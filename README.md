@@ -55,7 +55,7 @@ The weblogs are parsed by a cronjob every hour and saved in the honeypot adminis
  $ echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+ $ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
  $ sudo apt update && sudo apt upgrade
  $ sudo reboot (if update were applied)
  $ sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip
