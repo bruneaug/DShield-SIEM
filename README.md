@@ -7,15 +7,13 @@ https://isc.sans.edu/diary/DShield+Sensor+Monitoring+with+a+Docker+ELK+Stack+Gue
 This docker is custom built to be used with the DShield Honeypot [1] to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The default installion example by DShield is to install it in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS.
 
 # Ubuntu Setup
-
 - Ubuntu 20.04 LTS Live Server 64-Bit or Raspbian OS 64-Bit
 - Minimum 8+ GB RAM
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.
 - 4-8 Cores
 - Minimum 40 GB partition assigned to /var/lib/docker
 
-1. Have setup filebeat per Install & Configure Filebeat on Raspberry Pi ARM64 to Parse DShield Sensor Logs [2] up to the Setup Logstash Collection & Parsing
-2. Install docker
+## Install docker
  $ sudo apt-get install ca-certificates curl gnupg network-manager
  $ sudo install -m 0755 -d /etc/apt/keyrings
  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
