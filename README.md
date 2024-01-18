@@ -12,29 +12,36 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.
 - 4-8 Cores
 - Minimum 40 GB partition assigned to /var/lib/docker
+## Elastic Packages Installed
+- Kibana
+- Elasticsearch
+- Logstash
+- Metricbeat
+- Elastic-Agent
 
 ## Install docker
- $ sudo apt-get install ca-certificates curl gnupg network-manager
- $ sudo install -m 0755 -d /etc/apt/keyrings
- $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
- $ sudo chmod a+r /etc/apt/keyrings/docker.gpg
- $ echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
- $ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
- $ sudo apt update && sudo apt upgrade
- $ sudo reboot (if update were applied)
- $ sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip
- $ sudo systemctl enable docker
+ $ sudo apt-get install ca-certificates curl gnupg network-manager<br>
+ $ sudo install -m 0755 -d /etc/apt/keyrings<br>
+ $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br>
+ $ sudo chmod a+r /etc/apt/keyrings/docker.gpg<br>
+ $ echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\<br>
+   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
+ $ sudo apt update && sudo apt upgrade<br>
+ $ sudo reboot (if update were applied)<br>
+ $ sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip<br>
+ $ sudo systemctl enable docker<br>
 
 # Configure and install DShield ELK
 
-$ git clone https://github.com/bruneaug/DShield-SIEM.git
-$ cd ~/Dshield-SIEM
-Note: Before installation, you can edit the .env file to make any derided changes.
-    - Current default password for elastic is student
-Memory Limits in .env are the most memory that docker will allocate for each of the ELK containers. Default to 2147483648 (2GB) but can be expanded if you have the resources
-$ sudo docker compose up -d (For setup or any changes)
+$ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
+$ cd ~/Dshield-SIEM<br>
+
+**Note**: Before installation, you can edit the .env file to make any derided changes.<br>
+    - Current _default password_ for elastic is **student**<br>
+Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
+Default to **2147483648** (2GB) but can be expanded if you have the resources<br>
+
+$ sudo docker compose up -d (For setup or any changes)<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/dcc963af-357f-4b74-b7e5-7acf84438750)
 
@@ -66,7 +73,8 @@ $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' p
 - Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration
 $ sudo cat /tmp/ca.crt 
 
-Format must be exactly like this. Copy the output of the certificate in Notepad or Notepad++ and format exactly like this. It needs 2 spaces before certificate_authorities: and the dash (-) and it needs 4 spaces from the pipe (|) all the way down to the end of -----END CERTIFICATE-----
+Format must be exactly like this. Copy the output of the certificate in Notepad or Notepad++ and format exactly like this.<br>
+It needs 2 spaces before certificate_authorities: and the dash (**-**) and it needs 4 spaces from the pipe (**|**) all the way down to the end of -----END CERTIFICATE-----
 
 - Change the Hosts to: https://es01:9200
 
@@ -91,7 +99,7 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
 - Last: Generate Fleet Server policy
 - Select: RPM
 - Copy starting at: elastic-agent enroll \ to the end of …port=8220
-- 
+  
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2499e7d8-86fd-4b7f-a3f1-d401dc43ddde)
 
 We are going to need this information to setup our fleet server. Login via SSH to the fleet-server to setup our agent:
@@ -114,15 +122,19 @@ elastic-agent enroll \
   --fleet-server-cert-key=/certs/fleet-server/fleet-server.key \
   --fleet-server-es-insecure**
 
-This will replace your current settings. Do you want to continue? [Y/n]: Y
-{"log.level":"info","@timestamp":"2024-01-17T00:00:40.404Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":411},"message":"Generating self-signed certificate for Fleet Server","ecs.version":"1.6.0"}
-{"log.level":"info","@timestamp":"2024-01-17T00:00:42.774Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":788},"message":"Fleet Server - Running on policy with Fleet Server integration: fleet-server-policy; missing config fleet.agent.id (expected during bootstrap process)","ecs.version":"1.6.0"}
-{"log.level":"info","@timestamp":"2024-01-17T00:00:43.073Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":479},"message":"Starting enrollment to URL: https://a4a1ada63084:8220/","ecs.version":"1.6.0"}
-{"log.level":"info","@timestamp":"2024-01-17T00:00:44.152Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":277},"message":"Successfully triggered restart on running Elastic Agent.","ecs.version":"1.6.0"}
-Successfully enrolled the Elastic Agent.
+This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 
-From your current location, verify it installed correctly 
-$ ./elastic-agent status
+{"log.level":"info","@timestamp":"2024-01-17T00:00:40.404Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":411},"message":"Generating self-signed certificate for Fleet Server","ecs.version":"1.6.0"}<br>
+
+{"log.level":"info","@timestamp":"2024-01-17T00:00:42.774Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":788},"message":"Fleet Server - Running on policy with Fleet Server integration: fleet-server-policy; missing config fleet.agent.id (expected during bootstrap process)","ecs.version":"1.6.0"}<br>
+
+{"log.level":"info","@timestamp":"2024-01-17T00:00:43.073Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":479},"message":"Starting enrollment to URL: https://a4a1ada63084:8220/","ecs.version":"1.6.0"}<br>
+
+{"log.level":"info","@timestamp":"2024-01-17T00:00:44.152Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":277},"message":"Successfully triggered restart on running Elastic Agent.","ecs.version":"1.6.0"}<br>
+_Successfully enrolled the Elastic Agent._
+
+From your current location, verify it installed correctly<br>
+$ ./elastic-agent status<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7739c64e-5c10-4a0c-85e8-7be20749a05f)
 
@@ -130,15 +142,16 @@ In Elastic Management → Fleet, refresh Agents and this is what shows up:
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/144f24f6-2f53-45b2-acaa-41f796efe6a3)
 
-The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs. The next step is to select Agent policies → Fleet Server Policy → Add integration:
-Select and Add AlienVault OTX (need an API key)
-Select AbuseCH (no API key needed)
-Select Threat Intelligence Utilities
+The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs. The next step is to select Agent policies → Fleet Server Policy → Add integration:<br>
+
+- Select and Add AlienVault OTX (need an API key)<br>
+- Select AbuseCH (no API key needed)<br>
+- Select Threat Intelligence Utilities<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
-- In Elastic Management → Installed Integration
-- Select each of the installed integration and select Settings and enable this:
+- In Elastic Management → Installed Integration<br>
+- Select each of the installed integration and select Settings and enable this:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2b3c2e40-c6ce-4963-9002-ad76b72ebc77)
 
@@ -147,66 +160,59 @@ Select Threat Intelligence Utilities
 - Select Rules → Detection rules (SIEM) → Add Elastic rules
 - Under Search Tags: Rule Type: Indicator Match (4 rules)
 - Install and enable those 4 rules
-- You can look through the rules and enable those other rules that you want to try against your honeypot data.
+- You can look through the rules and enable those other rules that you want to try against your honeypot data.<br>
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4fec2d86-208a-465d-8853-9456acc7913f)
 
 ## Configure Management → Stack Management → Advanced Settings
 
-Find Elasticsearch Indices and add at the end of the list:
-- ,cowrie*
-- Save changes for these logs to be analyzed by the SIEM part of ELK.
+Find Elasticsearch Indices and add at the end of the list:<br>
+- ,cowrie*<br>
+- Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
 
 # Setup Filebeat on DShield Sensor
-After completing the installation, add the following ilebeat packages to the DShield Sensor to send the logs the Elasticsearch.
+After completing the installation, add the following ilebeat packages to the DShield Sensor to send the logs the Elasticsearch.<br>
 
-If use the following to install the Filebeat package using [3] the following commands:
+If use the following to install the Filebeat package using [3] the following commands:<br>
 
-$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-$ sudo apt-get install apt-transport-https
-$ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-$ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-$ sudo apt-get update && sudo apt-get install filebeat
+$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>
+$ sudo apt-get install apt-transport-https<br>
+$ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
+$ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
+$ sudo apt-get update && sudo apt-get install filebeat<br>
 
-Download the custom filebeat.yml file that will forward the logs the Elasticsearch:
+Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
 
-$ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml
+$ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
 
-Edit the filebeat.yml file and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:
+Edit the filebeat.yml file and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 
-$ sudo vi /etc/filebeat/filebeat.yml
+$ sudo vi /etc/filebeat/filebeat.yml<br>
 
 ## Start Filebeat
 
-$ sudo systemctl enable filebeat
-$ sudo systemctl start filebeat
-$ sudo systemctl status filebeat
+$ sudo systemctl enable filebeat<br>
+$ sudo systemctl start filebeat<br>
+$ sudo systemctl status filebeat<br>
 
 ## Setup webhoneypot.sh Parser
 
-This is a hourly script that extract the logs hourly and Filebeat send them to Logstash
-The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour
+This is a hourly script that extract the logs hourly and Filebeat send them to Logstash<br>
+The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour<br>
 
 ## Dump the cowrie web logs every hours
-The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.
+The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.<br>
 
-1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&
+1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&<br>
 
 
 # References
-[1] https://isc.sans.edu/tools/honeypot/
-
-[2] https://www.elastic.co/downloads/beats/filebeat
-
-[3] https://www.elastic.co/guide/en/beats/filebeat/8.8/setup-repositories.html#_apt
-
-[4] https://isc.sans.edu/diary/DShield+Honeypot+Activity+for+May+2023/29932
-
-[5] https://isc.sans.edu/diary/DShield+Sensor+JSON+Log+to+Elasticsearch/29458
-
-[6] https://isc.sans.edu/diary/DShield+Sensor+JSON+Log+Analysis/29412
-
-[7] https://github.com/jslagrew/cowrieprocessor/blob/main/submit_vtfiles.py
-
-[8] https://handlers.sans.edu/gbruneau/elastic.htm
-
-[9] https://www.elastic.co/guide/en/fleet/current/secure-connections.html
+[1] https://isc.sans.edu/tools/honeypot/<br>
+[2] https://www.elastic.co/downloads/beats/filebeat<br>
+[3] https://www.elastic.co/guide/en/beats/filebeat/8.8/setup-repositories.html#_apt<br>
+[4] https://isc.sans.edu/diary/DShield+Honeypot+Activity+for+May+2023/29932<br>
+[5] https://isc.sans.edu/diary/DShield+Sensor+JSON+Log+to+Elasticsearch/29458<br>
+[6] https://isc.sans.edu/diary/DShield+Sensor+JSON+Log+Analysis/29412<br>
+[7] https://github.com/jslagrew/cowrieprocessor/blob/main/submit_vtfiles.py<br>
+[8] https://handlers.sans.edu/gbruneau/elastic.htm<br>
+[9] https://www.elastic.co/guide/en/fleet/current/secure-connections.html<br>
