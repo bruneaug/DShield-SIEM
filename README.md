@@ -63,8 +63,8 @@ The weblogs are parsed by a cronjob every hour and saved in the honeypot adminis
 
 # Configure and install DShield ELK
 
-$ tar zxvf Dshield-ELK
-$ cd ~/Dshield-ELK
+$ git clone https://github.com/bruneaug/DShield-SIEM.git
+$ cd ~/Dshield-SIEM
 Note: Before installation, you can edit the .env file to make any derided changes.
     - Current default password for elastic is student
 Memory Limits in .env are the most memory that docker will allocate for each of the ELK containers. Default to 2147483648 (2GB) but can be expanded if you have the resources
