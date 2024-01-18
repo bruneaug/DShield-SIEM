@@ -97,7 +97,7 @@ $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' p
 - The output will look like this:
 673FB617E15CCCE73F9B647EF99449642A19CFC1D75BF5772047DA99DB950844
 
-Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration
+- Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration
 $ sudo cat /tmp/ca.crt 
 
 Format must be exactly like this. Copy the output of the certificate in Notepad or Notepad++ and format exactly like this. It needs 2 spaces before certificate_authorities: and the dash (-) and it needs 4 spaces from the pipe (|) all the way down to the end of -----END CERTIFICATE-----
@@ -125,11 +125,13 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
 - Last: Generate Fleet Server policy
 - Select: RPM
 - Copy starting at: elastic-agent enroll \ to the end of …port=8220
+- 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2499e7d8-86fd-4b7f-a3f1-d401dc43ddde)
 
 We are going to need this information to setup our fleet server. Login via SSH to the fleet-server to setup our agent:
 $ sudo docker start dshield-elk-fleet-server-1
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash
+
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.
 The token and fingerprint will be different then my example:
@@ -140,11 +142,11 @@ elastic-agent enroll \
   --fleet-server-policy=fleet-server-policy \
   --fleet-server-es-ca-trusted-fingerprint=76DA77DAE186F8CFBA9E87D450D5419B68E2555A9BD57795611C0545ED0BF03F \
   --fleet-server-port=8220 \
-  --certificate-authorities=/certs/ca/ca.crt \
+  **--certificate-authorities=/certs/ca/ca.crt \
   --fleet-server-es-ca=/certs/es01/es01.crt
   --fleet-server-cert=/certs/fleet-server/fleet-server.crt \
   --fleet-server-cert-key=/certs/fleet-server/fleet-server.key \
-  --fleet-server-es-insecure
+  --fleet-server-es-insecure**
 
 This will replace your current settings. Do you want to continue? [Y/n]: Y
 {"log.level":"info","@timestamp":"2024-01-17T00:00:40.404Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":411},"message":"Generating self-signed certificate for Fleet Server","ecs.version":"1.6.0"}
@@ -152,11 +154,14 @@ This will replace your current settings. Do you want to continue? [Y/n]: Y
 {"log.level":"info","@timestamp":"2024-01-17T00:00:43.073Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":479},"message":"Starting enrollment to URL: https://a4a1ada63084:8220/","ecs.version":"1.6.0"}
 {"log.level":"info","@timestamp":"2024-01-17T00:00:44.152Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":277},"message":"Successfully triggered restart on running Elastic Agent.","ecs.version":"1.6.0"}
 Successfully enrolled the Elastic Agent.
+
 From your current location, verify it installed correctly 
 $ ./elastic-agent status
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7739c64e-5c10-4a0c-85e8-7be20749a05f)
+
 In Elastic Management → Fleet, refresh Agents and this is what shows up:
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/144f24f6-2f53-45b2-acaa-41f796efe6a3)
 
 The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs. The next step is to select Agent policies → Fleet Server Policy → Add integration:
@@ -166,8 +171,9 @@ Select Threat Intelligence Utilities
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
-In Elastic Management → Installed Integration
-Select each of the installed integration and select Settings and enable this:
+- In Elastic Management → Installed Integration
+- Select each of the installed integration and select Settings and enable this:
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2b3c2e40-c6ce-4963-9002-ad76b72ebc77)
 
 ## Configuring Security → Rules
@@ -179,6 +185,7 @@ Select each of the installed integration and select Settings and enable this:
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4fec2d86-208a-465d-8853-9456acc7913f)
 
 ## Configure Management → Stack Management → Advanced Settings
+
 Find Elasticsearch Indices and add at the end of the list:
 - ,cowrie*
 - Save changes for these logs to be analyzed by the SIEM part of ELK.
