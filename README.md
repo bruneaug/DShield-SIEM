@@ -206,6 +206,10 @@ The weblogs are parsed by a cronjob every hour and saved in the honeypot adminis
 
 1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&<br>
 
+# Interface - Logs DShield Sensor Overview
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e2f41712-8606-438f-991f-07b48a3cbdb5)
+
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
