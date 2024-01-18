@@ -35,13 +35,16 @@ This is a hourly script that extract the logs hourly and Filebeat send them to L
 The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour
 
 # Dump the cowrie web logs every hours
+The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.
+
 1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&
 
 # Ubuntu Setup
 
-- Minimum 8 GB RAM
+- Minimum 8+ GB RAM
+  - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.
 - 4-8 Cores
-- Minimum 40 GB Separate partition for /var/lib/docker
+- Minimum 40 GB partition assigned to /var/lib/docker
 
 1. Have setup filebeat per Install & Configure Filebeat on Raspberry Pi ARM64 to Parse DShield Sensor Logs [2] up to the Setup Logstash Collection & Parsing
 2. Install docker
@@ -70,14 +73,16 @@ $ sudo docker compose up -d (For setup or any changes)
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/dcc963af-357f-4b74-b7e5-7acf84438750)
 
 Installation Completed
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/df44cf7d-b105-4188-abe7-983311e313d3)
 
 # Access Kibana Interface
 
 Web Access: http://serverIP:5601
 
-# Configure elastic-agent
+# Configuring elastic-agent
 The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
 
 - Login Kibana with username: elastic and default password: student
@@ -101,6 +106,7 @@ Format must be exactly like this. Copy the output of the certificate in Notepad 
 
 Save and apply settings after making the changes and adding the certificate information.
 Followed by Save and deploy
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/82d3b29f-5398-4f23-afea-63bf6727e087)
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/bc97d11c-b9de-4c26-b24e-17ebed278cd2)
 
