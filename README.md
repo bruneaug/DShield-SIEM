@@ -206,5 +206,7 @@ Find Elasticsearch Indices and add at the end of the list:
 [6] https://isc.sans.edu/diary/DShield+Sensor+JSON+Log+Analysis/29412
 
 [7] https://github.com/jslagrew/cowrieprocessor/blob/main/submit_vtfiles.py
+
 [8] https://handlers.sans.edu/gbruneau/elastic.htm
+
 [9] https://www.elastic.co/guide/en/fleet/current/secure-connections.html
