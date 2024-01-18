@@ -3,44 +3,12 @@
 This is fork and a significant update from the initial publication on the ISC Storm Center website by Scott Jensen as a BACS paper and the scripts published in Github.
 https://github.com/fkadriver/Dshield-ELK
 https://isc.sans.edu/diary/DShield+Sensor+Monitoring+with+a+Docker+ELK+Stack+Guest+Diary/30118
-
-# Setup Filebeat on DShield Sensor
-After completing the installation of the SQLite database, add the following ARM64 Filebeat packages to the Pi to send the logs the Elasticsearch.
-
-Installing ARM64 Filebeat package using [3] the following commands:
-
-$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-$ sudo apt-get install apt-transport-https
-$ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-$ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-$ sudo apt-get update && sudo apt-get install filebeat
-
-Download the updated filebeat.yml file that will forward the logs the Elasticsearch:
-
-$ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml
-
-Edit the filebeat.yml file and change the IP address to the logstash parser (192.168.25.23):
-
-$ sudo vi /etc/filebeat/filebeat.yml
-
-### Start Filebeat
-
-$ sudo systemctl enable filebeat
-$ sudo systemctl start filebeat
-$ sudo systemctl status filebeat
-
-# Setup webhoneypot.sh Parser
-
-This is a hourly script that extract the logs hourly and Filebeat send them to Logstash
-The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour
-
-# Dump the cowrie web logs every hours
-The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.
-
-1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&
+# What it is Used For
+This docker is custom built to be used with the DShield Honeypot [1] to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The default installion example by DShield is to install it in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS.
 
 # Ubuntu Setup
 
+- Ubuntu 20.04 LTS Live Server 64-Bit or Raspbian OS 64-Bit
 - Minimum 8+ GB RAM
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.
 - 4-8 Cores
@@ -190,6 +158,40 @@ Find Elasticsearch Indices and add at the end of the list:
 - ,cowrie*
 - Save changes for these logs to be analyzed by the SIEM part of ELK.
 
+# Setup Filebeat on DShield Sensor
+After completing the installation, add the following ilebeat packages to the DShield Sensor to send the logs the Elasticsearch.
+
+If use the following to install the Filebeat package using [3] the following commands:
+
+$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+$ sudo apt-get install apt-transport-https
+$ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+$ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+$ sudo apt-get update && sudo apt-get install filebeat
+
+Download the custom filebeat.yml file that will forward the logs the Elasticsearch:
+
+$ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml
+
+Edit the filebeat.yml file and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:
+
+$ sudo vi /etc/filebeat/filebeat.yml
+
+## Start Filebeat
+
+$ sudo systemctl enable filebeat
+$ sudo systemctl start filebeat
+$ sudo systemctl status filebeat
+
+## Setup webhoneypot.sh Parser
+
+This is a hourly script that extract the logs hourly and Filebeat send them to Logstash
+The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour
+
+## Dump the cowrie web logs every hours
+The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.
+
+1 * * * * /home/guy/scripts/webhoneypot.sh  > /dev/null 2>1&
 
 
 # References
