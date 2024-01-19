@@ -232,11 +232,17 @@ $ sudo systemctl status filebeat<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e2f41712-8606-438f-991f-07b48a3cbdb5)
 
 # Useful Docker Commands
+$ sudo docker compose rm -f -v (clear setup but need to run up -d again)<br>
 $ sudo docker compose up -d (reload container with changes)<br>
 $ sudo docker compose start/stop<br>
 $ sudo docker compose ps (list running containers)<br>
 $ sudo docker stats (shows status of container)<br>
 $ sudo docker container ls/ps<br>
+$ sudo docker stats (shows status of container)<br>
+$ sudo docker system prune -a (Remove everything)<br>
+$ sudo docker logs dshield-elk-kibana (troubleshooting docker)<br>
+$ sudo docker compose logs --follow (debugging)<br>
+$ sudo docker compose down --remove-orphans && sudo docker compose up --build -d
 
 $ sudo docker stop dshield-elk-metricbeat01-1<br>
 $ sudo docker stop dshield-elk-logstash01-1<br>
@@ -246,7 +252,6 @@ $ sudo docker inspect dshield-elk-logstash01-1<br>
 $ sudo docker exec -ti dshield-elk-es01-1 bash<br>
 $ sudo docker exec -ti dshield-elk-logstash01-1 bash<br>
 $ sudo docker exec -ti dshield-elk-kibana-1 bash<br>
-$ sudo docker exec -ti dshield-elk-metricbeat01-1 bash<br>
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
 
 
