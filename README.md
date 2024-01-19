@@ -35,7 +35,7 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 # Configure and install DShield ELK
 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
-$ cd ~/Dshield-SIEM<br>
+$ cd ~/DShield-SIEM<br>
 
 **Note**: Before installation, you can edit the .env file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
