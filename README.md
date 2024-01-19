@@ -147,7 +147,11 @@ In Elastic Management → Fleet, refresh Agents and this is what shows up:
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/144f24f6-2f53-45b2-acaa-41f796efe6a3)
 
-The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs. The next step is to select Agent policies → Fleet Server Policy → Add integration:<br>
+The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs.<br>
+The next step is to select Agent policies → Fleet Server Policy → Add integration:<br>
+Use this Dashboard to view the metrics collected by elastic-agent:<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/ebb0441a-36b4-454c-acd3-ae6d8262f7d9)
+
 
 - Select and Add AlienVault OTX (need an API key)<br>
 - Select AbuseCH (no API key needed)<br>
