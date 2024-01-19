@@ -35,8 +35,10 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 # Configure and install DShield ELK
 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
+$ chmod +x scripts/*.sh<br>
 $ cd ~/DShield-SIEM<br>
 
+The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
 **Note**: Before installation, you can edit the .env file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
@@ -113,16 +115,17 @@ This is an example of what need to be copied to the fleet server. Ensure the fle
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.
 The token and fingerprint will be different then my example:
 
-elastic-agent enroll \
-  --fleet-server-es=https://es01:9200 \
-  --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MDU0NDg3MDMwNTI6NkNxcWlCeTRRVmlhYW0yeldhN3pGZw \
-  --fleet-server-policy=fleet-server-policy \
-  --fleet-server-es-ca-trusted-fingerprint=76DA77DAE186F8CFBA9E87D450D5419B68E2555A9BD57795611C0545ED0BF03F \
-  --fleet-server-port=8220 \
-  **--certificate-authorities=/certs/ca/ca.crt \
-  --fleet-server-es-ca=/certs/es01/es01.crt
-  --fleet-server-cert=/certs/fleet-server/fleet-server.crt \
-  --fleet-server-cert-key=/certs/fleet-server/fleet-server.key \
+elastic-agent enroll \\<br>
+  --url=https://fleet-server:8220 \\<br>
+  --fleet-server-es=https://es01:9200 \\<br>
+  --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MDU0NDg3MDMwNTI6NkNxcWlCeTRRVmlhYW0yeldhN3pGZw \\<br>
+  --fleet-server-policy=fleet-server-policy \\<br>
+  --fleet-server-es-ca-trusted-fingerprint=76DA77DAE186F8CFBA9E87D450D5419B68E2555A9BD57795611C0545ED0BF03F \\<br>
+  --fleet-server-port=8220 \\<br>
+  **--certificate-authorities=/certs/ca/ca.crt \\<br>
+  --fleet-server-es-ca=/certs/es01/es01.crt \\<br>
+  --fleet-server-cert=/certs/fleet-server/fleet-server.crt \\<br>
+  --fleet-server-cert-key=/certs/fleet-server/fleet-server.key \\<br>
   --fleet-server-es-insecure**
 
 This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
