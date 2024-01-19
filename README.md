@@ -154,7 +154,7 @@ The server is now ready to install Threat Intel Agents to be used in Security (S
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
 - In Elastic Management → Installed Integration<br>
-- Select each of the installed integration and select Settings and enable this:<br>
+- Select each of the installed integration, then select Settings and enable the tab to _keep the policy up to date_:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f7f8d4d9-f5b3-45b2-849f-cb855bf6b757)
 
