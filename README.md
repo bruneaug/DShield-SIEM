@@ -235,11 +235,11 @@ $ sudo docker stop dshield-elk-logstash01-1<br>
 $ sudo docker inspect dshield-elk-logstash01-1<br>
 
 # Login each Container<br>
-sudo docker exec -ti dshield-elk-es01-1 bash<br>
-sudo docker exec -ti dshield-elk-logstash01-1 bash<br>
-sudo docker exec -ti dshield-elk-kibana-1 bash<br>
-sudo docker exec -ti dshield-elk-metricbeat01-1 bash<br>
-sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
+$ sudo docker exec -ti dshield-elk-es01-1 bash<br>
+$ sudo docker exec -ti dshield-elk-logstash01-1 bash<br>
+$ sudo docker exec -ti dshield-elk-kibana-1 bash<br>
+$ sudo docker exec -ti dshield-elk-metricbeat01-1 bash<br>
+$ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
 
 
 # References
