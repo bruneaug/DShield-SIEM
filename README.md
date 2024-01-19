@@ -212,6 +212,24 @@ The weblogs are parsed by a cronjob every hour and saved in the honeypot adminis
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e2f41712-8606-438f-991f-07b48a3cbdb5)
 
+# Useful Docker Commands
+
+$ sudo docker compose start/stop
+$ sudo docker compose ps
+$ sudo docker stats (shows status of container)
+$ sudo docker container ls/ps
+
+$ sudo docker stop dshield-elk-metricbeat01-1
+$ sudo docker stop dshield-elk-logstash01-1
+$ sudo docker inspect dshield-elk-logstash01-1
+
+# Login in each Container
+sudo docker exec -ti dshield-elk-es01-1 bash
+sudo docker exec -ti dshield-elk-logstash01-1 bash
+sudo docker exec -ti dshield-elk-kibana-1 bash
+sudo docker exec -ti dshield-elk-metricbeat01-1 bash
+sudo docker exec -ti dshield-elk-fleet-server-1 bash
+
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
