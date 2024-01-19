@@ -1,4 +1,4 @@
-# DShield Sensor Log Collection with Elasticsearch
+fv# DShield Sensor Log Collection with Elasticsearch
 ## Introduction
 This is fork and a significant update from the initial publication on the ISC Storm Center website by Scott Jensen as a BACS paper and the scripts published in Github.<br>
 https://github.com/fkadriver/Dshield-ELK<br>
@@ -156,7 +156,7 @@ The server is now ready to install Threat Intel Agents to be used in Security (S
 - In Elastic Management → Installed Integration<br>
 - Select each of the installed integration and select Settings and enable this:<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2b3c2e40-c6ce-4963-9002-ad76b72ebc77)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f7f8d4d9-f5b3-45b2-849f-cb855bf6b757)
 
 ## Configuring Security → Rules
 
