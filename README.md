@@ -207,6 +207,7 @@ The script is kept in: ~/scripts but can be put where you want. The cronjob runs
 The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.<br>
 **Note**: For the cronjob to work, _change the path_ from /home/**guy** to your own /home account.
 
+$ crontab -e (add the hour cronjob below to your account)<br>
 1 * * * * /home/**guy**/scripts/webhoneypot.sh  > /dev/null 2>1&<br>
 
 # Interface - Logs DShield Sensor Overview
