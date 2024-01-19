@@ -103,7 +103,9 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
   
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2499e7d8-86fd-4b7f-a3f1-d401dc43ddde)
 
-We are going to need this information to setup our fleet server. Login via SSH to the fleet-server to setup our agent:<br>
+We are going to need this information to setup our fleet server.<br>
+Login via SSH to the fleet-server and make sure the dshield-elk-fleet-server-1 is running before setting up our agent:<br>
+
 $ sudo docker start dshield-elk-fleet-server-1<br>
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
 
