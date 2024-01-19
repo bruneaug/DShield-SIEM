@@ -17,7 +17,6 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 - Kibana
 - Elasticsearch
 - Logstash
-- Metricbeat
 - Elastic-Agent
 
 ## Install docker
@@ -154,6 +153,7 @@ The server is now ready to install Threat Intel Agents to be used in Security (S
 - Select AbuseCH (no API key needed)<br>
 - Select Threat Intelligence Utilities<br>
 - Select Docker<br>
+- Select Kibana<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
