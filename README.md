@@ -173,8 +173,21 @@ Find Elasticsearch Indices and add at the end of the list:<br>
 - ,cowrie*<br>
 - Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
 
+## Setup webhoneypot.sh Parser
+
+This is a hourly script that extract the logs hourly and Filebeat send them to Logstash<br>
+The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour<br>
+
+## Dump the cowrie web logs every hours
+The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.<br>
+**Note**: For the cronjob to work, _change the path_ from /home/**guy** to your own /home account.
+
+$ crontab -e (add the hour cronjob below to your account)<br>
+1 * * * * /home/**guy**/scripts/webhoneypot.sh  > /dev/null 2>1&<br>
+
 # Setup Filebeat on DShield Sensor
-After completing the installation, add the following ilebeat packages to the DShield Sensor to send the logs the Elasticsearch.<br>
+
+After adding the webhoneypot.sh script, add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
 
 If use the following to install the Filebeat package using [3] the following commands:<br>
 
@@ -188,27 +201,23 @@ Download the custom filebeat.yml file that will forward the logs the Elasticsear
 
 $ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
 
-Edit the filebeat.yml file and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
+- Edit the filebeat.yml file and change the path of the webhoneypot logs to match the cronjob path you just completed.<br>
+- Change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 
 $ sudo vi /etc/filebeat/filebeat.yml<br>
+
+ # Paths that should be crawled and fetched. Glob based paths.<br>
+  paths:<br>
+    - /home/guy/webhoneypot/webhoneypot*.json<br>
+
+  output.logstash:<br>
+  hosts: ["192.168.25.23:5044"]<br>
 
 ## Start Filebeat
 
 $ sudo systemctl enable filebeat<br>
 $ sudo systemctl start filebeat<br>
 $ sudo systemctl status filebeat<br>
-
-## Setup webhoneypot.sh Parser
-
-This is a hourly script that extract the logs hourly and Filebeat send them to Logstash<br>
-The script is kept in: ~/scripts but can be put where you want. The cronjob runs every hour<br>
-
-## Dump the cowrie web logs every hours
-The weblogs are parsed by a cronjob every hour and saved in the honeypot administrator account directory (i.e. ~/webhoneypot) and sent by Filebeat to ELK.<br>
-**Note**: For the cronjob to work, _change the path_ from /home/**guy** to your own /home account.
-
-$ crontab -e (add the hour cronjob below to your account)<br>
-1 * * * * /home/**guy**/scripts/webhoneypot.sh  > /dev/null 2>1&<br>
 
 # Interface - Logs DShield Sensor Overview
 
