@@ -83,6 +83,7 @@ services:
     depends_on:
       setup:
         condition: service_healthy
+    hostname: es01
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     labels:
       co.elastic.logs/module: elasticsearch
@@ -128,6 +129,7 @@ services:
     depends_on:
       es01:
         condition: service_healthy
+    hostname: kibana
     image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
     labels:
       co.elastic.logs/module: kibana
@@ -163,6 +165,7 @@ services:
         condition: service_healthy
       kibana:
         condition: service_healthy
+    hostname: cowrie
     image: photon
     volumes:
       - ${SCRIPTS_DIR}:/usr/share/scripts
@@ -181,6 +184,7 @@ services:
         condition: service_healthy
       kibana:
         condition: service_healthy
+    hostname: logstash
     image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
     labels:
       co.elastic.logs/module: logstash
@@ -213,6 +217,7 @@ services:
         condition: service_healthy
       kibana:
         condition: service_healthy
+    hostname: fleet-server
     image: docker.elastic.co/beats/elastic-agent:${STACK_VERSION}
     labels:
       co.elastic.logs/module: fleet-server
