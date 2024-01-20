@@ -256,6 +256,7 @@ $ sudo docker exec -ti dshield-elk-es01-1 bash<br>
 $ sudo docker exec -ti dshield-elk-logstash01-1 bash<br>
 $ sudo docker exec -ti dshield-elk-kibana-1 bash<br>
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
+$ sudo docker exec -ti dshield-elk-cowrie-1 bash<br>
 
 
 # References
