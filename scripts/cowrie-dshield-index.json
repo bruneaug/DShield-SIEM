@@ -1,5 +1,5 @@
 {
-  "index_patterns": ["cowrie-*"],
+  "index_patterns": ["cowrie.dshield-*"],
     "template": {
      "settings": {
        "number_of_shards": 1,
@@ -8,15 +8,15 @@
        "index": {
          "refresh_interval": "5s",
          "lifecycle": {
-          "name": "cowrie",
-          "rollover_alias": "cowrie"
+          "name": "cowrie.dshield",
+          "rollover_alias": "cowrie.dshield"
         }
       }
     },
     "mappings" : {
       "numeric_detection": true,
       "_meta" : {
-        "beat" : "cowrie"
+        "beat" : "cowrie.dshield"
       },
       "dynamic_templates": [
         {
@@ -123,9 +123,6 @@
             },
             "uptime": {
               "type": "long"
-            },
-            "tty": {
-              "type": "object"
             }
           }
         },
@@ -244,13 +241,6 @@
                 "timezone": {
                   "type": "keyword"
                 }              }
-            },
-            "user": {
-              "properties": {
-                "command": {
-                  "type": "keyword"
-                }
-              }
             }
           }
         },
@@ -370,18 +360,6 @@
             }
           }
         },
-        "user_agent": {
-          "properties": {
-            "original": {
-              "type": "keyword",
-              "fields": {
-                "text": {
-                  "type": "match_only_text"
-                }
-              }
-            }
-          }
-        },
         "interface": {
           "properties": {
             "alias": {
@@ -425,142 +403,8 @@
               "type": "keyword"
             }
           }
-        },
-        "url": {
-          "properties": {
-            "query": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "port": {
-              "type": "long"
-            },
-            "password": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "username": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "original": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "full": {
-              "type": "wildcard"
-            },
-            "domain": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "http": {
-          "properties": {
-            "request":{
-              "properties": {
-                "body": {
-                  "properties": {
-                    "content" : {
-                      "ignore_above": 1024,
-                      "type": "keyword"
-                    }
-                  }
-                }
-              }
-            },
-            "method": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "mime_type": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "referrer": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "version": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "bytes": {
-              "type": "long"
-            },
-            "id": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "ssh": {
-          "properties": {
-            "client": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "transaction": {
-          "properties": {
-            "id": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "error": {
-          "properties": {
-            "code": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "id": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "message": {
-              "ignore_above": 1024,
-              "type": "keyword",
-              "fields": {
-                "text": {
-                  "type": "match_only_text"
-                }
-              }
-            },
-            "error": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "ttylog": {
-          "ignore_above": 1024,
-          "type": "keyword"
-        },
-        "file": {
-          "properties": {
-            "name": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "path": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "size": {
-              "type": "long"
-            },
-            "directory": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
         }
       }
     }
   }
 }
-
