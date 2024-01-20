@@ -174,7 +174,8 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 - Install and enable those 4 rules
 - You can look through the rules and enable those other rules that you want to try against your honeypot data.<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4fec2d86-208a-465d-8853-9456acc7913f)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b45ba835-2eb9-4246-97b1-160f3c6273d8)
+
 
 ## Configure Management → Stack Management → Advanced Settings
 
