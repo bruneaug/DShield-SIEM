@@ -1,4 +1,4 @@
-fv# DShield Sensor Log Collection with Elasticsearch
+# DShield Sensor Log Collection with Elasticsearch
 ## Introduction
 This is fork and a significant update from the initial publication on the ISC Storm Center website by Scott Jensen as a BACS paper and the scripts published in Github.<br>
 https://github.com/fkadriver/Dshield-ELK<br>
