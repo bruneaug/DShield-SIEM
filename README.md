@@ -232,6 +232,11 @@ $ sudo systemctl enable filebeat<br>
 $ sudo systemctl start filebeat<br>
 $ sudo systemctl status filebeat<br>
 
+### Filebeat Tracking File
+Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
+The location of this file:<br>
+$ cd /var/lib/filebeat/registry/filebeat 
+
 # Interface - Logs DShield Sensor Overview
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/aa016326-53ea-4f0f-8c59-de7db93d5741)
