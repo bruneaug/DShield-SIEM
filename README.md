@@ -200,7 +200,7 @@ $ sudo apt-get update && sudo apt-get install filebeat<br>
 
 Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
 
-$ sudo curl https://handlers.sans.edu/gbruneau/elk//DShield/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
+$ sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
 
 - Edit the filebeat.yml file and change the path of the webhoneypot logs to match the cronjob path you just completed.<br>
 - Change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
