@@ -229,6 +229,10 @@ Filebeat tracks the events it has processed with a file located called **log.jso
 The location of this file:<br>
 $ cd /var/lib/filebeat/registry/filebeat 
 
+## Want to add Elastic-Agent to other Devices?
+Follow this step-by-step documents to install the elastic-agent to the DShield sensor<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Configure%20Elastic-Agent.pdf
+
 # Interface - Logs DShield Sensor Overview
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/aa016326-53ea-4f0f-8c59-de7db93d5741)
