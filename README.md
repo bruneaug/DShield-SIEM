@@ -230,7 +230,8 @@ $ sudo systemctl status filebeat<br>
 
 # Interface - Logs DShield Sensor Overview
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e2f41712-8606-438f-991f-07b48a3cbdb5)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/aa016326-53ea-4f0f-8c59-de7db93d5741)
+
 
 # Useful Docker Commands
 $ sudo docker compose rm -f -v (clear setup but need to run up -d again)<br>
