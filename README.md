@@ -196,7 +196,7 @@ $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key a
 $ sudo apt-get install apt-transport-https<br>
 $ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
 $ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-$ sudo apt-get update && sudo apt-get install filebeat<br>
+$ sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd<br>
 
 Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
 
@@ -219,6 +219,10 @@ $ sudo vi /etc/filebeat/filebeat.yml<br>
 $ sudo systemctl enable filebeat<br>
 $ sudo systemctl start filebeat<br>
 $ sudo systemctl status filebeat<br>
+$ sudo systemctl enable elastic-agent<br>
+$ sudo systemctl start elastic-agent<br>
+$ sudo systemctl enable softflowd<br>
+$ sudo systemctl start softflowd<br>
 
 ### Filebeat Tracking File
 Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
