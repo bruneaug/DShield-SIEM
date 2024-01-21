@@ -267,6 +267,10 @@ $ sudo docker exec -ti dshield-elk-kibana-1 bash<br>
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
 $ sudo docker exec -ti dshield-elk-cowrie-1 bash<br>
 
+# Copying Files Between Docker & Local User
+$ sudo docker cp  dshield-elk-fleet-server-1:/usr/share/elastic-agent/elastic-agent.yml .<br>
+$ sudo docker cp elastic-agent.yml  dshield-elk-fleet-server-1:/usr/share/elastic-agent/
+
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
