@@ -61,6 +61,12 @@ Installation Completed
 
 Web Access: http://serverIP:5601
 
+# Configure Management -> Stack Monitoring
+- Select "_Or, set up with self monitoring_"<br>
+- Monitoring is currently off -> Select: _Turn on monitoring_<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b41deef3-462c-42de-bf75-c79100833f4b)
+
 # Configuring elastic-agent
 The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.
 
