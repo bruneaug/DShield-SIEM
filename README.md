@@ -140,7 +140,7 @@ _Successfully enrolled the Elastic Agent._
 From your current location, verify it installed correctly<br>
 $ ./elastic-agent status<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7739c64e-5c10-4a0c-85e8-7be20749a05f)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/a1bdb5ec-4cf9-4921-b3dc-ff4be0981bc8)
 
 In Elastic Management → Fleet, refresh Agents and this is what shows up:
 
