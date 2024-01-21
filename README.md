@@ -5,7 +5,12 @@ https://github.com/fkadriver/Dshield-ELK<br>
 https://isc.sans.edu/diary/DShield+Sensor+Monitoring+with+a+Docker+ELK+Stack+Guest+Diary/30118<br>
 
 # What it is Used For
-This docker is custom built to be used with the DShield Honeypot [1] to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The default installion example by DShield is to install it in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS.
+This docker is custom built to be used with the DShield Honeypot [1] to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The default installion example by DShield is to install it in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS.<br>
+
+- This was tested on Ubuntu 20.04 LTS<br>
+- Step 1 build Ubuntu<br>
+- Step 2 install docker and ELK<br>
+- Step 3 install and configure Filebeat on DShield Sensor(s)<br>
 
 # Ubuntu Setup
 - Ubuntu 20.04 LTS Live Server 64-Bit or Raspbian OS 64-Bit
@@ -188,7 +193,7 @@ Find Elasticsearch Indices and add at the end of the list (comma cowrie *):<br>
 - ,cowrie*<br>
 - Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
 
-# Setup Filebeat on DShield Sensor
+# Setup Filebeat on DShield Sensor - Logs to ELK
 
 After adding the webhoneypot.sh script, add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
 
