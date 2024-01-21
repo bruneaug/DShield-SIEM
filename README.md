@@ -35,7 +35,7 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod +x scripts/*.sh<br>
-$ chmod 754 DShield-SIEM/scripts/cowrie-setup.sh<br>
+$ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ cd ~/DShield-SIEM<br>
 
 The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
@@ -258,9 +258,9 @@ $ sudo docker stop dshield-elk-logstash01-1<br>
 $ sudo docker inspect dshield-elk-logstash01-1<br>
 
 # Download Github Update
-$ sudo docker compose stop
-$ cd DShield-SIEM
-$ git pull (Update the code from Github)
+$ sudo docker compose stop<br>
+$ cd DShield-SIEM<br>
+$ git pull (Update the code from Github)<br>
 $ sudo docker compose up -d
 
 # Login each Container<br>
