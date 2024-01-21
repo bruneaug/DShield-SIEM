@@ -243,6 +243,7 @@ $ sudo docker compose rm -f -v (clear setup but need to run up -d again)<br>
 $ sudo docker compose up -d (reload container with changes)<br>
 $ sudo docker compose up --build -d<br>
 $ sudo docker compose up --build --force-recreate -d (force a rebuild if the container hasn't changed)<br>
+$ sudo docker compose pull (Update the code from Github)
 $ sudo docker compose start/stop<br>
 $ sudo docker compose ps (list running containers)<br>
 $ sudo docker stats (shows status of container)<br>
