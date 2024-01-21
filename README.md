@@ -45,7 +45,7 @@ Default to **2147483648** (2GB) but can be expanded if you have the resources<br
 
 $ sudo docker compose up -d (For setup or any changes)<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/dcc963af-357f-4b74-b7e5-7acf84438750)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/55df8e2f-6896-497c-b1b8-247196141e6f)
 
 Installation Completed
 
