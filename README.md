@@ -160,6 +160,10 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
+# Fleet Server Policy Example
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/9cbd15e0-1c03-4d79-8cf5-4e0bf1467b18)
+
 - In Elastic Management → Installed Integration<br>
 - Select each of the installed integration, then select Settings and enable the tab to _keep the policy up to date_:<br>
 
