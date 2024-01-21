@@ -231,7 +231,7 @@ $ cd /var/lib/filebeat/registry/filebeat
 
 ## Want to add Elastic-Agent to other Devices?
 Follow this step-by-step documents to install the elastic-agent to the DShield sensor<br>
-https://github.com/bruneaug/DShield-SIEM/blob/main/Configure%20Elastic-Agent.pdf
+https://github.com/bruneaug/DShield-SIEM/blob/main/Configure-Elastic-Agent.pdf
 
 # Interface - Logs DShield Sensor Overview
 
