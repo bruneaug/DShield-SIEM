@@ -13,11 +13,12 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 - Step 3 install and configure Filebeat on DShield Sensor(s)<br>
 
 # Ubuntu Setup
-- Ubuntu 20.04 LTS Live Server 64-Bit or Raspbian OS 64-Bit
-- Minimum 8+ GB RAM
-  - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.
-- 4-8 Cores
-- Minimum 40 GB partition assigned to /var/lib/docker
+- Ubuntu 20.04 LTS Live Server 64-Bit<br>
+- Minimum 8+ GB RAM<br>
+  - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.<br>
+- 4-8 Cores<br>
+- Minimum 40 GB partition assigned to /var/lib/docker<br>
+- Adding a 40 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/build_40gb_docker_partition.txt
 ## Elastic Packages Installed
 - Kibana
 - Elasticsearch
