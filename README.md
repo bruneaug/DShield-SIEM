@@ -144,7 +144,7 @@ $ ./elastic-agent status<br>
 
 In Elastic Management → Fleet, refresh Agents and this is what shows up:
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/144f24f6-2f53-45b2-acaa-41f796efe6a3)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f2bb9efd-3c3e-463b-bb9a-a5b3e1bacfd0)
 
 The server is now ready to install Threat Intel Agents to be used in Security (SIEM portion) against the honeypot logs.<br>
 The next step is to select Agent policies → Fleet Server Policy → Add integration:<br>
