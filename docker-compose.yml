@@ -1,5 +1,10 @@
 version: "3.8"
 
+# Guy Bruneau
+# Date: 21 Jan 204
+# Version: 1.0
+# Initial release of DShield Sensor ELK docker log storage.
+
 volumes:
   certs:
     driver: local
