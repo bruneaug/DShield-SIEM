@@ -34,7 +34,6 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 # Configure and install DShield ELK
 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
-$ chmod +x scripts/*.sh<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ cd ~/DShield-SIEM<br>
 
