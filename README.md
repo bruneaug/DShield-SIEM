@@ -104,7 +104,7 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
 - Select: RPM
 - Copy starting at: elastic-agent enroll \ to the end of …port=8220
   
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2499e7d8-86fd-4b7f-a3f1-d401dc43ddde)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/580b3009-0de8-45ba-b297-d4090e2120c9)
 
 We are going to need this information to setup our fleet server.<br>
 Login via SSH to the fleet-server and make sure the dshield-elk-fleet-server-1 is running before setting up our agent:<br>
