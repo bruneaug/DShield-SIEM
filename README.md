@@ -123,12 +123,12 @@ Login via SSH to the fleet-server and make sure the dshield-elk-fleet-server-1 i
 $ sudo docker start dshield-elk-fleet-server-1<br>
 $ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
 
-This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200
-Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.
-The token and fingerprint will be different then my example:
+This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
+Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
+The token and fingerprint will be different then this example:
 
 elastic-agent enroll \\<br>
-  --url=https://fleet-server:8220 \\<br>
+  **--url=https://fleet-server:8220** \\<br>
   --fleet-server-es=https://es01:9200 \\<br>
   --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MDU0NDg3MDMwNTI6NkNxcWlCeTRRVmlhYW0yeldhN3pGZw \\<br>
   --fleet-server-policy=fleet-server-policy \\<br>
