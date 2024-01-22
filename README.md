@@ -271,10 +271,11 @@ $ sudo docker stop dshield-elk-logstash01-1<br>
 $ sudo docker inspect dshield-elk-logstash01-1<br>
 
 # Download Github Update
-$ sudo docker compose stop<br>
 $ cd DShield-SIEM<br>
+$ sudo docker compose stop<br>
 $ git pull (Update the code from Github)<br>
-$ sudo docker compose up -d
+$ sudo docker compose rm -f -v<br>
+$  sudo docker compose up --build -d
 
 # Login each Container<br>
 $ sudo docker exec -ti dshield-elk-es01-1 bash<br>
