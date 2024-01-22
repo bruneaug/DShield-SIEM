@@ -221,7 +221,7 @@ $ sudo vi /etc/filebeat/filebeat.yml<br>
 
   output.logstash:<br>
   hosts: ["192.168.25.23:5044"]<br>
-
+  
 ## Start Filebeat
 
 $ sudo systemctl enable filebeat<br>
