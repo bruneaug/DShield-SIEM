@@ -216,14 +216,8 @@ Download the custom filebeat.yml file that will forward the logs the Elasticsear
 
 $ sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
 
-- Edit the filebeat.yml file and change the path of the webhoneypot logs to match the cronjob path you just completed.<br>
-- Change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
-
+- Edit the filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 $ sudo vi /etc/filebeat/filebeat.yml<br>
-
- # Paths that should be crawled and fetched. Glob based paths.<br>
-  paths:<br>
-    - /home/guy/webhoneypot/webhoneypot*.json<br>
 
   output.logstash:<br>
   hosts: ["192.168.25.23:5044"]<br>
