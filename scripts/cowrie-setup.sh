@@ -40,4 +40,5 @@ $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ind
 
 # dashboard setup
 echo "Setting up Dashboard"
-curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST http://kibana:5601/api/saved_objects/_import --form file=@dshield_sensor_8.11.1.ndjson
+#curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST http://kibana:5601/api/saved_objects/_import --form file=@dshield_sensor_8.11.1.ndjson
+curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST http://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.11.1.ndjson
