@@ -26,7 +26,7 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 - Elastic-Agent
 
 ## Install docker
- $ sudo apt-get install ca-certificates curl gnupg network-manager<br>
+ $ sudo apt-get install ca-certificates curl gnupg network-manager txt2html<br>
  $ sudo install -m 0755 -d /etc/apt/keyrings<br>
  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br>
  $ sudo chmod a+r /etc/apt/keyrings/docker.gpg<br>
