@@ -167,8 +167,9 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 - Select and Add AlienVault OTX (need an API key)<br>
 - Select AbuseCH (no API key needed)<br>
 - Select Threat Intelligence Utilities<br>
-- Select Docker<br>
+- Elasticsearch<br>
 - Select Kibana<br>
+- Select Docker<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/64f795cf-e761-42ca-b94a-a79e87b16ee6)
 
