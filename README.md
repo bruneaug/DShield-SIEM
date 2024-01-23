@@ -46,6 +46,7 @@ $ cd ~/DShield-SIEM<br>
 The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
 **Note**: Before installation, you can edit the .env file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
+    - Default DNS is 9.9.9.9<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
 Default to **2147483648** (2GB) but can be expanded if you have the resources<br>
 
