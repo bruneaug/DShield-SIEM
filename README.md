@@ -244,7 +244,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Configure-Elastic-Agent.pdf
 
 # Interface - Logs DShield Sensor Overview
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/fedcaba7-5b24-4abd-a40e-83ed55ab854c)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8a1f4aeb-2a93-412f-9c0b-06e491a11cee)
 
 # Useful Docker Commands
 $ sudo docker compose rm -f -v (clear setup but need to run up -d again)<br>
