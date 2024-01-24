@@ -159,8 +159,12 @@ _Successfully enrolled the Elastic Agent._
 
 From your current location, verify it installed correctly<br>
 $ ./elastic-agent status<br>
-
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/a1bdb5ec-4cf9-4921-b3dc-ff4be0981bc8)
+
+Now that the Fleet Server is connected, close this Windows and lets proceed to the next step.
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/05f1b89e-b081-4ee7-bea6-9c83ae20d350)
+
 
 In Elastic Management → Fleet, refresh Agents and this is what shows up:
 
