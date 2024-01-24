@@ -50,6 +50,8 @@ Memory Limits in **.env** are the most memory that docker will allocate for each
 Default to **2147483648** (2GB) but can be expanded if you have the resources<br>
 
 - The default name servers in Logstash are set in the following files to:  nameserver => [ "8.8.8.8", "9.9.9.9" ]
+- If you want to change the default nameserver(s), go to the following directory for the files
+  - $ cd logstash/pipeline
   - logstash-200-filter-cowrie.conf <br>
   - logstash-201-filter-iptables.conf <br>
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
