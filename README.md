@@ -92,8 +92,8 @@ $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' p
 - The output will look like this:<br>
 673FB617E15CCCE73F9B647EF99449642A19CFC1D75BF5772047DA99DB950844
 
-- Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration<br>
-$ sudo cat /tmp/ca.crt | sed 's/\\(.*\\)/    \1/g'<br> 
+- Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration. Type the command because it doesn't copy well<br>
+$ <code>&nbsp;sudo cat /tmp/ca.crt | sed 's/\(.*\)/    \1/g'</code>
 
 Format must be exactly like this. Copy the output of the certificate in Notepad or Notepad++ and format exactly like this.<br>
 It needs 2 spaces before certificate_authorities: and the dash (**-**) and it needs 4 spaces from the pipe (**|**) all the way down to the end of -----END CERTIFICATE-----<br>
