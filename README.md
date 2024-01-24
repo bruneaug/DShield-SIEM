@@ -75,12 +75,12 @@ Web Access: http://serverIP:5601
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b41deef3-462c-42de-bf75-c79100833f4b)
 
-# Configuring elastic-agent
-The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.
-
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
 
 - Login Kibana with username: elastic and default password: student<br>
+# Configuring elastic-agent
+The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.
+
 - From the dropdown menu, select Management → Fleet →Settings → Edit Outputs (Actions)<br>
 - Login server via SSH<br>
 - Copy ca.crt certificate to /tmp<br>
