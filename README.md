@@ -41,9 +41,13 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
+$ mkdir scripts<br>
+$ mv DShield-SIEM/startelk.sh scripts/<br>
+$ chmod 754 scripts/startelk.sh<br>
+The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
+
 $ cd ~/DShield-SIEM<br>
 
-The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
 **Note**: Before installation, you can edit the .env file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
