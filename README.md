@@ -277,7 +277,7 @@ $ sudo docker logs dshield-elk-kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)
 
-$ sudo docker stop dshield-elk-metricbeat01-1<br>
+$ sudo docker stop dshield-elk-fleet-server-1<br>
 $ sudo docker stop dshield-elk-logstash01-1<br>
 $ sudo docker inspect dshield-elk-logstash01-1<br>
 
