@@ -260,6 +260,9 @@ Follow this step-by-step documents to install the elastic-agent to the DShield s
 https://github.com/bruneaug/DShield-SIEM/blob/main/Configure-Elastic-Agent.pdf
 
 # Interface - Logs DShield Sensor Overview
+To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor] Overview**<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/5e5aaa4d-a4b6-40bc-98ca-5bae46373c9c)
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8a1f4aeb-2a93-412f-9c0b-06e491a11cee)
 
