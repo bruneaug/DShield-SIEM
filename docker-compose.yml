@@ -89,6 +89,7 @@ services:
       setup:
         condition: service_healthy
     hostname: es01
+    container_name: es01
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     labels:
       co.elastic.logs/module: elasticsearch
@@ -135,6 +136,7 @@ services:
       es01:
         condition: service_healthy
     hostname: kibana
+    container_name: kibana
     image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
     labels:
       co.elastic.logs/module: kibana
@@ -171,6 +173,7 @@ services:
       kibana:
         condition: service_healthy
     hostname: cowrie
+    container_name: cowrie
     image: photon
     volumes:
       - ${SCRIPTS_DIR}:/usr/share/scripts
@@ -190,6 +193,7 @@ services:
       kibana:
         condition: service_healthy
     hostname: logstash
+    container_name: logstash
     image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
     labels:
       co.elastic.logs/module: logstash
@@ -223,17 +227,13 @@ services:
       kibana:
         condition: service_healthy
     hostname: fleet-server
+    container_name: fleet-server
     image: docker.elastic.co/beats/elastic-agent:${STACK_VERSION}
     labels:
       co.elastic.logs/module: fleet-server
     volumes:
       - certs:/certs
       - fleetserverdata:/usr/share/elastic-agent
-      - "/var/lib/docker/containers:/var/lib/docker/containers:ro"
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro"
-      - "/proc:/hostfs/proc:ro"
-      - "/:/hostfs:ro"
     ports:
       - ${FLEET_PORT}:8220
     user: root
