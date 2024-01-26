@@ -89,7 +89,7 @@ The elastic-agent will be used to ingest threat intelligence. It can also be use
 - From the dropdown menu, select Management → Fleet →Settings → Edit Outputs (Actions)<br>
 - Login server via SSH<br>
 - Copy ca.crt certificate to /tmp<br>
-$ sudo docker cp dshield-elk-es01-1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
+$ sudo docker cp es01:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
 
 - Get a copy of Elasticsearch CA trusted fingerprint<br>
 $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
