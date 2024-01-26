@@ -131,7 +131,7 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/580b3009-0de8-45ba-b297-d4090e2120c9)
 
 We are going to need this information to setup our fleet server.<br>
-Login via SSH to the fleet-server and make sure the dshield-elk-fleet-server-1 is running before setting up our agent:<br>
+Login via SSH to the fleet-server and make sure the fleet-server is running before setting up our agent:<br>
 
 $ sudo docker start fleet-server<br>
 $ sudo docker exec -ti fleet-server bash<br>
@@ -277,7 +277,7 @@ $ sudo docker stats (shows status of container)<br>
 $ sudo docker container ls/ps<br>
 $ sudo docker stats (shows status of container)<br>
 $ sudo docker system prune -a (Remove everything)<br>
-$ sudo docker logs dshield-elk-kibana (troubleshooting docker)<br>
+$ sudo docker logs kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)
 
