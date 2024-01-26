@@ -281,9 +281,9 @@ $ sudo docker logs dshield-elk-kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)
 
-$ sudo docker stop dshield-elk-fleet-server-1<br>
-$ sudo docker stop dshield-elk-logstash01-1<br>
-$ sudo docker inspect dshield-elk-logstash01-1<br>
+$ sudo docker stop fleet-server<br>
+$ sudo docker stop logstash01<br>
+$ sudo docker inspect logstash<br>
 
 # Download Github Update
 $ cd DShield-SIEM<br>
@@ -293,15 +293,15 @@ $ sudo docker compose rm -f -v<br>
 $  sudo docker compose up --build -d
 
 # Login each Container<br>
-$ sudo docker exec -ti dshield-elk-es01-1 bash<br>
-$ sudo docker exec -ti dshield-elk-logstash01-1 bash<br>
-$ sudo docker exec -ti dshield-elk-kibana-1 bash<br>
-$ sudo docker exec -ti dshield-elk-fleet-server-1 bash<br>
-$ sudo docker exec -ti dshield-elk-cowrie-1 bash<br>
+$ sudo docker exec -ti es01 bash<br>
+$ sudo docker exec -ti logstash01 bash<br>
+$ sudo docker exec -ti kibana bash<br>
+$ sudo docker exec -ti fleet-server bash<br>
+$ sudo docker exec -ti cowrie bash<br>
 
 # Copying Files Between Docker & Local User
-$ sudo docker cp  dshield-elk-fleet-server-1:/usr/share/elastic-agent/elastic-agent.yml .<br>
-$ sudo docker cp elastic-agent.yml  dshield-elk-fleet-server-1:/usr/share/elastic-agent/
+$ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
+$ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/
 
 
 # References
