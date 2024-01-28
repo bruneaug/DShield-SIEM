@@ -139,7 +139,7 @@ $ sudo docker exec -ti fleet-server bash<br>
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
 
-The token and fingerprint will be different than this example _but what is in italic and bolded must be added for the certificat to load_****:<br>
+The token and fingerprint will be different than this example **_but what is in italic and bolded must be added for the certificat to load_**:<br>
 
 elastic-agent enroll \\<br>
   **_--url=https://fleet-server:8220_** \\<br>
