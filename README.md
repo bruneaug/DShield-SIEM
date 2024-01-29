@@ -44,9 +44,11 @@ $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ mkdir scripts<br>
 $ mv DShield-SIEM/startelk.sh scripts/<br>
-$ chmod 754 scripts/startelk.sh<br>
-The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
+$ mv DShield-SIEM/parsing_tty.sh scripts<br>
+$ chmod 754 scripts/*.sh<br>
 
+The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
+The parsing_tty.sh script will be configured later in another document.<br>
 $ cd ~/DShield-SIEM<br>
 
 **Note**: Before installation, you can edit the .env file to make any derided changes.<br>
