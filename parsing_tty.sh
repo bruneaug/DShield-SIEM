@@ -18,14 +18,14 @@
 # This is the cronjob to parse and copy the ttylogs every hours
 
 # Transfer logs to ELK server
-# 1 * * * * /home/guy/scripts/parsing_tty.sh > /dev/null 2>1&
+# 1 * * * * ~/scripts/parsing_tty.sh > /dev/null 2>1&
 
 # Delete the previously processed ttylogs
-ssh -p 12222 guy@192.168.25.105 "cd ~/ttylog; rm *.html"
+ssh -p 12222 guy@192.168.25.165 "cd ~/ttylog; rm *.html"
 
 # SSH to the sensor and parse the logs
-ssh -p 12222 guy@192.168.25.105 "cd ~/scripts; ./ttylog.sh"
+ssh -p 12222 guy@192.168.25.165 "cd ~/scripts; ./ttylog.sh"
 
 # scp to the sensor and transfer the logs to the ELK webserver
-scp -P 12222 guy@192.168.25.105:~/ttylog/* /var/www/lighttpd
+scp -P 12222 guy@192.168.25.165:~/ttylog/* /var/www/html
 
