@@ -24,7 +24,7 @@
 ssh -p 12222 guy@192.168.25.165 "cd ~/ttylog; rm *.html"
 
 # SSH to the sensor and parse the logs
-ssh -p 12222 guy@192.168.25.165 "cd ~/scripts; ./ttylog.sh"
+ssh -p 12222 guy@192.168.25.165 "cd ~/scripts;bash ./ttylog.sh"
 
 # scp to the sensor and transfer the logs to the ELK webserver
 scp -P 12222 guy@192.168.25.165:~/ttylog/* /var/www/html
