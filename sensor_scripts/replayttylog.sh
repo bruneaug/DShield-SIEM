@@ -9,7 +9,6 @@
 # List the files by day save in the /srv/cowrie/var/lib/cowrie/tty directory.
 
 TODAY=$(date "+%b %d")
-#TODAY=$(date "+%Y-%m-%d")
 YESTERDAY=$(date -d "1 hour ago" '+%Y-%m-%d')
 DIRECTORY="$HOME/ttylog"
 TTYDIR="/srv/cowrie/var/lib/cowrie/tty/"
@@ -34,9 +33,6 @@ if [ ! -f "playlog" ]; then
 
 fi
 
-#FILES=$(/usr/bin/ls -l /srv/cowrie/var/lib/cowrie/tty | awk '{ print $6" "$7" "$9 }' | grep "$TODAY")
-#array=`/usr/bin/ls -l /srv/cowrie/var/lib/cowrie/tty | grep "$TODAY" | awk '{ print "/home/guy/scripts/playlog /srv/cowrie/var/lib/cowrie/tty/"$9" > ../ttylog/"$9 }'`
-# After the initial setup, this will replay all the ttylogs already capture by the honeypot
 array=`/usr/bin/ls -l /srv/cowrie/var/lib/cowrie/tty | awk '{ print "~/scripts/playlog -b /srv/cowrie/var/lib/cowrie/tty/"$9" | txt2html >&1 --outfile ../ttylog/"$9".html" }'`
 filelist=`/usr/bin/ls -l /srv/cowrie/var/lib/cowrie/tty | awk '{ print $9 }'`
 
