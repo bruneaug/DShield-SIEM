@@ -306,7 +306,12 @@ $ sudo docker exec -ti cowrie bash<br>
 $ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
 $ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/
 
+# Information About The Node
+These command are run from the Dev Tool -> Console<br>
 
+GET _nodes/http?pretty	(Get a list and information of all the nodes)<br>
+GET _security/_authenticate<br>
+ 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
 [2] https://www.elastic.co/downloads/beats/filebeat<br>
