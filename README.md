@@ -285,7 +285,7 @@ $ sudo docker compose logs --follow (debugging)<br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)
 
 $ sudo docker stop fleet-server<br>
-$ sudo docker stop logstash01<br>
+$ sudo docker stop logstash<br>
 $ sudo docker inspect logstash<br>
 
 # Download Github Update
@@ -297,7 +297,7 @@ $  sudo docker compose up --build -d
 
 # Login each Container<br>
 $ sudo docker exec -ti es01 bash<br>
-$ sudo docker exec -ti logstash01 bash<br>
+$ sudo docker exec -ti logstash bash<br>
 $ sudo docker exec -ti kibana bash<br>
 $ sudo docker exec -ti fleet-server bash<br>
 $ sudo docker exec -ti cowrie bash<br>
