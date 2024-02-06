@@ -3,12 +3,18 @@
 # Guy Bruneau, guybruneau@outlook.com
 # Date: 11 Jan 2024
 # Version: 0.5
+# Date: 5 Feb 2024
+# Version: 1.1
+# Fixed date for log parsing
 
 # This script is used to parse the TTY logs captured by the DShield Sensor.
 
 # List the files by day save in the /srv/cowrie/var/lib/cowrie/tty directory.
 
-TODAY=$(date "+%b %d")
+# Change directory
+cd ~/scripts
+
+TODAY=$(date "+%b %e")
 YESTERDAY=$(date -d "1 hour ago" '+%Y-%m-%d')
 DIRECTORY="$HOME/ttylog"
 TTYDIR="/srv/cowrie/var/lib/cowrie/tty/"
@@ -29,7 +35,7 @@ if [ ! -f "playlog" ]; then
   /usr/bin/cp /srv/cowrie/bin/playlog ~/scripts
 
   # rename python to python3
-  sed -i 's/python/python3/g' playlog
+  sed -i 's/python/python3/g' ~/scripts/playlog
 
 fi
 
