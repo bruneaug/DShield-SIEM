@@ -61,9 +61,10 @@ Now we can configure the Agent policies by adding integration like we did for th
 •	NetFlow Records (add-on with softflowd if you want NetFlow data from the sensor)<br>
 •	Network Traffic (packetbeat equivalent)<br>
 •	System is the default agent<br>
- 
 
-Configure softflowd Application<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7011a635-deff-484e-b8ee-88b30524bc14)
+ 
+# Configure softflowd Application<br>
 This application will capture NetFlow traffic targeting your DShield sensor and report it to ELK under the NetFlow dashboard<br>
 
 $ sudo vi /etc/softflowd/default.conf<br>
@@ -74,5 +75,7 @@ $ sudo systemctl restart softflowd<br>
 
 $ netstat -an | grep 2055  (Confirm softflowd is running)<br>
 The flows can be viewed with this dashboard:<br>
- 
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4372dc5d-ad41-45b1-a81c-63d191851c3e)
+
  
