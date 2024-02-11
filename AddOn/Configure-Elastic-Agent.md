@@ -40,11 +40,12 @@ Management -> Fleet -> Agent policies -> Create agent policy:<br>
 
 After the policy is created, select the policy (DShield Sensor), Actions -> Add agent <br>
 Pick RPM and copy line 3 and format it like this:<br>
-sudo elastic-agent enroll \
-  --url=https://fleet-server:8220 \
-  --certificate-authorities=/etc/ssl/certs/ca.pem \
-  --enrollment-token=RVFIbEo0MEJKRzNBblNzWHJCb3U6dy1WemJnRnVRVzJJZTdDX29PR2Ftdw== \
-  --insecure
+sudo elastic-agent enroll \\<br>
+  --url=https://fleet-server:8220 \\<br>
+  --certificate-authorities=/etc/ssl/certs/ca.pem \\<br>
+  --enrollment-token=RVFIbEo0MEJKRzNBblNzWHJCb3U6dy1WemJnRnVRVzJJZTdDX29PR2Ftdw== \\<br>
+  --insecure<br>
+  
 The DShield sensor should show this confirmation after it is added:<br>
  
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/d03fa3d9-9bf7-4c60-87b5-fdc570f41aec)
