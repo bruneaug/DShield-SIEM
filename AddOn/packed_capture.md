@@ -5,7 +5,7 @@ $ sudo apt install daemonlogger
 
 Copy to the sensor packet_capture.tgz tarball to your home user account and extract it as follow:<br>
 $  curl -LJO https://github.com/bruneaug/DShield-SIEM/raw/main/AddOn/packet_capture.tgz<br>
-$ sudo tar zxvf packet_capture.tgz -C /
+$ sudo tar zxvf packet_capture.tgz -C /<br>
 
 ## Edit the log_packets.sh Script
 The log_packets.sh script need to be edit and update the DShield sensor interface before it can capture.<br>
