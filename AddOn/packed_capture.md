@@ -11,6 +11,15 @@ $ sudo tar zxvf packet_capture.tgz -C /<br>
 The log_packets.sh script need to be edit and update the DShield sensor interface before it can capture.<br>
 $ ifconfig (get the sensor interface, eth0, ens18, etc)<br>
 
+Interface to 'listen' to.
+INTERFACE="_ens18_"
+
+Edit the default filter that exclude Logstash (5044), Elastic (8220, 9200) and DNS (UDP/53)<br>
+Change the host IP address (192.168.25.105) with your sensor IP. You can modify the filter to meet your needs.<br>
+
+_FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or udp port 53\)'_<br>
+-- Then save the changes
+
 Search for INTERFACE and replace ens18 with the current interface<br>
 $ sudo vi /etc/init.d/log_packets.sh<br>
 
