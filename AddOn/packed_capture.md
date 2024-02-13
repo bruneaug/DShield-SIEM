@@ -36,6 +36,9 @@ By date like this: 2024-02-13<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b4479f06-2848-4334-93eb-b9d8bcb0824f)
 
+The packet capture will start when the sensor is started, it is setup to start on boot:<br>
+/etc/rc3.d/S01log_packets<br>
+
 ## Nightly Root Cronjob
 
 The log_packet.sh must be enabled to copy packets with daemonlogger<br>
