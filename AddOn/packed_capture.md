@@ -11,7 +11,9 @@ $ sudo tar zxvf packet_capture.tgz -C /<br>
 The log_packets.sh script need to be edit and update the DShield sensor interface before it can capture.<br>
 $ ifconfig (get the sensor interface, eth0, ens18, etc)<br>
 
-Percentage of disk to try and maintain - I set mine to 75% for /srv but that can be adjusted to meet your need
+Percentage of disk to try and maintain - I set mine to 75% for /srv but that can be adjusted to meet your need<br>
+The directory (or partition) also contains to downloads, cowrie logs and webhoneypot logs. If you want to keep your<br>
+logs for longer, you can add a separate partition. 
 MAX_DISK_USE=75
 
 Interface to 'listen' to.
