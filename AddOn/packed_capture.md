@@ -26,6 +26,11 @@ Change the host IP address (192.168.25.105) with your sensor IP. You can modify 
 _FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or udp port 53\)'_<br>
 -- Then save the changes
 
+## Nightly Root Cronjob
+
+The log_packet.sh must be enabled to copy packets with daemonlogger<br>
+0 0 * * * /etc/rc3.d/S01log_packets restart > /dev/null 2>1&<br>
+
 Search for INTERFACE and replace ens18 with the current interface<br>
 $ sudo vi /etc/init.d/log_packets.sh<br>
 
