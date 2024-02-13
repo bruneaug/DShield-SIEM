@@ -36,6 +36,8 @@ $ sudo vi /etc/init.d/log_packets.sh<br>
 
 ### Lets start packet capture
 $ sudo /etc/init.d/log_packets.sh start<br>
+The pcap are saved in this location: /srv/NSM/dailylogs/<br>
+By date like this: 2024-02-13<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b4479f06-2848-4334-93eb-b9d8bcb0824f)
 
