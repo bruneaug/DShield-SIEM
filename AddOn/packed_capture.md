@@ -34,5 +34,7 @@ $ sudo /etc/init.d/log_packets.sh start<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b4479f06-2848-4334-93eb-b9d8bcb0824f)
 
+This complete packet capture setup with daemonlogger.
+
 [1] https://www.talosintelligence.com/daemon<br>
 [2] https://bammv.github.io/sguil/index.html
