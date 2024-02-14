@@ -20,10 +20,10 @@ MAX_DISK_USE=75
 Interface to 'listen' to.
 INTERFACE="_ens18_"
 
-Edit the default filter that exclude Logstash (5044), Elastic (8220, 9200) and DNS (UDP/53)<br>
+Edit the default filter that exclude Logstash (5044), Elastic (8220, 9200), remote SSH management (12222) and DNS (UDP/53)<br>
 Change the host IP address (192.168.25.105) with your sensor IP. You can modify the filter to meet your needs.<br>
 
-_FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or udp port 53\)'_<br>
+_FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or port 12222 or udp port 53\)'_<br>
 -- Then save the changes
 
 Search for INTERFACE and replace ens18 with the current interface<br>
@@ -41,6 +41,8 @@ The packet capture will start when the sensor is started, it is setup to start o
 /etc/rc3.d/S01log_packets<br>
 
 ## Nightly Root Cronjob
+
+This nightly cronjob is installed by default to the root account. It is used to restart packet capture every night at midnight.<br>
 
 The log_packet.sh must be enabled to copy packets with daemonlogger<br>
 0 0 * * * /etc/rc3.d/S01log_packets restart > /dev/null 2>1&<br>
