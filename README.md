@@ -282,7 +282,8 @@ $ sudo docker stats (shows status of container)<br>
 $ sudo docker system prune -a (Remove everything)<br>
 $ sudo docker logs kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
-$ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)
+$ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)<br>
+$ sudo docker rm -f cowrie (remove a container)
 
 $ sudo docker stop fleet-server<br>
 $ sudo docker stop logstash<br>
