@@ -232,7 +232,7 @@ services:
     labels:
       co.elastic.logs/module: fleet-server
     volumes:
-      - certs:/certs
+      - certs:/certs/fleet-server
       - fleetserverdata:/usr/share/elastic-agent
     ports:
       - ${FLEET_PORT}:8220
