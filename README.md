@@ -138,6 +138,7 @@ Login via SSH to the fleet-server and make sure the fleet-server is running befo
 
 $ sudo docker start fleet-server<br>
 $ sudo docker exec -ti fleet-server bash<br>
+$ ./elastic-agent status (check it is running)<br>
 
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
