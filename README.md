@@ -44,7 +44,8 @@ $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ mkdir scripts<br>
 $ mv DShield-SIEM/startelk.sh scripts/<br>
-$ mv DShield-SIEM/parsing_tty.sh scripts<br>
+$ mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts<br>
+$ mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts<br>
 $ chmod 754 scripts/*.sh<br>
 
 The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
