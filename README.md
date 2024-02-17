@@ -154,7 +154,7 @@ elastic-agent enroll \\<br>
   --fleet-server-port=8220 _\\<br>
   **--certificate-authorities=/certs/ca/ca.crt \\<br>
   --fleet-server-es-ca=/certs/es01/es01.crt \\<br>
-  --fleet-server-es-insecure**_
+  --insecure**_
 
 This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 
