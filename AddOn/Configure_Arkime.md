@@ -31,6 +31,7 @@ Password to encrypt S2S and other things, don't use spaces [no-default] **studen
 Arkime - Creating configuration files<br>
 
 Installing sample /opt/arkime/etc/config.ini<br>
+
 Arkime - Installing /etc/security/limits.d/99-arkime.conf to make core and memlock unlimited<br>
 Download GEO files? You'll need a MaxMind account https://arkime.com/faq#maxmind (yes or no) [**yes**]<br>
 Arkime - Downloading GEO files<br>
@@ -46,6 +47,9 @@ $ sudo vi /opt/arkime/etc/config.ini
 Update to: elasticsearch=https://elastic:student@es01:9200
 
 ## Setup Arkime Tables
+
+Use elastic as username and if your elastic password is different that **student**, update before running this script<br>
+
 $ sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init<br>
 
 $ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .<br>
