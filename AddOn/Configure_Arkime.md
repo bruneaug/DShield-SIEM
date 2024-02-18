@@ -121,10 +121,24 @@ $ scp guy@192.168.25.231:/home/guy/.ssh/id_rsa.pub .<br>
 $ cat id_rsa.pub >> .ssh/authorized_keys<br>
 $ rm id_rsa.pub<br>
 
-Back on ELK server<br>
-Edit the script rename_arkime_pcap.sh and update the variable SENSOR for you own DShield sensor(s).<br>
-Using default password to sudo commands: training
-See last command and change training to your own sudo password to import into Arkime
+## Back on ELK server<br>
+
+The **rename_arkime_pcap.sh** script should already be in the ~scripts directory.<br>
+
+Edit the script rename_arkime_pcap.sh
+- Update the variable SENSOR for you own DShield sensor(s).<br>
+- Update default sudo password (i.e. training) used to sudo from your account to root<br>
+See last command and change training to your own sudo password to import into Arkime<br>
+
+### Add this cronjob to your Local Account
+
+Transfer logs to ELK server every night at 1 AM<br>
+0 1 * * * /home/guy/scripts/rename_arkime_pcap.sh > /dev/null 2>1&
+
+# Arkime Dashboard
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8e8813fc-ed69-4ed6-9c1a-7e2f692b9777)
+
+
 
 
 
