@@ -316,12 +316,6 @@ These command are run from the Dev Tool -> Console<br>
 GET _nodes/http?pretty	(Get a list and information of all the nodes)<br>
 GET _security/_authenticate<br>
 
-# Delete and Remove an Image
-$ sudo docker container stop moloch (stop image)<br>
-$ sudo docker rm -f moloch (remove image)<br)
-$ sudo docker images -a (List active images)<br>
-$ sudo docker rmi danielguerra/docker-moloch (delete all of moloch)<br>
- 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
 [2] https://www.elastic.co/downloads/beats/filebeat<br>
