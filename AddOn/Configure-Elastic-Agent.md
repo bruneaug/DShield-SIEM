@@ -9,10 +9,9 @@ $ sudo chown guy:guy ca.crt (change it to your username:username)<br>
 ## Login DShield Sensor<br>
 From the DShield sensor, copy the certificate to this directory<br>
 $ scp guy@192.168.25.231:/home/guy/ca.crt .<br>
-$ mv ca.crt ca.pem<br>
-$ sudo cp ca.pem /etc/ssl/certs/<br>
-$ sudo mv ca.pem /usr/local/share/ca-certificates<br>
-$ sudo update-ca-certificates -v<br>
+$ sudo mkdir /usr/share/ca-certificates/extra<br>
+$ sudo cp ca.crt /usr/share/ca-certificates/extra<br>
+$ sudo dpkg-reconfigure ca-certificates<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/84c067b2-0358-425f-b8bb-bc3eb911c151)
 
 ## Add ELK IP to DShield sensor:
