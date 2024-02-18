@@ -43,7 +43,7 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ mkdir scripts<br>
-$ mv DShield-SIEM/startelk.sh scripts/<br>
+$ mv DShield-SIEM/AddOnScripts/startelk.sh scripts/<br>
 $ mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts<br>
 $ mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts<br>
 $ chmod 754 scripts/*.sh<br>
