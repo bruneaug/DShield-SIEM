@@ -25,4 +25,9 @@ echo $PASSWORD | sudo -S -k sysctl -w vm.max_map_count=262144
 cd $ELK
 echo $PASSWORD | sudo -S -k docker compose up -d
 
+echo "Starting Arkime interface..."
+
+echo $PASSWORD | sudo -S -k /usr/bin/systemctl start arkimecapture.service
+echo $PASSWORD | sudo -S -k /usr/bin/systemctl start arkimeviewer.service
+
 echo "Login http://IP:5601 with user: elastic and password: student"
