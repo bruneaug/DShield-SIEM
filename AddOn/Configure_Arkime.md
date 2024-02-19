@@ -91,7 +91,14 @@ http:IP:8005
 
 Daemonlogger pcap files will be save in ~/pcap directory<br>
 
-$ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --host es01 --pcapdir /home/student/pcap/ --skip --recursive sensor1
+How to get previous unprocessed files from the DShield sensor? Repeat this scp get for each day by replacing the username and IP.<br>
+**Important**: Each files must end with **_.pcap_** for the Arkime script to load them into ELK<br>
+$  scp -P 12222 guy@$192.168.25.105:/srv/NSM/dailylogs/2024-02-17/daemonlogger* .
+Execute the $ ~/scripts/rename_arkime_pcap.sh<br>
+It will rename the files and load them into Arkime
+
+To manually load .pcap file(s) into Arkime, place the file in ~/pcap and run this command:<br>
+$ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --host es01 --pcapdir ~/pcap --skip --recursive sensor1
 
 ### Troubleshooting
 
