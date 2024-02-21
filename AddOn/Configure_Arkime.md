@@ -39,6 +39,7 @@ Download GEO files? You'll need a MaxMind account https://arkime.com/faq#maxmind
 Arkime - Downloading GEO files<br>
 2024-02-16 22:30:49 URL:https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.csv [23323/23323] -> "/tmp/tmp.6m3dNzyHi5" [1]<br>
 2024-02-16 22:30:50 URL:https://www.wireshark.org/download/automated/data/manuf [2721990/2721990] -> "/tmp/tmp.PmjUnXNoN7" [1]<br>
+chmod: cannot access ‘/usr/share/GeoIP/*.mmdb’: No such file or directory<br>
 
 # Update and add username/password of es01 
 
