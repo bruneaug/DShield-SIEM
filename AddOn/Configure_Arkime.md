@@ -69,7 +69,7 @@ ExecStart=/bin/sh -c '/opt/arkime/bin/node viewer.js --insecure -c /opt/arkime/e
 
 $ sudo systemctl daemon-reload
 
-*** **Note**: If you apply an upgraded, you have to reapply --insecure from this section because the get erased by the update.
+*** **Note**: If you apply an update, you have to reapply _--insecure_ from this section because it get erased by the update.
 
 $ sudo systemctl start arkimecapture.service<br>
 $ sudo systemctl start arkimeviewer.service<br>
