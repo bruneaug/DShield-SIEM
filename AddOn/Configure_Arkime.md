@@ -1,5 +1,7 @@
 # Setup Arkime with DShield-SIEM
 
+### Latest release version 5.01-1 -> 20 Feb 2024<br>
+
 This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.
 
 $ sudo su -<br>
@@ -146,4 +148,5 @@ $ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8e8813fc-ed69-4ed6-9c1a-7e2f692b9777)
 
 
- [1] https://arkime.com/
+ [1] https://arkime.com<br>
+ [2] https://github.com/arkime/arkime/releases/
