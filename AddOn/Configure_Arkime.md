@@ -61,6 +61,7 @@ Add the following to get GeoIP to work with Arkime<br>
 - geoLite2Country=/var/lib/GeoIP/GeoLite2-Country.mmdb<br>
 - geoLite2ASN=/var/lib/GeoIP/GeoLite2-ASN.mmdb<br>
 
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/1978cc5a-3015-45f1-9332-0866719dca5d)
 
 ## Setup Arkime Tables
 
