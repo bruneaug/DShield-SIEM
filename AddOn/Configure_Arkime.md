@@ -45,7 +45,7 @@ chmod: cannot access ‘/usr/share/GeoIP/*.mmdb’: No such file or directory<br
 
 We are going to take a copy of the GeoLite2 files from Elastic and make a copy for Arkime<br>
 
-$ sudo mkdir /var/lib/GeoIP
+$ sudo mkdir /var/lib/GeoIP<br>
 sudo find /var/lib/docker/. -type f -name GeoLite2-Country.mmdb | xargs -r -I file sudo cp GeoLite2-Country.mmdb /var/lib/GeoIP<br>
 sudo cp /var/lib/docker/overlay2/e065c7e8bb347d150cbb7aa18aae61989ad52451546e1ba2190100cef8c7fd85/diff/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-filter-geoip-7.2.13-java/vendor/GeoLite2-ASN.mmdb /var/lib/GeoIP<br>
 
@@ -58,8 +58,8 @@ $ sudo vi /opt/arkime/etc/config.ini
 Update to: elasticsearch=https://elastic:student@es01:9200
 
 Add the following to get GeoIP to work with Arkime<br>
-- geoLite2Country=/var/lib/GeoIP/GeoLite2-Country.mmdb
-- geoLite2ASN=/var/lib/GeoIP/GeoLite2-ASN.mmdb
+- geoLite2Country=/var/lib/GeoIP/GeoLite2-Country.mmdb<br>
+- geoLite2ASN=/var/lib/GeoIP/GeoLite2-ASN.mmdb<br>
 
 
 ## Setup Arkime Tables
