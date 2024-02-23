@@ -51,13 +51,16 @@ $ sudo find /var/lib/docker/. -type f -name GeoLite2-ASN.mmdb -exec cp {} /var/l
 
 # Update and add username/password of es01 
 
-Use elastic as user and password you setup if it isn't student
+Use elastic as user and password you setup if it isn't student<br>
+Add after updating elasticsearch= a pcap filter to ignore the IP of ELK server IP and 127.0.0.1 (localhost) from capturing packets<br>
 
 $ sudo vi /opt/arkime/etc/config.ini
 
-Update to: elasticsearch=https://elastic:student@es01:9200
+Update elasticsearch, add bpf filter and update 192.168.25.231 to your ELK server IP:<br>
+elasticsearch=https://elastic:student@es01:9200<br>
+bpf=not host 192.168.25.231 and not host 127.0.0.1<br>
 
-Add the following to get GeoIP to work with Arkime<br>
+Find GeoIP and add the following to get GeoIP to work with Arkime<br>
 - geoLite2Country=/var/lib/GeoIP/GeoLite2-Country.mmdb<br>
 - geoLite2ASN=/var/lib/GeoIP/GeoLite2-ASN.mmdb<br>
 
