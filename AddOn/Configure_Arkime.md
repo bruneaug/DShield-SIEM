@@ -58,7 +58,7 @@ $ sudo vi /opt/arkime/etc/config.ini
 
 Update elasticsearch, add bpf filter and update 192.168.25.231 to your ELK server IP:<br>
 elasticsearch=https://elastic:student@es01:9200<br>
-bpf=not host 192.168.25.231 and not host 127.0.0.1<br>
+bpf=not host 192.168.25.231 and not host 127.0.0.1 and not host ::1<br>
 
 Find GeoIP and add the following to get GeoIP to work with Arkime<br>
 - geoLite2Country=/var/lib/GeoIP/GeoLite2-Country.mmdb<br>
@@ -117,10 +117,10 @@ $ sudo tail -f /opt/arkime/logs/capture.log<br>
 ### Checking for Missing packages against Arkime capture Binary
 $ sudo ldd /opt/arkime/bin/capture<br>
 
-Reset Arkime Tables to Empty & Set Username/Password
+### Reset Arkime Tables to Empty & Set Username/Password
 
-sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init
-sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin
+sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init<br>
+sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin<br>
 
 ## Transfering pcap Files from DShield Sensor
 
