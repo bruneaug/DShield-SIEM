@@ -119,8 +119,8 @@ $ sudo ldd /opt/arkime/bin/capture<br>
 
 ### Reset Arkime Tables to Empty & Set Username/Password
 
-sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init<br>
-sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin<br>
+$ sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init<br>
+$ sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin<br>
 
 ## Transfering pcap Files from DShield Sensor
 
