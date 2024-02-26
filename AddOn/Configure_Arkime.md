@@ -167,6 +167,11 @@ $ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --
 # Arkime Dashboard
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8e8813fc-ed69-4ed6-9c1a-7e2f692b9777)
 
+# Arkime & CyberChef
+
+CyberChef is available as part of Arkime and can be accessed by expending the + beside the protocol
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/d85bc926-8271-4d80-9df5-30f4540dd9d0)
+
 
  [1] https://arkime.com<br>
  [2] https://github.com/arkime/arkime/releases/
