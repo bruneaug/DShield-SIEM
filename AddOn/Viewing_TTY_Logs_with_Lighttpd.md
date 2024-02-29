@@ -90,6 +90,18 @@ In Kibana, lookf for the Top 10 TTY Logs summary and just select TTYLog to go to
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8981493b-553b-464e-8fc8-a9ff4a39e92e)
 
+## Change the URL IP 192.168.25.231
+
+In Kibana, select Management -> Kibana -> Data Views -> cowrie*<br>
+Edit TTYLog<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/88efde75-cfe5-4e2f-83c8-b12bf74d237a)
+
+Change the IP in the URL Template to match your IP or you hostname if it resolves in the network and save the update<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/322731e1-0b0a-4211-8af1-22678da6bef4)
+
+
 This is an example of the output:
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2991bff6-bbd9-4968-9642-1d8b7c78c360)
+
