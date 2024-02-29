@@ -29,13 +29,7 @@ Confirm the webserver is accessible, that your account is now the owner of the h
 Using browser access: http://elk
 $ mv /var/www/html/index.lighttpd.html .<br>
 
-Configure TTYLog in Kibana
-
-Management -> Kibana -> Data Views -> cowrie*<br>
-Edit TTYLog and change the IP 192.168.25.231 to your ELK server IP or Name<br>
- 
-
-In ELK server, create SSH Shared Keys and don’t put a password:
+### In ELK server, create SSH Shared Keys and don’t put a password:
 
 $ ssh-keygen<br>
 Copy id_rsa.pub over to each sensor(s). Likely the easiest way to copy the public key over might be to scp from DShield sensor. <br>
@@ -90,10 +84,11 @@ In Kibana, lookf for the Top 10 TTY Logs summary and just select TTYLog to go to
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8981493b-553b-464e-8fc8-a9ff4a39e92e)
 
-## Change the URL IP 192.168.25.231
+## Change the TTYLog URL IP 192.168.25.231
 
 In Kibana, select Management -> Kibana -> Data Views -> cowrie*<br>
 Edit TTYLog<br>
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/88efde75-cfe5-4e2f-83c8-b12bf74d237a)
 
 Change the IP in the URL Template to match your IP or you hostname if it resolves in the network and save the update<br>
