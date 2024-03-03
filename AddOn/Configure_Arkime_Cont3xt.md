@@ -48,6 +48,8 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/Manually_Upda
 
 You will also need in ELK to go to Management -> Stack Management -> Kibana -> Data Views<br>
 Edit Cont3xtHash and Cont3xtIP and change the IP of the URL (192.168.25.231) to your own ELK IP to query Cont3xt directly from the interface<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/14b981b3-123d-424b-ad3c-97d8932dd33d)
+
 
 # Login the Interface and Configure Threat Intelligence Sites
 Goto Settings -> Integrations
