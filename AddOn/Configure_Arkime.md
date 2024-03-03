@@ -165,7 +165,7 @@ To manually load .pcap file(s) into Arkime, place the file in ~/pcap and run thi
 $ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --host es01 --pcapdir ~/pcap --skip --recursive sensor1
 
 # Arkime Dashboard
-Access Arkime http:IP:8008<br>
+Access Arkime http:IP:8005<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8e8813fc-ed69-4ed6-9c1a-7e2f692b9777)
 
 # Arkime & CyberChef
