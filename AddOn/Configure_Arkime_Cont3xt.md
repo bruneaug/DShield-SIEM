@@ -36,6 +36,13 @@ $ netstat -an | grep 3218<br>
 Login in the service using the same username/password set for Arkime<br>
 http://IP:3218
 
+## Right Click Access
+If you want to take advantage of the right click function, you may need to download and install the latest update for dshield_sensor_8.11.1.ndjson<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson
+
+You will also need in ELK to go to Management -> Stack Management -> Kibana -> Data Views<br>
+Edit Cont3xtHash and Cont3xtIP and change the IP of the URL (192.168.25.231) to your own ELK IP to query Cont3xt directly from the interface<br>
+
 # Login the Interface and Configure Threat Intelligence Sites
 Goto Settings -> Integrations
 If you have your own keys for Virustotal, AlienVault OTX, Shodan, etc, you can add them here which will run the query to each of these sites for you.
