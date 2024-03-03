@@ -39,6 +39,9 @@ http://IP:3218
 ## Kibana Interface Direct Cont3xt Access
 If you want to take advantage of the right click function, you may need to download and install the latest update for dshield_sensor_8.11.1.ndjson<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson
+If downloading from Windows, download the file this way to prevent modification<br>
+[image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/eb1877c6-78e1-4f26-adf6-ca6aaa6dbb1c)
+
 
 You will also need in ELK to go to Management -> Stack Management -> Kibana -> Data Views<br>
 Edit Cont3xtHash and Cont3xtIP and change the IP of the URL (192.168.25.231) to your own ELK IP to query Cont3xt directly from the interface<br>
