@@ -1,55 +1,38 @@
 # Arkime Cont3xt
+
+"**Cont3xt centralizes and simplifies a structured approach to gathering contextual intelligence in support of technical investigations.**"[1]<br>
+Login the ELK server to enable Cont3xt to gather threat intelligence from multiple locations.<br>
+
 $ sudo /opt/arkime/bin/Configure --cont3xt
-Edit /opt/arkime/etc/cont3xt.ini and update elasticsearch setting
+
+Edit /opt/arkime/etc/cont3xt.ini and update elasticsearch setting<br>
 $ sudo vi /opt/arkime/etc/cont3xt.ini
 
-passwordSecret must match the same passwordSecret that was added to /opt/arkime/etc/config.ini
+**Important**: passwordSecret must match the same passwordSecret that was added to /opt/arkime/etc/config.ini<br>
+Edit config.ini and copy the _paswordSecret_<br>
+
+$ sudo vi /opt/arkime/etc/config.ini
+
+Now edit the cont3xt.ini and set the 2 required fields<br>
+$ sudo vi /opt/arkime/etc/cont3xt.ini
 
 elasticsearch=https://elastic:student@es01:9200
 passwordSecret=student
 
+Next we need to add --insecure to the service to start correctly<br>
 $ sudo vi /etc/systemd/system/arkimecont3xt.service
 
 ExecStart=/bin/sh -c '/opt/arkime/bin/node cont3xt.js --insecure -c /opt/arkime/etc/cont3xt.ini ${OPTIONS} >> /opt/arkime/logs/cont3xt.log 2>&1'
 
-$ sudo systemctl daemon-reload
-$ sudo systemctl start arkimecont3xt
-$ sudo systemctl status arkimecont3xt
-$ sudo systemctl enable arkimecont3xt
-$ netstat -an | grep 3218
+$ sudo systemctl daemon-reload<br>
+$ sudo systemctl start arkimecont3xt<br>
+$ sudo systemctl status arkimecont3xt<br>
+$ sudo systemctl enable arkimecont3xt<br>
+Check to see if the services is started listening on TCP 3218
+$ netstat -an | grep 3218<br>
 
+Login in the service using the same username/password set for Arkime<br>
 http://IP:3218
 
-http://192.168.25.231:3218?q=${indicator}
 
-You'll need to run cont3xt.js from the cont3xt directory.
-If Cont3xt isn't working, look at /opt/arkime/log/cont3xt.log
-
-$ sudo cp /opt/arkime/etc/parliament.ini.sample /opt/arkime/etc/parliament.ini
-$ sudo vi /opt/arkime/etc/parliament.ini
-
-port=8008
-usersElasticsearch=https://elastic:student@es01:9200
-
-$ sudo vi /etc/systemd/system/arkimeparliament.service
-vi ExecStart=/bin/sh -c '/opt/arkime/bin/node parliament.js --insecure -c /opt/arkime/etc/parliament.ini ${OPTIONS} >> /opt/arkime/logs/parliament.log 2>&1'
-
-
-$ sudo systemctl daemon-reload
-$ sudo /opt/arkime/bin/Configure --parliament
-$ sudo systemctl start arkimeparliament
-$ sudo systemctl status arkimeparliament
-$ netstat -an | grep 8008
-
-$ sudo tail -f /opt/arkime/logs/parliament.log
-
-
-sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 backup arkime
-
-$ sudo systemctl stop arkimecapture.service
-$ sudo systemctl stop arkimeviewer.service
-$ sudo systemctl stop arkimecont3xt
-
-sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin
- sudo /opt/arkime/bin/arkime_add_user.sh --insecure digest "Arkime User" ARKIME_PASSWORD --admin
-
+[1] https://arkime.com/cont3xt
