@@ -1,3 +1,4 @@
+# Arkime Cont3xt
 $ sudo /opt/arkime/bin/Configure --cont3xt
 Edit /opt/arkime/etc/cont3xt.ini and update elasticsearch setting
 $ sudo vi /opt/arkime/etc/cont3xt.ini
