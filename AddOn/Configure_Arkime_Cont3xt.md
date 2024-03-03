@@ -46,10 +46,12 @@ Edit Cont3xtHash and Cont3xtIP and change the IP of the URL (192.168.25.231) to 
 # Login the Interface and Configure Threat Intelligence Sites
 Goto Settings -> Integrations
 If you have your own keys for Virustotal, AlienVault OTX, Shodan, etc, you can add them here which will run the query to each of these sites for you.
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/01c24a0e-6a48-4244-98d8-fafa57ee9f8e)
 
 # Analysis Example
 This is an example of an IP and file hash analysis. Each of the top icone that have a number, select the number to see the data<br>
+
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/72a8a4a0-4d06-4ad6-a327-b0254dbb92c7)
 
 
