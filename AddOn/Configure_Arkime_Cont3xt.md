@@ -3,8 +3,10 @@
 "**Cont3xt centralizes and simplifies a structured approach to gathering contextual intelligence in support of technical investigations.**"[1]<br>
 Login the ELK server to enable Cont3xt to gather threat intelligence from multiple locations.<br>
 
+### Setup Cont3xt
 $ sudo /opt/arkime/bin/Configure --cont3xt
 
+### Configure Cont3xt
 Edit /opt/arkime/etc/cont3xt.ini and update elasticsearch setting<br>
 $ sudo vi /opt/arkime/etc/cont3xt.ini
 
@@ -34,6 +36,12 @@ $ netstat -an | grep 3218<br>
 Login in the service using the same username/password set for Arkime<br>
 http://IP:3218
 
+# Login the Interface and Configure Threat Intelligence Sites
+Goto Settings -> Integrations
+If you have your own keys for Virustotal, AlienVault OTX, Shodan, etc, you can add them here which will run the query to each of these sites for you.
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/01c24a0e-6a48-4244-98d8-fafa57ee9f8e)
+
+# Analysis Example
 This is an example of an IP and file hash analysis
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/72a8a4a0-4d06-4ad6-a327-b0254dbb92c7)
 
