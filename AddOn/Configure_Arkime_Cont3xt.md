@@ -1,4 +1,4 @@
-# Arkime Cont3xt
+# Arkime Cont3xt Threat Intelligence
 
 "**Cont3xt centralizes and simplifies a structured approach to gathering contextual intelligence in support of technical investigations.**"[1]<br>
 Login the ELK server to enable Cont3xt to gather threat intelligence from multiple locations.<br>
