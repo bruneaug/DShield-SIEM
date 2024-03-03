@@ -34,5 +34,8 @@ $ netstat -an | grep 3218<br>
 Login in the service using the same username/password set for Arkime<br>
 http://IP:3218
 
+This is an example of an IP and file hash analysis
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/72a8a4a0-4d06-4ad6-a327-b0254dbb92c7)
+
 
 [1] https://arkime.com/cont3xt
