@@ -36,7 +36,7 @@ $ netstat -an | grep 3218<br>
 Login in the service using the same username/password set for Arkime<br>
 http://IP:3218
 
-## Kibana Interface Direct Cont3xt Access
+## Kibana Interface Direct Arkime & Cont3xt Access
 If you want to take advantage of the right click function, you may need to download and install the latest update for dshield_sensor_8.11.1.ndjson<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson<br>
 
