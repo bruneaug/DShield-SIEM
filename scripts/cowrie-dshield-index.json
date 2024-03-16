@@ -408,6 +408,15 @@
             "application": {
               "ignore_above" : 1024,
               "type": "keyword"
+            },
+            "bytes": {
+              "type": "long"
+            },
+            "ttl": {
+              "type": "long"
+            },
+            "packets": {
+              "type": "long"
             }
           }
         }
