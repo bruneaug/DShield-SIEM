@@ -26,6 +26,9 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 - Logstash
 - Elastic-Agent
 
+**Note**: To update ELK server components, follow these steps:<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-update
+
 ## Install docker
  $ sudo apt-get install ca-certificates curl gnupg network-manager txt2html<br>
  $ sudo install -m 0755 -d /etc/apt/keyrings<br>
