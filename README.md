@@ -20,7 +20,7 @@ This docker is custom built to be used with the DShield Honeypot [1] to collect 
 - Minimum 40 GB partition assigned to /var/lib/docker<br>
 - Adding a 40 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/build_40gb_docker_partition.txt
 ## Elastic Packages Installed
-### ELK Current Version: 8.12.0
+### ELK Current Version: 8.12.2 (Updated 17 Mar 2024)
 - Kibana
 - Elasticsearch
 - Logstash
