@@ -15,7 +15,9 @@ Delete data that isn't critical, review the indices and delete those that are li
 * Management -> Stack Management -> Index Management<br>
 * Enable Include hidden indices<br>
 * Sort by Storage size<br>
-* Keep any files that are greater than 000001 -> the latest version of any tables you won't be able to delete<br>
+* Keep any files that are greater than 000001 -> The system won't allow deleting the indice currently in use by the system<br>
 * Select the left square to mark it and Manage index will appear to delete it. Usually something starting with .ds- I don't keep more than a month<br>
 
 **Don't delete anything cowrie**
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/eaaf24c5-f560-440d-aadd-66513be47d0f)
