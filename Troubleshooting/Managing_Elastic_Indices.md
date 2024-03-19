@@ -8,3 +8,14 @@ Note: It is a good idea to keep storage below 85% usage. How to delete data that
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b7bcae79-9f09-4792-83b9-5fdd93f4c900)
 
+## Removing Indice Data
+
+Delete data that isn't critical, review the indices and delete those that are likely non-needed for the analysis of cowrie logs:<br>
+
+Management -> Stack Management -> Index Management<br>
+Enable Include hidden indices<br>
+Sort by Storage size<br>
+Keep any files that are greater than 000001 -> the latest version of any tables you won't be able to delete<br>
+Select the left square to mark it and Manage index will appear to delete it. Usually something starting with .ds- I don't keep more than a month<br>
+
+*** Don't delete anything cowrie*
