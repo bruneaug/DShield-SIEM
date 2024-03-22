@@ -45,10 +45,11 @@ There is another ZeekControl command, deploy, that combines the above two steps 
 ### Lets create a soft link to /usr/local/bin<br>
 
 $ sudo ln -s /opt/zeek/bin/zeekctl /usr/local/bin/zeekctl<br>
-
+<pre>
 guy@switchone:~$ sudo zeekctl status<br>
 Name         Type       Host          Status    Pid    Started<br>
 zeek         standalone localhost     running   17384  22 Mar 16:44:04<br>
+</pre>
 
 ### Additional Commands
 
