@@ -18,16 +18,17 @@ Confirm the interface (default interface eth0)<br>
 sudo vi /opt/zeek/etc/node.cfg<br>
 
 Confirm "home" network(s)<br>
-sudo vi /opt/zeek/etc/networks.cfg<br>
+
+$ sudo vi /opt/zeek/etc/networks.cfg<br>
 192.168.25.0/24<br>
 
 Add to local.zeek JSON log formatting<br>
 
-sudo vi /opt/zeek/share/zeek/site/local.zeek<br>
+$ sudo vi /opt/zeek/share/zeek/site/local.zeek<br>
 
 @load policy/tuning/json-logs.zeek<br>
 
-Now start the ZeekControl shell like:<br>
+ Now start the ZeekControl shell like:<br>
 
 $ sudo /opt/zeek/bin/zeekctl<br>
 
