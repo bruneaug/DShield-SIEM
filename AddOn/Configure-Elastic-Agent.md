@@ -79,4 +79,4 @@ The flows can be viewed with this dashboard:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4372dc5d-ad41-45b1-a81c-63d191851c3e)
 
-[1] https://ubuntu.com/server/docs/security-trust-store 
+[1] https://ubuntu.com/server/docs/security-trust-store
