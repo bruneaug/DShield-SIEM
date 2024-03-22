@@ -2,6 +2,17 @@
 
 This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the **/opt/zeek** directory.<br>
 
+## Adding Zeek to DShield Sensor Agent Policy
+
+If you haven't already added Zeek with your DShield sensor elastic-agent, goto:<br>
+Management -> Fleet -> Agent policies<br>
+
+* My policy is DShield Sensors:<br>
+* Select Integration and zeek to add it to the sensor<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/34c22e6c-ea2b-4e50-8b4c-fde0745dc9ed)
+
+Now proceed with the sensor Zeek installation using the following steps.<br>
 Reference: https://docs.zeek.org/en/master/install.html#binary-packages
 
 $ echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list<br>
