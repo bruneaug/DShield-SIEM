@@ -1,1 +1,58 @@
+# Installing Zeek on DShield Sensor
+
+This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the /opt directory.<br>
+
+Reference: https://docs.zeek.org/en/master/install.html#binary-packages
+
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list<br>
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null<br>
+sudo apt update<br>
+sudo apt upgrade<br>
+sudo apt install zeek-6.0<br>
+
+Reference: https://docs.zeek.org/en/master/quickstart.html#managing-zeek-with-zeekcontrol
+
+Confirm the interface (default interface eth0)<br>
+sudo vi /opt/zeek/etc/node.cfg<br>
+
+Confirm "home" network(s)<br>
+sudo vi /opt/zeek/etc/networks.cfg<br>
+192.168.25.0/24<br>
+
+Add to local.zeek JSON log formatting<br>
+
+sudo vi /opt/zeek/share/zeek/site/local.zeek<br>
+
+@load policy/tuning/json-logs.zeek<br>
+
+Now start the ZeekControl shell like:<br>
+
+$ sudo /opt/zeek/bin/zeekctl<br>
+
+Since this is the first-time use of the shell, perform an initial installation of the ZeekControl configuration:<br>
+
+[ZeekControl] > install<br>
+
+Then start up a Zeek instance:<br>
+
+[ZeekControl] > start<br>
+
+There is another ZeekControl command, deploy, that combines the above two steps and can be run after any changes to Zeek policy scripts or the ZeekControl configuration. Note that the check command is available to validate a modified configuration before installing it.<br>
+
+[ZeekControl] > deploy<br>
+[ZeekControl] > exit<br>
+
+### Lets create a soft link to /usr/local/bin<br>
+
+$ sudo ln -s /opt/zeek/bin/zeekctl /usr/local/bin/zeekctl<br>
+
+guy@switchone:~$ sudo zeekctl status<br>
+Name         Type       Host          Status    Pid    Started<br>
+zeek         standalone localhost     running   17384  22 Mar 16:44:04<br>
+
+### Additional Commands
+
+$ sudo zeekctl stop<br>
+$ sudo zeekctl start<br>
+$ sudo zeekctl restart<br>
 
