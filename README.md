@@ -210,7 +210,7 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 ## Configuring Security → Rules
 
 - Select Rules → Detection rules (SIEM) → Add Elastic rules
-- Under Search Tags: Rule Type: Indicator Match (4 rules)
+- Under Search Tags: Rule Type: Indicator Match (add at the minimum those 4 rules)
 - Install and enable those 4 rules
 - You can look through the rules and enable those other rules that you want to try against your honeypot data.<br>
 
