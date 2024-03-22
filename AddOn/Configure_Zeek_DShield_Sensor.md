@@ -1,14 +1,16 @@
 # Installing Zeek on DShield Sensor
 
-This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the /opt directory.<br>
+This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the **/opt/zeek** directory.<br>
 
 Reference: https://docs.zeek.org/en/master/install.html#binary-packages
 
-echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list<br>
-curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null<br>
-sudo apt update<br>
-sudo apt upgrade<br>
-sudo apt install zeek-6.0<br>
+$ echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list<br>
+$ curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null<br>
+$ sudo apt update<br>
+$ sudo apt upgrade<br>
+$ sudo apt install zeek-6.0<br>
+
+## Configuring and Starting Zeek
 
 Reference: https://docs.zeek.org/en/master/quickstart.html#managing-zeek-with-zeekcontrol
 
