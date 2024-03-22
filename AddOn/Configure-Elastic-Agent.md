@@ -7,7 +7,7 @@ $ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt  .<br>
 $ sudo chown guy:guy ca.crt (change it to your username:username)<br>
 
 ## Login DShield Sensor<br>
-From the DShield sensor, copy the certificate to this directory<br>
+From the DShield sensor, copy the certificate to this directory [1]<br>
 $ scp guy@192.168.25.231:/home/guy/ca.crt .<br>
 $ sudo mkdir /usr/local/share/ca-certificates<br>
 $ sudo cp ca.crt /usr/local/share/ca-certificates<br>
@@ -79,4 +79,4 @@ The flows can be viewed with this dashboard:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4372dc5d-ad41-45b1-a81c-63d191851c3e)
 
- 
+[1] https://ubuntu.com/server/docs/security-trust-store 
