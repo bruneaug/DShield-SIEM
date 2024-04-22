@@ -319,6 +319,8 @@ $ sudo docker compose stop<br>
 $ git pull (Update the code from Github)<br>
 $ sudo docker compose rm -f -v<br>
 $  sudo docker compose up --build -d
+### Remove a Container that Fail to Start
+$ sudo docker inspect logstash
 
 # Login each Container<br>
 $ sudo docker exec -ti es01 bash<br>
