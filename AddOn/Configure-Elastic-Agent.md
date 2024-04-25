@@ -64,6 +64,12 @@ Now we can configure the Agent policies by adding integration like we did for th
 •	System is the default agent<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7011a635-deff-484e-b8ee-88b30524bc14)
+
+## Review Regularly Integration
+It is important to review the installed integrations to update them when available. Select Updates available and update each of them to the latest version.<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e70ab700-e55f-4d00-beae-f97f6d12d394)
+
  
 # Configure softflowd Application<br>
 This application will capture NetFlow traffic targeting your DShield sensor and report it to ELK under the NetFlow dashboard<br>
