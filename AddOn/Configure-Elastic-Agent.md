@@ -67,6 +67,7 @@ Now we can configure the Agent policies by adding integration like we did for th
 
 ## Review Regularly Integration
 It is important to review the installed integrations to update them when available. Select Updates available and update each of them to the latest version.<br>
+Select the Integration -> Settings -> Upgrade to latest version<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e70ab700-e55f-4d00-beae-f97f6d12d394)
 
