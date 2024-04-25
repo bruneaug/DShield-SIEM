@@ -216,16 +216,16 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b45ba835-2eb9-4246-97b1-160f3c6273d8)
 
-## Review the Activity Captured by the Rules
-
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f3fae247-ee9b-4919-9286-e66518c33ff3)
-
 ## Configure Management → Stack Management → Advanced Settings
 
 Find Elasticsearch Indices and add at the end of the list (comma cowrie *):<br>
 - ,cowrie*<br>
 - Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
 The final result should look like this: ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6112efdc-954e-4377-8a8e-31c005f54a18)
+
+## Review the Activity Captured by the Rules
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4c2d50c9-5776-432d-8ca3-1fcc2306f2f1)
 
 # Setup Filebeat on DShield Sensor - Logs to ELK
 
