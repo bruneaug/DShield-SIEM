@@ -224,8 +224,8 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 
 Find Elasticsearch Indices and add at the end of the list (comma cowrie *):<br>
 - ,cowrie*<br>
-Note: The entry should look like this: apm-*-transaction*, auditbeat-*, endgame-*, filebeat-*, logs-*, packetbeat-*, traces-apm*, winlogbeat-*, -*elastic-cloud-logs-*, cowrie*<br>
 - Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
+The final result should look like this: ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6112efdc-954e-4377-8a8e-31c005f54a18)
 
 # Setup Filebeat on DShield Sensor - Logs to ELK
 
