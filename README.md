@@ -223,9 +223,11 @@ Find Elasticsearch Indices and add at the end of the list (comma cowrie *):<br>
 - Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
 The final result should look like this: ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6112efdc-954e-4377-8a8e-31c005f54a18)
 
-## Review the Activity Captured by the Rules
+## Review the Activity Captured by the Rules in Alert trend
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4c2d50c9-5776-432d-8ca3-1fcc2306f2f1)
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/09319047-e0bf-4377-a1e9-72b2fb08c893)
+
 
 # Setup Filebeat on DShield Sensor - Logs to ELK
 
