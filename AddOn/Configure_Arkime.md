@@ -1,6 +1,6 @@
 # Setup Arkime with DShield-SIEM
 
-### Latest release version 5.01-1 -> 20 Feb 2024<br>
+### Latest release version 5.1.2-1 -> 30 April 2024<br>
 
 This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.
 
@@ -18,6 +18,17 @@ $ sudo apt install ./libssl1.1_1.1.1f-1ubuntu2.21_amd64.deb<br>
 $ sudo apt-get install -yq curl libmagic-dev wget logrotate libffi-dev libffi7<br>
 $ sudo apt-get install ./arkime_5.0.0-1.ubuntu2004_amd64.deb --fix-broken<br>
 
+# Upgrading Arkime
+
+$ mkdir arkime<br>
+$ cd arkime<br>
+$ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
+$ sudo apt install ./arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
+
+## Need to Reapply --insecure to Configuration Scripts
+
+Go to this section to reapply --insecure<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Arkime.md#edit-and-add---insecure-to-configuration-scripts
 
 # Configure Arkime
 The bolded data is the sugest configuration. The default password (student) is the password for Arkime to login ELK.<br>
