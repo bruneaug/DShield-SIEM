@@ -14,6 +14,8 @@ exit
 $ mkdir arkime<br>
 $ cd arkime<br>
 $ curl -LJO https://github.com/arkime/arkime/releases/download/v5.0.1/arkime_5.0.1-1.ubuntu2004_amd64.deb<br>
+$ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
+$ sudo apt install ./libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
 $ sudo apt-get install -yq curl libmagic-dev wget logrotate libffi-dev libffi7<br>
 $ sudo apt-get install ./arkime_5.0.0-1.ubuntu2004_amd64.deb --fix-broken<br>
 
