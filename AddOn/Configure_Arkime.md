@@ -2,7 +2,8 @@
 
 ### Latest release version 5.1.2-1 -> 30 April 2024<br>
 
-This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.
+This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.<br>
+First step is to add the IP of your ELK server to the /etc/hosts file following the example below.<br>
 
 $ sudo su -<br>
 echo "192.168.25.231 es01" >> /etc/hosts<br>
