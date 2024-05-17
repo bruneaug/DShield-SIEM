@@ -310,7 +310,11 @@ $ sudo docker system prune -a (Remove everything)<br>
 $ sudo docker logs kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)<br>
-$ sudo docker rm -f cowrie (remove a container)
+$ sudo docker rm -f cowrie (remove a container)<br>
+$ sudo docker system df (Check docker usage)<br>
+$ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker (Shows a breakdown of docker filesystem)<br>
+$ sudo docker builder prune (Clear the build cache if > 0)<br)
+
 
 $ sudo docker stop fleet-server<br>
 $ sudo docker stop logstash<br>
