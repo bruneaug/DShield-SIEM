@@ -1,6 +1,6 @@
 # Updating Dashboard Mapping
 
-Management → Kibana → Saved → Object
+Management → Kibana → Saved → Objects
 
 If any component of docker get updated, Kibana re-add all the dashboard. It is important to delete them by searching in the search bar: cowrie dshield.
 Select and delete them all and download the current map and manually upload it in this same location. Go to this directory: https://github.com/bruneaug/DShield-SIEM/tree/main/scripts 
@@ -9,6 +9,13 @@ The file to download is: _dshield_sensor_8.11.1.ndjson_
 ## Before you Delete
  
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/409ba24c-8c41-4603-b40d-e499501f3551)
+
+## Import the Updated Dashboards
+The current or updated dashboard can be downloaded from Github using curl (Windows & Linux) as follow:<br>
+
+curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson
+
+From the same Location Saved → Objects, us **Import**  to import the updated dashboard JSON file into Elasticsearch<br>
 
 ## After you Imported the Updated Dashboard
 
