@@ -27,8 +27,12 @@ cowrie* has been added as part of the Elasticsearch indices which is used by the
 
 ## Update cowrie Right-Click Objects
 
-After importing the updated dashboards, it is necessary to edit the cowrie mapping to change the default IP in some of the custom fields to work. The IP address must be change from 192.168.25.231 to the ELK server IP address. To make the change, goto Management -> Kibana -> Data Views and select cowrie*<br>
-- Edit Arkime, Context3Hash, Context3IP and TTYLog to change the default IP address and save the changes.<br>
+After importing the updated dashboards, it is necessary to edit the cowrie mapping to change the default IP in some of the custom fields to work.<br>
+The IP address must be change from 192.168.25.231 to the ELK server IP address. To make the change, goto Management -> Kibana -> Data Views and select cowrie*<br>
+
+**Note**: If you get some errors after importing an updated dashboard, you may have to select **edit** in cowrie* and select **Save** to update the list of objects in the template.<br>
+Now edit each of the Name listed below to change the IP address to match your ELK name or IP<br>
+- Edit Arkime, Context3Hash, Context3IP and TTYLog <br>
 
  ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/1b9f9980-790c-4882-8844-32005c752eed)
  
