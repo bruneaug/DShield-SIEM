@@ -2,25 +2,22 @@
 
 Management → Kibana → Saved → Objects
 
-If any component of docker get updated, Kibana re-add all the dashboard. It is important to delete them by searching in the search bar: cowrie dshield.
-Select and delete them all and download the current map and manually upload it in this same location. Go to this directory: https://github.com/bruneaug/DShield-SIEM/tree/main/scripts 
-The file to download is: _dshield_sensor_8.11.1.ndjson_
-
-## Before you Delete
+If any component of docker get updated, Kibana is likely to re-add all the dashboard. It is important to delete all the current objects by searching in the search bar: cowrie dshield.<br>
+Select and delete all objects like the picture below (list might be slighly different than below)<br>
  
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/409ba24c-8c41-4603-b40d-e499501f3551)
 
 ## Import the Updated Dashboards
 The current or updated dashboard can be downloaded from Github using curl (Windows & Linux) as follow:<br>
 
-curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson
+curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.13.0.ndjson
 
-From the same Location Saved → Objects, us **Import**  to import the updated dashboard JSON file into Elasticsearch<br>
+From the same Location Saved → Objects, select **Import**  to import the updated JSON dashboard file into Elasticsearch<br>
 
 ## After you Imported the Updated Dashboard
 
-The result will look like this after the JSON has been re-imported (6 Titles):
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/d5e6a2ce-fa8e-41bc-af2f-28079ee11054)
+The result will look like this after the JSON has been re-imported (11 Titles):
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/eee5ba35-ece9-45a3-8840-9e70cfcf7609)
  
 cowrie* has been added as part of the Elasticsearch indices which is used by the Security App. By adding cowrie*, it is now used by the Security → Rules to track threat intelligence matches by the SIEM part of Elastic. The minimum of 4 rules that are needed will also be listed in Management → Alerts and Insights → Rules
  ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/ab1b4a78-bb6d-4630-9ff5-8b3eea437c02)
