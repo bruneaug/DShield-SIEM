@@ -4,7 +4,7 @@ Building a Separate Docker Partition
 This is an example to create a separate docker partition in Linux to mount the drive to:<br>
 /var/lib/docker
 
-This setup a 40 GB partition for /var/lib/docker<br>
+This setup a 300 GB partition for /var/lib/docker<br>
 As root<br>
 
 cfdisk /dev/sdb<br>
@@ -31,15 +31,15 @@ root@internship4499:~# **vgdisplay internship_vg01**<br>
   Max PV                0
   Cur PV                1
   Act PV                1
-  VG Size               <40.00 GiB
+  VG Size               <300.00 GiB
   PE Size               4.00 MiB
   Total PE              10239
   Alloc PE / Size       0 / 0
-  Free  PE / Size       10239 / <40.00 GiB
+  Free  PE / Size       10239 / <300.00 GiB
   VG UUID               w7bKa9-6Y5U-I3sj-hZwG-0nGZ-paJc-D0BKrc
 ```
 
-[root@NWAPPLIANCE7516 ~]# **lvcreate -n /dev/mapper/internship_vg01-4499 --size 39G internship_vg01**<br>
+[root@NWAPPLIANCE7516 ~]# **lvcreate -n /dev/mapper/internship_vg01-4499 --size 299G internship_vg01**<br>
   Logical volume "4499" created.
 
 root@internship4499:~# **lvdisplay internship_vg01**<br>
@@ -52,7 +52,7 @@ root@internship4499:~# **lvdisplay internship_vg01**<br>
   LV Creation host, time internship4499, 2024-01-03 01:48:06 +0000
   LV Status              available
   # open                 0
-  LV Size                39.00 GiB
+  LV Size                299.00 GiB
   Current LE             9984
   Segments               1
   Allocation             inherit
