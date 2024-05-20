@@ -17,8 +17,8 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Minimum 8+ GB RAM<br>
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.<br>
 - 4-8 Cores<br>
-- Minimum 40 GB partition assigned to /var/lib/docker<br>
-- Adding a 40 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/build_40gb_docker_partition.txt
+- Minimum 300 GB partition assigned to /var/lib/docker<br>
+- Adding a 300 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/build_40gb_docker_partition.txt
 ## Elastic Packages Installed
 ### ELK Current Version: 8.13.3 (Updated May 2024)
 - Kibana
