@@ -76,6 +76,13 @@ Installation Completed
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/df44cf7d-b105-4188-abe7-983311e313d3)
 
+### Shows Docker Directory Listing
+This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
+As data gets added to Elasticsearch, you can also monitor either with the command below or within ELK the amount of disk is available for storage.<br>
+$ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2f3f3f6d-94a8-4154-b39e-7edaa4086572)
+
 # Access Kibana Interface
 
 Web Access: http://serverIP:5601
