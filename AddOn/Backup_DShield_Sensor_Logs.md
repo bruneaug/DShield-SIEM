@@ -28,4 +28,4 @@ The copy_cowrie.sh script will make a backup copy of iptables at:<br>
 /srv/NSM/webhoneypot
 /srv/NSM/downloads
 
-When the sensor update the cowrie software or you manually run the update, the logs usually get erased.
+**Note**: When the sensor update the cowrie software or you manually run the update, _the logs usually get erased_.
