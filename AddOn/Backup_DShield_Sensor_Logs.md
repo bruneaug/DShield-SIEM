@@ -16,6 +16,10 @@ $ sudo crontab -e
 \#  Copy the daily cowrie & webhoneypot logs at the end of the day<br>
 0 2 * * * /home/guy/scripts/copy_cowrie.sh > /dev/null 2>1& > /dev/null 2>1&<br>
 
+## Backup Locations
+
+If the backup directories don't exists, the script will automatically create all 3 of them when the script runs.
+
 The copy_iptables.sh script will make a backup copy of iptables at:<br>
 /srv/NSM/iptables
 
