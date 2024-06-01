@@ -97,7 +97,9 @@ Web Access: http://serverIP:5601
 
 - Login Kibana with username: **elastic** and default password _if it hasn't been changed_: **student**<br>
 # Configuring elastic-agent
-The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.
+The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.<br>
+This is an example for the format to setup the fleet-server and the elastic-agent:<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-examples.txt
 
 - From the dropdown menu, select Management → Fleet →Settings → Edit Outputs (Actions)<br>
 - Login server via SSH<br>
