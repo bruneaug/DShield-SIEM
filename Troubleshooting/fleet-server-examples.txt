@@ -42,10 +42,10 @@ Use your server the remainder is the same as below:
 --fleet-server-es-ca-trusted-fingerprint=
 
 elastic-agent enroll \
-  --fleet-server-es=http://es01:9200 \
-  --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MTcyMDk5MDEyMjY6amRQMmIxTkRSeC1NX0pCWHd4QVJYQQ \
+  --fleet-server-es=https://es01:9200 \
+ --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MTcyNDg2MDgyMjA6VmRtRVhuZkdUMGVZd3Fuc0NTNTNRQQ \
   --fleet-server-policy=fleet-server-policy \
-  --fleet-server-es-ca-trusted-fingerprint=D4D47A67B48CDEED04BD7F0C65D9F4ED0AF35C8D31F20511E3ABE55B545F998A \
+  --fleet-server-es-ca-trusted-fingerprint=0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61 \
   --fleet-server-port=8220 \
   --certificate-authorities=/certs/ca/ca.crt \
   --fleet-server-es-ca=/certs/es01/es01.crt \
