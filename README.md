@@ -149,6 +149,7 @@ Login via SSH to the fleet-server and make sure the fleet-server is running befo
 $ sudo docker start fleet-server<br>
 $ sudo docker exec -ti fleet-server bash<br>
 $ ./elastic-agent status (check it is running)<br>
+$ ./elastic-agent restart (if it doesn't appear to be running, force a restart, and recheck the status)<br>
 
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
@@ -179,6 +180,7 @@ _Successfully enrolled the Elastic Agent._
 
 From your current location, verify it installed correctly<br>
 $ ./elastic-agent status<br>
+$ ./elastic-agent restart (if you got what appears to be errors, force a restart and check the status)<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/a1bdb5ec-4cf9-4921-b3dc-ff4be0981bc8)
 
 Now that the Fleet Server is connected, close this Windows and lets proceed to the next step.
