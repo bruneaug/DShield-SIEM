@@ -292,7 +292,7 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 This script will start all the ELK components and if installed, the Arkime services.
 
 Install startelk.tgz tarball to ELK server as follow:<br>
-$ cd ~/DShield-SIEM/AddOn
+$ cd ~/DShield-SIEM/AddOn<br>
 $ sudo tar zxvf startelk.tgz -C /
 
 ## Edit the Script and Update the User Account Password
