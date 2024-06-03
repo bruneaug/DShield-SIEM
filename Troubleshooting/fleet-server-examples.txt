@@ -7,6 +7,8 @@ Advanced YAML configuration
 ===========================
 
 https://www.elastic.co/guide/en/fleet/current/secure-logstash-connections.html
+Note: The spacing is very important.
+
 This is an example of the certificate format. The header must start with the first 3 lines and the certificate must be indented like this example.
 
 ssl:
