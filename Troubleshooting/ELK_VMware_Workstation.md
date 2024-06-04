@@ -10,4 +10,6 @@ If you plan to use VMware workstation using NAT on a laptop, this is how NAT sho
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/5f8d7452-d77b-4f07-b2af-fa7b0f2482aa)
 
-- Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).
+- Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).<br>
+
+Access Kibana: https://ELK:5601
