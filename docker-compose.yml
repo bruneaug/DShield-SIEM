@@ -4,6 +4,8 @@
 # Date: 21 Jan 204
 # Version: 1.0
 # Initial release of DShield Sensor ELK docker log storage.
+# Date: 3 June 2024
+# Added SSL to Kibana
 
 volumes:
   certs:
@@ -155,6 +157,10 @@ services:
       - XPACK_SECURITY_ENCRYPTIONKEY=${ENCRYPTION_KEY}
       - XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY=${ENCRYPTION_KEY}
       - XPACK_REPORTING_ENCRYPTIONKEY=${ENCRYPTION_KEY}
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=certificate
+      - SERVER_SSL_ENABLED=true
+      - SERVER_SSL_KEY=config/certs/kibana/kibana.key
+      - SERVER_SSL_CERTIFICATE=config/certs/kibana/kibana.crt
     mem_limit: ${KB_MEM_LIMIT}
     healthcheck:
       test:
