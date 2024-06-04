@@ -85,7 +85,7 @@ $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var
 
 # Access Kibana Interface
 
-Web Access: http://serverIP:5601
+Web Access: https://serverIP:5601
 
 # Configure Management -> Stack Monitoring
 - Select "_Or, set up with self monitoring_"<br>
