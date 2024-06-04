@@ -328,7 +328,7 @@ $ sudo docker builder prune (Clear the build cache if > 0)<br)
 
 
 $ sudo docker stop fleet-server<br>
-$ sudo docker stop logstash<br>
+$ sudo docker restart logstash  (restart logstash service)<br>
 $ sudo docker inspect logstash<br>
 
 # Download Github Update
