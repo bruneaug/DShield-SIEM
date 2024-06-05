@@ -4,6 +4,8 @@ This is fork and a significant update from the initial publication on the ISC St
 https://github.com/fkadriver/Dshield-ELK<br>
 https://isc.sans.edu/diary/DShield+Sensor+Monitoring+with+a+Docker+ELK+Stack+Guest+Diary/30118<br>
 
+This is a good reference on howto use DShield-SIEM for analysis: https://isc.sans.edu/diary/30962/
+
 # What it is Used For
 This docker is custom built to be used with the [DShield Honeypot](https://isc.sans.edu/tools/honeypot/) to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The suggested installation is to install the DShield sensor in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS either in your network or in the cloud of your choice.<br>
 
