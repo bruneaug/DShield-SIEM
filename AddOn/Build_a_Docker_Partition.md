@@ -9,7 +9,7 @@ As root<br>
 \# sudo su -<br>
 
 \# cfdisk /dev/sdb<br>
-Create the new disk ans save the result<br>
+Create the new partition using all the default, write to disk and save the result (quit)<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e1977c75-af8f-4cc4-9ed7-7f437ce910cf)
 
 Now initializes Physical Volume for later use by the Logical Volume Manager (LVM)<br>
