@@ -6,8 +6,12 @@ This is an example to create a separate docker partition in Linux to mount the d
 
 This setup a 300 GB partition for /var/lib/docker<br>
 As root<br>
+sudo su -<br>
 
 cfdisk /dev/sdb<br>
+Create the new disk ans save the result<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e1977c75-af8f-4cc4-9ed7-7f437ce910cf)
+
 pvcreate /dev/sdb1<br>
 vgcreate internship_vg01 /dev/sdb1<br>
 pvcreate /dev/sdb1<br>
@@ -75,10 +79,14 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
 ### Add to /etc/fstab
+Edit /etc/fstab and add with either vi or nano this line to mount the new partition, then save and exit<br>
 
-$ sudo vi /dev/internship_vg01/4499 /var/lib/docker xfs defaults,noatime,nosuid 0 0<br>
+$ sudo vi /etc/fstab<br>
+/dev/internship_vg01/4499 /var/lib/docker xfs defaults,noatime,nosuid 0 0<br>
 
 ### Setup and Mount the Partition
+Create a new directory to mount the new partition
+
 $ sudo mkdir -p /var/lib/docker<br>
 $ sudo mount /dev/internship_vg01/4499 /var/lib/docker<br>
 $ sudo mount -a<br>
