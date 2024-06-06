@@ -6,16 +6,14 @@ This is an example to create a separate docker partition in Linux to mount the d
 
 This setup a 300 GB partition for /var/lib/docker<br>
 As root<br>
-sudo su -<br>
+\# sudo su -<br>
 
-cfdisk /dev/sdb<br>
+\# cfdisk /dev/sdb<br>
 Create the new disk ans save the result<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e1977c75-af8f-4cc4-9ed7-7f437ce910cf)
 
-pvcreate /dev/sdb1<br>
-vgcreate internship_vg01 /dev/sdb1<br>
-pvcreate /dev/sdb1<br>
-Physical volume "/dev/sdb1" successfully created.<br>
+Now initializes Physical Volume for later use by the Logical Volume Manager (LVM)<br>
+\# pvcreate /dev/sdb1<br>
 
 root@internship4499:~# **vgcreate internship_vg01 /dev/sdb1**<br>
   Volume group "internship_vg01" successfully created<br>
@@ -64,6 +62,7 @@ root@internship4499:~# **lvdisplay internship_vg01**<br>
   - currently set to     256
   Block device           253:1
 ```
+This step creates the disk to be used for docker<br>
 
 root@internship4499:~# **mkfs.xfs /dev/internship_vg01/4499**
 ```meta-data=/dev/internship_vg01/4499 isize=512    agcount=4, agsize=2555904 blks
@@ -89,6 +88,10 @@ Create a new directory to mount the new partition
 
 $ sudo mkdir -p /var/lib/docker<br>
 $ sudo mount /dev/internship_vg01/4499 /var/lib/docker<br>
-$ sudo mount -a<br>
+
+## List the mounted partitions<br>
+$ df -h<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/7ad6f80e-3551-4f22-a279-8929358804ee)
+
 
 
