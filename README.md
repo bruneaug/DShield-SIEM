@@ -108,7 +108,9 @@ Web Access: https://serverIP:5601
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
 
-# Configure Management -> Stack Monitoring
+# Configuring ELK Stack Management
+In order to see the ELK stack health, it is necessary to configure the stack monitoring by navigating to: Management -> Stack Monitoring<br>
+
 - Select "_Or, set up with self monitoring_"<br>
 - Monitoring is currently off -> Select: _Turn on monitoring_<br>
 
