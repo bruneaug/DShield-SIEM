@@ -186,13 +186,6 @@ elastic-agent enroll \\<br>
 
 This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 
-{"log.level":"info","@timestamp":"2024-01-17T00:00:40.404Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":411},"message":"Generating self-signed certificate for Fleet Server","ecs.version":"1.6.0"}<br>
-
-{"log.level":"info","@timestamp":"2024-01-17T00:00:42.774Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":788},"message":"Fleet Server - Running on policy with Fleet Server integration: fleet-server-policy; missing config fleet.agent.id (expected during bootstrap process)","ecs.version":"1.6.0"}<br>
-
-{"log.level":"info","@timestamp":"2024-01-17T00:00:43.073Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":479},"message":"Starting enrollment to URL: https://a4a1ada63084:8220/","ecs.version":"1.6.0"}<br>
-
-{"log.level":"info","@timestamp":"2024-01-17T00:00:44.152Z","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":277},"message":"Successfully triggered restart on running Elastic Agent.","ecs.version":"1.6.0"}<br>
 _Successfully enrolled the Elastic Agent._
 
 From your current location, verify it installed correctly<br>
