@@ -1,5 +1,9 @@
 Elasticsearch CA trusted fingerprint
 ====================================
+- Copy ca.crt certificate to /tmp
+$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /tmp
+Get a copy of Elasticsearch CA trusted fingerprint
+$ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
 
 0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61
 
@@ -10,6 +14,9 @@ https://www.elastic.co/guide/en/fleet/current/secure-logstash-connections.html
 Note: The spacing is very important. The easiest way is to copy this example in Notepad and replace the certificate to prevent any errors.
 
 This is an example of the certificate format. The header must start with the first 3 lines and the certificate must be indented like this example.
+
+- Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration. Type the command because it doesn't copy well
+$ sudo cat /tmp/ca.crt | sed  's/\(.*\)/    \1/g'
 
 ssl:
   certificate_authorities:
