@@ -88,9 +88,25 @@ $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2f3f3f6d-94a8-4154-b39e-7edaa4086572)
 
+### The following ELK Services are Setup
+Using netstat, these 4 services should now be listening.<br>
+```
+$ netstat -an | grep '9200\|8200\|5601\|5044'
+tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana
+tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent
+tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch
+tcp        0      0 0.0.0.0:5044            0.0.0.0:*               LISTEN  ---> Logstash
+tcp6       0      0 :::5601                 :::*                    LISTEN
+tcp6       0      0 :::8220                 :::*                    LISTEN
+tcp6       0      0 :::9200                 :::*                    LISTEN
+tcp6       0      0 :::5044                 :::*                    LISTEN
+```
 # Access Kibana Interface
-
+After docker finish installing all the ELK docker components, now it is time to login the ELK stack using your Ubuntu server IP.<br>
+- Login Kibana with username: **elastic** and default password _if it hasn't been changed_: **student**<br>
 Web Access: https://serverIP:5601
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
 
 # Configure Management -> Stack Monitoring
 - Select "_Or, set up with self monitoring_"<br>
@@ -98,9 +114,6 @@ Web Access: https://serverIP:5601
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b41deef3-462c-42de-bf75-c79100833f4b)
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
-
-- Login Kibana with username: **elastic** and default password _if it hasn't been changed_: **student**<br>
 # Configuring elastic-agent
 The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.<br>
 This is an example for the format to setup the fleet-server and the elastic-agent:<br>
