@@ -250,7 +250,7 @@ This is the output from Management → Stack Management → Advanced Settings<br
 
 After adding the webhoneypot.sh script, add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
 
-If use the following to install the Filebeat package using [3] the following commands:<br>
+Use the following steps to install Filebeat using the following commands taken from this reference [3]: <br>
 
 $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>
 $ sudo apt-get install apt-transport-https<br>
