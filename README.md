@@ -235,15 +235,13 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b45ba835-2eb9-4246-97b1-160f3c6273d8)
 
-## Configure Management → Stack Management → Advanced Settings
-
-Find Elasticsearch Indices and add at the end of the list (comma cowrie *):<br>
-- ,cowrie*<br>
-- Save changes for these logs to be analyzed by the SIEM part of ELK.<br>
-The final result should look like this: ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6112efdc-954e-4377-8a8e-31c005f54a18)
-
 ## Review the Activity Captured by the Rules in Alert trend
+If some of the threat intel above were added to the elastic-agent, and cowrie* was added to the Management -> Advanced Settings during the initial installation, it can now track rules that match in the alert trends of the SIEM part of the ELK stack.<br>
+This is the output from Management → Stack Management → Advanced Settings<br>
+ ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6112efdc-954e-4377-8a8e-31c005f54a18)
 
+ If any threat intel match, the SIEM will display the following activity that can now be investigated:<br>
+ 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4c2d50c9-5776-432d-8ca3-1fcc2306f2f1)
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/09319047-e0bf-4377-a1e9-72b2fb08c893)
 
