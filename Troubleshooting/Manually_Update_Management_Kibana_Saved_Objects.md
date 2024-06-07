@@ -19,17 +19,17 @@ From the same Location Saved → Objects, select **Import**  to import the updat
 The result will look like this after the JSON has been re-imported (11 Titles):
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/eee5ba35-ece9-45a3-8840-9e70cfcf7609)
  
-cowrie* has been added as part of the Elasticsearch indices which is used by the Security App. By adding cowrie*, it is now used by the Security → Rules to track threat intelligence matches by the SIEM part of Elastic. The minimum of 4 rules that are needed will also be listed in Management → Alerts and Insights → Rules
- ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/ab1b4a78-bb6d-4630-9ff5-8b3eea437c02)
-
 ## Update cowrie Right-Click Objects
 
-After importing the updated dashboards, it is necessary to edit the cowrie mapping to change the default IP in some of the custom fields to work.<br>
-The IP address must be change from 192.168.25.231 to the ELK server IP address. To make the change, goto Management -> Kibana -> Data Views and select cowrie*<br>
+Note: This step is only done if any of the following services have been added to your own ELK stack -> Arkime, Context3Hash, Context3IP and TTYLog. Otherwise, skip this<br>
+
+After importing the updated dashboards, if you have installed Arkime, Context3Hash, Context3IP and TTYLog (those are additional tools if you wish to use them), you need to change the default of my test ELK system to your own ELK server for the right-click functions to work.<br>
+The IP address that you need to change is 192.168.25.231 to your own ELK server IP address.<br>
+To make the change, goto Management -> Kibana -> Data Views and select cowrie*<br>
 
 **Note**: If you get some errors after importing an updated dashboard, you may have to select **edit** in cowrie* and select **Save** to update the list of objects in the template.<br>
 Now edit each of the Name listed below to change the IP address to match your ELK name or IP<br>
-- Edit Arkime, Context3Hash, Context3IP and TTYLog <br>
+- Edit  <br>
 
  ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/1b9f9980-790c-4882-8844-32005c752eed)
  
