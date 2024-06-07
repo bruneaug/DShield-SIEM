@@ -70,7 +70,10 @@ Default to **2147483648** (2GB) but can be expanded if you have the resources<br
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
 You can keep these default or edit each files and change them.
 
-$ sudo docker compose up -d (For setup or any changes)<br>
+Now execute docker compose to build the ELK server applications. <br>
+This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
+
+$ sudo docker compose up -d <br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/55df8e2f-6896-497c-b1b8-247196141e6f)
 
