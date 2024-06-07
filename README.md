@@ -147,9 +147,6 @@ Followed by Save and deploy
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/82d3b29f-5398-4f23-afea-63bf6727e087)
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/bc97d11c-b9de-4c26-b24e-17ebed278cd2)
 
-The raw output for the Certificate should look like this with the same spaces as per this picture. Two spaces from the left for the certificate certificate_authorities: and four spaces from the left from the pipe (|) to the end of certificate [9]:
-
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/002cc7c6-ecba-4b1e-b5de-2bf97915854e)
 
 Under Settings, configure the Fleet server hosts by either edit or Add Fleet Server configured as follows:
 
