@@ -124,7 +124,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-
 - From the dropdown menu, select Management → Fleet →Settings → Edit Outputs (Actions)<br>
 - Login server via SSH<br>
 - Copy ca.crt certificate to /tmp<br>
-$ sudo docker cp es01:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
+$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /tmp
 
 - Get a copy of Elasticsearch CA trusted fingerprint<br>
 $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
@@ -135,18 +135,16 @@ $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' p
 - Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration. Type the command because it doesn't copy well<br>
 $ <code>&nbsp;sudo cat /tmp/ca.crt | sed -r 's/\(.*\)/    \1/g'</code>
 
-Format must be exactly like this. Copy the output of the certificate in Notepad or Notepad++ and format exactly like this.<br>
-It needs 2 spaces before certificate_authorities: and the dash (**-**) and it needs 4 spaces from the pipe (**|**) all the way down to the end of -----END CERTIFICATE-----<br>
+Follow the example from the Troubleshooting fleet-server-examples guide URL above for the correct format.<br>
 _sed_ will add the 4 spaces with the previous command against the CA certificate
 
 - Change the Hosts to: https://es01:9200
 
-Save and apply settings after making the changes and adding the certificate information.
+After adding the certificate information, save and apply these settings.<br>
 Followed by Save and deploy
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/82d3b29f-5398-4f23-afea-63bf6727e087)
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/bc97d11c-b9de-4c26-b24e-17ebed278cd2)
-
 
 Under Settings, configure the Fleet server hosts by either edit or Add Fleet Server configured as follows:
 
