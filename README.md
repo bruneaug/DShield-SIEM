@@ -62,7 +62,11 @@ $ cd ~/DShield-SIEM<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
 Default to **2147483648** (2GB) but can be expanded if you have the resources<br>
 
-- The default name servers in Logstash are set in the following files to:  nameserver => [ "8.8.8.8", "9.9.9.9" ]
+- Update the following variables in Logstash to match your ELK server DNS information, hostname, IP and default elastic password if you want to change it: <br>
+  - HOSTNAME="ubuntu"
+  - DNS_SERVER="9.9.9.9"
+  - IPADDRESS="192.168.25.231"
+  - ELASTIC_PASSWORD=student
 - If you want to change the default nameserver(s), go to the following directory for the files
   - $ cd logstash/pipeline
   - logstash-200-filter-cowrie.conf <br>
