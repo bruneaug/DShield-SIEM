@@ -59,11 +59,7 @@ The DShield sensor should show this confirmation after it is added:<br>
  
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/d03fa3d9-9bf7-4c60-87b5-fdc570f41aec)
  
-The server will show the following:
-
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/107bd46d-d33b-40fc-b6a0-841c4441efe3)
-
-This confirm the DShield sensor is now added to ELK<br>
+This confirm the DShield sensor is now added to the Fleet Server<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/1e884e05-9bc5-4058-a908-3a428fbe45d9)
  
