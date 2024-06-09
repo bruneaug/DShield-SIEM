@@ -23,7 +23,7 @@ echo "192.168.25.231 es01" >> /etc/hosts<br>
 sudo apt-get install elastic-agent<br>
 
 **Note**: elastic-agent must be the same version as the ELK server. If the agent is a newer version, you need to use a command like this or update the .env file to reflect the current version of ELK:<br>
-You can find the past released here: https://www.elastic.co/downloads/past-releases#elastic-agent
+You can find the past released here: https://www.elastic.co/downloads/past-releases#elastic-agent<br>
 _curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.13.4-amd64.deb_<br>
 _sudo dpkg -i elastic-agent-8.11.0-amd64.deb_<br>
 
