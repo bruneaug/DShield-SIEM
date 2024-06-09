@@ -45,6 +45,10 @@ Management -> Fleet -> Agent policies -> Create agent policy:<br>
 
 After the policy is created, select the policy (DShield Sensor), Actions -> Add agent <br>
 Pick RPM and copy line 3 and format it like this:<br>
+
+There is an example for enrolling the agent to the Fleet Server<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-examples.txt<br>
+
 sudo elastic-agent enroll \\<br>
   --url=https://fleet-server:8220 \\<br>
   --certificate-authorities=/etc/ssl/certs/ca.pem \\<br>
