@@ -6,6 +6,10 @@ https://isc.sans.edu/diary/DShield+Sensor+Monitoring+with+a+Docker+ELK+Stack+Gue
 
 This is a good reference on howto use DShield-SIEM for analysis: https://isc.sans.edu/diary/30962/
 
+## DShield SIEM Network Flow
+This provides an overview how the log collection with the DShield sensor is done.<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield-SIEM-Flow.png
+
 # What it is Used For
 This docker is custom built to be used with the [DShield Honeypot](https://isc.sans.edu/tools/honeypot/) to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The suggested installation is to install the DShield sensor in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS either in your network or in the cloud of your choice.<br>
 
@@ -85,7 +89,7 @@ Installation Completed
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/df44cf7d-b105-4188-abe7-983311e313d3)
 
-### Shows Docker Directory Listing
+### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
 As data gets added to Elasticsearch, you can also monitor either with the command below or within ELK the amount of disk is available for storage.<br>
 $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker<br>
