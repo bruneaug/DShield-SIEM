@@ -15,6 +15,7 @@ $ sudo update-ca-certificates<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/84c067b2-0358-425f-b8bb-bc3eb911c151)
 
 ## Add ELK IP to DShield sensor:
+Where the IP shows 192.168.25.231, replace with your own ELK server IP.
 
 $ sudo su -<br>
 echo "192.168.25.231 fleet-server" >> /etc/hosts<br>
