@@ -60,3 +60,18 @@ elastic-agent enroll \
   --certificate-authorities=/certs/ca/ca.crt \
   --fleet-server-es-ca=/certs/es01/es01.crt \
   --insecure
+
+Adding Agents to Fleet Server
+=============================
+
+This portion is used in this section: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure-Elastic-Agent.md
+
+For this example, you only need to replace this:
+
+--enrollment-token=
+
+sudo elastic-agent enroll \
+--url=https://fleet-server:8220 \
+--certificate-authorities=/etc/ssl/certs/ca.pem \
+--enrollment-token=eEZKYl9ZOEJnS09PTVh2cHd3LW46eGlMTHRUdmhUTWFfS05URG52TjQwdw== \
+--insecure
