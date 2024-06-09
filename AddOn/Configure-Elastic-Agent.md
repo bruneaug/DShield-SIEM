@@ -7,7 +7,7 @@ $ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt  .<br>
 $ sudo chown guy:guy ca.crt (change it to your username:username)<br>
 
 ## Login DShield Sensor<br>
-From the DShield sensor, copy the certificate to this directory [1]<br>
+From the DShield sensor, copy the certificate to the Ubuntu ca store [1]<br>
 $ scp guy@192.168.25.231:/home/guy/ca.crt .<br>
 $ sudo mkdir /usr/local/share/ca-certificates<br>
 $ sudo cp ca.crt /usr/local/share/ca-certificates<br>
