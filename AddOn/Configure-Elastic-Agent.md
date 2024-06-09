@@ -31,6 +31,7 @@ _sudo dpkg -i elastic-agent-8.11.0-amd64.deb_<br>
 $ sudo systemctl enable elastic-agent<br>
 $ sudo systemctl stop elastic-agent<br>
 $ sudo systemctl start elastic-agent<br>
+$ sudo systemctl status elastic-agent<br>
 Reference: https://hub.docker.com/_/elasticsearch <br>
 
 To add elastic-agent to DShield sensor do:<br>
