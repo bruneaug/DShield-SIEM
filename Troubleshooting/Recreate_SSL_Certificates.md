@@ -19,8 +19,8 @@ Login in elasticsearch (es01) as root and unzip certs.zip to load the new certif
 $ sudo docker exec -ti -u root es01 bash<br>
 $ cd config/certs/<br>
 $ unzip certs.zip<br>
-replace es01/es01.crt? [y]es, [n]o, [A]ll, [N]one, [r]ename:<br>
-Select A for all<br>
+
+replace es01/es01.crt? [y]es, [n]o, [A]ll, [N]one, [r]ename: _Select A for all_<br>
 
 $ sudo docker compose stop<br>
 $ sudo docker compose rm -f -v<br>
