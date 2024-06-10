@@ -164,7 +164,8 @@ Next phase is to Select Agent Policy → Add Agent → Enroll in Fleet → Add F
 - Provide URL: https://fleet-server:8220
 - Last: Generate Fleet Server policy
 - Select: RPM
-- Copy starting at: elastic-agent enroll \ to the end of …port=8220
+Refer to this page for an example of _Fleet-Server SSL Configuration_:<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-examples.txt
   
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/580b3009-0de8-45ba-b297-d4090e2120c9)
 
