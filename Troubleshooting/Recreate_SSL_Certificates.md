@@ -1,4 +1,4 @@
-# Removing Current SSL Certificate
+# Updating ELK Components Docker SSL Certificates
 If after setting up ELK you find out your ELK certificates are incorrect, you can rebuild them after updating the .env files in the DShield-SIEM directory.<br>
 
 Review this section **Configure and install DShield ELK**<br>
