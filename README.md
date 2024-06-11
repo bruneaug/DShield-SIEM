@@ -81,7 +81,9 @@ This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cow
 
 $ sudo docker compose up -d <br>
 
-Enable and start the docker service
+### Setup Docker Auto-Restart on Reboot
+Enable and start the docker service. This will restart DShield-SIEM when the server is rebooted.
+
 $ sudo systemctl enable docker.service<br>
 $ sudo systemctl start docker.service<br>
 
