@@ -80,6 +80,8 @@ Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
 
 $ sudo docker compose up -d <br>
+
+Enable and start the docker service
 $ sudo systemctl enable docker.service<br>
 $ sudo systemctl start docker.service<br>
 
