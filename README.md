@@ -52,12 +52,10 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-upd
 $ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
 $ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 $ mkdir scripts<br>
-$ mv DShield-SIEM/AddOnScripts/startelk.sh scripts/<br>
 $ mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts<br>
 $ mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts<br>
 $ chmod 754 scripts/*.sh<br>
 
-The script ~/scripts/startelk.sh should be edited if you modified the elastic password to reflect your user account password. Default is currently _student_.<br>
 The parsing_tty.sh script will be configured later in another document.<br>
 $ cd ~/DShield-SIEM<br>
 
@@ -82,6 +80,11 @@ Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
 
 $ sudo docker compose up -d <br>
+$ sudo systemctl enable docker.service<br>
+$ sudo systemctl start docker.service<br>
+
+Confirm the docker service is running<br>
+$ sudo systemctl status docker.service<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/55df8e2f-6896-497c-b1b8-247196141e6f)
 
