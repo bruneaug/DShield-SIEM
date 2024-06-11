@@ -6,6 +6,9 @@
 # Initial release of DShield Sensor ELK docker log storage.
 # Date: 3 June 2024
 # Added SSL to Kibana
+# Date: 11 June 2024
+# Added auto-restart. This will restart the services after system is rebooted
+# and systemctl enable docker.service has been enabled
 
 volumes:
   certs:
@@ -29,6 +32,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
+    restart: always
     user: "0"
     command: >
       bash -c '
@@ -111,6 +115,7 @@ services:
       - certs:/usr/share/elasticsearch/config/certs
       - esdata01:/usr/share/elasticsearch/data
       - ${SCRIPTS_DIR}:/usr/share/elasticsearch/scripts
+    restart: always
     ports:
       - ${ES_PORT}:9200
     environment:
@@ -161,6 +166,7 @@ services:
       - certs:/usr/share/kibana/config/certs
       - kibanadata:/usr/share/kibana/data
       - ${SCRIPTS_DIR}:/usr/share/kibana/scripts
+    restart: always
     ports:
       - ${KIBANA_PORT}:5601
     environment:
@@ -199,6 +205,7 @@ services:
     volumes:
       - ${SCRIPTS_DIR}:/usr/share/scripts
       - certs:/usr/share/config/certs
+    restart: always
     user: root
     entrypoint: /usr/share/scripts/cowrie-setup.sh
     environment: 
@@ -225,6 +232,7 @@ services:
       # - "./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml:ro"
       # - "./logstash/ingest_data/:/usr/share/logstash/ingest_data/"
       - "./logstash/pipeline/:/usr/share/logstash/pipeline/"
+    restart: always
     ports:
       - ${LOGSTASH_PORT}:5044
     environment:
@@ -255,6 +263,7 @@ services:
     volumes:
       - certs:/certs
       - fleetserverdata:/usr/share/elastic-agent
+    restart: always
     ports:
       - ${FLEET_PORT}:8220
     user: root
