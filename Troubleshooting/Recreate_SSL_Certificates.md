@@ -53,4 +53,9 @@ The certificate will now be trusted by the local machine. It is possible the web
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4db225a5-b30f-469a-9fcc-d2bc969694a6)
 
+If you look inside the certificate before login ELK, you can see the hostnames and IPs added to the .env file<br>
+
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f2492ec3-71a7-4d04-9c78-e5b9a6f33c7e)
+
+
 Now you can login Kibana.
