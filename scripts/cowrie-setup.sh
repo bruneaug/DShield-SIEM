@@ -3,6 +3,9 @@
 # Guy Bruneau, guybruneau@outlook.com
 # Date: 10 Jan 2024
 # Version: 1.0
+# Date: 22 Jun 2024
+# Version: 1.5
+# Added cowrie.vt_data index & policy
 
 # All the policies have been updated to reflect the changes in the DShield log collection.
 # This is a significant update from the initial publication on the ISC Storm Center website
@@ -37,6 +40,10 @@ $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ind
 echo "Setting up cowrie.webhoneypot"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.webhoneypot --data-binary @cowrie-webhoneypot-policy.json; echo
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/cowrie.webhoneypot --data-binary @cowrie-webhoneypot-index.json; echo
+
+echo "Setting up cowrie.vt_data"
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.vt_data --data-binary @cowrie.vt_data-policy.json; echo
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/cowrie.vt_data --data-binary @cowrie.vt_data-index.json; echo
 
 # dashboard setup
 echo "Setting up Dashboard"
