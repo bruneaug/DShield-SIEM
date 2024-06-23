@@ -19,7 +19,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Step 3 install and configure Filebeat on DShield Sensor(s)<br>
 
 # Ubuntu Setup
-- Ubuntu 20.04 LTS Live Server 64-Bit<br>
+- Ubuntu 22.04 LTS Live Server 64-Bit<br>
 - Minimum 8+ GB RAM<br>
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.<br>
 - 4-8 Cores<br>
