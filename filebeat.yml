@@ -35,6 +35,20 @@ filebeat.inputs:
       message_key: message
       key_under_root: true
 
+# Parsing Virustotal Hashes for DShield
+- type: filestream
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - /home/guy/hash/vt_data
+
+  # Change to true to enable this input configuration.
+  enabled: true
+  parsers:
+    - ndjson:
+      message_key: message
+      key_under_root: true
+
 # Firewall logs for dshield
 - type: log
   enabled: true
