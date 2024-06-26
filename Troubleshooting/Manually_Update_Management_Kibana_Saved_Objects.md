@@ -8,7 +8,7 @@ Select and delete all objects like the picture below (list might be slighly diff
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/476e03cd-88ae-40b5-a7ad-6ad7757a6bf2)
 
 ## Import the Updated Dashboards
-The current or updated dashboard can be downloaded from Github using curl (Windows & Linux) as follow:<br>
+The current or updated dashboard can be downloaded from Github using curl (in Windows Download directory & Linux) as follow:<br>
 
 curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.14.0.ndjson
 
