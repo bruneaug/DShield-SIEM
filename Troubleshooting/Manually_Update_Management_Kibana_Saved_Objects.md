@@ -39,4 +39,5 @@ Now edit any of the following services that you are using Arkime, Context3Hash, 
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f32c4cdd-301c-4b05-a8f1-30a81cb72901)
 
- 
+## After the update, access the dashboard:<br>
+ **DShield Main Page Activity**
