@@ -245,8 +245,12 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 ## Configuring Security → Rules
 
 - Select Rules → Detection rules (SIEM) → Add Elastic rules
-- Under Search Tags: Rule Type: Indicator Match (add at the minimum those 4 rules)
+- Under Search Tags: Rule Type: Threat Intel (add at the minimum those 4 rules)
 - Install and enable those 4 rules
+  - Threat Intel IP Address Indicator Match
+  - Threat Intel Windows Registry Indicator Match
+  - Threat Intel Hash Indicator Match
+  - Threat Intel URL Indicator Match
 - You can look through the rules and enable those other rules that you want to try against your honeypot data.<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b45ba835-2eb9-4246-97b1-160f3c6273d8)
