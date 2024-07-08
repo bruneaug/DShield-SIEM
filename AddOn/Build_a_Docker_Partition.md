@@ -9,6 +9,8 @@ As root<br>
 \# sudo su -<br>
 
 \# cfdisk /dev/sdb<br>
+![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/1a9db609-fd6f-489e-9bfe-161357720163)
+
 Create the new partition using all the default, write to disk and save the result (quit)<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e1977c75-af8f-4cc4-9ed7-7f437ce910cf)
 
