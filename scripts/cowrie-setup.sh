@@ -41,6 +41,10 @@ echo "Setting up cowrie.webhoneypot"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.webhoneypot --data-binary @cowrie-webhoneypot-policy.json; echo
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/cowrie.webhoneypot --data-binary @cowrie-webhoneypot-index.json; echo
 
+echo "Setting up ti.iscintel"
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/ti.iscintel --data-binary @ti.iscintel-policy.json; echo
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.iscintel --data-binary @ti.iscintel-index.json; echo
+
 echo "Setting up cowrie.vt_data"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.vt_data --data-binary @cowrie.vt_data-policy.json; echo
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/cowrie.vt_data --data-binary @cowrie.vt_data-index.json; echo
