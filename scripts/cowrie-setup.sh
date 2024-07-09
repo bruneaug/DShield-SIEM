@@ -6,6 +6,9 @@
 # Date: 22 Jun 2024
 # Version: 1.5
 # Added cowrie.vt_data index & policy
+# Date: 9 July 2024
+# Version: 1.6
+# Added ISC threatintel data
 
 # All the policies have been updated to reflect the changes in the DShield log collection.
 # This is a significant update from the initial publication on the ISC Storm Center website
