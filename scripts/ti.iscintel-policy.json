@@ -16,7 +16,7 @@
             "priority": 50
           },
           "allocate": {
-            "number_of_replicas": 1
+            "number_of_replicas": 0
           },
           "shrink": {
             "number_of_shards": 1
