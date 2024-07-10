@@ -22,7 +22,7 @@ $ sudo systemctl status filebeat<br>
 
 ### Installing the Script
 
-$ sudo su -
+$ sudo su -<br>
 \# mkdir $HOME/scripts<br>
 \# cd $HOME/scripts<br>
 \# wget https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/AddOnScripts/get_iscipintel.sh<br>
