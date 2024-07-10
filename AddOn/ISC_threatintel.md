@@ -8,7 +8,7 @@ $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key a
 $ sudo apt-get install apt-transport-https<br>
 $ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
 $ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-$ $ sudo apt-get update && sudo apt-get install filebeat <br>
+$ sudo apt-get update && sudo apt-get install filebeat <br>
 $ sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
 
 $ sudo vi /etc/filebeat/filebeat.yml <br>
