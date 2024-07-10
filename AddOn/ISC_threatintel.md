@@ -38,6 +38,6 @@ Add the to following:<br>
 
 ### Manually Getting Data
 If it is important to parse data from a date that wasn't imported, the following command can be used to get that data.<br>
-$ sudo su -
-\# cd $HOME/iscintel
-\# wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json
+$ sudo su -<br>
+\# cd $HOME/iscintel<br>
+\# wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json<br>
