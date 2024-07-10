@@ -25,7 +25,8 @@ $ sudo systemctl status filebeat<br>
 $ sudo su -
 \# mkdir $HOME/scripts<br>
 \# cd $HOME/scripts<br>
-\# wget get_iscipintel.sh<br>
+\# wget https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/AddOnScripts/get_iscipintel.sh<br>
+\# chmod 755 get_iscipintel.sh
 
 ### Setup Cronjob
 
