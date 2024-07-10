@@ -40,7 +40,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /home/guy/hash/vt_data
+    - /srv/hash/vt_data
 
   # Change to true to enable this input configuration.
   enabled: true
