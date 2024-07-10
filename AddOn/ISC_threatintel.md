@@ -22,7 +22,21 @@ $ sudo systemctl status filebeat<br>
 
 ### Installing the Script
 
-$ mkdir $HOME/scripts<br>
-$ cd $HOME/scripts<br>
-$ wget get_iscipintel.sh<br>
+$ sudo su -
+\# mkdir $HOME/scripts<br>
+\# cd $HOME/scripts<br>
+\# wget get_iscipintel.sh<br>
 
+### Setup Cronjob
+
+\# crontab -e<br>
+Add the to following:<br>
+
+\# Transfer logs to ELK server<br>
+0 6 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&<br>
+
+### Manually Getting Data
+If it is important to parse data from a date that wasn't imported, the following command can be used to get that data.<br>
+$ sudo su -
+\# cd $HOME/iscintel
+\# wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json
