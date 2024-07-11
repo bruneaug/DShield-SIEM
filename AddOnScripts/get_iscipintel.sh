@@ -11,7 +11,7 @@
 # Parsing wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json
 
 # Transfer logs to ELK server
-#0 6 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&
+#0 12 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&
 
 YESTERDAY=`date -d "1 day ago" '+%Y-%m-%d'`
 2DAYSAGO=`date -d "2 day ago" '+%Y-%m-%d'`
