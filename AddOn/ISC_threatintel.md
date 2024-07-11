@@ -34,7 +34,7 @@ $ sudo su -<br>
 Add the to following:<br>
 
 \# Transfer logs to ELK server<br>
-0 6 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&<br>
+0 12 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&<br>
 
 ### Manually Getting Data
 If it is important to parse data from a date that wasn't imported, the following command can be used to get that data.<br>
