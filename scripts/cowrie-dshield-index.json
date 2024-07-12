@@ -419,6 +419,36 @@
               "type": "long"
             }
           }
+        },
+        "url" : {
+          "properties": {
+            "query": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "port": {
+              "type": "long"
+            },
+            "password": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "username": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "original": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "full": {
+              "type": "wildcard"
+            },
+            "domain": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
         }
       }
     }
