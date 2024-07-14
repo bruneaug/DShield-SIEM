@@ -69,7 +69,7 @@ Default to **2147483648** (2GB) but can be expanded if you have the resources<br
   - DNS_SERVER="9.9.9.9"
   - IPADDRESS="192.168.25.231"
   - ELASTIC_PASSWORD=student
-- If you want to change the default nameserver(s), go to the following directory for the files
+- If you want to change the default nameserver(s) information and your local private network location for the destination address (i.e. DShield sensor mapping - currently set for Ottawa, Canada), edit to the following directory for the files before loading docker:<br>
   - $ cd logstash/pipeline
   - logstash-200-filter-cowrie.conf <br>
   - logstash-201-filter-iptables.conf <br>
