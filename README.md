@@ -310,9 +310,10 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Configure-Elastic-Agent.pdf
 # Interface - Logs DShield Sensor Overview
 To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor] Overview**<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/5e5aaa4d-a4b6-40bc-98ca-5bae46373c9c)
+![image](https://github.com/user-attachments/assets/af0f668c-977d-43be-95f0-2626237b7616)
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/8a1f4aeb-2a93-412f-9c0b-06e491a11cee)
+![image](https://github.com/user-attachments/assets/7d63ce9e-7a34-478b-88b4-e2e100f593c0)
+
 
 # Starting ELK after a Reboot
 This script will start all the ELK components and if installed, the Arkime services.
