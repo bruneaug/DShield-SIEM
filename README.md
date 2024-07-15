@@ -288,7 +288,25 @@ $ sudo vi /etc/filebeat/filebeat.yml<br>
 
   output.logstash:<br>
   hosts: ["192.168.25.23:5044"]<br>
-  
+
+### Troubleshooting Filebeat
+\# sudo su -<br>
+\# filebeat test config<br>
+Expected output: _Config OK<br>_
+
+\# filebeat test output<br>
+Expected output:
+<pre>
+logstash: 192.168.25.23:5044...
+  connection...
+    parse host... OK
+    dns lookup... OK
+    addresses: 192.168.25.231
+    dial up... OK
+  TLS... WARN secure connection disabled
+  talk to server... OK
+</pre>
+
 ## Start Filebeat
 
 $ sudo systemctl enable filebeat<br>
