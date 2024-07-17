@@ -187,6 +187,7 @@ How to get previous unprocessed files from the DShield sensor? Repeat this scp g
 Before executing the _~/scripts/rename_arkime_pcap.sh_, you need to edit the script and comment (add #) to this line:<br>
 Like this: **#/usr/bin/rm -f $HOME/pcap/***<br>
 
+$ cd $/pcap
 $ scp -P 12222 guy@$192.168.25.105:/srv/NSM/dailylogs/2024-02-17/daemonlogger* .<br>
 Execute the $ ~/scripts/rename_arkime_pcap.sh<br>
 It will rename the files and load them into Arkime<br>
