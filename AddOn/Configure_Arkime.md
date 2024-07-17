@@ -167,7 +167,7 @@ $ rm id_rsa.pub<br>
 
 The **rename_arkime_pcap.sh** script should already be in the ~scripts directory.<br>
 
-Edit the script rename_arkime_pcap.sh
+Edit the script rename_arkime_pcap.sh<br>
 - Update the variable SENSOR for you own DShield sensor(s).<br>
 - Update default sudo password (i.e. training) used to sudo from your account to root<br>
 See last command and change training to your own sudo password to import into Arkime<br>
@@ -187,7 +187,7 @@ How to get previous unprocessed files from the DShield sensor? Repeat this scp g
 Before executing the _~/scripts/rename_arkime_pcap.sh_, you need to edit the script and comment (add #) to this line:<br>
 Like this: **#/usr/bin/rm -f $HOME/pcap/***<br>
 
-$ scp -P 12222 guy@$192.168.25.105:/srv/NSM/dailylogs/2024-02-17/daemonlogger* .
+$ scp -P 12222 guy@$192.168.25.105:/srv/NSM/dailylogs/2024-02-17/daemonlogger* .<br>
 Execute the $ ~/scripts/rename_arkime_pcap.sh<br>
 It will rename the files and load them into Arkime<br>
 
