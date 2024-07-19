@@ -106,7 +106,7 @@ $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var
 ### The following ELK Services are Setup
 Using netstat, these 4 services should now be listening.<br>
 ```
-$ netstat -an | grep '9200\|8200\|5601\|5044'
+$ netstat -an | grep '9200\|8220\|5601\|5044'
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana
 tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent
 tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch
