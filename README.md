@@ -121,7 +121,7 @@ After docker finish installing all the ELK docker components, now it is time to 
 - Login Kibana with username: **elastic** and default password _if it hasn't been changed_: **student**<br>
 Web Access: https://serverIP:5601
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/6ff32abf-7bf7-4185-8e6d-ae6373d88bea)
+![image](https://github.com/user-attachments/assets/4e22361f-4cc7-4fb3-a9cc-d725bf5c9c06)
 
 # Configuring ELK Stack Management
 In order to see the ELK stack health, it is necessary to configure the stack monitoring by navigating to: Management -> Stack Monitoring<br>
