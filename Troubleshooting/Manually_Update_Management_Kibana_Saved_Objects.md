@@ -1,6 +1,6 @@
 # Updating Dashboard Mapping
 
-The best place to start to udate the dashboard, start by doing a normal update with **git pull** and follow these steps:<br>
+The best place to start to udate the dashboard, start by doing a normal update with **git pull** and follow these steps in the Gitub Update:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful_commands..md#download-github-update****
 
 Management → Kibana → Saved → Objects
