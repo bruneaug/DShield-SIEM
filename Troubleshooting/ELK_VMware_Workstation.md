@@ -12,4 +12,5 @@ If you plan to use VMware workstation using NAT on a laptop, this is how NAT sho
 
 - Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).<br>
 
+### Access ELK via the Laptop IP
 Access Kibana: https://ELK:5601
