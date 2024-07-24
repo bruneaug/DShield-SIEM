@@ -13,7 +13,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield-SIEM-
 # What it is Used For
 This docker is custom built to be used with the [DShield Honeypot](https://isc.sans.edu/tools/honeypot/) to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The suggested installation is to install the DShield sensor in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS either in your network or in the cloud of your choice.<br>
 
-- This was tested on Ubuntu 20.04 & 22.04 LTS<br>
+- This was tested on Ubuntu 20.04, 22.04 & 24.04 LTS<br>
 - Step 1 build Ubuntu<br>
 - Step 2 install docker and ELK<br>
 - Step 3 install and configure Filebeat on DShield Sensor(s)<br>
@@ -26,7 +26,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Minimum 300 GB partition assigned to /var/lib/docker<br>
 - Adding a 300 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Build_a_Docker_Partition.md
 ## Elastic Packages Installed
-### ELK Current Version: 8.14.0 (Updated June 2024)
+### ELK Current Version: 8.14.3 (Updated July 2024)
 - Kibana
 - Elasticsearch
 - Logstash
