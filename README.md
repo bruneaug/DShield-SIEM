@@ -320,7 +320,9 @@ $ sudo systemctl start softflowd<br>
 ### Filebeat Tracking File
 Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
 The location of this file:<br>
-$ cd /var/lib/filebeat/registry/filebeat 
+$ cd /var/lib/filebeat/registry/filebeat<br>
+
+If you are planning to resend all the logs because your ELK server got rebuild, _stop filebeat, delete log.json and restart filebeat_.
 
 ## Want to add Elastic-Agent to other Devices?
 Follow this step-by-step documents to install the elastic-agent to the DShield sensor<br>
