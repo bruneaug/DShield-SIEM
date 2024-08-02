@@ -181,6 +181,9 @@
             },
             "code": {
               "type": "keyword"
+            },
+            "ingested": {
+              "type": "date"
             }
           }
         },
