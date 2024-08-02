@@ -181,6 +181,9 @@
             },
             "code": {
               "type": "keyword"
+            },
+            "ingested": {
+              "type": "date"
             }
           }
         },
@@ -192,13 +195,6 @@
             "domain": {
               "ignore_above": 1024,
               "type": "keyword"
-            },
-            "as_org": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "asn": {
-              "type": "long"
             },
             "bytes": {
               "type": "long"
@@ -515,4 +511,3 @@
     }
   }
 }
-
