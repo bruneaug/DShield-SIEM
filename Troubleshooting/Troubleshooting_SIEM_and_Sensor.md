@@ -101,6 +101,32 @@ If you do, try removing the public key and try to login again<br>
 
 $ sudo grep your_account /var/log/syslog<br>
 
+## IPTables Issues
+These steps is for troubleshooting Ubuntu OS. The iptables firewall is located:<br>
+$ sudo cat /etc/network/iptables
+
+Firewall won't start:<br>
+Lookin for any forms of errors in syslog that might indicate why it isn't starting.<br>
+$ sudo grep -i error /var/log/syslog | grep iptables
+
+Normal output of firewall when checking the status:<br>
+$ sudo systemctl status dshieldfw
+<pre>
+dshieldfw.service - DShield Firewall Configuration
+  Loaded: loaded (/etc/systemd/system/dshieldfw.service; enabled; preset: enabled)
+  Active: inactive (dead) since Fri 2024-08-09 16:58:28 UTC; 3h 53min ago
+Duration: 1.616s
+    Docs: https://isc.sans.edu
+Main PID: 642 (code=exited, status=0/SUCCESS)
+     CPU: 19ms
+
+Aug 09 16:58:26 collector systemd[1]: Started dshieldfw.service - DShield Firewall Configuration.
+Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfully.
+****
+</pre>
+$ sudo systemctl restart dshieldfw<br>
+$ sudo systemctl status dshieldfw<br>
+
 # DShield SIEM Setup
 
 The example to setup a docker partition is for 300GB but it can be more if you wish:<br>
