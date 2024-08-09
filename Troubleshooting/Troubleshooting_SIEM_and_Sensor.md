@@ -69,6 +69,9 @@ twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 </pre>
 
 ## Logs Location
+Enable TTYLog by editing this file. It is important to remember when you update the DShield sensor this will reset to false.<br>
+Look for: ttylog = false to ttylog = true<br>
+$ sudo vi /srv/cowrie/cowrie.cfg 
 
 /var/log/dshield.log -> firewall<br>
 /srv/db -> webhoneypot-*.json<br>
