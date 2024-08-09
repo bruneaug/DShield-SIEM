@@ -23,6 +23,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Minimum 8+ GB RAM<br>
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.<br>
 - 4-8 Cores<br>
+- Add 2 partitions, one for the OS, the other for docker<br>
 - Minimum 300 GB partition assigned to /var/lib/docker<br>
 - After Ubuntu is rebooted, setup the docker partition<br>
 - Adding a 300 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Build_a_Docker_Partition.md
