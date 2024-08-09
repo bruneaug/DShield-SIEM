@@ -42,6 +42,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-upd
  $ sudo install -m 0755 -d /etc/apt/keyrings<br>
  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br>
  $ sudo chmod a+r /etc/apt/keyrings/docker.gpg<br>
+ **Note**: You may need to take the next line, remove the backlash (\) and put everythin in a single line in Notepad to run this echo.<br>
  $ echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\<br>
    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
  $ sudo apt update && sudo apt upgrade<br>
