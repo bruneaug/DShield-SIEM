@@ -17,17 +17,18 @@ logs for longer, you can add a separate partition.<br>
 As an example, see: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Build_a_Docker_Partition.md<br>
 MAX_DISK_USE=75
 
-Interface to 'listen' to.
-INTERFACE="_ens18_"
+Interface to 'listen' to.<br>
+INTERFACE="**_ens18_**"
 
 Edit the default filter that exclude Logstash (5044), Elastic (8220, 9200), remote SSH management (12222) and DNS (UDP/53)<br>
 Change the host IP address (192.168.25.105) with your sensor IP. You can modify the filter to meet your needs.<br>
 
-_FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or port 12222 or udp port 53\)'_<br>
--- Then save the changes
-
-Search for INTERFACE and replace ens18 with the current interface<br>
 $ sudo vi /etc/init.d/log_packets.sh<br>
+Search for INTERFACE and replace **ens18** with the current interface<br>
+
+Update the filter to match your sensor IP<br>
+_**FILTER='src host 192.168.25.105 or dst host 192.168.25.105 and not \(port 9200 or port 5044 or port 8220 or port 12222 or udp port 53\)'**_<br>
+-- Then save the changes
 
 ### Lets start packet capture
 $ sudo /etc/init.d/log_packets.sh start<br>
