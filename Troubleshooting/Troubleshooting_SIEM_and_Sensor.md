@@ -54,7 +54,7 @@ Add root cronjob to delay start if part to the PI won't start the isc-agent:<br>
 
 $ sudo /srv/dshield/status.sh<br>
 $ sudo lsof -i -P -n | grep LISTEN<br>
-<pre></pre>
+<pre>
 guy@dshieldhp1:~/dshield$ sudo lsof -i -P -n | grep LISTEN
 systemd       1            root  209u  IPv6   7839      0t0  TCP *:12222 (LISTEN)
 systemd-r   553 systemd-resolve   15u  IPv4   7685      0t0  TCP 127.0.0.53:53 (LISTEN)
