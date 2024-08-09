@@ -35,7 +35,15 @@ sudo su cowrie -<br>
 This is the location for the DShield sensor configuration.<br>
 $ sudo vi /etc/dshield.ini<br>
 
-## Troubleshooting DShield Agent
+## Troubleshooting DShield isc-agent
+
+Sometimes thew isc-agent has errors such as this picture:<br>
+
+![isc_agent_error](https://github.com/user-attachments/assets/b9c3e43b-4de5-444d-960a-7e1c84634362)
+
+if /var/log/dshield.log is missing do the following to create an empty file:<br>
+$ sudo touch /var/log/dshield.log<br>
+$ sudo chown  syslog:adm /var/log/dshield.log<br>
 
 Can you run the following commands:<br>
 
@@ -47,6 +55,7 @@ $ sudo systemctl start isc-agent<br>
 $ sudo systemctl restart isc-agent<br>
 $ sudo systemctl status isc-agent<br>
 $ sudo systemctl enable isc-agent<br>
+
 
 ## PI Won't start IPTables & isc-agent
 
