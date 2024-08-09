@@ -128,14 +128,20 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 ****
 </pre>
 $ sudo systemctl restart dshieldfw<br>
-$ sudo systemctl status dshieldfw<br>
+$ sudo systemctl status dshieldfw<br
+
+## Update the DShield Sensor
+
+$ cd dshield<br>
+$ sudo git pull<br>
+$ sudo bin/install.sh --update<br>
+
+## OS Update
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
 
 # Troubleshooting DShield SIEM
-
-The example to setup a docker partition is for 300GB but it can be more if you wish:<br>
-https://github.com/bruneaug/DShield-SIEM/tree/main<br>
-
-Picture showing 2 partitions
 
 ## DShield SIEM main page is missing some data
 If the main interface is only showing some logs and not all of them like the example below, check the tables next to make sure if have been loaded correcly.<br>
