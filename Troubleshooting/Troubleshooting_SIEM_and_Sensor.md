@@ -127,3 +127,7 @@ In the Kibana console<br>
 Go to Management -> Kibana -> Data Views -> select cowrie*<br>
 Select **Edit** in the upper Right corner<br>
 Select **Save** to refresh the index<br>
+
+## Docker Troubleshooting Commands
+This is a list of command that can be useful to troubleshoot issues with the docker.<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful_commands..md
