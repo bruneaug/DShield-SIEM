@@ -1,5 +1,8 @@
-Building a Separate Docker Partition
-====================================
+# 300GB Partition
+Before you start, make sure you have 2 partitions with the SIEM<br>
+![image](https://github.com/user-attachments/assets/b7b9cffe-74d9-4b5f-a895-59b4c8cf7e49)
+
+# Building a Separate Docker Partition
 
 This is an example to create a separate docker partition in Linux to mount the drive to:<br>
 /var/lib/docker
