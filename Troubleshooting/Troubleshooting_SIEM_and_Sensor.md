@@ -1,7 +1,7 @@
  # Troubleshooting DShield Sensor
 
-https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md
-https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md
+https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
+https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
 
 ## Reset & Reinstall
 
