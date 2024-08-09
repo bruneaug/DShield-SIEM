@@ -109,11 +109,12 @@ https://github.com/bruneaug/DShield-SIEM/tree/main<br>
 Picture showing 2 partitions
 
 ## DShield SIEM main page is missing some data
+If the main interface is only showing some logs and not all of them like the example below, check the tables next to make sure if have been loaded correcly.<br>
+This picture shows only the iptables logs. Something isn't configured correctly.
 
-Check the folowing tables to make sure they are correctly loaded<br>
+![DShield_Interface_Missing_logs](https://github.com/user-attachments/assets/09832dd1-7fff-45ba-b10e-3c0b7eb2b298)
 
-Picture here of index example
-
+Check the folowing tables to make sure they are correctly loaded with the date as an extension?<br>
 Go to Management -> Data -> Index Management<br>
 Type **cowrie** in the search box<br>
 Do they all look like this with the date? You can also see there is data in the indices<br>
