@@ -107,13 +107,14 @@ Check the folowing tables to make sure they are correctly loaded<br>
 Picture here of index example
 
 Go to Management -> Data -> Index Management<br>
-Type cowrie in the search box<br>
-Do they all look like this with the date?<br>
+Type **cowrie** in the search box<br>
+Do they all look like this with the date? You can also see there is data in the indices<br>
 
-Put picture here
+![image](https://github.com/user-attachments/assets/623df8e9-ceb0-4a44-b635-16dc91aef143)
 
+If there is data in the indice, you need to refresh the cowrie* data table to force a reload<br>
 You likely need to do this to refresh the index:<br>
 In the Kibana console<br>
 Go to Management -> Kibana -> Data Views -> select cowrie*<br>
-Select Edit in the Right corner<br>
-Select Save to refresh the index<br>
+Select **Edit** in the upper Right corner<br>
+Select **Save** to refresh the index<br>
