@@ -76,6 +76,10 @@ twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
 
+## Router Port Forwarding 
+This is an example of custom router port forwarding to the DShield sensor.<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield_Sensor_Port_Forwardng_Example.PNG
+
 ## Disable WIFI
 This command should disable WIFI on the PI<br>
 $ sudo nmcli radio wifi off<br>
