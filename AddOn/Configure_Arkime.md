@@ -11,6 +11,7 @@ exit
 
 # Download & Install Arkime
 
+This installation is only for Ubuntu 20.04<br>
 $ mkdir arkime<br>
 $ cd arkime<br>
 $ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
