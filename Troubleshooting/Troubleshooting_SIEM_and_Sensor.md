@@ -55,17 +55,16 @@ Add root cronjob to delay start if part to the PI won't start the isc-agent:<br>
 $ sudo /srv/dshield/status.sh<br>
 $ sudo lsof -i -P -n | grep LISTEN<br>
 <pre>
-guy@dshieldhp1:~/dshield$ sudo lsof -i -P -n | grep LISTEN
-systemd       1            root  209u  IPv6   7839      0t0  TCP *:12222 (LISTEN)
-systemd-r   553 systemd-resolve   15u  IPv4   7685      0t0  TCP 127.0.0.53:53 (LISTEN)
-systemd-r   553 systemd-resolve   17u  IPv4   7687      0t0  TCP 127.0.0.54:53 (LISTEN)
-sshd       3645            root    3u  IPv6   7839      0t0  TCP *:12222 (LISTEN)
-master    14777            root   13u  IPv4  51880      0t0  TCP *:25 (LISTEN)
-master    14777            root   14u  IPv6  51881      0t0  TCP *:25 (LISTEN)
-python3   14858            root    9u  IPv4  52169      0t0  TCP *:8000 (LISTEN)
-python3   14858            root   10u  IPv4  52170      0t0  TCP *:8443 (LISTEN)
-twistd    15068          cowrie   11u  IPv4  53444      0t0  TCP *:2222 (LISTEN)
-twistd    15068          cowrie   12u  IPv4  53445      0t0  TCP *:2223 (LISTEN)
+guy@collector:~$ sudo lsof -i -P -n | grep LISTEN
+systemd      1            root  233u  IPv6   7564      0t0  TCP *:12222 (LISTEN)
+systemd-r  556 systemd-resolve   15u  IPv4   8331      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  556 systemd-resolve   17u  IPv4   8333      0t0  TCP 127.0.0.54:53 (LISTEN)
+python3    962            root    9u  IPv4  10880      0t0  TCP *:8000 (LISTEN)
+python3    962            root   10u  IPv4  10881      0t0  TCP *:8443 (LISTEN)
+master    1355            root   13u  IPv4  11561      0t0  TCP *:25 (LISTEN)
+sshd      1386            root    3u  IPv6   7564      0t0  TCP *:12222 (LISTEN)
+twistd    3050          cowrie   11u  IPv4  22593      0t0  TCP *:2222 (LISTEN)
+twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 </pre>
 
 ## Logs Location
