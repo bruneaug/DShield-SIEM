@@ -130,7 +130,7 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 $ sudo systemctl restart dshieldfw<br>
 $ sudo systemctl status dshieldfw<br>
 
-# DShield SIEM Setup
+# Troubleshooting DShield SIEM
 
 The example to setup a docker partition is for 300GB but it can be more if you wish:<br>
 https://github.com/bruneaug/DShield-SIEM/tree/main<br>
