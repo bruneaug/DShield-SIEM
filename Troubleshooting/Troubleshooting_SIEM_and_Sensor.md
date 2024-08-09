@@ -41,7 +41,7 @@ Sometimes thew isc-agent has errors such as this picture:<br>
 
 ![isc_agent_error](https://github.com/user-attachments/assets/b9c3e43b-4de5-444d-960a-7e1c84634362)
 
-if /var/log/dshield.log is missing do the following to create an empty file:<br>
+If _/var/log/dshield.log_ is missing do the following to create an empty file:<br>
 $ sudo touch /var/log/dshield.log<br>
 $ sudo chown  syslog:adm /var/log/dshield.log<br>
 
