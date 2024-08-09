@@ -122,7 +122,7 @@ Do they all look like this with the date? You can also see there is data in the 
 ![image](https://github.com/user-attachments/assets/623df8e9-ceb0-4a44-b635-16dc91aef143)
 
 If there is data in the indice, you need to refresh the cowrie* data table to force a reload<br>
-You likely need to do this to refresh the index:<br>
+You need to do this step to refresh the index:<br>
 In the Kibana console<br>
 Go to Management -> Kibana -> Data Views -> select cowrie*<br>
 Select **Edit** in the upper Right corner<br>
