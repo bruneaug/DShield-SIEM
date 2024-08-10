@@ -183,12 +183,15 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful
 
 # Linux Commands
 
-Official JQ site: https://jqlang.github.io/jq/download/
-
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
+
+Official JQ site: https://jqlang.github.io/jq/download/
 
 JQ paper for parsing various cowrie logs by Kaela Reed<br>
 https://isc.sans.edu/diary/The+Art+of+JQ+and+Commandline+Fu+Guest+Diary/31006
 
 Paper for corralation DShield Sensor data by Joshua Jobe<br>
 https://isc.sans.edu/diary/Is+that+It+Finding+the+Unknown+Correlations+Between+Honeypot+Logs+PCAPs+Guest+Diary/30962
+
+Parsing cowrie logs with Python by Josh Jobe<br>
+https://github.com/jrjobe/DShield-Cowrie-json-Parser
