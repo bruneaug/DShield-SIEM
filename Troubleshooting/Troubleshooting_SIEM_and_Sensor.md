@@ -3,6 +3,9 @@
 https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
 https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
 
+## Review Error Logs
+sudo cat /srv/log/isc-agent.err
+
 ## Reset & Reinstall
 This command is used to reset the DShield sensor and remove everything.<br>
 
