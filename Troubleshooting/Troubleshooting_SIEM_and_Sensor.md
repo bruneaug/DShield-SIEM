@@ -16,7 +16,7 @@ This command is used to reset the DShield sensor and remove everything.<br>
 $ sudo ./bin/quickreset.sh<br>
 $ sudo ./bin/install.sh<br>
 
-## Connecting to ISC
+## Testing Connection to ISC
 Testing connection to ISC website<br>
 curl -s 'https://isc.sans.edu/api/portcheck?json'<br>
 
