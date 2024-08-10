@@ -3,6 +3,9 @@
 https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
 https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
 
+## DShield Sensor Setup
+The sensor only support 64-Bit OS on the PI and any combination of VM or hardware sensor<br>
+
 ## Review Error Logs
 After the installation or upgrade, you can review the errors during the installation<br>
 sudo cat /srv/log/isc-agent.err
