@@ -92,7 +92,7 @@ twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 </pre>
 
 ## Logs Location
-Enable TTYLog by editing this file. It is important to remember when you update the DShield sensor this will reset to false.<br>
+Enable TTYLog by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
 Look for: ttylog = false to ttylog = true<br>
 $ sudo vi /srv/cowrie/cowrie.cfg 
 
@@ -151,7 +151,7 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 $ sudo systemctl restart dshieldfw<br>
 $ sudo systemctl status dshieldfw<br
 
-## Update the DShield Sensor
+##  the DShield Sensor
 
 $ cd dshield<br>
 $ sudo git pull<br>
@@ -162,6 +162,7 @@ $ sudo reboot<br>
 
 $ sudo apt-get update<br>
 $ sudo apt-get upgrade
+$ sudo reboot<br>
 
 ## Sensor Log Backup
 You are encourage to setup some kind of backup for your logs since the sensor is setup by defaul to keep the cowrie logs for 8 days and the iptables only daily.<br>
