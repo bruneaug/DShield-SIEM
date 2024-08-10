@@ -91,7 +91,8 @@ $ sudo vi /srv/cowrie/cowrie.cfg
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
 
-## Router Port Forwarding 
+## Router Port Forwarding or DMZ
+The easiest way of getting your DShield sensor expose it to add it to the **DMZ** of your router.<br>
 This is an example of custom router port forwarding to the DShield sensor.<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield_Sensor_Port_Forwardng_Example.PNG
 
