@@ -180,3 +180,9 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful
 
 # Linux Commands
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
+
+JQ paper for parsing various cowrie logs by Kaela Reed
+https://isc.sans.edu/diary/The+Art+of+JQ+and+Commandline+Fu+Guest+Diary/31006
+
+Paper for corralation DShield Sensor data by Joshua Jobe
+https://isc.sans.edu/diary/Is+that+It+Finding+the+Unknown+Correlations+Between+Honeypot+Logs+PCAPs+Guest+Diary/30962
