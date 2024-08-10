@@ -182,6 +182,9 @@ This is a list of command that can be useful to troubleshoot issues with the doc
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful_commands..md
 
 # Linux Commands
+
+Official JQ site: https://jqlang.github.io/jq/download/
+
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
 
 JQ paper for parsing various cowrie logs by Kaela Reed<br>
