@@ -169,6 +169,11 @@ You are encourage to setup some kind of backup for your logs since the sensor is
 These scripts can be used to backup you logs nightly<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Backup_DShield_Sensor_Logs.md
 
+## Checking Cowrie Logs in ISC
+Access your logs at this location on the ISC website. The 3 highlighted are the logs populating your data in your account.<br>
+![image](https://github.com/user-attachments/assets/e8a10de8-49c9-4f6f-bd5a-ddd2bc34f547)
+
+
 # Troubleshooting DShield SIEM
 
 ## Installing DShield SIEM on P5
