@@ -216,5 +216,14 @@ https://isc.sans.edu/diary/The+Art+of+JQ+and+Commandline+Fu+Guest+Diary/31006
 Paper for corralation DShield Sensor data by Joshua Jobe<br>
 https://isc.sans.edu/diary/Is+that+It+Finding+the+Unknown+Correlations+Between+Honeypot+Logs+PCAPs+Guest+Diary/30962
 
+## Various Linux Commands
+$ sudo last                       -> shows who was login the beside your account<br>
+$ netstat -an | grep 5044         -> Check if the port is active and connected to an IP
+$ w                               -> Shows who else is login
+$ uptime                          -> Shows how long the server has been running without a reboot
+$ crontab -l                      -> List all the active cronjobs
+
+
+
 Parsing cowrie logs with Python by Josh Jobe<br>
 https://github.com/jrjobe/DShield-Cowrie-json-Parser
