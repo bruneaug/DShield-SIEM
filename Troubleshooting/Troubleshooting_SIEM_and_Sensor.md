@@ -156,6 +156,7 @@ $ sudo systemctl status dshieldfw<br
 $ cd dshield<br>
 $ sudo git pull<br>
 $ sudo bin/install.sh --update<br>
+$ sudo reboot<br>
 
 ## OS Update
 
