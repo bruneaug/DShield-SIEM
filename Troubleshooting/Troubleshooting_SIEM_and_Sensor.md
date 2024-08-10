@@ -159,7 +159,7 @@ $ sudo bin/install.sh --update<br>
 
 ## OS Update
 
-$ sudo apt-get update
+$ sudo apt-get update<br>
 $ sudo apt-get upgrade
 
 ## Sensor Log Backup
