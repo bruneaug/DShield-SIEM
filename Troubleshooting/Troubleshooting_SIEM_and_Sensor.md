@@ -20,6 +20,10 @@ $ sudo ./bin/install.sh<br>
 Testing connection to ISC website<br>
 curl -s 'https://isc.sans.edu/api/portcheck?json'<br>
 
+## Testing iptables Logs
+
+$ sudo /srv/dshield/fwlogparser.py
+
 ## Cannot Login to DShield Sensor
 
 $ ps -aef | grep 12222<br>
