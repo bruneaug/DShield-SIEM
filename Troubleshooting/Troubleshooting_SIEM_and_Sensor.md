@@ -153,6 +153,9 @@ $ sudo apt-get upgrade
 
 # Troubleshooting DShield SIEM
 
+## Installing DShield SIEM on P5
+https://github.com/amelete11235/homelab/blob/main/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM.md
+
 ## DShield SIEM main page is missing some data
 If the main interface is only showing some logs and not all of them like the example below, check the tables next to make sure if have been loaded correcly.<br>
 This picture shows only the iptables logs. Something isn't configured correctly.
