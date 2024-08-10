@@ -158,6 +158,11 @@ $ sudo bin/install.sh --update<br>
 $ sudo apt-get update
 $ sudo apt-get upgrade
 
+## Sensor Log Backup
+You are encourage to setup some kind of backup for your logs since the sensor is setup by defaul to keep the cowrie logs for 8 days and the iptables only daily.<br>
+These scripts can be used to backup you logs nightly<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Backup_DShield_Sensor_Logs.md
+
 # Troubleshooting DShield SIEM
 
 ## Installing DShield SIEM on P5
