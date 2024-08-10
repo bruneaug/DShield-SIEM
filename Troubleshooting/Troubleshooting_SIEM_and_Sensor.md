@@ -4,6 +4,7 @@ https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
 https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
 
 ## Review Error Logs
+After the installation or upgrade, you can review the errors during the installation<br>
 sudo cat /srv/log/isc-agent.err
 
 ## Reset & Reinstall
