@@ -36,7 +36,7 @@ $ git pull (Update the code from Github)<br>
 $ cp -f ../.env .<br>
 $ sudo docker compose rm -f -v<br>
 $ sudo docker compose up --build -d<br>
-**Note**: Remove this file after the update, it will prevent making any changes to Data Views for the cowrie* index.<br>
+**Note**: Remove this file after the update, it will prevent making any changes to Data Views for the cowrie* index. If you made some changes to cowrie* TTYLog and Arkime, those will need to be reset again.<br>
 $ rm -f ~/DShield-SIEM/scripts/dshield_sensor_8.14.0.ndjson<br>
 
 ### Removing a Container that Fail to Start
