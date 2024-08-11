@@ -26,7 +26,7 @@ $ sudo docker inspect logstash<br>
 # Download Github Update
 Make a backup of the .env file. If you forget, you need to redo the **Important** part.
 $ cd DShield-SIEM<br>
-$ mv .evn ../<br>
+$ mv .env ../<br>
 $ sudo docker compose stop<br>
 **-> Important**: Edit the .env and reset your your hostname & IP address variables. The other option is to manually update to the new version and **skip git pull**<br>
 $ git pull (Update the code from Github)<br>
