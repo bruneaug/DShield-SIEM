@@ -20,6 +20,8 @@ $ sudo docker builder prune (Clear the build cache if > 0)<br>
 
 $ sudo docker stop fleet-server<br>
 $ sudo docker restart logstash  (restart logstash service)<br>
+$ sudo docker stop kibana<br>
+$ sudo docker start kibana<br>
 $ sudo docker restart kibana (restart kibana service)<br>
 $ sudo docker logs logstash (looking at debugging information)<br>
 $ sudo docker inspect logstash<br>
