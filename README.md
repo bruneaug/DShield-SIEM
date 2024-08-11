@@ -341,18 +341,7 @@ If you **sudo systemctl enable docker** during the setup above<br>
 Docker will automatically start all the docker services. If you need to stop and start the docker service, use the following commands:<br>
 $ cd DShield-SIEM<br>
 $ sudo docker compose stop<br>
-$ sudo docker compose up -d<br>
-
-## Edit the Script and Update the User Account Password
-
-$ sudo vi /etc/init.d/startelk.sh
-
-The script is configured with the default password to sudo: **training**<br>
-You need to change it to the account's password in use.<br>
-You need to change the account under which location DShield-SIEM is located.<br>
-
-PASSWORD="**training**"
-ELK="**/home/guy/**DShield-SIEM"
+$ sudo docker compose start<br>
 
 # Useful Docker Commands
 I have move the list of commands to its own page<br>
