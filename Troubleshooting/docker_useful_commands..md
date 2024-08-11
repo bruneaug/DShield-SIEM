@@ -24,7 +24,7 @@ $ sudo docker logs logstash (looking at debugging information)<br>
 $ sudo docker inspect logstash<br>
 
 # Download Github Update
-Make a backup of the .env file. If you forget, you need to redo the **Important** part.
+Make a backup of the .env file. If you forget, you need to redo the **Important** part.<br>
 $ cd DShield-SIEM<br>
 $ mv .env ../<br>
 $ sudo docker compose stop<br>
