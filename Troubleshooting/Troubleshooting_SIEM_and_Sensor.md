@@ -175,6 +175,9 @@ https://isc.sans.edu/diary/DShield+Honeypot+Maintenance+and+Data+Retention/30024
 Access your logs at this location on the ISC website. The 3 highlighted are the logs populating your data in your account.<br>
 ![image](https://github.com/user-attachments/assets/e8a10de8-49c9-4f6f-bd5a-ddd2bc34f547)
 
+## DShield Sensor in Cloud
+If you are setting up a sensor in one of the cloud and your home IP isn't static, consider setting up a script (example below) to check your home IP and update the firewall as necessary so you don't loose access to your sensor. <br>
+https://isc.sans.edu/diary/DShield+Sensor+Setup+in+Azure/29370
 
 # Troubleshooting DShield SIEM
 
