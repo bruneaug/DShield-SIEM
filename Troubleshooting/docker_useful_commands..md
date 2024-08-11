@@ -35,8 +35,11 @@ $ sudo docker compose stop<br>
 $ git pull (Update the code from Github)<br>
 $ cp -f ../.env .<br>
 $ sudo docker compose rm -f -v<br>
-$  sudo docker compose up --build -d
-### Remove a Container that Fail to Start
+$ sudo docker compose up --build -d
+**Note**: Remove this file after the update, it will prevent making any changes to Data Views for the cowrie* index.
+$ rm -f ~/DShield-SIEM/scripts/dshield_sensor_8.14.0.ndjson
+
+### Removing a Container that Fail to Start
 $ sudo docker inspect logstash
 
 # Login each Container<br>
