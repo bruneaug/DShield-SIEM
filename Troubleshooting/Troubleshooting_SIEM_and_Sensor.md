@@ -227,6 +227,6 @@ $ netstat -an | grep 5044               -> Check if the port is active and conne
 $ w                                     -> Shows who else is login<br>
 $ uptime                                -> Shows how long the server has been running without a reboot<br>
 $ crontab -l                            -> List all the active cronjobs<br>
-$ netstat -an | grep '5601\|9200\5044'  -> Shows if Elasticsearch and logstash are listening<br>
+$ netstat -an | grep '5601\|9200\|5044'  -> Shows if Elasticsearch and logstash are listening<br>
 
 
