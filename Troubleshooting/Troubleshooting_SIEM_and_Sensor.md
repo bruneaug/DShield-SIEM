@@ -223,10 +223,10 @@ https://github.com/jrjobe/DShield-Cowrie-json-Parser
 
 ## Various Linux Commands
 $ sudo last                             -> shows who was login the beside your account<br>
-$ netstat -an | grep 5044               -> Check if the port is active and connected to an IP
-$ w                                     -> Shows who else is login
-$ uptime                                -> Shows how long the server has been running without a reboot
-$ crontab -l                            -> List all the active cronjobs
-$ netstat -an | grep '5601\|9200\5044'  -> Shows if Elasticsearch and logstash are listening
+$ netstat -an | grep 5044               -> Check if the port is active and connected to an IP<br>
+$ w                                     -> Shows who else is login<br>
+$ uptime                                -> Shows how long the server has been running without a reboot<br>
+$ crontab -l                            -> List all the active cronjobs<br>
+$ netstat -an | grep '5601\|9200\5044'  -> Shows if Elasticsearch and logstash are listening<br>
 
 
