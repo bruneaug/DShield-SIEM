@@ -338,10 +338,9 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 
 # Starting ELK after a Reboot
 If you **sudo systemctl enable docker** during the setup above<br>
-Docker will automatically start all the docker services. If you need to stop and start the docker service, use the following commands:<br>
-$ cd DShield-SIEM<br>
-$ sudo docker compose stop<br>
-$ sudo docker compose start<br>
+Docker will automatically start all the docker services. If you need to restart the docker service, use either of these commands:<br>
+$ sudo systemctl restart docker<br> or
+$ sudo reboot the server
 
 # Useful Docker Commands
 I have move the list of commands to its own page<br>
