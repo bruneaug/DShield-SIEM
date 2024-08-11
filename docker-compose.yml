@@ -205,7 +205,7 @@ services:
     volumes:
       - ${SCRIPTS_DIR}:/usr/share/scripts
       - certs:/usr/share/config/certs
-    restart: on-failure:3
+    #restart: on-failure:3
     user: root
     entrypoint: /usr/share/scripts/cowrie-setup.sh
     environment: 
