@@ -337,11 +337,11 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 ![image](https://github.com/user-attachments/assets/a700729e-b2e4-4c78-833c-759df4ff609a)
 
 # Starting ELK after a Reboot
-This script will start all the ELK components and if installed, the Arkime services.
-
-Install startelk.tgz tarball to ELK server as follow:<br>
-$ cd ~/DShield-SIEM/AddOn<br>
-$ sudo tar zxvf startelk.tgz -C /
+If you **sudo systemctl enable docker** during the setup above<br>
+Docker will automatically start all the docker services. If you need to stop and start the docker service, use the following commands:<br>
+$ cd DShield-SIEM<br>
+$ sudo docker compose stop<br>
+$ sudo docker compose up -d<br>
 
 ## Edit the Script and Update the User Account Password
 
