@@ -70,4 +70,4 @@ $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/detection_engine/
 
 # Delete Mapping File after it has been loaded in Kibana
 # This prevent overwriting changes made in the mapping file until the next update
-rm dshield_sensor*.ndjson
+rm dshield_sensor_8.14.0.ndjson
