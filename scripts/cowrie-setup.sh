@@ -12,6 +12,9 @@
 # Date: 10 July 2024
 # Version: 1.7
 # Added SIEM Detection Rule
+# Date: 12 August 2024
+# Version: 1.8
+# Added remove command to delete the dashboard mapping file after it has been removed.
 
 # All the policies have been updated to reflect the changes in the DShield log collection.
 # This is a significant update from the initial publication on the ISC Storm Center website
@@ -64,3 +67,7 @@ $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_im
 # Detection SIEM Rules setup
 echo "Setting up SIEM Detection Rule for Cowrie Activity"
 $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
+
+# Delete Mapping File after it has been loaded in Kibana
+# This prevent overwriting changes made in the mapping file until the next update
+rm dshield_sensor*.ndjson
