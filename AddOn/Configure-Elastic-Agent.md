@@ -85,6 +85,7 @@ Set the interface (usually eth0 for PI)<br>
 Set: options= "-v 9 -P udp -n 127.0.0.1:2055" (Must be double quotes)<br>
 Save the changes and restart the service<br>
 $ sudo systemctl restart softflowd<br>
+$ sudo systemctl enable softflowd<br>
 
 $ netstat -an | grep 2055  (Confirm softflowd is running)<br>
 The flows can be viewed with this dashboard:<br>
