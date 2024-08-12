@@ -31,13 +31,13 @@ Make a backup of the .env file. If you forget, you need to redo the **Important*
 $ cd DShield-SIEM<br>
 $ mv .env ../<br>
 $ sudo docker compose stop<br>
-**-> Important**: Edit the .env and reset your your hostname & IP address variables. The other option is to manually update to the new version and **skip git pull**<br>
+**-> Important**: If you forgot to backup the .env file, edit the .env and reset your your hostname & IP address variables.<br>
 $ git pull (Update the code from Github)<br>
 $ cp -f ../.env .<br>
 $ sudo docker compose rm -f -v<br>
 $ sudo docker compose up --build -d<br>
-**Note**: Remove this file after the update, it will prevent making any changes to Data Views for the cowrie* index. If you made some changes to cowrie* TTYLog and Arkime, those will need to be reset again.<br>
-$ rm -f ~/DShield-SIEM/scripts/dshield_sensor_8.14.0.ndjson<br>
+**Note**: The file in this location ~/DShield-SIEM/scripts/dshield_sensor\*ndjson will be removed by the script after cowrie-setup.exe loads. This will prevent making any changes to Data Views for the cowrie* index.<br>
+If an updated dshield_sensor\*ndjson is published, you will need to update the TTYLog and Arkime after the update has been applied.<br>
 
 ### Removing a Container that Fail to Start
 $ sudo docker inspect logstash
