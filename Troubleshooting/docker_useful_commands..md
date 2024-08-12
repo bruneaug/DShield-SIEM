@@ -31,7 +31,7 @@ Make a backup of the .env file. If you forget, you need to redo the **Important*
 $ cd DShield-SIEM<br>
 $ mv .env ../<br>
 $ sudo docker compose stop<br>
-**-> Important**: If you forgot to backup the .env file, edit the .env and reset your your hostname & IP address variables.<br>
+**-> Important**: If you forgot to backup the .env file or the ELK stack version has been updated,, edit the .env, reset your hostname & IP address variables. _Make your your backup match the current ELK stack version_<br>
 $ git pull (Update the code from Github)<br>
 $ cp -f ../.env .<br>
 $ sudo docker compose rm -f -v<br>
