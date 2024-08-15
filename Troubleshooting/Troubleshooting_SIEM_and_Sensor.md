@@ -91,6 +91,24 @@ twistd    3050          cowrie   11u  IPv4  22593      0t0  TCP *:2222 (LISTEN)
 twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 </pre>
 
+## Troubleshooting Filebeat Connection to Logstash
+\# sudo su -<br>
+\# filebeat test config<br>
+Expected output: _Config OK<br>_
+
+\# filebeat test output<br>
+Expected output:
+<pre>
+logstash: 192.168.25.231:5044...
+  connection...
+    parse host... OK
+    dns lookup... OK
+    addresses: 192.168.25.231
+    dial up... OK
+  TLS... WARN secure connection disabled
+  talk to server... OK
+</pre>
+
 ## Logs Location
 Enable TTYLog by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
 Look for: ttylog = false to ttylog = true<br>
