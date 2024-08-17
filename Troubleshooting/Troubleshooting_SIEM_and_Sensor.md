@@ -169,6 +169,14 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 $ sudo systemctl restart dshieldfw<br>
 $ sudo systemctl status dshieldfw<br
 
+## Custom IPTables Rules
+From Dr J.<br>
+Added local iptables rules that will be applied in addition to the automatic rules created by the install script. The intent is to allow you to add more flexible rule to allow access to the honeypot.<br>
+This has been an issue in particular for cloud based honeypots.<br>
+The rules are applied after the default rules are applied. A small dummy file with instructions is created by default.<br>
+ 
+$ sudo vi /etc/network/iptables.local
+
 ##  the DShield Sensor
 
 $ cd dshield<br>
