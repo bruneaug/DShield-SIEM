@@ -177,7 +177,7 @@ The rules are applied after the default rules are applied. A small dummy file wi
  
 $ sudo vi /etc/network/iptables.local
 
-##  the DShield Sensor
+## Update the DShield Sensor
 
 $ cd dshield<br>
 $ sudo git pull<br>
