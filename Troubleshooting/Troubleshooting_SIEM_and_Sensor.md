@@ -206,6 +206,25 @@ If you are setting up a sensor in one of the cloud and your home IP isn't static
 https://isc.sans.edu/diary/DShield+Sensor+Setup+in+Azure/29370
 AWS failed to access via TCP/12222 - Jesse recommend trying the EC2 serial console or the EC2 Instance Connect to reconnect to the sensor. If that fails, you may have to rebuild the sensor.<br>
 
+## SSH to Remote Sensor
+This option has been suggested by Michael Tigges.
+This gets stored in ~/.ssh/config and invoked with ssh honeypot or ssh jumpbox respectively.
+<pre>
+### Jumpbox
+Host jumpbox
+  HostName JUMPBOX-IP
+  Port 22
+  User root
+  IdentityFile ~/.ssh/_docean
+
+### Honeypot
+Host honeypot
+  HostName HONEYPOT-IP
+  User root
+  ProxyJump jumpbox
+  IdentityFile ~/.ssh/dshield
+  Port 12222
+</pre>
 # Troubleshooting DShield SIEM
 
 ## Installing DShield SIEM on PI 5
