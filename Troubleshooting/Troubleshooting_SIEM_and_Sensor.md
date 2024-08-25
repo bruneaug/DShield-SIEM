@@ -56,7 +56,7 @@ If _/var/log/dshield.log_ is missing do the following to create an empty file:<b
 $ sudo touch /var/log/dshield.log<br>
 $ sudo chown  syslog:adm /var/log/dshield.log<br>
 
-Can you run the following commands:<br>
+Run the following command to check the isc-agent status:<br>
 
 $ sudo systemctl status isc-agent<br>
 
@@ -110,7 +110,7 @@ logstash: 192.168.25.231:5044...
 </pre>
 
 ## Logs Location
-Enable TTYLog by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
+**Enable TTYLog** by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
 Look for: ttylog = false to ttylog = true<br>
 $ sudo vi /srv/cowrie/cowrie.cfg 
 
@@ -124,6 +124,11 @@ $ sudo vi /srv/cowrie/cowrie.cfg
 The easiest way of getting your DShield sensor expose it to add it to the **DMZ** of your router.<br>
 This is an example of custom router port forwarding to the DShield sensor.<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield_Sensor_Port_Forwardng_Example.PNG
+
+If you get this error, your webserver might not be exposed and need to check port forwarding<br>
+
+![image (1)](https://github.com/user-attachments/assets/1f8bd54b-7793-4de6-a1fb-b9cfa3ded2d5)
+
 
 ## Disable WIFI
 This command should disable WIFI on the PI<br>
