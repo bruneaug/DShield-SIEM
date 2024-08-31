@@ -67,6 +67,7 @@ $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_im
 # Detection SIEM Rules setup
 echo "Setting up SIEM Detection Rule for Cowrie Activity"
 $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
+$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/detection_engine/rules/_import?overwrite=true --form file=@threat_Intel_IP_Address_Indicator_Match_ISC_ThreatIntel.ndjson
 
 # Delete Mapping File after it has been loaded in Kibana
 # This prevent overwriting changes made in the mapping file until the next update
