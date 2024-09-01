@@ -181,9 +181,6 @@
             },
             "code": {
               "type": "keyword"
-            },
-            "ingested": {
-              "type": "date"
             }
           }
         },
@@ -655,6 +652,14 @@
                 },
                 "ip": {
                   "type": "ip"
+                }
+              }
+            },
+            "feed": {
+              "properties": {
+                "name": {
+                  "ignore_above": "1024",
+                  "type": "keyword"
                 }
               }
             }
