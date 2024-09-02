@@ -265,7 +265,9 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful
 
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
 
-Official JQ site: https://jqlang.github.io/jq/download/
+Official JQ site: https://jqlang.github.io/jq/download/<br>
+CSVJSON: https://csvjson.com/json2csv<br>
+Convert JSON to CSV: https://www.convertcsv.com/json-to-csv.htm
 
 JQ paper for parsing various cowrie logs by Kaela Reed<br>
 https://isc.sans.edu/diary/The+Art+of+JQ+and+Commandline+Fu+Guest+Diary/31006
