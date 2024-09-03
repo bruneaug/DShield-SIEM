@@ -16,12 +16,12 @@ This command is used to reset the DShield sensor and remove everything.<br>
 $ sudo ./bin/quickreset.sh<br>
 $ sudo ./bin/install.sh<br>
 
-## Testing Connection to ISC
+## Testing Connection to ISC Website
 Testing connection to ISC website<br>
 curl -s 'https://isc.sans.edu/api/portcheck?json'<br>
 
 ## Testing iptables Logs
-
+Testing connection to the ISC website to confirm the iptables logs are able to upload to the site. If it gives an error, provide the error in Slack to check what is the issue.<br>
 $ sudo /srv/dshield/fwlogparser.py
 
 ## Cannot Login to DShield Sensor
