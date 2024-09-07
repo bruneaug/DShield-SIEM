@@ -129,7 +129,6 @@ If you get this error, your webserver might not be exposed and need to check por
 
 ![image (1)](https://github.com/user-attachments/assets/1f8bd54b-7793-4de6-a1fb-b9cfa3ded2d5)
 
-
 ## Disable WIFI
 This command should disable WIFI on the PI<br>
 $ sudo nmcli radio wifi off<br>
@@ -188,6 +187,11 @@ $ cd dshield<br>
 $ sudo git pull<br>
 $ sudo bin/install.sh --update<br>
 $ sudo reboot<br>
+
+## Check if DShield Sensor is Receiving any Traffic
+If after checking the log files they are not storing log, use tcpdump to check if the sensor is receiving packets via port forwarding or the DMZ exposure.<br>
+$  ip address -> for the interface<br>
+$ sudo tcpdump -nni eth0 -c 1000 'host 192.168.25.105 and not dst net 192.168'<br>
 
 ## OS Update
 
