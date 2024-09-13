@@ -272,7 +272,7 @@ This is the output from Management → Stack Management → Advanced Settings<br
 
 # Setup Filebeat on DShield Sensor - Logs to ELK
 
-After adding the webhoneypot.sh script, add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
+Next step is to add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
 
 Use the following steps to install Filebeat using the following commands taken from this reference [3]: <br>
 
