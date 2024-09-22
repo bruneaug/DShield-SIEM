@@ -219,6 +219,10 @@ AWS failed to access via TCP/12222 - Jesse recommend trying the EC2 serial conso
 This option has been suggested by Michael Tigges.
 This gets stored in ~/.ssh/config and invoked with ssh honeypot or ssh jumpbox respectively.
 <pre>
+$ touch ~/.ssh/config
+$ chmod 600 ~/.ssh/config
+If needed, build your private/public keys.
+$ ssh-keygen
 ### Jumpbox
 Host jumpbox
   HostName JUMPBOX-IP
@@ -234,6 +238,8 @@ Host honeypot
   IdentityFile ~/.ssh/dshield
   Port 12222
 </pre>
+Login the honeypot with this simple command:<br>
+$ ssh honeypot<br>
 # Troubleshooting DShield SIEM
 
 ## Installing DShield SIEM on PI 5
