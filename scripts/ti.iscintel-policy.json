@@ -16,7 +16,7 @@
             "priority": 50
           },
           "allocate": {
-            "number_of_replicas": 0
+            "number_of_replicas": 1
           },
           "shrink": {
             "number_of_shards": 1
@@ -26,12 +26,10 @@
           }
         }
       }, 
-      "cold": {
-        "min_age": "30d",
+      "delete": {
+        "min_age": "60d",
         "actions": {
-          "set_priority": {
-            "priority": 0
-          }
+          "delete": {}
         }
       }
     }
