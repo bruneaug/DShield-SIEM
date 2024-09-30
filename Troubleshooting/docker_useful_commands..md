@@ -43,6 +43,10 @@ If an updated dshield_sensor\*ndjson is published, you will need to update the T
 ### Removing a Container that Fail to Start
 $ sudo docker inspect logstash
 
+## Removing all Docker Images
+Using this script will remove everything installed in docker<br>
+[https://github.com/jwasham/docker-nuke/blob/master/docker-nuke.sh](https://github.com/jwasham/docker-nuke/tree/master)
+
 # Login each Container<br>
 $ sudo docker exec -ti es01 bash<br>
 $ sudo docker exec -ti logstash bash<br>
