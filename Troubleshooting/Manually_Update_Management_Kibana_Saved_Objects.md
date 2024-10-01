@@ -14,8 +14,8 @@ Select and delete all objects like the picture below (list might be slighly diff
 
 The current or updated dashboard can be downloaded from Github using curl in Windows Download directory and wget in Linux as follow:<br>
 
-Windows: curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.14.0.ndjson<br>
-Linux: wget https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.14.0.ndjson<br>
+Windows: curl -LJO https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.15.0.ndjson<br>
+Linux: wget https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/dshield_sensor_8.15.0.ndjson<br>
 
 From the same Location: Saved → Objects<br>
 Select **Import**  to import the updated JSON dashboard file into Elasticsearch<br>
