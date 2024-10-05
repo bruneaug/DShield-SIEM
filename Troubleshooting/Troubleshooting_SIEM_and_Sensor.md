@@ -171,7 +171,7 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 ****
 </pre>
 $ sudo systemctl restart dshieldfw<br>
-$ sudo systemctl status dshieldfw<br
+$ sudo systemctl status dshieldfw<br>
 
 ## Custom IPTables Rules
 From Dr J.<br>
