@@ -67,6 +67,14 @@ $ sudo systemctl restart isc-agent<br>
 $ sudo systemctl status isc-agent<br>
 $ sudo systemctl enable isc-agent<br>
 
+## Extend Log Storage Past 8 Days
+To keep logs longer than 7 days, you need to edit:<br>
+$ sudo vi /etc/cron.d/dshield<br>
+
+Change the -ctime from +7 to the lenght you wish:<br>
+
+0 6 * * * root find /srv/db -name 'webhoneypot*json' -ctime +7 -delete<br>
+0 10 * * * root find /srv/cowrie/var/log/cowrie -name 'cowrie.*' -ctime +7 -delete<br>
 
 ## PI Won't start IPTables & isc-agent
 
@@ -123,7 +131,7 @@ $ sudo vi /srv/cowrie/cowrie.cfg
 ## Router Port Forwarding or DMZ
 The easiest way of getting your DShield sensor expose it to add it to the **DMZ** of your router.<br>
 This is an example of custom router port forwarding to the DShield sensor.<br>
-https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield_Sensor_Port_Forwardng_Example.PNG
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield_Sensor_Port_Forwardng_Example.PNG<br>
 
 If you get this error, your webserver might not be exposed and need to check port forwarding<br>
 
