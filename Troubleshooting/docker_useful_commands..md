@@ -5,7 +5,6 @@ $ sudo docker compose up --build -d<br>
 $ sudo docker compose up --build --force-recreate -d (force a rebuild if the container hasn't changed)<br>
 $ sudo docker compose start/stop<br>
 $ sudo docker compose ps (list running containers)<br>
-$ sudo docker stats (shows status of container)<br>
 $ sudo docker container ls/ps<br>
 $ sudo docker network ls (network listing)<br>
 $ sudo docker stats (shows status of container)<br>
@@ -17,6 +16,10 @@ $ sudo docker rm -f cowrie (remove a container)<br>
 $ sudo docker system df (Check docker usage)<br>
 $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker (Shows a breakdown of docker filesystem)<br>
 $ sudo docker builder prune (Clear the build cache if > 0)<br>
+
+# Docker Stats
+$ sudo docker stats (shows status of container)<br>
+![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
 
 $ sudo docker stop fleet-server<br>
 $ sudo docker restart logstash  (restart logstash service)<br>
