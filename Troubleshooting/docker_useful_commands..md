@@ -17,10 +17,7 @@ $ sudo docker system df (Check docker usage)<br>
 $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker (Shows a breakdown of docker filesystem)<br>
 $ sudo docker builder prune (Clear the build cache if > 0)<br>
 
-# Docker Stats
-$ sudo docker stats (shows status of container)<br>
-![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
-
+# Specific Docker Commands
 $ sudo docker stop fleet-server<br>
 $ sudo docker restart logstash  (restart logstash service)<br>
 $ sudo docker stop kibana<br>
@@ -28,6 +25,10 @@ $ sudo docker start kibana<br>
 $ sudo docker restart kibana (restart kibana service)<br>
 $ sudo docker logs logstash (looking at debugging information)<br>
 $ sudo docker inspect logstash<br>
+
+# Docker Stats
+$ sudo docker stats (shows status of container)<br>
+![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
 
 # Download Github Update
 Make a backup of the .env file. If you forget, you need to redo the **Important** part.<br>
