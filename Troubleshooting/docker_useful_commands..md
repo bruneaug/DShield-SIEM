@@ -30,7 +30,7 @@ $ sudo docker inspect logstash<br>
 $ sudo docker stats (shows status of container)<br>
 ![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
 
-# Download Github Update
+# Update DShield ELK to the Latest Version
 Make a backup of the .env file. If you forget, you need to redo the **Important** part.<br>
 $ cd DShield-SIEM<br>
 $ mv .env ../<br>
