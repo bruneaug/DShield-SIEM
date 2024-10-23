@@ -41,3 +41,6 @@ If it is important to parse data from a date that wasn't imported, the following
 $ sudo su -<br>
 \# cd $HOME/iscintel<br>
 \# wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json<br>
+
+# SIEM Alert Activity
+![image](https://github.com/user-attachments/assets/67c4da57-ef7c-4d00-b7fd-7ea91eebefb7)
