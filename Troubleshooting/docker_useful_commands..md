@@ -65,6 +65,7 @@ $ guy@ubuntu:~/DShield-SIEM$ git reset --hard origin/main
 HEAD is now at 4f83ad1 Update ISC_threatintel.md
 $ guy@ubuntu:~/DShield-SIEM$ git pull
 Already up to date.
+$ guy@ubuntu:~/DShield-SIEM$ chmod 755 scripts/cowrie-setup.sh
 </pre>
 
 ## Removing all Docker Images
