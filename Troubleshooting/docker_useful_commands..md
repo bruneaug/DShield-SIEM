@@ -38,6 +38,7 @@ $ sudo docker compose stop<br>
 **-> Important**: If you forgot to backup the .env file or the ELK stack version has been updated,, edit the .env, reset your hostname & IP address variables.<br>
 _Make your your backup match the current ELK stack version_ (i.e 8.15.0 vs 8.14.3)<br>
 $ git pull (Update the code from Github)<br>
+**Note**: If this fails to download, see Update DShield ELK Fails to Download<br>
 $ cp -f ../.env .<br>
 $ sudo docker compose rm -f -v<br>
 $ sudo docker compose up --build -d<br>
@@ -46,6 +47,25 @@ If an updated dshield_sensor\*ndjson is published, you will need to update the T
 
 ### Removing a Container that Fail to Start
 $ sudo docker inspect logstash
+
+# Update DShield ELK Fails to Download
+The following commands should download the latest update:</br>
+<pre>
+$ guy@ubuntu:~/DShield-SIEM$ git pull
+Updating 44f37f4..4f83ad1
+error: Your local changes to the following files would be overwritten by merge:
+        scripts/cowrie-setup.sh
+Please commit your changes or stash them before you merge.
+Aborting
+
+guy@ubuntu:~/DShield-SIEM$
+$ guy@ubuntu:~/DShield-SIEM$ git fetch --all
+Fetching origin
+$ guy@ubuntu:~/DShield-SIEM$ git reset --hard origin/main
+HEAD is now at 4f83ad1 Update ISC_threatintel.md
+$ guy@ubuntu:~/DShield-SIEM$ git pull
+Already up to date.
+</pre>
 
 ## Removing all Docker Images
 Using this script will remove everything installed in docker<br>
