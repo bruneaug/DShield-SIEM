@@ -288,29 +288,33 @@ This is the output from Management → Stack Management → Advanced Settings<br
 Next step is to add the Filebeat package to the DShield Sensor to send the logs the Elasticsearch.<br>
 
 Use the following steps to install Filebeat using the following commands taken from this reference [3]: <br>
-
-$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>
-$ sudo apt-get install apt-transport-https<br>
-$ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-$ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-$ sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd<br>
-
+````
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>
+sudo apt-get install apt-transport-https<br>
+echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
+echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
+sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd<br>
+````
 Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
-
-$ sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml<br>
-
+````
+sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml
+````
 - Edit the filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
-$ sudo vi /etc/filebeat/filebeat.yml<br>
-
+````
+sudo vi /etc/filebeat/filebeat.yml
+````
   output.logstash:<br>
   hosts: ["192.168.25.23:5044"]<br>
 
 ### Troubleshooting Filebeat
-\# sudo su -<br>
-\# filebeat test config<br>
+````
+sudo su -
+filebeat test config
+````
 Expected output: _Config OK<br>_
-
-\# filebeat test output<br>
+````
+filebeat test output
+````
 Expected output:
 <pre>
 logstash: 192.168.25.231:5044...
@@ -324,20 +328,21 @@ logstash: 192.168.25.231:5044...
 </pre>
 
 ## Start Filebeat
-
-$ sudo systemctl enable filebeat<br>
-$ sudo systemctl start filebeat<br>
-$ sudo systemctl status filebeat<br>
-$ sudo systemctl enable elastic-agent<br>
-$ sudo systemctl start elastic-agent<br>
-$ sudo systemctl enable softflowd<br>
-$ sudo systemctl start softflowd<br>
-
+````
+sudo systemctl enable filebeat
+sudo systemctl start filebeat
+sudo systemctl status filebeat
+sudo systemctl enable elastic-agent
+sudo systemctl start elastic-agent
+sudo systemctl enable softflowd
+sudo systemctl start softflowd
+````
 ### Filebeat Tracking File
 Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
 The location of this file:<br>
-$ cd /var/lib/filebeat/registry/filebeat<br>
-
+````
+cd /var/lib/filebeat/registry/filebeat
+````
 If you are planning to resend all the logs because your ELK server got rebuild, _stop filebeat, delete log.json and restart filebeat_.
 
 ## Want to add Elastic-Agent to other Devices?
@@ -351,14 +356,17 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 
 # Restarting ELK Stack after a Reboot
 Manual restart of the docker<br>
-$ cd DShield-SIEM
-$ sudo docker compose stop
-$ sudo docker compose start
+````
+cd DShield-SIEM
+sudo docker compose stop
+sudo docker compose start
+````
 If you **sudo systemctl enable docker** during the setup above<br>
 Docker will automatically start all the docker services. If you need to restart the docker service, use either of these commands:<br>
-$ sudo systemctl restart docker<br> or
-$ sudo reboot the server<br>
-
+````
+sudo systemctl restart docker or
+sudo reboot the server
+`````
 # Useful Docker Commands
 I have move the list of commands to its own page<br>
 Refer to this page: https://github.com/bruneaug/DShield-SIEM/edit/main/Troubleshooting/docker_useful_commands..md
