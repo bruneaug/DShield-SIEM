@@ -40,17 +40,20 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-update
 
 ## Install docker
- $ sudo apt-get install ca-certificates curl gnupg network-manager txt2html<br>
- $ sudo install -m 0755 -d /etc/apt/keyrings<br>
- $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br>
- $ sudo chmod a+r /etc/apt/keyrings/docker.gpg<br>
- **Note**: You may need to take the next line, remove the backlash (\) and put everythin in a single line in Notepad to run this echo.<br>
- $ echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\<br>
-   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
- $ sudo apt update && sudo apt upgrade<br>
- $ sudo reboot (if update were applied)<br>
- $ sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip<br>
- $ sudo systemctl enable docker<br>
+Install docker user user ($) account:
+````
+sudo apt-get install ca-certificates curl gnupg network-manager txt2html
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+Note: You may need to take the next line, remove the backlash () and put everythin in a single line in Notepad to run this echo.
+echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update && sudo apt upgrade
+sudo reboot (if update were applied)
+sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip
+sudo systemctl enable docker
+````
 
 # Configure and install DShield ELK
 Using user ($) account, run the following commands:<br>
