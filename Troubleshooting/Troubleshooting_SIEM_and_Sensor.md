@@ -275,8 +275,16 @@ Select **Edit** in the upper Right corner<br>
 Select **Save** to refresh the index<br>
 Note: Sometimes you might get an error and you have to click **Save** twice to save the changes.
 
-## Installing DShield SIEM on PI 5
-https://github.com/amelete11235/homelab/blob/main/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM.md
+## Resetting the elastic User Password
+
+Login in your VM with the following command to get into the elastic container:
+````
+sudo docker exec -ti es01 bash
+````
+Run the following command to reset the elastic user password:
+````
+bin/elasticsearch-reset-password --url "https://127.0.0.1:9200" --username elastic -i
+````
 
 # Docker Troubleshooting Commands
 This is a list of command that can be useful to troubleshoot issues with the docker.<br>
