@@ -164,8 +164,9 @@ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' pri
 673FB617E15CCCE73F9B647EF99449642A19CFC1D75BF5772047DA99DB950844
 
 - Get Content of Elasticsearch CA Certificate to Apply to Advanced YAML configuration. Type the command because it doesn't copy well<br>
-$ <code>&nbsp;sudo cat /tmp/ca.crt | sed -r 's/\(.*\)/    \1/g'</code>
-
+````
+sudo cat /tmp/ca.crt | sed -r 's/(.*)/    \1/g'
+````
 Follow the example from the Troubleshooting fleet-server-examples guide URL above for the correct format.<br>
 _sed_ will add the 4 spaces with the previous command against the CA certificate
 
@@ -194,12 +195,12 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-
 
 We are going to need this information to setup our fleet server.<br>
 Login via SSH to the fleet-server and make sure the fleet-server is running before setting up our agent:<br>
-
-$ sudo docker start fleet-server<br>
-$ sudo docker exec -ti fleet-server bash<br>
-$ ./elastic-agent status (check it is running)<br>
-$ ./elastic-agent restart (if it doesn't appear to be running, force a restart, and recheck the status)<br>
-
+````
+sudo docker start fleet-server
+sudo docker exec -ti fleet-server bash
+./elastic-agent status (check it is running)
+./elastic-agent restart (if it doesn't appear to be running, force a restart, and recheck the status)
+````
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
 
