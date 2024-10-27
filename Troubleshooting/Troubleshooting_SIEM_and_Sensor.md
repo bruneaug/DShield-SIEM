@@ -178,35 +178,37 @@ Aug 09 16:58:26 collector systemd[1]: Started dshieldfw.service - DShield Firewa
 Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfully.
 ****
 </pre>
-$ sudo systemctl restart dshieldfw<br>
-$ sudo systemctl status dshieldfw<br>
-
+````
+sudo systemctl restart dshieldfw
+sudo systemctl status dshieldfw
+````
 ## Custom IPTables Rules
 From Dr J.<br>
 Added local iptables rules that will be applied in addition to the automatic rules created by the install script. The intent is to allow you to add more flexible rule to allow access to the honeypot.<br>
 This has been an issue in particular for cloud based honeypots.<br>
 The rules are applied after the default rules are applied. A small dummy file with instructions is created by default.<br>
- 
-$ sudo vi /etc/network/iptables.local
-
+```` 
+sudo vi /etc/network/iptables.local
+````
 ## Update the DShield Sensor
-
-$ cd dshield<br>
-$ sudo git pull<br>
-$ sudo bin/install.sh --update<br>
-$ sudo reboot<br>
-
+````
+cd dshield
+sudo git pull
+sudo bin/install.sh --update
+sudo reboot
+````
 ## Check if DShield Sensor is Receiving any Traffic
 If after checking the log files they are not storing log, use tcpdump to check if the sensor is receiving packets via port forwarding or the DMZ exposure.<br>
-$  ip address -> for the interface<br>
-$ sudo tcpdump -nni eth0 -c 1000 'host 192.168.25.105 and not dst net 192.168'<br>
-
+````
+ip address -> for the interface
+sudo tcpdump -nni eth0 -c 1000 'host 192.168.25.105 and not dst net 192.168'
+````
 ## OS Update
-
-$ sudo apt-get update<br>
-$ sudo apt-get upgrade
-$ sudo reboot<br>
-
+````
+sudo apt-get update
+sudo apt-get upgrade
+sudo reboot
+````
 ## Sensor Log Backup
 You are encourage to setup some kind of backup for your logs since the sensor is setup by defaul to keep the cowrie logs for 8 days and the iptables only daily.<br>
 These scripts can be used to backup you logs nightly<br>
@@ -289,6 +291,12 @@ bin/elasticsearch-reset-password --url "https://127.0.0.1:9200" --username elast
 # Docker Troubleshooting Commands
 This is a list of command that can be useful to troubleshoot issues with the docker.<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful_commands..md
+
+## Docker Start with Errors
+To troubleshoot why some components are failing to start, start the docker this way without going in deamon mode:<br>
+````
+sudo docker compose up --build
+````
 
 # Linux Commands
 
