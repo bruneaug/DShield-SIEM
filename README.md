@@ -66,8 +66,9 @@ mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts
 chmod 754 scripts/*.sh
 ````
 The parsing_tty.sh script will be configured later in another document.<br>
-$ cd ~/DShield-SIEM<br>
-
+````
+cd ~/DShield-SIEM
+````
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
@@ -79,7 +80,9 @@ Default to **2147483648** (2GB) but can be expanded if you have the resources<br
   - IPADDRESS="192.168.25.231"
   - ELASTIC_PASSWORD=student
 - If you want to change the default nameserver(s) information and your local private network location for the destination address (i.e. DShield sensor mapping - currently set for Ottawa, Canada), edit to the following directory for the files before loading docker:<br>
-  - $ cd logstash/pipeline
+````
+  cd logstash/pipeline
+````
   - logstash-200-filter-cowrie.conf <br>
   - logstash-201-filter-iptables.conf <br>
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
@@ -87,18 +90,19 @@ You can keep these default or edit each files and change them.
 
 Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
-
-$ sudo docker compose up -d <br>
-
+````
+$ sudo docker compose up -d
+````
 ### Setup Docker Auto-Restart on Reboot
 Enable and start the docker service. This will restart DShield-SIEM when the server is rebooted.
-
-$ sudo systemctl enable docker.service<br>
-$ sudo systemctl start docker.service<br>
-
+````
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+````
 Confirm the docker service is running<br>
-$ sudo systemctl status docker.service<br>
-
+````
+sudo systemctl status docker.service
+````
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/55df8e2f-6896-497c-b1b8-247196141e6f)
 
 Installation Completed
@@ -108,14 +112,15 @@ Installation Completed
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
 As data gets added to Elasticsearch, you can also monitor either with the command below or within ELK the amount of disk is available for storage.<br>
-$ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker<br>
-
+````
+sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker
+````
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/2f3f3f6d-94a8-4154-b39e-7edaa4086572)
 
 ### The following ELK Services are Setup
 Using netstat, these 4 services should now be listening.<br>
 ```
-$ netstat -an | grep '9200\|8220\|5601\|5044'
+netstat -an | grep '9200\|8220\|5601\|5044'
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana
 tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent
 tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch
@@ -148,11 +153,13 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-
 - From the dropdown menu, select Management → Fleet →Settings → Edit Outputs (Actions)<br>
 - Login server via SSH<br>
 - Copy ca.crt certificate to /tmp<br>
-$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /tmp
-
+````
+sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /tmp
+````
 - Get a copy of Elasticsearch CA trusted fingerprint<br>
-$ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
-
+````
+sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
+````
 - The output will look like this:<br>
 673FB617E15CCCE73F9B647EF99449642A19CFC1D75BF5772047DA99DB950844
 
