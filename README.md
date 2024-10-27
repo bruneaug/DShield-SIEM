@@ -30,7 +30,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - After Ubuntu is rebooted, setup the docker partition<br>
 - Adding a 300 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Build_a_Docker_Partition.md
 ## Elastic Packages Installed
-### ELK Current Version: 8.15.0 (Updated 9 Aug 2024)
+### ELK Current Version: 8.15.3 (Updated 9 Aug 2024)
 - Kibana
 - Elasticsearch
 - Logstash
@@ -53,14 +53,14 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-upd
  $ sudo systemctl enable docker<br>
 
 # Configure and install DShield ELK
-
-$ git clone https://github.com/bruneaug/DShield-SIEM.git<br>
-$ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
-$ mkdir scripts<br>
-$ mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts<br>
-$ mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts<br>
-$ chmod 754 scripts/*.sh<br>
-
+````
+git clone https://github.com/bruneaug/DShield-SIEM.git
+chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
+mkdir scripts
+mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts
+mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts
+chmod 754 scripts/*.sh
+````
 The parsing_tty.sh script will be configured later in another document.<br>
 $ cd ~/DShield-SIEM<br>
 
