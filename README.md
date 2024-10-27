@@ -222,8 +222,10 @@ This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 _Successfully enrolled the Elastic Agent._
 
 From your current location, verify it installed correctly<br>
-$ ./elastic-agent status<br>
-$ ./elastic-agent restart (if you got what appears to be errors, force a restart and check the status)<br>
+````
+./elastic-agent status
+./elastic-agent restart (if you got what appears to be errors, force a restart and check the status)
+````
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/a1bdb5ec-4cf9-4921-b3dc-ff4be0981bc8)
 
 Now that the Fleet Server is connected, close this Windows and lets proceed to the next step.
