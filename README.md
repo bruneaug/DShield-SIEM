@@ -53,6 +53,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-upd
  $ sudo systemctl enable docker<br>
 
 # Configure and install DShield ELK
+Using user ($) account, run the following commands:<br>
 ````
 git clone https://github.com/bruneaug/DShield-SIEM.git
 chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
