@@ -100,11 +100,14 @@ twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 </pre>
 
 ## Troubleshooting Filebeat Connection to Logstash
-\# sudo su -<br>
-\# filebeat test config<br>
+````
+sudo su -<br>
+filebeat test config<br>
+````
 Expected output: _Config OK<br>_
-
-\# filebeat test output<br>
+````
+filebeat test output<br>
+````
 Expected output:
 <pre>
 logstash: 192.168.25.231:5044...
@@ -116,7 +119,12 @@ logstash: 192.168.25.231:5044...
   TLS... WARN secure connection disabled
   talk to server... OK
 </pre>
-
+If filebeat failed to connect to logstash, check the firewall and that logstash is running on the ELK server<br>
+````
+sudo iptables -nL
+sudo iptables -F   (to flush the firewall)
+sudo docker restart logstash (restart logstash service)
+````
 ## Logs Location
 **Enable TTYLog** by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
 Look for: ttylog = false to ttylog = true<br>
