@@ -36,9 +36,9 @@ To make the change, goto Management -> Kibana -> Data Views and select cowrie*<b
 
 **Note**: If you get some errors after importing an updated dashboard, you may have to select **edit** in cowrie* and select **Save** to update the list of objects in the template.<br>
 
-Now edit any of the following services that you are using Arkime, Context3Hash, Context3IP and TTYLog and change the IP address to match your ELK servername or IP<br>
+Now edit any of the following services that you are using Arkime and TTYLog and change the IP address to match your ELK servername or IP<br>
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/ecea58f3-354a-452d-ae36-9a7fbfc317e2)
+![image](https://github.com/user-attachments/assets/63385cbf-6f64-4291-ad4c-0bddaf139f7b)
 
 - Select the pen on the right to Edit, make the change and save<br>
 
