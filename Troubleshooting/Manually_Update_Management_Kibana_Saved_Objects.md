@@ -27,7 +27,7 @@ The result will look like this after the JSON has been re-imported (13 Titles):
  
 ## Update cowrie Right-Click Objects
 
-**Important Note**: This step is only done if any of the following services have been added to your own ELK stack -> Arkime, Context3Hash, Context3IP and TTYLog. Otherwise, skip this<br>
+**Important Note**: This step is only done if any of the following services have been added to your own ELK stack -> Arkime and TTYLog. Otherwise, skip this<br>
 
 After importing the updated dashboards, if you have installed Arkime, Context3Hash, Context3IP and TTYLog (those are additional tools if you wish to use them), you need to change the default of my test ELK system to your own ELK server for the right-click functions to work.<br>
 
@@ -36,7 +36,7 @@ To make the change, goto Management -> Kibana -> Data Views and select cowrie*<b
 
 **Note**: If you get some errors after importing an updated dashboard, you may have to select **edit** in cowrie* and select **Save** to update the list of objects in the template.<br>
 
-Now edit any of the following services that you are using Arkime and TTYLog and change the IP address to match your ELK servername or IP<br>
+Now edit any of the following services **if you are using Arkime and TTYLog** and change the IP address to match your ELK servername or IP<br>
 
 ![image](https://github.com/user-attachments/assets/63385cbf-6f64-4291-ad4c-0bddaf139f7b)
 
