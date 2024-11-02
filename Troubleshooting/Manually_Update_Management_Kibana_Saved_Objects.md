@@ -8,7 +8,7 @@ Management → Kibana → Saved → Objects
 If any component of docker get updated, Kibana is likely to re-add all the dashboard. It is important to delete all the current objects by searching in the search bar: **cowrie dshield**.<br>
 Select and delete all objects like the picture below (list might be slighly different than below)<br>
  
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/476e03cd-88ae-40b5-a7ad-6ad7757a6bf2)
+![image](https://github.com/user-attachments/assets/cc5f4447-702e-4641-b786-09d820fe443a)
 
 ## Import the Updated Dashboards
 
