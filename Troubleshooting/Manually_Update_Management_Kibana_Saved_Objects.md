@@ -22,8 +22,8 @@ Select **Import**  to import the updated JSON dashboard file into Elasticsearch<
 
 ## After you Imported the Updated Dashboard
 
-The result will look like this after the JSON has been re-imported (13 Titles):
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/eb7f3256-8f92-4828-a64e-f6c6b55632bf)
+The result will look like this after the JSON has been re-imported (23 Titles):
+![image](https://github.com/user-attachments/assets/6f0ba3fc-900b-407e-a16a-a9e0009819a6)
  
 ## Update cowrie Right-Click Objects
 
