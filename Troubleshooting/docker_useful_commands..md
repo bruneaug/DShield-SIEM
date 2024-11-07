@@ -26,6 +26,17 @@ $ sudo docker restart kibana (restart kibana service)<br>
 $ sudo docker logs logstash (looking at debugging information)<br>
 $ sudo docker inspect logstash<br>
 
+# Removing a Docker Container
+The first command to run is to list the container volumes<br>
+```sudo docker volume ls```
+
+The next command is to remove the target container<br>
+```sudo docker volume rm  dshield-elk_fleetserverdata```
+
+The output looks like this:<br>
+![image](https://github.com/user-attachments/assets/2339589a-df15-4b0a-b4a1-80060d06fa15)
+
+
 # Docker Stats
 $ sudo docker stats (shows status of container)<br>
 ![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
