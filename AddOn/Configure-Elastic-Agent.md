@@ -107,5 +107,16 @@ And finally filter: component.type : "netflow"
 
 ![image](https://github.com/user-attachments/assets/ad09cbbb-6b49-49bf-b289-2a0f1ef4d319)
 
+# Using tcpdump to Verify softflowd is Sending Data
+````
+ sudo tcpdump -nni lo udp port 2055 -c 100
+````
+<pre>
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on lo, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+20:00:01.827172 IP 127.0.0.1.47941 > 127.0.0.1.2055: UDP, length 1384
+20:00:01.827254 IP 127.0.0.1.47941 > 127.0.0.1.2055: UDP, length 344
+
+</pre>
 
 [1] https://ubuntu.com/server/docs/security-trust-store
