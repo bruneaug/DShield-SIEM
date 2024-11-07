@@ -15,8 +15,9 @@ $ sudo update-ca-certificates<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/84c067b2-0358-425f-b8bb-bc3eb911c151)
 
 Test ca.crt that is actually working with ELK Kibana<br>
-```wget https://192.168.25.231:5601```
-
+````
+wget https://192.168.25.231:5601
+````
 Output should show connected and download index.html<br>
 ![image](https://github.com/user-attachments/assets/ecd310e7-c59e-4636-a34d-4c595949ba86)
 
