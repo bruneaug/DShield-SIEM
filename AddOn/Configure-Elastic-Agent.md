@@ -101,4 +101,11 @@ The flows can be viewed with this dashboard:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4372dc5d-ad41-45b1-a81c-63d191851c3e)
 
+# Checking the Agent Netflow Logs
+Goto Fleet -> Host Agent -> Logs -> Select Dataset -> elastic_agent.filebeat<br>
+And finally filter: component.type : "netflow" 
+
+![image](https://github.com/user-attachments/assets/ad09cbbb-6b49-49bf-b289-2a0f1ef4d319)
+
+
 [1] https://ubuntu.com/server/docs/security-trust-store
