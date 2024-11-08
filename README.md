@@ -227,8 +227,7 @@ Copy the elastic-enrol agent below and eplace these 2 lines taken from your own 
 --elastic-agent-cert=/certs/fleet-server/fleet-server.crt \
 --elastic-agent-cert-key=/certs/fleet-server/fleet-server.key \
 --fleet-server-es-cert=/certs/fleet-server/fleet-server.crt \
---fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key \
---fleet-server-client-auth=required
+--fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key
 ````
 
 
