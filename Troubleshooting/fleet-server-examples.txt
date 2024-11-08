@@ -46,7 +46,7 @@ ssl:
 Fleet-Server Configuration Example
 ==================================
 
-Use your server the remainder is the same as below:
+Use your server for the token and fingerprint and the remainder is the same as below:
 
 --fleet-server-service-token=
 --fleet-server-es-ca-trusted-fingerprint=
