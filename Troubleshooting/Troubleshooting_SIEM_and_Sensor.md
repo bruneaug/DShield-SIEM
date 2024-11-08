@@ -230,7 +230,8 @@ Access your logs at this location on the ISC website. The 3 highlighted are the 
 
 ## DShield Sensor in Cloud
 If you are setting up a sensor in one of the cloud and your home IP isn't static, consider setting up a script (example below) to check your home IP and update the firewall as necessary so you don't loose access to your sensor. <br>
-https://isc.sans.edu/diary/DShield+Sensor+Setup+in+Azure/29370
+https://isc.sans.edu/diary/DShield+Sensor+Setup+in+Azure/29370<br>
+
 AWS failed to access via TCP/12222 - Jesse recommend trying the EC2 serial console or the EC2 Instance Connect to reconnect to the sensor. If that fails, you may have to rebuild the sensor.<br>
 
 ## SSH to Remote Sensor
