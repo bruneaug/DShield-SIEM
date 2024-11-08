@@ -204,18 +204,33 @@ sudo docker exec -ti fleet-server bash
 This is an example of what need to be copied to the fleet server. Ensure the fleet server es is: https://es01:9200<br>
 Add the bold section after port=8220 because are certificates are self-generated. This will ensure the agent takes the update.<br>
 
-The token and fingerprint will be different than this example **_but what is in italic and bolded must be added for the certificat to load_**:<br>
+The token and fingerprint will be different than this example<br>
 
-elastic-agent enroll \\<br>
-  **_--url=https://fleet-server:8220 \\<br>
-  --fleet-server-es=https://es01:9200_** \\<br>
-  --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MDU0NDg3MDMwNTI6NkNxcWlCeTRRVmlhYW0yeldhN3pGZw \\<br>
-  --fleet-server-policy=fleet-server-policy \\<br>
-  --fleet-server-es-ca-trusted-fingerprint=76DA77DAE186F8CFBA9E87D450D5419B68E2555A9BD57795611C0545ED0BF03F \\<br>
-  --fleet-server-port=8220 _\\<br>
-  **--certificate-authorities=/certs/ca/ca.crt \\<br>
-  --fleet-server-es-ca=/certs/es01/es01.crt \\<br>
-  --insecure**_
+Copy the elastic-enrol agent below and eplace these 2 lines taken from your own serve and everything else remain the same.<br>
+<pre>
+--fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MzEwOTcwODU3MzI6VjMyLU13cmFUOUM1eUFvMUhVUFl5QQ \
+--fleet-server-es-ca-trusted-fingerprint=0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61 \
+</pre>
+
+  ````
+  elastic-agent enroll \
+--url=https://fleet-server:8220 \
+--fleet-server-es=https://es01:9200 \
+--fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MzEwOTcwODU3MzI6VjMyLU13cmFUOUM1eUFvMUhVUFl5QQ \
+--fleet-server-policy=fleet-server-policy \
+--fleet-server-es-ca-trusted-fingerprint=0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61 \
+--fleet-server-port=8220 \
+--certificate-authorities=/certs/ca/ca.crt \
+--fleet-server-es-ca=/certs/es01/es01.crt \
+--fleet-server-cert=/certs/fleet-server/fleet-server.crt \
+--fleet-server-cert-key=/certs/fleet-server/fleet-server.key \
+--elastic-agent-cert=/certs/fleet-server/fleet-server.crt \
+--elastic-agent-cert-key=/certs/fleet-server/fleet-server.key \
+--fleet-server-es-cert=/certs/fleet-server/fleet-server.crt \
+--fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key \
+--fleet-server-client-auth=required
+````
+
 
 This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 
