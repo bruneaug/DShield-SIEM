@@ -57,12 +57,13 @@ Pick RPM and copy line 3 and format it like this:<br>
 
 There is an example for enrolling the agent to the Fleet Server<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-examples.txt<br>
-
-sudo elastic-agent enroll \\<br>
-  --url=https://fleet-server:8220 \\<br>
-  --certificate-authorities=/etc/ssl/certs/ca.pem \\<br>
-  --enrollment-token=RVFIbEo0MEJKRzNBblNzWHJCb3U6dy1WemJnRnVRVzJJZTdDX29PR2Ftdw== \\<br>
-  --insecure<br>
+<pre>
+sudo elastic-agent enroll \
+--url=https://fleet-server:8220 \
+--certificate-authorities=/etc/ssl/certs/ca-certificates.crt \
+--enrollment-token=eEZKYl9ZOEJnS09PTVh2cHd3LW46eGlMTHRUdmhUTWFfS05URG52TjQwdw== \
+--insecure
+  </pre>
   
 The DShield sensor should show this confirmation after it is added:<br>
  
