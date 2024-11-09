@@ -232,7 +232,22 @@ Access your logs at this location on the ISC website. The 3 highlighted are the 
 If you are setting up a sensor in one of the cloud and your home IP isn't static, consider setting up a script (example below) to check your home IP and update the firewall as necessary so you don't loose access to your sensor. <br>
 https://isc.sans.edu/diary/DShield+Sensor+Setup+in+Azure/29370<br>
 
+### AWS Recovery - Suggestions from Jesse
+
 AWS failed to access via TCP/12222 - Jesse recommend trying the EC2 serial console or the EC2 Instance Connect to reconnect to the sensor. If that fails, you may have to rebuild the sensor.<br>
+
+I'd focus on getting working data and go back to try and recovery that honeypot VM if you're interested. It looks like you may be able to use a similar snapshot recovery process that I've used in AWS Lightsail, based on a reddit recommendation [1]. <br>
+If you didn't move any of the log data to a different location on your honeypot, you'll only be losing 7 days of local data. It may not be worth the effort to recover.<br>
+ If you cannot ssh to an instance, and assuming you did not configure EC2 Session Manager (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/session-manager.html)<br>
+ or EC2 instance connect (https://aws.amazon.com/about-aws/whats-new/2019/06/introducing-amazon-ec2-instance-connect/), then your only chance is:<br>
+<pre>
+1 - Create a snapshot of your root disk
+2 - launch a new EC2 instance.
+3 - Mount the snapshot on the healthy instance, verify the configuration and make any changes if needed.
+4 - Unmount the disk
+5 - Stop your unhealthy instance, replace the root disk with the new on
+[1] https://www.reddit.com/r/aws/comments/hhdxbg/locked_out_of_ec2_instance/
+</pre>
 
 ## SSH to Remote Sensor
 This option has been suggested by Michael Tigges.
