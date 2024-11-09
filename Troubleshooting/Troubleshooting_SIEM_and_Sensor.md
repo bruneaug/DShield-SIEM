@@ -43,7 +43,7 @@ $ sudo systemctl enable ssh<br>
 sudo su cowrie -<br>
 
 ## Editing the Cowrie Configuration File
-This is the location for the DShield sensor configuration.<br>
+This is the location for the DShield sensor configuration. This file also contains the IP address your are going to be accessing the sensor from<br>
 $ sudo vi /etc/dshield.ini<br>
 
 ## Troubleshooting DShield isc-agent
