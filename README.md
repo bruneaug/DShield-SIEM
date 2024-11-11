@@ -21,7 +21,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Step 3 install and configure Filebeat on DShield Sensor(s)<br>
 
 # Ubuntu Setup
-Like an enterprise, a system collection security logs and monitoring a network like the DShield SIEM, it need to be installed on a separately server and not with the DShield sensor. 
+#### Like in an enterprise, a system collecting security logs and monitoring a network like the DShield SIEM, it need to be installed on a separately server and not with the DShield sensor. 
 
 - Ubuntu 22.04 LTS Live Server 64-Bit<br>
 - Minimum 8+ GB RAM<br>
