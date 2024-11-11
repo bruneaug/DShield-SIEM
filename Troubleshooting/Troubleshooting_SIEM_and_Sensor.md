@@ -301,6 +301,15 @@ Select **Edit** in the upper Right corner<br>
 Select **Save** to refresh the index<br>
 Note: Sometimes you might get an error and you have to click **Save** twice to save the changes.
 
+## Missing Dashboard
+If you go to Management -> Stack Management -> Saved Objects<br>
+And search for cowrie dshield and nothing shows up, you will need to manually import the DShield dashboards<br>
+If you search looks like this, you need to manually import the dashboards
+![image](https://github.com/user-attachments/assets/efef1257-1ae5-4fcf-bc7e-92b807ad1330)
+
+Follow these steps to download import the dashboard. Be carefull to use the correct curl download and not the browser which will lead to an error<br>
+https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/Manually_Update_Management_Kibana_Saved_Objects.md#import-the-updated-dashboards
+
 ## Resetting the elastic User Password
 
 Login in your VM with the following command to get into the elastic container:
