@@ -73,7 +73,8 @@ elastic-agent enroll \
 --elastic-agent-cert=/certs/fleet-server/fleet-server.crt \
 --elastic-agent-cert-key=/certs/fleet-server/fleet-server.key \
 --fleet-server-es-cert=/certs/fleet-server/fleet-server.crt \
---fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key
+--fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key \
+--insecure
 
 
 Adding Agents to Fleet Server
