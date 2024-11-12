@@ -56,6 +56,12 @@ sudo reboot (if update were applied)
 sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip
 sudo systemctl enable docker
 ````
+## Update /etc/hosts
+Add the following to /etc/hosts where the IP address is the IP of your own ELK server:
+````
+192.168.25.231 fleet-server
+192.168.25.231 es01
+````
 
 # Configure and install DShield ELK
 Using user ($) account, run the following commands:<br>
