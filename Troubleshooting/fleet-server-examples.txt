@@ -1,3 +1,11 @@
+Update /etc/hosts
+=================
+
+Confirm the Addition of Addition of the following to /etc/hosts where the IP address is the IP of your own ELK server:
+
+192.168.25.231 fleet-server
+192.168.25.231 es01
+
 Elasticsearch CA trusted fingerprint
 ====================================
 - Copy ca.crt certificate to /tmp
