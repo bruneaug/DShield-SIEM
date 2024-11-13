@@ -323,11 +323,11 @@ Next step is to add the Filebeat package to the DShield Sensor to send the logs 
 
 Use the following steps to install Filebeat using the following commands taken from this reference [3]: <br>
 ````
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 sudo apt-get install apt-transport-https<br>
-echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list<br>
-sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd<br>
+echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd
 ````
 Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
 ````
