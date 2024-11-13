@@ -153,8 +153,8 @@ In order to see the ELK stack health, it is necessary to configure the stack mon
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/b41deef3-462c-42de-bf75-c79100833f4b)
 
-# Configuring elastic-agent
-The elastic-agent will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.<br>
+# Configuring the fleet-agent
+The fleet-agent (this is an elastic-agent running on the ELK stack) will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.<br>
 This is an example for the format to setup the fleet-server and the elastic-agent:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-examples.txt
 
