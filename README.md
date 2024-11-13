@@ -220,7 +220,14 @@ Copy the elastic-enrol agent below and eplace these 2 lines taken from your own 
 --fleet-server-es-ca-trusted-fingerprint=0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61 \
 </pre>
 
-  ````
+First step, don't forget to login in the fleet-agent before enrolling your fleet-agent:
+
+````
+sudo docker exec -ti fleet-server bash
+`````
+Use this template to install your certificate<br>
+
+````
 elastic-agent enroll \
 --url=https://fleet-server:8220 \
 --fleet-server-es=https://es01:9200 \
