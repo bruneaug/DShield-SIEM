@@ -54,7 +54,7 @@ ssl:
 Fleet-Server Configuration Example
 ==================================
 
-First step, don't forget to login fleet-agent before enrolling your fleet-agent:
+First step, don't forget to login in the fleet-agent before enrolling your fleet-agent:
 
 sudo docker start fleet-server
 sudo docker exec -ti fleet-server bash
