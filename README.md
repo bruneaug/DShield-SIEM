@@ -239,10 +239,11 @@ elastic-agent enroll \
 
 ````
 
-
 This will replace your current settings. Do you want to continue? [Y/n]: Y<br>
 
-_Successfully enrolled the Elastic Agent._
+![image](https://github.com/user-attachments/assets/dc1844c0-e7ef-428a-81a9-5b7d22089687)
+
+**Successfully enrolled the Elastic Agent.**
 
 From your current location, verify it installed correctly<br>
 ````
