@@ -61,13 +61,12 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-
 sudo elastic-agent enroll \
 --url=https://fleet-server:8220 \
 --certificate-authorities=/etc/ssl/certs/ca-certificates.crt \
---enrollment-token=eEZKYl9ZOEJnS09PTVh2cHd3LW46eGlMTHRUdmhUTWFfS05URG52TjQwdw== \
---insecure
+--enrollment-token=eEZKYl9ZOEJnS09PTVh2cHd3LW46eGlMTHRUdmhUTWFfS05URG52TjQwdw== 
   </pre>
   
 The DShield sensor should show this confirmation after it is added:<br>
  
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/d03fa3d9-9bf7-4c60-87b5-fdc570f41aec)
+![image](https://github.com/user-attachments/assets/ed078488-a177-400f-8aa8-fef2cb695615)
  
 This confirm the DShield sensor is now added to the Fleet Server<br>
 
