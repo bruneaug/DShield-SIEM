@@ -221,21 +221,22 @@ Copy the elastic-enrol agent below and eplace these 2 lines taken from your own 
 </pre>
 
   ````
-  elastic-agent enroll \
+elastic-agent enroll \
 --url=https://fleet-server:8220 \
 --fleet-server-es=https://es01:9200 \
 --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MzEwOTcwODU3MzI6VjMyLU13cmFUOUM1eUFvMUhVUFl5QQ \
 --fleet-server-policy=fleet-server-policy \
+--fleet-server-es-ca=/certs/es01/es01.crt \
 --fleet-server-es-ca-trusted-fingerprint=0D9A25F4C147EB3A496253525DF6F039CF3C19776E64A1F77CEFCCD08B76BC61 \
 --fleet-server-port=8220 \
 --certificate-authorities=/certs/ca/ca.crt \
---fleet-server-es-ca=/certs/es01/es01.crt \
 --fleet-server-cert=/certs/fleet-server/fleet-server.crt \
 --fleet-server-cert-key=/certs/fleet-server/fleet-server.key \
 --elastic-agent-cert=/certs/fleet-server/fleet-server.crt \
 --elastic-agent-cert-key=/certs/fleet-server/fleet-server.key \
 --fleet-server-es-cert=/certs/fleet-server/fleet-server.crt \
 --fleet-server-es-cert-key=/certs/fleet-server/fleet-server.key
+
 ````
 
 
