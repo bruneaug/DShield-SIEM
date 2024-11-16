@@ -136,6 +136,11 @@ $ sudo vi /srv/cowrie/cowrie.cfg
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
 
+## Jesse's cowrieprocessor 
+"The initial purpose of this application is helps simplify command input and file download data from DShield Honeypots"<br>
+
+https://github.com/jslagrew/cowrieprocessor
+
 ## Router Port Forwarding or DMZ
 The easiest way of getting your DShield sensor expose it to add it to the **DMZ** of your router.<br>
 This is an example of custom router port forwarding to the DShield sensor.<br>
