@@ -306,7 +306,7 @@ Select **Edit** in the upper Right corner<br>
 Select **Save** to refresh the index<br>
 Note: Sometimes you might get an error and you have to click **Save** twice to save the changes.
 
-## Problems with the Indices
+## Problems with the Indices - Zeroize all Cowrie Indices
 If any of the previous steps don't resolve seeing the logs correctly in the dashboard, the only solution might be to remove the current Indices and re-initialize the log collection. These steps will delete the currently stored cowrie* Indices and reload all the logs currently stored in the DShield sensor<br>
 This is an example where the logs don't show correctly in the dashboard<br>
 ![image](https://github.com/user-attachments/assets/712ea76e-61ec-4e22-9a25-885c1072bd5c)
