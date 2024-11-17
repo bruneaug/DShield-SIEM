@@ -306,6 +306,37 @@ Select **Edit** in the upper Right corner<br>
 Select **Save** to refresh the index<br>
 Note: Sometimes you might get an error and you have to click **Save** twice to save the changes.
 
+## Problems with the Indices
+If any of the previous steps don't resolve seeing the logs correctly in the dashboard, the only solution might be to remove the current Indices and re-initialize the log collection. These steps will delete the currently stored cowrie* Indices and reload all the logs currently stored in the DShield sensor<br>
+This is an example where the logs don't show correctly in the dashboard<br>
+![image](https://github.com/user-attachments/assets/712ea76e-61ec-4e22-9a25-885c1072bd5c)
+
+Login DShield sensor<br>
+````
+sudo systemctl stop filebeat
+sudo su -
+cd /var/lib/filebeat/registry/filebeat
+rm log.json
+````
+
+Login Kibana<br>
+Go to Management -> Index Management<br>
+In the search box, enter cowrie, select all of them as per example below and delete all the cowrie Indices<br>
+![image](https://github.com/user-attachments/assets/f9cded0f-6291-4a1a-9d40-3ef8435b9229)
+
+Login to ELK server command-line in your user account<br>
+````
+cd DShield-SIEM
+sudo docker compose stop
+sudo docker compose start
+````
+
+Back in the DShield sensor
+Now it is time to restart filebeat to send all the stored logs to ELK stack<br>
+````
+sudo systemctl start filebeat
+````
+
 ## Missing Dashboard
 If you go to Management -> Stack Management -> Saved Objects<br>
 And search for cowrie dshield and nothing shows up, you will need to manually import the DShield dashboards<br>
