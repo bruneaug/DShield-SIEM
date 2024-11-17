@@ -335,7 +335,21 @@ To troubleshoot why some components are failing to start, start the docker this 
 ````
 sudo docker compose up --build
 ````
+## Change Indices from Yellow to Green
+If your indices are showing Yellow because the number of Replicas isn't 0 (illustration below), it need to be changed to 0 to go back to green.<br>
+![image](https://github.com/user-attachments/assets/8f9002df-7d2c-4953-bfdb-0b306dab3613)
 
+ This can be done by executing the command below. Go to Management -> Dev Tools 
+ Copy and execute this command to change from 1 to 0:
+ 
+````
+PUT _settings
+{
+    "index" : {
+        "number_of_replicas" : 0
+    }
+}
+````
 # Linux Commands
 
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
