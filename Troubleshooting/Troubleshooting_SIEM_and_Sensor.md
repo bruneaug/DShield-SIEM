@@ -350,6 +350,9 @@ PUT _settings
     }
 }
 ````
+This will also return your Cluster to green. Management -> Stack Monitoring
+![image](https://github.com/user-attachments/assets/92ec68df-8e7f-4341-abf0-82e56c48f7ba)
+
 # Linux Commands
 
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
