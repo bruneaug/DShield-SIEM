@@ -4,7 +4,7 @@ Daemonlogger is a packet capture software by Cisco Talos[1] which capture the pa
 $ sudo apt install daemonlogger
 
 Copy to the sensor packet_capture.tgz tarball to your home user account and extract it as follow:<br>
-$  curl -LJO https://github.com/bruneaug/DShield-SIEM/raw/main/AddOn/packet_capture.tgz<br>
+$  curl -LJO https://github.com/bruneaug/DShield-Sensor/blob/main/sensor_scripts/packet_capture.tgz<br>
 $ sudo tar zxvf packet_capture.tgz -C /<br>
 
 ## Edit the log_packets.sh Script
