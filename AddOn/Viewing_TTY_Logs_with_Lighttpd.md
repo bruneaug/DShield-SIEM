@@ -53,8 +53,8 @@ There are 2 scripts provided for the sensor<br>
 If the sensor has been running for a while, un replayttylog.sh until it is completed. This could take a while depending on the number of logs is currently stored. The converted hashes will be stored in the home directory in \~/ttylog. <br>
 $ mkdir scripts<br>
 $ cd scripts<br>
-$ curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/sensor_scripts/replayttylog.sh -o replayttylog.sh<br>
-$ curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/sensor_scripts/ttylog.sh -o ttylog.sh<br>
+$ curl https://raw.githubusercontent.com/bruneaug/DShield-Sensor/refs/heads/main/sensor_scripts/replayttylog.sh -o replayttylog.sh<br>
+$ curl https://raw.githubusercontent.com/bruneaug/DShield-Sensor/refs/heads/main/sensor_scripts/ttylog.sh -o ttylog.sh<br>
 $ chmod 755 *.sh<br>
 $ ./replayttylog.sh<br>
 
