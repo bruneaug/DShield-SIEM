@@ -3,6 +3,16 @@
 https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
 https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
 
+## Sending SSH Public Key to Remote Sensor
+These 2 options can be used to send your public SSH key to a remote server. When asked, enter your password to copy the key.<br>
+Windows example<br>
+````
+type %USERPROFILE%\.ssh\id_rsa.pub | ssh ubuntu@192.168.25.231 -p 12222 "cat >> .ssh/authorized_keys"
+````
+Linux Example<br>
+````
+ssh-copy-id ubuntu@192.168.25.231 -p 12222
+````
 ## DShield Sensor Setup
 The sensor only support 64-Bit OS on the PI and any combination of VM or hardware sensor<br>
 
