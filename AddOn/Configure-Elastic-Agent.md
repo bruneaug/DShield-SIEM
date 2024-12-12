@@ -91,14 +91,21 @@ This application will capture NetFlow traffic targeting your DShield sensor and 
 
 $ sudo vi /etc/softflowd/default.conf<br>
 Set the interface (usually eth0 for PI)<br>
-Set: options= "-v 9 -P udp -n 127.0.0.1:2055" (Must be double quotes)<br>
-Save the changes and restart the service<br>
-$ sudo systemctl restart softflowd<br>
-$ sudo systemctl enable softflowd<br>
-
-$ netstat -an | grep 2055  (Confirm softflowd is running)<br>
+Set: options= "-v 9 -P udp -n 127.0.0.1:2055 -c /var/run/softflowd.ctl" (Must be double quotes)<br>
+Save the changes, enable and restart the service<br>
+````
+sudo systemctl restart softflowd
+sudo systemctl enable softflowd
+````
+Confirm softflowd is running<br>
+````
+netstat -an | grep 2055
+````
 The flows can be viewed with this dashboard:<br>
-
+Check the collection statistics<br>
+````
+sudo softflowctl statistics
+````
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/4372dc5d-ad41-45b1-a81c-63d191851c3e)
 
 # Checking the Agent Netflow Logs
