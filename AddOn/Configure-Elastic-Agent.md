@@ -88,8 +88,9 @@ Select the Integration -> Settings -> Upgrade to latest version<br>
  
 # Configure softflowd Application<br>
 This application will capture NetFlow traffic targeting your DShield sensor and report it to ELK under the NetFlow dashboard<br>
-
-$ sudo vi /etc/softflowd/default.conf<br>
+````
+sudo vi /etc/softflowd/default.conf
+````
 Set the interface (usually eth0 for PI)<br>
 Set: options= "-v 9 -P udp -n 127.0.0.1:2055 -c /var/run/softflowd.ctl" (Must be double quotes)<br>
 Save the changes, enable and restart the service<br>
