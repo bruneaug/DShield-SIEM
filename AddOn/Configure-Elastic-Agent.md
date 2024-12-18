@@ -35,7 +35,7 @@ sudo apt-get install elastic-agent
 You can find the past released here: https://www.elastic.co/downloads/past-releases#elastic-agent<br>
 _curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.15.3-amd64.deb_<br>
 PI Package: _curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.15.3-amd64.deb_<br>
-_sudo dpkg -i elastic-agent-8.13.4-amd64.deb_<br>
+_sudo dpkg -i elastic-agent-8.15.3-amd64.deb_<br>
 
 ## Enable the elastic-agent
 
