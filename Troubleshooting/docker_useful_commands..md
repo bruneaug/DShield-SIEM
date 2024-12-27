@@ -36,6 +36,20 @@ The next command is to remove the target container<br>
 The output looks like this:<br>
 ![image](https://github.com/user-attachments/assets/2339589a-df15-4b0a-b4a1-80060d06fa15)
 
+# Docker Container Error
+These command should kill the container that won't stop.<br>
+Try to start the containers in debug mode:<br>
+![image](https://github.com/user-attachments/assets/e1b5bdf6-3964-419c-9525-424f5ff4eff3)
+
+````
+sudo docker compose up
+````
+If you see an error, you need to kill all of the running dockers<br>
+````
+sudo docker compose stop
+sudo docker compose kill
+sudo docker compose start
+````
 
 # Docker Stats
 $ sudo docker stats (shows status of container)<br>
