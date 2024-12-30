@@ -396,7 +396,7 @@ This will also return your Cluster to green. Management -> Stack Monitoring
 ![image](https://github.com/user-attachments/assets/92ec68df-8e7f-4341-abf0-82e56c48f7ba)
 
 ## Docker GUI Errors
-Docker configuration in the .env file has some default RAM setting when starting each services and those might not be enough and may need to be increased.<br>
+Docker configuration in the **.env** file has some default RAM setting when starting each services and those might not be enough and may need to be increased.<br>
 These are the current defaults:<br>
 <pre>
 ES_MEM_LIMIT=2g
@@ -407,7 +407,9 @@ To check if your setup has enough RAM for each services (Kibana, Elasticsearch, 
 ````
 sudo docker stats
 ````
+![image](https://github.com/user-attachments/assets/d8139461-d826-406a-b878-6f6bcbae4217)
 
+The amount of RAM used by es01 is pretty close to the 2GB mark and at some point might need to be increased to 3G if ELK start getting some errors.<br>
 
 # Linux Commands
 
