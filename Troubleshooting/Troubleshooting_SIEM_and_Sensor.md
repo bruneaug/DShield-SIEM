@@ -395,6 +395,20 @@ PUT _settings
 This will also return your Cluster to green. Management -> Stack Monitoring
 ![image](https://github.com/user-attachments/assets/92ec68df-8e7f-4341-abf0-82e56c48f7ba)
 
+## Docker GUI Errors
+Docker configuration in the .env file has some default RAM setting when starting each services and those might not be enough and may need to be increased.<br>
+These are the current defaults:<br>
+<pre>
+ES_MEM_LIMIT=2g
+KB_MEM_LIMIT=1g
+LS_MEM_LIMIT=1g
+</pre>
+To check if your setup has enough RAM for each services (Kibana, Elasticsearch, Logstash), run the following command:<br>
+````
+sudo docker stats
+````
+
+
 # Linux Commands
 
 SANS Linux Essential Cheet Sheet https://sansorg.egnyte.com/dl/T2c7pGW9p0
