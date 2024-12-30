@@ -410,6 +410,9 @@ sudo docker stats
 ![image](https://github.com/user-attachments/assets/d8139461-d826-406a-b878-6f6bcbae4217)
 
 The amount of RAM used by es01 is pretty close to the 2GB mark and at some point might need to be increased to 3G if ELK start getting some errors.<br>
+This errors in Kibana means that _es01_ needs some additional RAM for Java. Increasing **ES_MEM_LIMIT to 3g** would fix this error.<br>
+![image](https://github.com/user-attachments/assets/6aa4c57b-73c5-4171-b948-17c24e7b76a7)
+
 
 # Linux Commands
 
