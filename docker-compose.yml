@@ -9,6 +9,10 @@
 # Date: 11 June 2024
 # Added auto-restart. This will restart the services after system is rebooted
 # and systemctl enable docker.service has been enabled
+# Date: 31 December 2024
+# Added filebeat to docker. Filebeat was added to load the filebeat Kibana templates
+# to be used with logs com9ing from the cloud.
+# Filebeat modules.d for netflow, zeek, etc.
 
 volumes:
   certs:
@@ -21,6 +25,8 @@ volumes:
     driver: local
   fleetserverdata:
     driver: local
+  filebeat:
+    driver: local
 
 networks:
   default:
@@ -32,7 +38,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
-    restart: always
+    restart: unless-stopped
     user: "0"
     command: >
       bash -c '
@@ -76,10 +82,11 @@ services:
           "    ip:\n"\
           "      - 127.0.0.1\n"\
           "      - ${IPADDRESS}\n"\
-          "  - name: beat\n"\
+          "  - name: filebeat\n"\
           "    dns:\n"\
-          "      - beat\n"\
+          "      - filebeat\n"\
           "      - localhost\n"\
+          "      - ${HOSTNAME}\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
           > config/certs/instances.yml;
@@ -115,7 +122,7 @@ services:
       - certs:/usr/share/elasticsearch/config/certs
       - esdata01:/usr/share/elasticsearch/data
       - ${SCRIPTS_DIR}:/usr/share/elasticsearch/scripts
-    restart: always
+    restart: unless-stopped
     ports:
       - ${ES_PORT}:9200
     environment:
@@ -166,7 +173,7 @@ services:
       - certs:/usr/share/kibana/config/certs
       - kibanadata:/usr/share/kibana/data
       - ${SCRIPTS_DIR}:/usr/share/kibana/scripts
-    restart: always
+    restart: unless-stopped
     ports:
       - ${KIBANA_PORT}:5601
     environment:
@@ -226,13 +233,13 @@ services:
     labels:
       co.elastic.logs/module: logstash
     user: root
+    restart: unless-stopped
     volumes:
       - certs:/usr/share/logstash/certs
       - logstashdata01:/usr/share/logstash/data
       # - "./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml:ro"
       # - "./logstash/ingest_data/:/usr/share/logstash/ingest_data/"
       - "./logstash/pipeline/:/usr/share/logstash/pipeline/"
-    restart: always
     ports:
       - ${LOGSTASH_PORT}:5044
     environment:
@@ -263,10 +270,10 @@ services:
     volumes:
       - certs:/certs
       - fleetserverdata:/usr/share/elastic-agent
-    restart: always
     ports:
       - ${FLEET_PORT}:8220
     user: root
+    restart: unless-stopped
     environment:
       - SSL_CERTIFICATE_AUTHORITIES=/certs/ca/ca.crt
       - CERTIFICATE_AUTHORITIES=/certs/ca/ca.crt
@@ -288,3 +295,38 @@ services:
       - KIBANA_FLEET_PASSWORD=${ELASTIC_PASSWORD}
       - KIBANA_HOST=https://kibana:5601
 
+  filebeat:
+    restart: unless-stopped
+    depends_on:
+      es01:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
+    hostname: filebeat
+    container_name: filebeat
+    image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
+    user: root
+    command: ["--strict.perms=false"]
+    configs:
+      - source: fb_config
+        target: /usr/share/filebeat/filebeat.yml
+    volumes:
+      - certs:/usr/share/filebeat/certs
+      - "filebeat:/usr/share/filebeat/data"
+        #- "./logs:/usr/share/filebeat/logs"
+    environment:
+      - ELASTIC_HOSTS=https://es01:9200
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=certificate
+      - NAME_SERVER=${DNS_SERVER}
+
+# This load the filebeat.yml template into filebeat docker
+# The following steps must me done to correcly setup filebeat.yml
+# sudo chown root:root filebeat/filebeat.yml
+# sudo chmod 644 filebeat/filebeat.yml
+
+configs:
+  fb_config:
+    file: ./filebeat/filebeat.yml
