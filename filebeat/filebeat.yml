@@ -9,6 +9,11 @@
 #
 # sudo chown root:root filebeat/filebeat.yml
 # sudo chmod 644 filebeat/filebeat.yml
+#
+# Loading filebeat templates into Kibana
+# sudo docker exec -ti filebeat bash
+# ./filebeat setup -e 
+
 
 filebeat.inputs:
 - type: filestream
