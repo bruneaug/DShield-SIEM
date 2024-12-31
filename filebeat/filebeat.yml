@@ -1,0 +1,27 @@
+filebeat.inputs:
+- type: filestream
+  id: my-application-logs
+  enabled: true
+  paths:
+    - /var/log/*.log
+# =================================== Kibana ===================================
+setup.kibana:  
+
+  host: "https://kibana:5601"
+  ssl:
+    certificate_authorities: ["/usr/share/filebeat/certs/ca/ca.crt"]
+    certificate: "/usr/share/filebeat/certs/kibana/kibana.crt"
+    key: "/usr/share/filebeat/certs/kibana/kibana.key"
+    verification_mode: "certificate"
+
+
+output.elasticsearch:
+  hosts: ["es01:9200"]
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+  protocol: "https"
+  ssl:
+    certificate_authorities: ["/usr/share/filebeat/certs/ca/ca.crt"]
+    certificate: "/usr/share/filebeat/certs/filebeat/filebeat.crt"
+    key: "/usr/share/filebeat/certs/filebeat/filebeat.key"
+    verification_mode: "certificate"
