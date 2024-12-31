@@ -1,3 +1,15 @@
+# Guy Bruneau
+# Version 1.0
+# Date: 31 Dec 2024
+#
+# This file must have the following permissions and user associated to it:
+# Filebeat is used first of all to load the filebeat templates into Kibana
+# The template can be used to ingest data from a cloud sensor
+# by pointing the logs to logstash
+#
+# sudo chown root:root filebeat/filebeat.yml
+# sudo chmod 644 filebeat/filebeat.yml
+
 filebeat.inputs:
 - type: filestream
   id: my-application-logs
