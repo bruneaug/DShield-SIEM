@@ -331,7 +331,7 @@ sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd
 ````
 Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
 ````
-sudo curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/filebeat.yml -o /etc/filebeat/filebeat.yml
+sudo curl https://raw.githubusercontent.com/bruneaug/DShield-Sensor/refs/heads/main/filebeat.yml -o /etc/filebeat/filebeat.yml
 ````
 - Edit the filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 ````
