@@ -246,7 +246,7 @@ services:
       - allow_superuser=true
       - config.reload.automatic=true
       - config.reload.interval=3s
-      - pipeline.ecs_compatibility=disabled
+      - pipeline.ecs_compatibility=v8
       - xpack.geoip.download.endpoint=https://geoip.elastic.co/v1/database
       - xpack.geoip.downloader.enabled=true
       - xpack.monitoring.enabled=false
