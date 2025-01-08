@@ -268,8 +268,9 @@ services:
     labels:
       co.elastic.logs/module: fleet-server
     volumes:
-      - certs:/usr/share/elastic-agent/certs
+      - certs:/certs
       - fleetserverdata:/usr/share/elastic-agent
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
       - /proc:/hostfs/proc:ro
