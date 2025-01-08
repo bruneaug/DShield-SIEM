@@ -1,0 +1,122 @@
+######################################
+# Fleet configuration
+######################################
+# ================================ General =====================================
+# Beats is configured under Fleet, you can define most settings
+# from the Kibana UI. You can update this file to configure the settings that
+# are not supported by Fleet.
+fleet:
+  enabled: true
+
+inputs:
+  - id: docker/metrics-docker
+    type: docker/metrics
+    streams:
+      - id: docker/metrics-docker.container
+        data_stream:
+          dataset: docker.container
+          type: metrics
+        metricsets:
+          - container
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.cpu
+        data_stream:
+          dataset: docker.cpu
+          type: metrics
+        metricsets:
+          - cpu
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.diskio
+        data_stream:
+          dataset: docker.diskio
+          type: metrics
+        metricsets:
+          - diskio
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+        skip_major:
+          - 9
+          - 253
+      - id: docker/metrics-docker.event
+        data_stream:
+          dataset: docker.event
+          type: metrics
+        metricsets:
+          - event
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.healthcheck
+        data_stream:
+          dataset: docker.healthcheck
+          type: metrics
+        metricsets:
+          - healthcheck
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.image
+        data_stream:
+          dataset: docker.image
+          type: metrics
+        metricsets:
+          - image
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.info
+        data_stream:
+          dataset: docker.info
+          type: metrics
+        metricsets:
+          - info
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+      - id: docker/metrics-docker.memory
+        data_stream:
+          dataset: docker.memory
+          type: metrics
+        metricsets:
+          - memory
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+      - id: docker/metrics-docker.network
+        data_stream:
+          dataset: docker.network
+          type: metrics
+        metricsets:
+          - network
+        hosts:
+          - 'unix:///var/run/docker.sock'
+        period: 10s
+        labels.dedot: true
+  - id: filestream-docker
+    type: filestream
+    streams:
+      - id: 'docker-container-logs-${docker.container.name}-${docker.container.id}'
+        data_stream:
+          dataset: docker.container_logs
+          type: logs
+          elasticsearch:
+            dynamic_dataset: true
+            dynamic_namespace: true
+        paths:
+          - '/var/lib/docker/containers/${docker.container.id}/*-json.log'
+        parsers:
+          - container:
+              stream: all
+              format: docker
