@@ -268,8 +268,12 @@ services:
     labels:
       co.elastic.logs/module: fleet-server
     volumes:
-      - certs:/certs
+      - certs:/usr/share/elastic-agent/certs
       - fleetserverdata:/usr/share/elastic-agent
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
+      - /proc:/hostfs/proc:ro
+      - /:/hostfs:ro
     ports:
       - ${FLEET_PORT}:8220
     user: root
