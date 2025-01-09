@@ -9,6 +9,9 @@ fleet:
   enabled: true
 
 inputs:
+  - id: fleet-server-fleet_server
+    type: fleet-server
+    unused_key: not_used
   - id: docker/metrics-docker
     type: docker/metrics
     streams:
