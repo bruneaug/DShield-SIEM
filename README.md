@@ -37,6 +37,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Elasticsearch
 - Logstash
 - Elastic-Agent
+- Filebeat
 
 **Note**: To update ELK server components, follow these steps:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-update
