@@ -267,6 +267,11 @@ services:
     image: docker.elastic.co/beats/elastic-agent:${STACK_VERSION}
     labels:
       co.elastic.logs/module: fleet-server
+    user: root
+    restart: unless-stopped
+    configs:
+      - source: ea_config
+        target: /usr/share/elastic-agent/state/elastic-agent.yml
     volumes:
       - certs:/certs
       - fleetserverdata:/usr/share/elastic-agent
@@ -277,8 +282,6 @@ services:
       - /:/hostfs:ro
     ports:
       - ${FLEET_PORT}:8220
-    user: root
-    restart: unless-stopped
     environment:
       - SSL_CERTIFICATE_AUTHORITIES=/certs/ca/ca.crt
       - CERTIFICATE_AUTHORITIES=/certs/ca/ca.crt
@@ -332,6 +335,8 @@ services:
 # sudo chown root:root filebeat/filebeat.yml
 # sudo chmod 644 filebeat/filebeat.yml
 
-configs:
-  fb_config:
-    file: ./filebeat/filebeat.yml
+    configs:
+      fb_config:
+        file: ./filebeat/filebeat.yml
+      ea_config:
+        file: ./elastic-agent/state/elastic-agent.yml
