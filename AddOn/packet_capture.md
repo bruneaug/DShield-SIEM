@@ -1,12 +1,15 @@
 # Packet Capture with Daemonlogger
 Daemonlogger is a packet capture software by Cisco Talos[1] which capture the packets and save them to disk. This used to be the primary packet capture software with Sguil[2].
 
-$ sudo apt install daemonlogger
-
-Copy to the sensor packet_capture.tgz tarball to your home user account and extract it as follow:<br>
-$  curl -LJO https://github.com/bruneaug/DShield-Sensor/blob/main/sensor_scripts/packet_capture.tgz<br>
-$ sudo tar zxvf packet_capture.tgz -C /<br>
-
+Install daemonlogger and download to the sensor (if not already done), the packet_capture.tgz tarball to your home user account and extract it as follow:<br>
+````
+sudo apt install daemonlogger
+git clone https://github.com/bruneaug/DShield-Sensor.git
+````
+Install the tarball as follow:<br>
+````
+sudo tar zxvf packet_capture.tgz -C
+````
 ## Edit the log_packets.sh Script
 The log_packets.sh script need to be edit and update the DShield sensor interface before it can capture.<br>
 $ ifconfig (get the sensor interface, eth0, ens18, etc)<br>
