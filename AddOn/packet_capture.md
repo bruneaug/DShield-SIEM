@@ -8,6 +8,7 @@ git clone https://github.com/bruneaug/DShield-Sensor.git
 ````
 Install the tarball as follow:<br>
 ````
+cd ~/DShield-Sensor/sensor_scripts
 sudo tar zxvf packet_capture.tgz -C
 ````
 ## Edit the log_packets.sh Script
