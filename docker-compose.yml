@@ -335,8 +335,8 @@ services:
 # sudo chown root:root filebeat/filebeat.yml
 # sudo chmod 644 filebeat/filebeat.yml
 
-    configs:
-      fb_config:
-        file: ./filebeat/filebeat.yml
-      ea_config:
-        file: ./elastic-agent/state/elastic-agent.yml
+configs:
+  fb_config:
+    file: ./filebeat/filebeat.yml
+  ea_config:
+    file: ./elastic-agent/state/elastic-agent.yml
