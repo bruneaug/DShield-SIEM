@@ -59,19 +59,25 @@ $ sudo docker stats (shows status of container)<br>
 ![image](https://github.com/user-attachments/assets/04f0bb31-8184-45b2-ab45-f1fca35fac14)
 
 # Update DShield ELK to the Latest Version
-Make a backup of the .env file. If you forget, you need to redo the **Important** part.<br>
-$ cd DShield-SIEM<br>
-$ mv .env ../<br>
-$ sudo docker compose stop<br>
-**-> Important**: If you forgot to backup the .env file or the ELK stack version has been updated,, edit the .env, reset your hostname & IP address variables.<br>
-_Make your your backup match the current ELK stack version_ (i.e 8.15.0 vs 8.14.3)<br>
-$ git pull (Update the code from Github)<br>
-**Note**: If this fails to download, see Update DShield ELK Fails to Download<br>
-$ cp -f ../.env .<br>
-$ sudo docker compose rm -f -v<br>
-$ sudo docker compose up --build -d<br>
-**Note**: The file in this location ~/DShield-SIEM/scripts/dshield_sensor\*ndjson will be removed by the script after cowrie-setup.exe loads. This will prevent making any changes to Data Views for the cowrie* index.<br>
-If an updated dshield_sensor\*ndjson is published, you will need to update the TTYLog and Arkime after the update has been applied.<br>
+Using **git stash** and **git stash pop** will backup your local changes (i.e. .env and any other files) and restore them after the update.<br>
+These two commands should have preserved the following files permissions from your original installation<br>
+chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
+sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml<br>
+
+````
+cd DShield-SIEM
+sudo docker compose stop
+git stash
+git pull
+git stash pop
+sudo docker compose up --build -d
+````
+If you get any errors after restarting the docker, rerun the following commands after stopping the docker</br)
+````
+sudo docker compose stop
+sudo docker compose rm -f -v
+sudo docker compose up --build -d
+````
 
 ### Removing a Container that Fail to Start
 $ sudo docker inspect logstash
