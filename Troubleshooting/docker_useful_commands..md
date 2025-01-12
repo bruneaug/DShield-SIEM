@@ -63,6 +63,7 @@ Using **git stash** and **git stash pop** will backup your local changes (i.e. .
 These two commands should have preserved the following files permissions from your original installation<br>
 chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml<br>
+sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml<br>
 
 ````
 cd DShield-SIEM
