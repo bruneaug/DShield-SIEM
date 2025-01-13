@@ -14,12 +14,21 @@ Management -> Fleet -> Agent policies<br>
 
 Now proceed with the sensor Zeek installation using the following steps.<br>
 Reference: https://docs.zeek.org/en/master/install.html#binary-packages
-
-$ echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list<br>
-$ curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null<br>
-$ sudo apt update<br>
-$ sudo apt upgrade<br>
-$ sudo apt install zeek-6.0<br>
+## Installing for Ubuntu 20.04
+````
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+ sudo apt update
+ sudo apt upgrade
+ sudo apt install zeek-7.0
+````
+## Installing for Ubuntu 24.04
+````
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+sudo apt update
+sudo apt install zeek-7.0
+````
 
 ## Configuring and Starting Zeek
 
