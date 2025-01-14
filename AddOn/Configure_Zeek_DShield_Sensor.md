@@ -90,3 +90,7 @@ $ sudo zeekctl restart<br>
 # Dashboard Logs Zeek Overview
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/0aac6ec0-43cd-48ae-be56-991c215613ef)
+
+# Zeek Cheatsheet
+
+https://github.com/corelight/zeek-cheatsheets/blob/master/Corelight-Zeek-Cheatsheets-3.0.4.pdf
