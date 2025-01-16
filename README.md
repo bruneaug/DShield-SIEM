@@ -340,9 +340,12 @@ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee 
 echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd
 ````
-Download the custom filebeat.yml file that will forward the logs the Elasticsearch:<br>
+### Transfer all Sensor Files to the DShield Sensor
+Follow this URL to download all the files related to the DShield Sensor<br>
+https://github.com/bruneaug/DShield-Sensor
 ````
-sudo curl https://raw.githubusercontent.com/bruneaug/DShield-Sensor/refs/heads/main/filebeat.yml -o /etc/filebeat/filebeat.yml
+git clone https://github.com/bruneaug/DShield-Sensor.git
+sudo cp ~/DShield-Sensor/filebeat.yml /etc/filebeat/filebeat.yml
 ````
 - Edit the filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 ````
