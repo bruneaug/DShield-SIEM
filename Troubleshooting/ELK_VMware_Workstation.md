@@ -12,6 +12,10 @@ If you plan to use VMware workstation using NAT on a laptop, this is how NAT sho
 
 - Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).<br>
 
+### Filebeat -> Logstash
+The IP to use from filebeat to connect to ELK is the actual IP for the host not the NAT IP<br>
+If the host IP is 192.168.25.5 and the NAT is 192.168.175.35, filebeat IP is going to be **192.168.25.5** to connect to logstash.<br>
+
 ### Troubleshooting Remote Access to 5044
 If unable to connect via filebeat test, check to see if Windows Defender is blocking access to the VM.<br>
 Disable the firewall and re-run the filebeat test to see if it still fails. If it fails, there might be an <br>
