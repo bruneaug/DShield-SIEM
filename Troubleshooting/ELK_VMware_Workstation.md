@@ -12,5 +12,10 @@ If you plan to use VMware workstation using NAT on a laptop, this is how NAT sho
 
 - Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).<br>
 
+### Troubleshooting Remote Access to 5044
+If unable to connect via filebeat test, check to see if Windows Defender is blocking access to the VM.<br>
+Disable the firewall and re-run the filebeat test to see if it still fails. If it fails, there might be an <br>
+issue with the **NAT** configuration.
+
 ### Access ELK via the Laptop IP
 Access Kibana: https://ELK:5601
