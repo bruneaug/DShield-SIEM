@@ -17,6 +17,11 @@ Add the following ports:
 * 8220 Access to Fleet Server
 
 - Now ELK can be reached via the 3 main ports remotely, including filebeat from the DShield sensor(s).<br>
+## Configure Windows Firewall
+In order for the DShield sensor to connect to ELK via NAT, you are required to add a firewall rule to the Windows firewall.<br>
+I most cases, a rule that allow everything TCP and under the Advanced tab only Private and Public are selected and Block edge traversal<br>
+should work<br>.
+![ElasticKibana](https://github.com/user-attachments/assets/0fb009ff-5728-4b48-80d9-fecda1b6c491)
 
 ### Filebeat -> Logstash
 The IP to use from filebeat to connect to ELK is the actual IP for the host not the NAT IP<br>
