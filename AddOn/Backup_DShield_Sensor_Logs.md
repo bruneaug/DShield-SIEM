@@ -1,15 +1,13 @@
 # Backup DShield Sensor Logs
-These 2 script are used to make backup of the the daily logs. This includes iptables, cowrie, downloads & webhoneypot.
 
-$ cd ~/scripts<br>
-$ curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/sensor_scripts/copy_cowrie.sh -o copy_cowrie.sh<br>
-$ curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/main/sensor_scripts/copy_iptables.sh -o copy_iptables.sh<br>
-$ chmod 755 *.sh
+First step is to download all the files to your sensor if that wasn't previously done.<br>
+Go to this site and follow the inststruction to pull the packages:<br>
+https://github.com/bruneaug/DShield-Sensor/tree/main
 
 After a copy of the scripts have been downloaded to the sensor local script directory, setup a cronjob (rename guy to your location) as root and add the following:
-
-$ sudo crontab -e
-
+````
+sudo crontab -e
+````
 \# Copy the daily iptables logs at the end of the day<br>
 58 23 * * * /home/guy/scripts/copy_iptables.sh > /dev/null 2>1&<br>
 \# <br>
