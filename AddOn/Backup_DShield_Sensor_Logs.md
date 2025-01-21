@@ -1,6 +1,6 @@
 # Backup DShield Sensor Logs
 
-First step is to download all the files to your sensor if that wasn't previously done.<br>
+First step is to download all the files to your sensor if that wasn't previously done. This will backup cowrie, firewall (dshield) and webhoneypot.<br>
 Go to this site and follow the inststruction to pull the packages:<br>
 https://github.com/bruneaug/DShield-Sensor/tree/main
 
