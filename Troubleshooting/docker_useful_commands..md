@@ -117,4 +117,5 @@ $ sudo docker exec -ti cowrie bash<br>
 
 # Copying Files Between Docker & Local User
 $ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
-$ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/
+$ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/<br>
+$ sudo docker cp logstash:/usr/share/logstash/config .
