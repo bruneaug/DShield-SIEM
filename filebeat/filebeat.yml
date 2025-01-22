@@ -14,13 +14,25 @@
 # sudo docker exec -ti filebeat bash
 # ./filebeat setup -e 
 
-
 filebeat.inputs:
 - type: filestream
   id: my-application-logs
   enabled: true
   paths:
     - /var/log/*.log
+
+# ============================== Filebeat modules ==============================
+
+filebeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: true
+
+  # Period on which files under path should be checked for changes
+  reload.period: 10s
+
 # =================================== Kibana ===================================
 setup.kibana:  
 
