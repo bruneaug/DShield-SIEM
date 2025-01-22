@@ -7,7 +7,7 @@ $ sudo docker compose start/stop<br>
 $ sudo docker compose ps (list running containers)<br>
 $ sudo docker container ls/ps<br>
 $ sudo docker network ls (network listing)<br>
-$ sudo docker stats (shows status of container)<br>
+$ sudo docker stats (shows status of container, container ID, Name, Mem/Usage)<br>
 $ sudo docker system prune -a (Remove everything)<br>
 $ sudo docker logs kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
