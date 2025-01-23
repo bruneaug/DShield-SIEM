@@ -64,7 +64,6 @@ These two commands should have preserved the following files permissions from yo
 chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
 sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml<br>
 sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml<br>
-
 ````
 cd DShield-SIEM
 sudo docker compose stop
@@ -78,6 +77,13 @@ If you get any errors after restarting the docker, rerun the following commands 
 sudo docker compose stop
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
+````
+**Important**<br>
+If this is a **new ELK version** (i.e 8.15.3 -> 8.17.0), you will need to run this update to activate the new Filebeat<br>
+dashboards, pipelines & index-management for Kibana.<br>
+````
+sudo docker exec -ti filebeat bash
+./filebeat setup -e 
 ````
 
 ### Removing a Container that Fail to Start
