@@ -2,6 +2,13 @@
 Jump To:
 - [Installing Zeek on DShield Sensor](#Installing-Zeek-on-DShield-Sensor)
   - [Adding Zeek to DShield Sensor Agent Policy](#Adding-Zeek-to-DShield-Sensor-Agent-Policy)
+  - [Installation for Ubuntu 20.04](#Installation-for-Ubuntu-20.04)
+  - [Installation for Ubuntu 22.04](#Installation-for-Ubuntu-22.04)
+  - [Installation for Ubuntu 24.04](#Installation-for-Ubuntu-24.04)
+  - [Configuring and Starting Zeek](#Configuring-and-Starting-Zeek)
+    - [Lets create a soft link to /usr/local/bin](#Lets-create-a-soft-link-to-/usr/local/bin)
+    - [Additional zeek Commands](#Additional-zeek-Commands)
+- [Dashboard Logs Zeek Overview](#Dashboard-Logs-Zeek-Overview)
 - [Zeek Sending Logs to ELK with Filebeat](#Zeek-Sending-Logs-to-ELK-with-Filebeat)
 
 This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the **/opt/zeek** directory.<br>
@@ -76,7 +83,7 @@ There is another ZeekControl command, deploy, that combines the above two steps 
 [ZeekControl] > deploy<br>
 [ZeekControl] > exit<br>
 
-### Lets create a soft link to /usr/local/bin<br>
+### Lets create a soft link to /usr/local/bin
 
 $ sudo ln -s /opt/zeek/bin/zeekctl /usr/local/bin/zeekctl<br>
 <pre>
@@ -85,7 +92,7 @@ Name         Type       Host          Status    Pid    Started<br>
 zeek         standalone localhost     running   17384  22 Mar 16:44:04<br>
 </pre>
 
-### Additional Commands
+### Additional zeek Commands
 
 $ sudo zeekctl stop<br>
 $ sudo zeekctl start<br>
