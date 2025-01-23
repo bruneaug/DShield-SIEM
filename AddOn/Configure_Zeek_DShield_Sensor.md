@@ -94,6 +94,7 @@ zeek         standalone localhost     running   17384  22 Mar 16:44:04<br>
 
 ### Additional zeek Commands
 
+$ sudo zeekctl check<br>
 $ sudo zeekctl stop<br>
 $ sudo zeekctl start<br>
 $ sudo zeekctl restart<br>
