@@ -2,9 +2,9 @@
 Jump To:
 - [Installing Zeek on DShield Sensor](#Installing-Zeek-on-DShield-Sensor)
   - [Adding Zeek to DShield Sensor Agent Policy](#Adding-Zeek-to-DShield-Sensor-Agent-Policy)
-  - [Installation for Ubuntu 20.04](#Installation-for-Ubuntu-20.04)
-  - [Installation for Ubuntu 22.04](#Installation-for-Ubuntu-22.04)
-  - [Installation for Ubuntu 24.04](#Installation-for-Ubuntu-24.04)
+  - [Installation for Ubuntu 20.04](#Installation-for-Ubuntu-20\.04)
+  - [Installation for Ubuntu 22.04](#Installation-for-Ubuntu-22\.04)
+  - [Installation for Ubuntu 24.04](#Installation-for-Ubuntu-24\.04)
   - [Configuring and Starting Zeek](#Configuring-and-Starting-Zeek)
     - [Lets create a soft link to /usr/local/bin](#Lets-create-a-soft-link-to-/usr/local/bin)
     - [Additional zeek Commands](#Additional-zeek-Commands)
