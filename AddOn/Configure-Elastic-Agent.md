@@ -3,6 +3,12 @@ Jump To:
 - [Add elastic-agent to DShield Sensor[(#Add-elastic-agent-to-DShield-Sensor)
  - [TLS Certificate is Needed to Connect to ELK](#TLS-Certificate-is-Needed-to-Connect-to-ELK)
  - [Login DShield Sensor](#Login-DShield-Sensor)
+ - [Add ELK IP to DShield sensor](#Add-ELK-IP-to-DShield-sensor)
+ - [Enable the elastic-agent](#Enable-the-elastic-agent)
+ - [Select: Create agent policy](#Select:-Create-Agent-Policy)
+- [Configure softflowd Application](#Configure-softflowd-Application)
+- [Checking the Agent Netflow Logs](#Checking-the-Agent-Netflow-Logs)
+- [Using tcpdump to Verify softflowd is Sending Data](#Using-tcpdump-to-Verify-softflowd-is-Sending-Data)
 - [Netflow Sending Logs to ELK with Filebeat](#Netflow-Sending-Logs-to-ELK-with-Filebeat)
 
 ## TLS Certificate is Needed to Connect to ELK<br>
@@ -27,7 +33,7 @@ Output should show connected and download index.html<br>
 ![image](https://github.com/user-attachments/assets/ecd310e7-c59e-4636-a34d-4c595949ba86)
 
 
-## Add ELK IP to DShield sensor:
+## Add ELK IP to DShield sensor
 Where the IP shows 192.168.25.231, replace with your own ELK server IP.
 
 $ sudo su -<br>
@@ -55,7 +61,7 @@ Management -> Fleet -> Agent policies -> Create agent policy:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e6d22e40-c01a-4a8b-a8c0-6d7cd5e2e3e6)
  
-## Select: Create agent policy
+## Select: Create Agent Policy
 
 After the policy is created, select the policy (DShield Sensor), Actions -> Add agent <br>
 Pick RPM and copy line 3 and format it like this:<br>
@@ -91,7 +97,8 @@ Select the Integration -> Settings -> Upgrade to latest version<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e70ab700-e55f-4d00-beae-f97f6d12d394)
 
  
-# Configure softflowd Application<br>
+# Configure softflowd Application
+
 This application will capture NetFlow traffic targeting your DShield sensor and report it to ELK under the NetFlow dashboard<br>
 ````
 sudo vi /etc/softflowd/default.conf
