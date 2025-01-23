@@ -320,14 +320,13 @@ services:
     container_name: filebeat
     image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
     user: root
-    command: ["--strict.perms=false"]
+    command: ["filebeat", "-e", "--strict.perms=false"]
     configs:
       - source: fb_config
         target: /usr/share/filebeat/filebeat.yml
     volumes:
       - certs:/usr/share/filebeat/certs
       - "filebeat:/usr/share/filebeat/data"
-        #- "./logs:/usr/share/filebeat/logs"
     environment:
       - ELASTIC_HOSTS=https://es01:9200
       - ELASTIC_USERNAME=elastic
