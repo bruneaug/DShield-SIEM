@@ -1,0 +1,90 @@
+## JVM configuration
+
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms1g
+-Xmx1g
+
+################################################################
+## Expert settings
+################################################################
+##
+## All settings below this section are considered
+## expert settings. Don't tamper with them unless
+## you understand what you are doing
+##
+################################################################
+
+## GC configuration
+11-13:-XX:+UseConcMarkSweepGC
+11-13:-XX:CMSInitiatingOccupancyFraction=75
+11-13:-XX:+UseCMSInitiatingOccupancyOnly
+
+## Locale
+# Set the locale language
+#-Duser.language=en
+
+# Set the locale country
+#-Duser.country=US
+
+# Set the locale variant, if any
+#-Duser.variant=
+
+## basic
+
+# set the I/O temp directory
+#-Djava.io.tmpdir=$HOME
+
+# set to headless, just in case
+-Djava.awt.headless=true
+
+# ensure UTF-8 encoding by default (e.g. filenames)
+-Dfile.encoding=UTF-8
+
+# use our provided JNA always versus the system one
+#-Djna.nosys=true
+
+# Turn on JRuby invokedynamic
+-Djruby.compile.invokedynamic=true
+
+## heap dumps
+
+# generate a heap dump when an allocation from the Java heap fails
+# heap dumps are created in the working directory of the JVM
+-XX:+HeapDumpOnOutOfMemoryError
+
+# specify an alternative path for heap dumps
+# ensure the directory exists and has sufficient space
+#-XX:HeapDumpPath=${LOGSTASH_HOME}/heapdump.hprof
+
+## GC logging
+#-Xlog:gc*,gc+age=trace,safepoint:file=@loggc@:utctime,pid,tags:filecount=32,filesize=64m
+
+# log GC status to a file with time stamps
+# ensure the directory exists
+#-Xloggc:${LS_GC_LOG_FILE}
+
+# Entropy source for randomness
+-Djava.security.egd=file:/dev/urandom
+
+# Copy the logging context from parent threads to children
+-Dlog4j2.isThreadContextMapInheritable=true
+
+# FasterXML/jackson defaults
+#
+# Sets the maximum string length (in chars or bytes, depending on input context).
+# This limit is not exact and an exception will happen at sizes greater than this limit.
+# Some text values that are a little bigger than the limit may be treated as valid but no
+# text values with sizes less than or equal to this limit will be treated as invalid.
+# This value should be higher than `logstash.jackson.stream-read-constraints.max-number-length`.
+# The jackson library defaults to 20000000 or 20MB, whereas Logstash defaults to 200MB or 200000000 characters.
+-Dlogstash.jackson.stream-read-constraints.max-string-length=200000000
+#
+# Sets the maximum number length (in chars or bytes, depending on input context).
+# The jackson library defaults to 1000, whereas Logstash defaults to 10000.
+-Dlogstash.jackson.stream-read-constraints.max-number-length=10000
+#
+# Sets the maximum nesting depth. The depth is a count of objects and arrays that have not
+# been closed, `{` and `[` respectively.
+#-Dlogstash.jackson.stream-read-constraints.max-nesting-depth=1000

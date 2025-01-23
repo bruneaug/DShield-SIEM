@@ -1,0 +1,10 @@
+allow_superuser: ${allow_superuser}
+config.reload.automatic: ${config.reload.automatic}
+config.reload.interval: ${config.reload.interval}
+http.host: 0.0.0.0
+pipeline.ecs_compatibility: ${pipeline.ecs_compatibility}
+xpack.geoip.download.endpoint: ${xpack.geoip.download.endpoint}
+xpack.geoip.downloader.enabled: ${xpack.geoip.downloader.enabled}
+xpack.monitoring.elasticsearch.hosts:
+- https://es01:9200
+xpack.monitoring.enabled: ${xpack.monitoring.enabled}
