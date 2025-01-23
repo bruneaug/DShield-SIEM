@@ -122,6 +122,8 @@ services:
       - certs:/usr/share/elasticsearch/config/certs
       - esdata01:/usr/share/elasticsearch/data
       - ${SCRIPTS_DIR}:/usr/share/elasticsearch/scripts
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
     ports:
       - ${ES_PORT}:9200
@@ -173,6 +175,8 @@ services:
       - certs:/usr/share/kibana/config/certs
       - kibanadata:/usr/share/kibana/data
       - ${SCRIPTS_DIR}:/usr/share/kibana/scripts
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
     ports:
       - ${KIBANA_PORT}:5601
