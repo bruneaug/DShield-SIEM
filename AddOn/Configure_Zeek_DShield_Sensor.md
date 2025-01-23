@@ -96,6 +96,17 @@ $ sudo zeekctl restart<br>
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/0aac6ec0-43cd-48ae-be56-991c215613ef)
 
 # Installing Zeek with Filebeat
+To install Activate logs collection to ELK when using a Cloud sensor, setting up the Elastic-Agent is likely<br>
+not going to be able to connect to the ELK Fleet server. The option to send the logs to ELK is to copy the pre-configured<br>
+modules (located in filebeat/modules.d) supplied from the GitHub download and copy them as follow:<br>
+````
+sudo cp ~/DShield-Sensor/filebeat/modules.d/* /etc/filebeat/modules.d
+sudo filebeat test config
+sudo filebeat test output
+sudo systemctl restart filebeat
+````
+The logs will be sent via logstash to ELK. To view the zeek logs, you will need to use the **[filebeat Zeek] Overview** dashboard<br>
+![image](https://github.com/user-attachments/assets/63bacb42-f101-4224-80de-15c051db0c9d)
 
 # Zeek Cheatsheet
 
