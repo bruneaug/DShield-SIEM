@@ -2,7 +2,7 @@
 Jump To:
 - [Installing Zeek on DShield Sensor](#Installing-Zeek-on-DShield-Sensor)
   - [Adding Zeek to DShield Sensor Agent Policy](#Adding-Zeek-to-DShield-Sensor-Agent-Policy)
-- [Installing Zeek with Filebeat](#Installing-Zeek-with-Filebeat)
+- [Zeek Sending Logs to ELK with Filebeat](#Zeek-Sending-Logs-to-ELK-with-Filebeat)
 
 This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the **/opt/zeek** directory.<br>
 
@@ -95,7 +95,7 @@ $ sudo zeekctl restart<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/0aac6ec0-43cd-48ae-be56-991c215613ef)
 
-# Installing Zeek with Filebeat
+# Zeek Sending Logs to ELK with Filebeat
 To install Activate logs collection to ELK when using a Cloud sensor, setting up the Elastic-Agent is likely<br>
 not going to be able to connect to the ELK Fleet server. The option to send the logs to ELK is to copy the pre-configured<br>
 modules (located in filebeat/modules.d) supplied from the GitHub download and copy them as follow:<br>
