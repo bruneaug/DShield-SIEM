@@ -5,7 +5,7 @@ Jump To:
  - [Login DShield Sensor](#Login-DShield-Sensor)
  - [Add ELK IP to DShield sensor](#Add-ELK-IP-to-DShield-sensor)
  - [Enable the elastic-agent](#Enable-the-elastic-agent)
- - [Select: Create agent policy](#Select:-Create-Agent-Policy)
+ - [Select Create agent policy](#Select-Create-Agent-Policy)
 - [Configure softflowd Application](#Configure-softflowd-Application)
 - [Checking the Agent Netflow Logs](#Checking-the-Agent-Netflow-Logs)
 - [Using tcpdump to Verify softflowd is Sending Data](#Using-tcpdump-to-Verify-softflowd-is-Sending-Data)
@@ -61,7 +61,7 @@ Management -> Fleet -> Agent policies -> Create agent policy:<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e6d22e40-c01a-4a8b-a8c0-6d7cd5e2e3e6)
  
-## Select: Create Agent Policy
+## Select Create Agent Policy
 
 After the policy is created, select the policy (DShield Sensor), Actions -> Add agent <br>
 Pick RPM and copy line 3 and format it like this:<br>
