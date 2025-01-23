@@ -351,9 +351,9 @@ Follow this URL to download all the files related to the DShield Sensor<br>
 https://github.com/bruneaug/DShield-Sensor
 ````
 git clone https://github.com/bruneaug/DShield-Sensor.git
-sudo cp ~/DShield-Sensor/filebeat.yml /etc/filebeat/filebeat.yml
+sudo cp ~/DShield-Sensor/filebeat/filebeat.yml /etc/filebeat/filebeat.yml
 ````
-- Edit the filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
+- Edit filebeat.yml and change the IP address to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
 ````
 sudo vi /etc/filebeat/filebeat.yml
 ````
