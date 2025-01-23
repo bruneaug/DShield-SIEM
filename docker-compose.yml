@@ -327,6 +327,9 @@ services:
     volumes:
       - certs:/usr/share/filebeat/certs
       - "filebeat:/usr/share/filebeat/data"
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log/auth.log:/var/log/auth.log:ro
     environment:
       - ELASTIC_HOSTS=https://es01:9200
       - ELASTIC_USERNAME=elastic
