@@ -237,9 +237,10 @@ services:
     volumes:
       - certs:/usr/share/logstash/certs
       - logstashdata01:/usr/share/logstash/data
-      # - "./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml:ro"
-      # - "./logstash/ingest_data/:/usr/share/logstash/ingest_data/"
       - "./logstash/pipeline/:/usr/share/logstash/pipeline/"
+      - "./logstash/config/:/usr/share/logstash/config/"
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - ${LOGSTASH_PORT}:5044
     environment:
