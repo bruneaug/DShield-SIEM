@@ -1,6 +1,11 @@
 # Add elastic-agent to DShield Sensor
+Jump To:
+- [Add elastic-agent to DShield Sensor[(#Add-elastic-agent-to-DShield-Sensor)
+ - [TLS Certificate is Needed to Connect to ELK](#TLS-Certificate-is-Needed-to-Connect-to-ELK)
+ - [Login DShield Sensor](#Login-DShield-Sensor)
+- [Netflow Sending Logs to ELK with Filebeat](#Netflow-Sending-Logs-to-ELK-with-Filebeat)
 
-TLS Certificate is Need to Connect to ELK<br>
+## TLS Certificate is Needed to Connect to ELK<br>
 
 Login the ELK server home user account and copy the ca.crt to ~.<br>
 $ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt  .<br>
@@ -126,5 +131,19 @@ listening on lo, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 20:00:01.827254 IP 127.0.0.1.47941 > 127.0.0.1.2055: UDP, length 344
 
 </pre>
+
+# Netflow Sending Logs to ELK with Filebeat
+To send logs collection to ELK for **Cloud sensor**, setting up the Elastic-Agent is likely will not work unless both sensor<br>
+and the ELK Stack are in the cloud. The only option available is to send the logs to ELK Stack is to copy the pre-configured<br>
+modules (located in filebeat/modules.d) supplied from the GitHub download and copy them as follow:<br>
+````
+git clone https://github.com/bruneaug/DShield-Sensor.git
+sudo cp ~/DShield-Sensor/filebeat/modules.d/* /etc/filebeat/modules.d
+sudo filebeat test config
+sudo filebeat test output
+sudo systemctl restart filebeat
+````
+The logs will be sent via logstash to ELK. To view the zeek logs, you will need to use the **[filebeat Netflow] Overview** dashboard<br>
+![image](https://github.com/user-attachments/assets/a180539c-5921-45a7-bae0-e8013b62f08d)
 
 [1] https://ubuntu.com/server/docs/security-trust-store
