@@ -1,4 +1,8 @@
 # Installing Zeek on DShield Sensor
+Jump To:
+- [Installing Zeek on DShield Sensor](#Installing-Zeek-on-DShield-Sensor)
+  - [Adding Zeek to DShield Sensor Agent Policy](#Adding-Zeek-to-DShield-Sensor-Agent-Policy)
+- [Installing Zeek with Filebeat](#Installing-Zeek-with-Filebeat)
 
 This is an addon to the DShield sensor if you have to space to log the data. Zeek is installed in the **/opt/zeek** directory.<br>
 
@@ -90,6 +94,8 @@ $ sudo zeekctl restart<br>
 # Dashboard Logs Zeek Overview
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/0aac6ec0-43cd-48ae-be56-991c215613ef)
+
+# Installing Zeek with Filebeat
 
 # Zeek Cheatsheet
 
