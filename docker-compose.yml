@@ -247,6 +247,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - ${LOGSTASH_PORT}:5044
+      - ${LOGSTASH_API_PORT}:9600
     environment:
       - allow_superuser=true
       - config.reload.automatic=true
