@@ -61,9 +61,12 @@ $ sudo docker stats (shows status of container)<br>
 # Update DShield ELK to the Latest Version
 Using **git stash** and **git stash pop** will backup your local changes (i.e. .env and any other files) and restore them after the update.<br>
 These two commands should have preserved the following files permissions from your original installation<br>
-chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh<br>
-sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml<br>
-sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml<br>
+````
+chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
+sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml
+sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml
+````
+This should be enough to update your ELK Stack but if something fails, remember to verify filebeat permissions.<br>
 ````
 cd DShield-SIEM
 sudo docker compose stop
