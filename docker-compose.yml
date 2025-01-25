@@ -27,7 +27,7 @@ volumes:
     driver: local
   filebeat:
     driver: local
-   metricbeatdata:
+  metricbeatdata:
     driver: local
 
 networks:
