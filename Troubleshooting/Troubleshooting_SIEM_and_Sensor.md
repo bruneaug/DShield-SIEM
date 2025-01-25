@@ -413,6 +413,11 @@ The amount of RAM used by es01 is pretty close to the 2GB mark and at some point
 This errors in Kibana means that _es01_ needs some additional RAM for Java. Increasing **ES_MEM_LIMIT to 3g** would fix this error.<br>
 ![image](https://github.com/user-attachments/assets/6aa4c57b-73c5-4171-b948-17c24e7b76a7)
 
+## Troubleshooting Logstash Bottleneck Issues
+Run this command and make sure the "status" : "green", if it isn't green, you need to change the **LS_MEM_LIMIT=2g** to fix this issue.<br>
+````
+curl -XGET 'localhost:9600/_node/pipelines?pretty'
+````
 
 # Linux Commands
 
