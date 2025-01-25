@@ -27,6 +27,8 @@ volumes:
     driver: local
   filebeat:
     driver: local
+   metricbeatdata:
+    driver: local
 
 networks:
   default:
@@ -89,6 +91,15 @@ services:
           "      - ${HOSTNAME}\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
+          "      - ${IPADDRESS}\n"\
+          "  - name: metricbeat\n"\
+          "    dns:\n"\
+          "      - metricbeat\n"\
+          "      - localhost\n"\
+          "      - ${HOSTNAME}\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
+          "      - ${IPADDRESS}\n"\
           > config/certs/instances.yml;
           bin/elasticsearch-certutil cert --silent --pem -out config/certs/certs.zip --in config/certs/instances.yml --ca-cert config/certs/ca/ca.crt --ca-key config/certs/ca/ca.key;
           unzip config/certs/certs.zip -d config/certs;
