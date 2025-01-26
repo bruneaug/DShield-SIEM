@@ -38,6 +38,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Logstash
 - Elastic-Agent
 - Filebeat
+- Metricbeat
 
 **Note**: To update ELK server components, follow these steps:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-update
@@ -58,9 +59,9 @@ sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-p
 sudo systemctl enable docker
 ````
 ## Update /etc/hosts
-Add the following to /etc/hosts where the IP address is the IP of your own ELK server:
-192.168.25.231 fleet-server
-192.168.25.231 es01
+Add the following to /etc/hosts where the IP address is the IP of your own ELK server:<br>
+192.168.25.231 fleet-server<br>
+192.168.25.231 es01<br>
 ````
 sudo vi /etc/hosts
 ````
