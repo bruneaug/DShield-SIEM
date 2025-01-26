@@ -11,8 +11,11 @@
 # and systemctl enable docker.service has been enabled
 # Date: 31 December 2024
 # Added filebeat to docker. Filebeat was added to load the filebeat Kibana templates
-# to be used with logs com9ing from the cloud.
+# to be used with logs coming from the cloud.
 # Filebeat modules.d for netflow, zeek, etc.
+# Date: 25 Jan 2025
+# Added metricbeat to docker. Metricbeat was added to load the metricbeat Kibana templates
+# to be used to monitor ELK Stack and Beats.
 
 volumes:
   certs:
@@ -227,8 +230,8 @@ services:
     volumes:
       - ${SCRIPTS_DIR}:/usr/share/scripts
       - certs:/usr/share/config/certs
-    #restart: on-failure:3
     user: root
+    #restart: unless-stopped
     entrypoint: /usr/share/scripts/cowrie-setup.sh
     environment: 
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
@@ -327,7 +330,6 @@ services:
       - KIBANA_PASSWORD=${KIBANA_PASSWORD}
 
   filebeat:
-    restart: unless-stopped
     depends_on:
       es01:
         condition: service_healthy
@@ -337,6 +339,9 @@ services:
     container_name: filebeat
     image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
     user: root
+    restart: unless-stopped
+    ports:
+      - ${FILEBEAT_PORT}:5067
     command: ["filebeat", "-e", "--strict.perms=false"]
     configs:
       - source: fb_config
@@ -348,12 +353,54 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/log/auth.log:/var/log/auth.log:ro
     environment:
+      - xpack.http.enabled=true
+      - xpack.monitoring.enabled=false
       - ELASTIC_HOSTS=https://es01:9200
       - ELASTIC_USERNAME=elastic
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
-      - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
+      - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=certs/ca/ca.crt
       - ELASTICSEARCH_SSL_VERIFICATIONMODE=certificate
       - NAME_SERVER=${DNS_SERVER}
+
+  metricbeat:
+    depends_on:
+      es01:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
+    hostname: metricbeat
+    container_name: metricbeat
+    image: docker.elastic.co/beats/metricbeat:${STACK_VERSION}
+    labels:
+      co.elastic.logs/module: metricbeat
+    user: root
+    restart: unless-stopped
+    ports:
+      - ${METRICBEAT_PORT}:5066
+    configs:
+      - source: mb_config
+        target: /usr/share/metricbeat/metricbeat.yml
+    environment:
+      - ELASTIC_HOSTS=https://es01:9200
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=certs/ca/ca.crt
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=certificate
+      - KIBANA_HOSTS=https://kibana:5601
+      - LOGSTASH_HOSTS=http://logstash:9600
+      - SERVER_SSL_ENABLED=true
+      - SERVER_SSL_KEY=certs/kibana/kibana.key
+      - SERVER_SSL_CERTIFICATE=certs/kibana/kibana.crt
+    volumes:
+      - certs:/usr/share/metricbeat/certs
+      - metricbeatdata:/usr/share/metricbeat/data
+      - "./metricbeat/modules.d/:/usr/share/metricbeat/modules.d/"
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro"
+      - "/proc:/hostfs/proc:ro"
+      - "/:/hostfs:ro"
+
 
 # This load the filebeat.yml template into filebeat docker
 # The following steps must me done to correcly setup filebeat.yml
@@ -365,3 +412,6 @@ configs:
     file: ./filebeat/filebeat.yml
   ea_config:
     file: ./elastic-agent/state/elastic-agent.yml
+  mb_config:
+    file: ./metricbeat/metricbeat.yml
+
