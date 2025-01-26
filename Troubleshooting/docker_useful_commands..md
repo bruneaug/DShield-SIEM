@@ -16,6 +16,7 @@ $ sudo docker rm -f cowrie (remove a container)<br>
 $ sudo docker system df (Check docker usage)<br>
 $ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/lib/docker (Shows a breakdown of docker filesystem)<br>
 $ sudo docker builder prune (Clear the build cache if > 0)<br>
+$ sudo docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a (Lists listening docker services (ports)<br>
 
 # Specific Docker Commands
 $ sudo docker stop fleet-server<br>
