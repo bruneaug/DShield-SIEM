@@ -110,7 +110,7 @@ You can keep these default or edit each files and change them.
 Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
 ````
-$ sudo docker compose up -d
+sudo docker compose up -d
 ````
 ### Setup Docker Auto-Restart on Reboot
 Enable and start the docker service. This will restart DShield-SIEM when the server is rebooted.
