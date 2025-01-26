@@ -14,6 +14,7 @@
 # sudo docker exec -ti filebeat bash
 # ./filebeat setup -e 
 
+
 filebeat.inputs:
 - type: filestream
   id: my-application-logs
@@ -45,6 +46,24 @@ setup.kibana:
 
 
 output.elasticsearch:
+  hosts: ["es01:9200"]
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+  protocol: "https"
+  ssl:
+    certificate_authorities: ["/usr/share/filebeat/certs/ca/ca.crt"]
+    certificate: "/usr/share/filebeat/certs/filebeat/filebeat.crt"
+    key: "/usr/share/filebeat/certs/filebeat/filebeat.key"
+    verification_mode: "certificate"
+
+# =============================== HTTP Endpoint ================================
+#
+# Defines if the HTTP endpoint is enabled.
+http.enabled: true
+
+# ============================= X-Pack Monitoring ==============================
+
+monitoring.elasticsearch:
   hosts: ["es01:9200"]
   username: "elastic"
   password: "${ELASTIC_PASSWORD}"
