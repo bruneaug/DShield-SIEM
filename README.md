@@ -60,8 +60,7 @@ sudo systemctl enable docker
 ````
 ## Update /etc/hosts
 Add the following to /etc/hosts where the IP address is the IP of your own ELK server:<br>
-192.168.25.231 fleet-server<br>
-192.168.25.231 es01<br>
+192.168.25.231 es01 fleet-server<br>
 ````
 sudo vi /etc/hosts
 ````
