@@ -170,7 +170,7 @@ In order to see the ELK stack health, it is necessary to configure the stack mon
 - Select "_Or, set up with self monitoring_"<br>
 - Monitoring is currently off -> Select: _Turn on monitoring_<br>
 
-![image](https://github.com/user-attachments/assets/eca130d6-b5ad-4281-81b6-b4c5e9cd0552)
+![image](https://github.com/user-attachments/assets/79b7a5c9-ebf7-40e2-8bd6-89d808c4c25b)
 
 # Configuring the fleet-agent
 The fleet-agent (this is an elastic-agent running on the ELK stack) will be used to ingest threat intelligence. It can also be used to do other things that won’t be covered here.<br>
