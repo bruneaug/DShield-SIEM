@@ -66,7 +66,7 @@ sudo vi /etc/hosts
 ````
 ## Ensure the Firewall is Off
 ````
-iptables -nL
+sudo iptables -nL
 ````
 ![image](https://github.com/user-attachments/assets/e6d260bd-021f-4dc0-9c27-86878f84d637)
 
