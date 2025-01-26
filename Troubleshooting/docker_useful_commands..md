@@ -65,7 +65,7 @@ These two commands should have preserved the following files permissions from yo
 chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
 sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml
 sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml
-sudo chown root:root ~/DShield-SIEM/metricbeat/metricbeat.yml
+sudo chown -R root:root ~/DShield-SIEM/metricbeat/*
 sudo chmod 644 ~/DShield-SIEM/metricbeat/metricbeat.yml
 ````
 This should be enough to update your ELK Stack but if something fails, remember to verify filebeat permissions.<br>
