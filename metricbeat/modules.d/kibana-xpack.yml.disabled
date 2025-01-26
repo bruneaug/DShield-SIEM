@@ -1,0 +1,19 @@
+# Module: kibana
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/8.15/metricbeat-module-kibana.html
+
+- module: kibana
+  xpack.enabled: true
+  period: 10s
+  hosts: ["localhost:5601"]
+  #basepath: ""
+  #username: "user"
+  #password: "secret"
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+  protocol: "https"
+  ssl:
+    certificate_authorities: ["/usr/share/metricbeat/certs/ca/ca.crt"]
+    certificate: "/usr/share/metricbeat/certs/metricbeat/metricbeat.crt"
+    key: "/usr/share/metricbeat/certs/metricbeat/metricbeat.key"
+    verification_mode: "certificate"
+

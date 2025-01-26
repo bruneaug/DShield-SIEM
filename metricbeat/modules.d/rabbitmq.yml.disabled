@@ -1,0 +1,14 @@
+# Module: rabbitmq
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/8.15/metricbeat-module-rabbitmq.html
+
+- module: rabbitmq
+  #metricsets:
+  #  - node
+  #  - queue
+  #  - connection
+  #  - exchange
+  #  - shovel
+  period: 10s
+  hosts: ["localhost:15672"]
+  #username: guest
+  #password: guest

@@ -1,0 +1,35 @@
+# Module: mysql
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/8.15/metricbeat-module-mysql.html
+
+- module: mysql
+  #metricsets:
+  #  - status
+  #  - galera_status
+  #  - performance
+  #  - query
+  period: 10s
+
+  # Host DSN should be defined as "user:pass@tcp(127.0.0.1:3306)/"
+  # or "unix(/var/lib/mysql/mysql.sock)/",
+  # or another DSN format supported by <https://github.com/Go-SQL-Driver/MySQL/>.
+  # The username and password can either be set in the DSN or using the username
+  # and password config options. Those specified in the DSN take precedence.
+  hosts: ["root:secret@tcp(127.0.0.1:3306)/"]
+
+  # Username of hosts. Empty by default.
+  #username: root
+
+  # Password of hosts. Empty by default.
+  #password: secret
+
+  # Optional SSL/TLS. By default is false.
+  #ssl.enabled: true
+
+  # List of root certificates for SSL/TLS server verification
+  #ssl.certificate_authorities: ["/etc/pki/root/ca.crt"]
+
+  # Certificate for SSL/TLS client authentication
+  #ssl.certificate: "/etc/pki/client/cert.crt"
+  
+  # Client certificate key file
+  #ssl.key: "/etc/pki/client/cert.key"
