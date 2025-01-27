@@ -16,6 +16,7 @@
 # Date: 25 Jan 2025
 # Added metricbeat to docker. Metricbeat was added to load the metricbeat Kibana templates
 # to be used to monitor ELK Stack and Beats.
+# Configuration tested with Proxmox LXC Containers
 
 volumes:
   certs:
