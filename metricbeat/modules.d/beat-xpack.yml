@@ -8,6 +8,8 @@
     - state
   period: 10s
   hosts: ["http://metricbeat:5066","filebeat:5067"]
-  #username: "user"
-  #password: "secret"
+  protocol: "https"
+  ssl:
+    certificate_authorities: ["/usr/share/metricbeat/certs/ca/ca.crt"]
+    verification_mode: "certificate"
 
