@@ -79,6 +79,7 @@ sudo docker compose stop
 git stash
 git pull
 git stash pop
+git reset HEAD
 sudo docker compose up --build -d
 ````
 If you get any errors after restarting the docker, rerun the following commands after stopping the docker</br)
