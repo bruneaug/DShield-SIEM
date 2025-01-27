@@ -4,10 +4,7 @@
 - module: kibana
   xpack.enabled: true
   period: 10s
-  hosts: ["localhost:5601"]
-  #basepath: ""
-  #username: "user"
-  #password: "secret"
+  hosts: ["https://kibana:5601"]
   username: "elastic"
   password: "${ELASTIC_PASSWORD}"
   protocol: "https"
