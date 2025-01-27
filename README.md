@@ -78,7 +78,7 @@ chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
 sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml
 sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml
 sudo chown -R root:root ~/DShield-SIEM/metricbeat/*
-sudo chmod 644 ~/DShield-SIEM/metricbeat/metricbeat.yml
+sudo chmod -R 644 ~/DShield-SIEM/metricbeat/*
 mkdir scripts
 mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts
 mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts
