@@ -375,6 +375,7 @@ services:
       co.elastic.logs/module: metricbeat
     user: root
     restart: unless-stopped
+    command: ["--environment", "container"]
     ports:
       - ${METRICBEAT_PORT}:5066
     configs:
