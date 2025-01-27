@@ -111,12 +111,12 @@ twistd    3050          cowrie   12u  IPv4  22594      0t0  TCP *:2223 (LISTEN)
 
 ## Troubleshooting Filebeat Connection to Logstash
 ````
-sudo su -<br>
-filebeat test config<br>
+sudo su -
+filebeat test config
 ````
 Expected output: _Config OK<br>_
 ````
-filebeat test output<br>
+filebeat test output
 ````
 Expected output:
 <pre>
