@@ -57,7 +57,13 @@ sudo apt update && sudo apt upgrade
 sudo reboot (if update were applied)
 sudo apt-get install -y jq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin pip
 sudo systemctl enable docker
+sudo systemctl start docker.service
 ````
+Confirm the docker service is running<br>
+````
+sudo systemctl status docker.service
+````
+
 ## Update /etc/hosts
 Add the following to /etc/hosts where the IP address is the IP of your own ELK server:<br>
 192.168.25.231 es01 fleet-server logstash filebeat<br>
@@ -113,18 +119,6 @@ This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cow
 ````
 sudo docker compose up -d
 ````
-### Setup Docker Auto-Restart on Reboot
-Enable and start the docker service. This will restart DShield-SIEM when the server is rebooted.
-````
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
-````
-Confirm the docker service is running<br>
-````
-sudo systemctl status docker.service
-````
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/55df8e2f-6896-497c-b1b8-247196141e6f)
-
 Installation Completed
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/df44cf7d-b105-4188-abe7-983311e313d3)
@@ -141,6 +135,9 @@ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/l
 Using netstat, these 4 services should now be listening.<br>
 ```
 netstat -an | grep '9200\|8220\|5601\|5044'
+````
+This should be the output you should see:<br>
+<pre>
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana
 tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent
 tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch
@@ -149,7 +146,8 @@ tcp6       0      0 :::5601                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
 tcp6       0      0 :::9200                 :::*                    LISTEN
 tcp6       0      0 :::5044                 :::*                    LISTEN
-```
+<\pre>
+  
 # Loading Default Filebeat Templates in Kibana
 This will install the default templates and dashboards can be used to store netflow data from remote DShield sensors.<br>
 In order for Logstash to start storing data, the following commands must be executed:<br>
