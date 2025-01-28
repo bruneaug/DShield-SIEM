@@ -98,8 +98,11 @@ cd ~/DShield-SIEM
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
-Default to **2147483648** (2GB) but can be expanded if you have the resources<br>
-
+Default to 2GB but can be expanded if you have the resources<br>
+Edit .env file and configure for your own ELK Stack<br>
+````
+vi .env
+````
 - Update the following variables in the **.env** file to match your ELK server DNS information, hostname, IP and default elastic password if you want to change it: <br>
   - HOSTNAME="ubuntu"
   - DNS_SERVER="9.9.9.9"
