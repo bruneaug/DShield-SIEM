@@ -150,8 +150,8 @@ tcp6       0      0 :::5601                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
 tcp6       0      0 :::9200                 :::*                    LISTEN
 tcp6       0      0 :::5044                 :::*                    LISTEN
-<\pre>
-  
+</pre>
+
 # Loading Default Filebeat Templates in Kibana
 This will install the default templates and dashboards can be used to store netflow data from remote DShield sensors.<br>
 In order for Logstash to start storing data, the following commands must be executed:<br>
