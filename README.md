@@ -98,7 +98,7 @@ cd ~/DShield-SIEM
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
     - Current _default password_ for elastic is **student**<br>
 Memory Limits in **.env** are the most memory that docker will allocate for each of the ELK containers.<br>
-Default to 2GB but can be expanded if you have the resources<br>
+Default to 2GB for Elasticsearch but can be expanded if you have the resources<br>
 Edit .env file and configure for your own ELK Stack<br>
 ````
 vi .env
@@ -108,6 +108,7 @@ vi .env
   - DNS_SERVER="9.9.9.9"
   - IPADDRESS="192.168.25.231"
   - ELASTIC_PASSWORD=student
+  - ES_MEM = Elasticsearch -> 2g, KB_MEM = Kibana -> 1g, LS_MEM = Logstash -> 1g
 - If you want to change the default nameserver(s) information and your local private network location for the destination address (i.e. DShield sensor mapping - currently set for Ottawa, Canada), edit to the following directory for the files before loading docker:<br>
 ````
   cd logstash/pipeline
