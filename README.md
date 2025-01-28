@@ -172,6 +172,8 @@ In order to see the ELK stack health, it is necessary to configure the stack mon
 
 - Select "_Or, set up with self monitoring_"<br>
 - Monitoring is currently off -> Select: _Turn on monitoring_<br>
+![image](https://github.com/user-attachments/assets/129deb88-a657-4cab-9f44-64d337c5c9c6)
+
 
 ![image](https://github.com/user-attachments/assets/79b7a5c9-ebf7-40e2-8bd6-89d808c4c25b)
 
@@ -417,22 +419,9 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 
 ![image](https://github.com/user-attachments/assets/a700729e-b2e4-4c78-833c-759df4ff609a)
 
-# Restarting ELK Stack after a Reboot
-Manual restart of the docker<br>
-````
-cd DShield-SIEM
-sudo docker compose stop
-sudo docker compose start
-````
-If you **sudo systemctl enable docker** during the setup above<br>
-Docker will automatically start all the docker services. If you need to restart the docker service, use either of these commands:<br>
-````
-sudo systemctl restart docker or
-sudo reboot the server
-`````
 # Useful Docker Commands
-I have move the list of commands to its own page<br>
-Refer to this page: https://github.com/bruneaug/DShield-SIEM/edit/main/Troubleshooting/docker_useful_commands..md
+Refer to this page for a list of useful docker commands.<br>
+https://github.com/bruneaug/DShield-SIEM/edit/main/Troubleshooting/docker_useful_commands..md
 
 # Information on Elastic with the Console
 These command are run from the Dev Tool -> Console<br>
