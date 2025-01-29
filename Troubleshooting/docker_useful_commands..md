@@ -77,10 +77,10 @@ This should be enough to update your ELK Stack but if something fails, remember 
 ````
 cd DShield-SIEM
 sudo docker compose stop
-git stash
-git pull
-git stash pop
-git reset HEAD
+sudo git stash
+sudo git pull
+sudo git stash pop
+sudo git reset HEAD
 chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
