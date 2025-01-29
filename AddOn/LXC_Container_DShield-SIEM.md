@@ -21,7 +21,7 @@ Login with user guy<br>
 ````
 sudo apt-get upgrade
 sudo apt-get update
-sudo apt-get install htop net-tools lxc
+sudo apt-get install htop net-tools 
 ````
 
 Login as root in Proxmox server and add the following 2 lines to the LXC container config (mine is 101):<br>
