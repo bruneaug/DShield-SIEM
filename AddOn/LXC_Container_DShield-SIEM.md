@@ -36,3 +36,5 @@ Configure as follow and **unselect Backup:**<br>
 
 Add the  /var/lib/docker
 Now proceed to install DShield SIEM<br>
+
+https://github.com/bruneaug/DShield-SIEM/blob/main/README.md
