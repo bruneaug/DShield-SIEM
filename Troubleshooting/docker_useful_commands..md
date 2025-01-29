@@ -81,6 +81,7 @@ git stash
 git pull
 git stash pop
 git reset HEAD
+chmod 754 ~/DShield-SIEM/scripts/cowrie-setup.sh
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
 ````
