@@ -90,9 +90,6 @@ mkdir scripts
 mv DShield-SIEM/AddOnScripts/parsing_tty.sh scripts
 mv DShield-SIEM/AddOnScripts/rename_arkime_pcap.sh scripts
 chmod 754 scripts/*.sh
-````
-The parsing_tty.sh script will be configured later in another document.<br>
-````
 cd ~/DShield-SIEM
 ````
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
