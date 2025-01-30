@@ -2,6 +2,9 @@
 
 https://github.com/DShield-ISC/dshield/blob/main/STATUSERRORS.md<br>
 https://github.com/DShield-ISC/dshield/blob/main/docs/general-guides/Troubleshooting.md<br>
+# EC2 AWS Template
+These are some of the EC2 template for DShield Sensor I'm aware that exists<br>
+https://github.com/Boggby/ec2-honeypot-template/tree/main
 
 ## Sending SSH Public Key to Remote Sensor
 These 2 options can be used to send your public SSH key to a remote server. When asked, enter your password to copy the key.<br>
