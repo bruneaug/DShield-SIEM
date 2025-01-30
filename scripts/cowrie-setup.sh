@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/bash
 
 # Guy Bruneau, guybruneau@outlook.com
 # Date: 10 Jan 2024
