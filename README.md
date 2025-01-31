@@ -117,7 +117,7 @@ The script change_perms.sh will configure some of the files before starting the 
 Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
 ````
- ~/scripts/change_perms.sh
+~/scripts/change_perms.sh
 sudo docker compose up -d
 ````
 Installation Completed
