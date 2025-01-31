@@ -80,11 +80,6 @@ sudo iptables -nL
 Using user ($) account, run the following commands:<br>
 ````
 git clone https://github.com/bruneaug/DShield-SIEM.git
-sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml
-sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml
-sudo chown -R root:root ~/DShield-SIEM/metricbeat/*
-sudo chmod 644 ~/DShield-SIEM/metricbeat/metricbeat.yml
-sudo chmod -R 644 ~/DShield-SIEM/metricbeat/modules.d/*
 mkdir scripts
 mv DShield-SIEM/AddOnScripts/*.sh scripts
 chmod 754 scripts/*.sh
