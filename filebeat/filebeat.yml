@@ -26,7 +26,7 @@ filebeat.inputs:
 - type: filestream
   id: iscintel
   paths:
-    - "/root/iscintel/iscintel*.json"
+    - "/usr/share/filebeat/intel/iscintel*.json"
   # Change to true to enable this input configuration.
   enabled: true
   parsers:
