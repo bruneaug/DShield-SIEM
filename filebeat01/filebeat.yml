@@ -1,0 +1,68 @@
+# Guy Bruneau
+# Version 1.0
+# Date: 31 Dec 2024
+#
+# This file must have the following permissions and user associated to it:
+# Filebeat is used first of all to load the filebeat templates into Kibana
+# The template can be used to ingest data from a cloud sensor
+# by pointing the logs to logstash
+#
+# sudo chown root:root filebeat01/filebeat.yml
+# sudo chmod 644 filebeat/filebeat.yml
+#
+# Login into filebeat for logstash
+# sudo docker exec -ti filebeat01 bash
+
+
+filebeat.inputs:
+# Parsing ISC ThreatIntel
+- type: filestream
+  id: iscintel
+  paths:
+    - "/usr/share/filebeat/intel/iscintel*.json"
+  # Change to true to enable this input configuration.
+  enabled: true
+  parsers:
+    - ndjson:
+      message_key: message
+      key_under_root: true
+
+# ============================== Filebeat modules ==============================
+
+filebeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: true
+
+  # Period on which files under path should be checked for changes
+  reload.period: 10s
+
+#==================== Output Event ====================
+output.logstash:
+  hosts: ["logstash:5044"]
+#  codec.json:
+#    pretty: true
+
+#output.console:
+#  pretty: true
+#  enable: true
+
+# =============================== HTTP Endpoint ================================
+#
+# Defines if the HTTP endpoint is enabled.
+http.enabled: true
+
+# ============================= X-Pack Monitoring ==============================
+
+monitoring.elasticsearch:
+  hosts: ["es01:9200"]
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+  protocol: "https"
+  ssl:
+    certificate_authorities: ["/usr/share/filebeat/certs/ca/ca.crt"]
+    certificate: "/usr/share/filebeat/certs/filebeat/filebeat.crt"
+    key: "/usr/share/filebeat/certs/filebeat/filebeat.key"
+    verification_mode: "certificate"
