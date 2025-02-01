@@ -353,6 +353,8 @@ services:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/log/auth.log:/var/log/auth.log:ro
+      # Used to import ISC IP threat intel data
+      - /opt/intel:/usr/share/filebeat/intel
     environment:
       - xpack.http.enabled=true
       - xpack.monitoring.enabled=false
