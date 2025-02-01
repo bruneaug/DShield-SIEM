@@ -7,7 +7,7 @@
     - stats
     - state
   period: 10s
-  hosts: ["http://metricbeat:5066","filebeat:5067"]
+  hosts: ["http://metricbeat:5066","filebeat:5067","filebeat01:5068"]
   protocol: "https"
   ssl:
     certificate_authorities: ["/usr/share/metricbeat/certs/ca/ca.crt"]
