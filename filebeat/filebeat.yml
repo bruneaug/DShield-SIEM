@@ -22,6 +22,18 @@ filebeat.inputs:
   paths:
     - /var/log/*.log
 
+# Parsing ISC ThreatIntel
+- type: filestream
+  id: iscintel
+  paths:
+    - "/root/iscintel/iscintel*.json"
+  # Change to true to enable this input configuration.
+  enabled: true
+  parsers:
+    - ndjson:
+      message_key: message
+      key_under_root: true
+
 # ============================== Filebeat modules ==============================
 
 filebeat.config.modules:
