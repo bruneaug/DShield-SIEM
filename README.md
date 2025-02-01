@@ -130,7 +130,7 @@ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/l
 ### The following ELK Services are Setup
 Using netstat, these 4 services should now be listening.<br>
 ```
-netstat -an | grep '9200\|8220\|5601\|5044\|5066\|5067\|9600'
+netstat -an | grep '9200\|8220\|5601\|5044\|5066\|5067\|5068\|9600'
 ````
 This should be the output you should see:<br>
 <pre>
@@ -140,6 +140,7 @@ tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  --->
 tcp        0      0 0.0.0.0:5044            0.0.0.0:*               LISTEN  ---> Logstash Data Collection
 tcp        0      0 0.0.0.0:5066            0.0.0.0:*               LISTEN  ---> Metricbeat Stack Node Information
 tcp        0      0 0.0.0.0:5067            0.0.0.0:*               LISTEN  ---> Filebeat Stack Node Information
+tcp        0      0 0.0.0.0:5068            0.0.0.0:*               LISTEN  ---> Filebeat Stack Node Information (Process ISC Threat Intel to Logstash)  
 tcp        0      0 0.0.0.0:9600            0.0.0.0:*               LISTEN  ---> Logstash Stack Node and Pipeline Information
 tcp6       0      0 :::5601                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
