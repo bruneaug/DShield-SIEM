@@ -373,7 +373,9 @@ bin/elasticsearch-reset-password --url "https://127.0.0.1:9200" --username elast
 If you need to rebuild or add a new appliance, you need to remove the original SSL certificates for your Docker installation<br
 and stop, remove some of the configuration and restart docker.
 `````
+sudo mv /var/lib/docker/volumes/dshield-elk_certs/_data/ca.zip /tmp
 sudo mv /var/lib/docker/volumes/dshield-elk_certs/_data/certs.zip /tmp
+
 sudo docker compose stop
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
