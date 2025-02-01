@@ -3,6 +3,9 @@
 # Guy Bruneau
 # Date: 29 Jun 2024
 # Version: 1.0
+# Date: 1 Feb 2025
+# Version: 1.0
+# Updated theat intel director location and running from $HOME directory.
 
 #### This script runs on ELK server
 
@@ -11,11 +14,11 @@
 # Parsing wget http://isc.sans.edu/api/sources/attacks/2000/2024-06-23?json -O 2024-06-23.json ; cat 2024-06-23.json | tr -d '[]' | sed 's/},{/}\n{/g'  > iscintel-2024-06-23.json
 
 # Transfer logs to ELK server
-#0 12 * * * /root/scripts/get_iscipintel.sh> /dev/null 2>1&
+#0 12 * * * /$HOME/scripts/get_iscipintel.sh> /dev/null 2>1&
 
 YESTERDAY=`date -d "1 day ago" '+%Y-%m-%d'`
 2DAYSAGO=`date -d "2 day ago" '+%Y-%m-%d'`
-DIRECTORY=$HOME/iscintel
+DIRECTORY=/opt/intel
 FILE=iscintel-$YESTERDAY.json
 FILENAME=$HOME/iscintel/iscintel-$YESTERDAY.json
 OLDFILE=$HOME/iscintel/iscintel-$2DAYSAGO.json
