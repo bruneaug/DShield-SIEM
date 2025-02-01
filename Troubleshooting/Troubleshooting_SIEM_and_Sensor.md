@@ -332,7 +332,6 @@ sudo su -
 cd /var/lib/filebeat/registry/filebeat
 rm log.json
 ````
-
 Login Kibana<br>
 Go to Management -> Index Management<br>
 In the search box, enter cowrie, select all of them as per example below and delete all the cowrie Indices<br>
@@ -370,6 +369,15 @@ Run the following command to reset the elastic user password:
 ````
 bin/elasticsearch-reset-password --url "https://127.0.0.1:9200" --username elastic -i
 ````
+## Rebuilding SSL certificates for DShield SIEM
+If you need to rebuild or add a new appliance, you need to remove the original SSL certificates for your Docker installation<br
+and stop, remove some of the configuration and restart docker.
+`````
+sudo mv /var/lib/docker/volumes/dshield-elk_certs/_data/certs.zip /tmp
+sudo docker compose stop
+sudo docker compose rm -f -v
+sudo docker compose up --build -d
+`````
 
 # Docker Troubleshooting Commands
 This is a list of command that can be useful to troubleshoot issues with the docker.<br>
