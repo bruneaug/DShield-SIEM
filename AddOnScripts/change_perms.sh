@@ -27,6 +27,10 @@ if [ ! -d "$DIRECTORY" ]; then
    sudo chown $USER:$USER /opt/intel
    echo "Directory '$DIRECTORY' created and permissions changed to '$USER'."
 
+   echo "Added cronjob to download ISC threat intel daily"
+   crontab -l | { cat; echo "# Transfer logs to ELK server"; } | crontab -
+   crontab -l | { cat; echo "0 12 * * * $HOME/scripts/get_iscipintel.sh> /dev/null 2>1&"; } | crontab -
+
 else
         echo "Directory '$DIRECTORY' already exist."
 fi
