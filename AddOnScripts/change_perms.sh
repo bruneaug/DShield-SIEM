@@ -41,7 +41,7 @@ fi
 
 ELK_IP=`cat ~/DShield-SIEM/.env | grep IPADDRESS | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'`
 
-if [ ! -e  `~/DShield-SIEM/scripts/dshield_sensor_8.*.ndjson` ]; then
+if [ ! -e  ~/DShield-SIEM/scripts/dshield_sensor_8.*.ndjson ]; then
 
    echo "File does not exist"
 else
