@@ -15,6 +15,9 @@
 # Date: 12 August 2024
 # Version: 1.8
 # Added remove command to delete the dashboard mapping file after it has been removed.
+# Date: 3 February 2025
+# Version: 1.9
+# Added Zeek dashboard
 
 # All the policies have been updated to reflect the changes in the DShield log collection.
 # This is a significant update from the initial publication on the ISC Storm Center website
@@ -63,6 +66,7 @@ echo "Setting up Dashboard"
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import --form file=@dshield_sensor_8.11.1.ndjson
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.11.1.ndjson
 $curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.15.3.ndjson
+$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_zeek_8.17.0.ndjson.ndjson
 
 # Detection SIEM Rules setup
 echo "Setting up SIEM Detection Rule for Cowrie Activity"
