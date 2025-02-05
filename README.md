@@ -120,7 +120,7 @@ sudo docker compose up -d
 ````
 Installation Completed
 
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/df44cf7d-b105-4188-abe7-983311e313d3)
+![image](https://github.com/user-attachments/assets/4adccef9-a0d2-4084-9f93-71a61a2a8a43)
 
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
