@@ -48,7 +48,6 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
-    restart: unless-stopped
     user: "0"
     command: >
       bash -c '
