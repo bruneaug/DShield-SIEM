@@ -108,11 +108,14 @@ vi .env
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
 You can keep these default or edit each files and change them.
 
-The script change_perms.sh will configure some of the files before starting the installation of the docker components.<br)
+The script **change_perms.sh** will configure some of the files before starting the installation of the docker components.<br)
+The script will also update the IP address used in the dashboard query to the IP of your ELK stack.<br>
+````
+~/scripts/change_perms.sh
+````
 Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
 ````
-~/scripts/change_perms.sh
 sudo docker compose up -d
 ````
 Installation Completed
