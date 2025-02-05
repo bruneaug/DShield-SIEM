@@ -27,6 +27,18 @@ filebeat.inputs:
       message_key: message
       key_under_root: true
 
+# Parsing Rosti ThreatIntel
+- type: filestream
+  id: rostiintel
+  paths:
+    - "/home/guy/rostiintel/rostiintel*.json"
+  # Change to true to enable this input configuration.
+  enabled: true
+  parsers:
+    - ndjson:
+      message_key: message
+      key_under_root: true
+
 # ============================== Filebeat modules ==============================
 
 filebeat.config.modules:
