@@ -31,7 +31,7 @@ filebeat.inputs:
 - type: filestream
   id: rostiintel
   paths:
-    - "/usr/share/filebeat/intel/rostiintel*.json"
+    - "/usr/share/filebeat/intel/rostiintel.json"
   # Change to true to enable this input configuration.
   enabled: true
   parsers:
