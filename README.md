@@ -15,7 +15,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 
 **Note**: This must be installed on a separate server as per the instruction below.<br>
 
-- This was tested on Ubuntu 20.04, 22.04 & 24.04 LTS<br>
+- This was tested on Ubuntu 20.04, 22.04 & 24.04 LTS or [Proxmox LXC](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/LXC_Container_DShield-SIEM.md) Container <br>
 - Step 1 build Ubuntu<br>
 - Step 2 install docker and ELK<br>
 - Step 3 install and configure Filebeat on DShield Sensor(s)<br>
