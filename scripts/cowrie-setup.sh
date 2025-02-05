@@ -15,9 +15,9 @@
 # Date: 12 August 2024
 # Version: 1.8
 # Added remove command to delete the dashboard mapping file after it has been removed.
-# Date: 3 February 2025
+# Date: 4 February 2025
 # Version: 1.9
-# Added Zeek dashboard
+# Added Rosti ThreatIntel
 
 # All the policies have been updated to reflect the changes in the DShield log collection.
 # This is a significant update from the initial publication on the ISC Storm Center website
@@ -56,6 +56,10 @@ $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ind
 echo "Setting up ti.iscintel"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/ti.iscintel --data-binary @ti.iscintel-policy.json; echo
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.iscintel --data-binary @ti.iscintel-index.json; echo
+
+echo "Setting up ti.rostiintel"
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/ti.iscintel --data-binary @ti.rostiintel-policy.json; echo
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.iscintel --data-binary @ti.rostiintel-index.json; echo
 
 echo "Setting up cowrie.vt_data"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.vt_data --data-binary @cowrie.vt_data-policy.json; echo
