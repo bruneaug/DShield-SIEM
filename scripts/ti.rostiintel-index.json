@@ -1,22 +1,23 @@
 {
-  "index_patterns": ["ti.iscintel-*"],
+  "index_patterns": ["ti.rostiintel-*"],
     "template": {
      "settings": {
        "number_of_shards": 1,
        "number_of_replicas": 0, 
        "max_docvalue_fields_search" : "200",
        "index": {
+         "mode": "logsdb",
          "refresh_interval": "5s",
          "lifecycle": {
-          "name": "ti.iscintel",
-          "rollover_alias": "ti.iscintel"
+          "name": "ti.rostiintel",
+          "rollover_alias": "ti.rostiintel"
         }
       }
     },
     "mappings" : {
       "numeric_detection": true,
       "_meta" : {
-        "beat" : "ti.iscintel"
+        "beat" : "ti.rostiintel"
       },
       "dynamic_templates": [
         {
@@ -652,6 +653,14 @@
                 },
                 "ip": {
                   "type": "ip"
+                }
+              }
+            },
+            "feed": {
+              "properties": {
+                "name": {
+                  "ignore_above": "1024",
+                  "type": "keyword"
                 }
               }
             }
