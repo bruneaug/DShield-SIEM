@@ -58,8 +58,8 @@ $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.iscintel --data-binary @ti.iscintel-index.json; echo
 
 echo "Setting up ti.rostiintel"
-$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/ti.iscintel --data-binary @ti.rostiintel-policy.json; echo
-$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.iscintel --data-binary @ti.rostiintel-index.json; echo
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/ti.rostiintel --data-binary @ti.rostiintel-policy.json; echo
+$curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/ti.rostiintel --data-binary @ti.rostiintel-index.json; echo
 
 echo "Setting up cowrie.vt_data"
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm/policy/cowrie.vt_data --data-binary @cowrie.vt_data-policy.json; echo
