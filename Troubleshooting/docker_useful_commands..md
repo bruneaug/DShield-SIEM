@@ -123,6 +123,7 @@ $ sudo docker exec -ti logstash bash<br>
 $ sudo docker exec -ti kibana bash<br>
 $ sudo docker exec -ti fleet-server bash<br>
 $ sudo docker exec -ti filebeat bash<br>
+$ sudo docker exec -ti filebeat01 bash<br>
 $ sudo docker exec -ti metricbeat bash<br>
 $ sudo docker exec -ti cowrie bash<br>
 
