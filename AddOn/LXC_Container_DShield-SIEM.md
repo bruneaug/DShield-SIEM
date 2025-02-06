@@ -1,6 +1,6 @@
 # Proxmox Setup DShield SIEM with LXC Container
 
-In Proxmox server, select local and download the Ubuntu 24.04 template:<br>
+In Proxmox server, select storage local and download the Ubuntu 24.04 template:<br>
 Download and install Ubuntu 24.04<br>
 Configure and install Ubuntu 24.04 Container<br>
 
