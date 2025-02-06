@@ -30,8 +30,8 @@ vi /etc/pve/lxc/101.conf
 ````
 Copy this at the bottom of the configuration file<br>
 ````
-lxc.prlimit.memlock=-1<br>
-lxc.prlimit.nofile:65536<br>
+lxc.prlimit.memlock=-1
+lxc.prlimit.nofile:65536
 ````
 Those 2 additional configuration are used by ELK server es01 to start.<br>
 Shutdown and take a snapshot<br>
