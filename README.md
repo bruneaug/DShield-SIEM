@@ -24,7 +24,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 #### Like in an enterprise, a system collecting security logs and monitoring a network like the DShield SIEM, it need to be installed on a separately server and not with the DShield sensor. 
 
 - Ubuntu 22.04 LTS Live Server 64-Bit<br>
-- Minimum 8+ GB - Recommended 12 GB RAM<br>
+- Minimum 8+ GB - Recommended 10-12 GB RAM<br>
   - If the amount of RAM assigned to each containers (see below) is more than 2GB, consider increasing the server RAM capacity.<br>
 - 4-8 Cores<br>
 - Add 2 partitions, one for the OS, the other for docker<br>
