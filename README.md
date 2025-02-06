@@ -98,7 +98,7 @@ vi .env
   - DNS_SERVER="9.9.9.9"
   - IPADDRESS="192.168.25.231"
   - ELASTIC_PASSWORD=student
-  - ES_MEM = Elasticsearch -> 3g, KB_MEM = Kibana -> 1g, LS_MEM = Logstash -> 1g
+  - ES_MEM = Elasticsearch -> 3g, KB_MEM = Kibana -> 1g, LS_MEM = Logstash -> 2g
 - If you want to change the default nameserver(s) information and your local private network location for the destination address (i.e. DShield sensor mapping - currently set for Ottawa, Canada), edit to the following directory for the files before loading docker:<br>
 ````
   cd logstash/pipeline
