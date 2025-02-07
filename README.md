@@ -227,7 +227,6 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/fleet-server-
 We are going to need this information to setup our fleet server.<br>
 Login via SSH to the fleet-server and make sure the fleet-server is running before setting up our agent:<br>
 ````
-sudo docker start fleet-server
 sudo docker exec -ti fleet-server bash
 ./elastic-agent status (check it is running)
 ./elastic-agent restart (if it doesn't appear to be running, force a restart, and recheck the status)
