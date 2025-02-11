@@ -176,6 +176,7 @@ Web Access: https://serverIP:5601
 # Configuring ELK Stack Management
 In order to see the ELK stack health, it is necessary to configure the stack monitoring by navigating to: Management -> Stack Monitoring<br>
 
+- This step is only necessary if the installation didn't automatically setup Stack Monitoring<br>
 - Select "_Or, set up with self monitoring_"<br>
 - Monitoring is currently off -> Select: _Turn on monitoring_<br>
 ![image](https://github.com/user-attachments/assets/129deb88-a657-4cab-9f44-64d337c5c9c6)
