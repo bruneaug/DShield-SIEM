@@ -355,8 +355,10 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 sudo apt-get install apt-transport-https<br>
 echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-sudo apt-get update && sudo apt-get install filebeat elastic-agent softflowd
+sudo apt-get update && sudo apt-get install filebeat softflowd
 ````
+If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
+
 ### Transfer all Sensor Files to the DShield Sensor
 Follow this URL to download all the files related to the DShield Sensor<br>
 https://github.com/bruneaug/DShield-Sensor
