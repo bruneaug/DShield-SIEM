@@ -32,7 +32,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - After Ubuntu is rebooted, setup the docker partition<br>
 - Adding a 300 GB to a VM: https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Build_a_Docker_Partition.md
 ## Elastic Packages Installed
-### ELK Current Version: 8.15.3 (Updated 9 Aug 2024)
+### ELK Current Version: 8.17.2 (Updated 10 Feb 2025)
 - Kibana
 - Elasticsearch
 - Logstash
