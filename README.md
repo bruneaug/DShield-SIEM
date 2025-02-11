@@ -149,6 +149,10 @@ tcp6       0      0 :::5601                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
 tcp6       0      0 :::9200                 :::*                    LISTEN
 tcp6       0      0 :::5044                 :::*                    LISTEN
+tcp6       0      0 :::5066                 :::*                    LISTEN
+tcp6       0      0 :::5067                 :::*                    LISTEN
+tcp6       0      0 :::5068                 :::*                    LISTEN
+tcp6       0      0 :::9600                 :::*                    LISTEN
 </pre>
 
 # Loading Default Filebeat Templates in Kibana
