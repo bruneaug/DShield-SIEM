@@ -153,6 +153,7 @@ services:
     restart: unless-stopped
     ports:
       - ${ES_PORT}:9200
+      - ${ES_PORT_CLUSTER}:9300
     environment:
       - node.name=es01
       - cluster.name=${CLUSTER_NAME}
