@@ -6,6 +6,7 @@
        "number_of_replicas": 0, 
        "max_docvalue_fields_search" : "200",
        "index": {
+         "mode": "logsdb",
          "refresh_interval": "5s",
          "lifecycle": {
           "name": "cowrie.dshield",
