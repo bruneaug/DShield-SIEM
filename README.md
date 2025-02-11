@@ -434,6 +434,7 @@ These command are run from the Dev Tool -> Console<br>
 
 GET _nodes/http?pretty	(Get a list and information of all the nodes)<br>
 GET _security/_authenticate<br>
+GET /_cat/nodes?v=true<br>
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
