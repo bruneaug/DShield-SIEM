@@ -157,9 +157,12 @@ tcp6       0      0 :::9600                 :::*                    LISTEN
 
 # Loading Default Filebeat Templates in Kibana
 This will install the default templates and dashboards can be used to store netflow data from remote DShield sensors.<br>
-In order for Logstash to start storing data, the following commands must be executed:<br>
+In order for Logstash to start storing data, the following commands must be executed. First step is to login filebeat:<br>
 ````
 sudo docker exec -ti filebeat bash
+````
+Next, run this Filebeat command to load the templates into Kibana:<br>
+````
 ./filebeat setup -e 
 ````
 
