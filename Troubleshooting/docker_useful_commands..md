@@ -84,9 +84,12 @@ sudo docker compose up --build -d
 ````
 **Important**<br>
 If this is a **new ELK version** (i.e 8.15.3 -> 8.17.0), you will need to run this update to activate the new Filebeat<br>
-dashboards, pipelines & index-management for Kibana.<br>
+dashboards, pipelines & index-management for Kibana. First login Filebeat<br>
 ````
 sudo docker exec -ti filebeat bash
+````
+Next, run this Filebeat command to load the templates into Kibana:<br>
+````
 ./filebeat setup -e 
 ````
 
