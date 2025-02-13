@@ -99,14 +99,10 @@ $ sudo zeekctl stop<br>
 $ sudo zeekctl start<br>
 $ sudo zeekctl restart<br>
 
-# Dashboard Logs Zeek Overview
-
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/0aac6ec0-43cd-48ae-be56-991c215613ef)
-
 # Zeek Sending Logs to ELK with Filebeat
-To send logs collection to ELK for **Cloud sensor**, setting up the Elastic-Agent is likely will not work unless both sensor<br>
-and the ELK Stack are in the cloud. The only option available is to send the logs to ELK Stack is to copy the pre-configured<br>
-modules (located in filebeat/modules.d) supplied from the GitHub download and copy them as follow:<br>
+To send logs collection to ELK for **Local & Cloud sensor**, to ELK Stack is to copy the pre-configured<br>
+modules (located in filebeat/modules.d) supplied from the [DShield Sensor GitHub](https://github.com/bruneaug/DShield-Sensor) if not already done <br>
+or have the latest download and copy them as follow:<br>
 ````
 git clone https://github.com/bruneaug/DShield-Sensor.git
 sudo cp ~/DShield-Sensor/filebeat/modules.d/* /etc/filebeat/modules.d
@@ -114,8 +110,20 @@ sudo filebeat test config
 sudo filebeat test output
 sudo systemctl restart filebeat
 ````
-The logs will be sent via logstash to ELK. To view the zeek logs, you will need to use the **[filebeat Zeek] Overview** dashboard<br>
-![image](https://github.com/user-attachments/assets/63bacb42-f101-4224-80de-15c051db0c9d)
+The logs will be sent via logstash to ELK. To view the zeek logs, you will need to use the DShield Zeek dashboard<br>
+![image](https://github.com/user-attachments/assets/adf009d2-f3a3-4bb5-b70d-f96d8d3427ab)
+
+## Install and Check Zeek is Running
+This script will ensure it Zeek is always running.
+Add the following cronjob as root<br>
+````
+sudo crontab -e
+````
+\# Change your home directory accordingly<br>
+\# Check Zeek status hourly<br>
+0 * * * * /home/ubuntu/scripts/check_zeek.sh > /dev/null 2>1&
+
+[check_zeek.sh](https://raw.githubusercontent.com/bruneaug/DShield-Sensor/refs/heads/main/sensor_scripts/check_zeek.sh)
 
 # Zeek Cheatsheet
 
