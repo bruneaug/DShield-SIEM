@@ -38,6 +38,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Logstash
 - Elastic-Agent
 - Filebeat
+- Heartbeat
 - Metricbeat
 
 **Note**: To update ELK server components, follow these steps:<br>
