@@ -17,6 +17,8 @@ sudo chmod 644 ~/DShield-SIEM/filebeat/filebeat.yml
 sudo chown -R root:root ~/DShield-SIEM/metricbeat/*
 sudo chmod 644 ~/DShield-SIEM/metricbeat/metricbeat.yml
 sudo chmod -R 644 ~/DShield-SIEM/metricbeat/modules.d/*
+sudo chown -R root:root ~/DShield-SIEM/heartbeat/*
+sudo chmod 644 ~/DShield-SIEM/heartbeat/heartbeat.yml
 
 # Create /opt/intel directory with local account for local user
 
