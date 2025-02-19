@@ -1,4 +1,5 @@
-
+# https://www.elastic.co/guide/en/beats/heartbeat/master/heartbeat-overview.html
+# Heartbeat tells you whether your services are reachable
 
 ############################# Heartbeat ######################################
 
@@ -14,6 +15,8 @@ heartbeat.config.monitors:
 
 # Configure monitors inline
 heartbeat.monitors:
+
+# https://www.elastic.co/guide/en/beats/heartbeat/master/monitor-http-options.html
 - type: http
 
   # List or urls to query
@@ -24,30 +27,36 @@ heartbeat.monitors:
     verification_mode: certificate
 
   # Configure task schedule
-  schedule: '@every 30s'
+  schedule: '@every 180s'
 
-  # Total test connection and data exchange timeout
-  # timeout: 16s
+# https://www.elastic.co/guide/en/beats/heartbeat/master/monitor-tcp-options.html
+# Query Elasticsearch
 
-- type: http
+- type: tcp
   name: es01
-  hosts: ["https://es01:9200"]
+  hosts: ["es01"]
+  ports: [9200, 9300]
   ssl:
     certificate_authorities: ['/usr/share/heartbeat/certs/ca/ca.crt']
     verification_mode: certificate
+  schedule: '@every 180s'
 
-  # Configure task schedule
-  schedule: '@every 30s'
+# Logstash
+- type: tcp
+  name: Logstash
+  hosts: ["logstash"]
+  ports: [5044, 9600]
+  schedule: '@every 180s'
 
-- type: http
-  name: es01_cluster
-  hosts: ["https://es01:9300"]
-  ssl:
-    certificate_authorities: ['/usr/share/heartbeat/certs/ca/ca.crt']
-    verification_mode: certificate
+# Query DShield sensor
+# For this one you can add as many has you have
 
-  # Configure task schedule
-  schedule: '@every 30s'
+- type: tcp
+  name: PI
+  hosts: ["192.168.25.165"]
+  ports: [12222]
+  schedule: '@every 180s'
+
 
 #==================== Elasticsearch template setting ==========================
 
@@ -86,6 +95,8 @@ output.elasticsearch:
 
 
 #================================ Processors =====================================
+
+# https://www.elastic.co/guide/en/beats/heartbeat/master/monitor-options.html
 
 processors:
   - add_observer_metadata:
