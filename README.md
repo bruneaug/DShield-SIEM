@@ -109,7 +109,15 @@ vi .env
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
 You can keep these default or edit each files and change them.
 
-The script **change_perms.sh** will configure some of the files before starting the installation of the docker components.<br)
+Edit heartbeat.yml to change the PI IP to your own sensor. Kibana heartbeat check the status of your services and determine whether they are available.<br>
+This can be viewed Observability -> Uptime Monitors<br>
+![image](https://github.com/user-attachments/assets/2877b810-e727-48e6-a6ba-bcb71bd7be88)
+
+````
+vi ~/DShield-SIEM/heartbeat/heartbeat.yml
+````
+
+The script **change_perms.sh** will configure some of the files before starting the installation of the docker components.<br>
 The script will also update the IP address used in the dashboard query to the IP of your ELK stack.<br>
 ````
 ~/scripts/change_perms.sh
