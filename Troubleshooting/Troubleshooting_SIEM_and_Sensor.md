@@ -420,7 +420,7 @@ To check if your setup has enough RAM for each services (Kibana, Elasticsearch, 
 ````
 sudo docker stats
 ````
-![image](https://github.com/user-attachments/assets/d8139461-d826-406a-b878-6f6bcbae4217)
+![image](https://github.com/user-attachments/assets/8cece5db-2203-4c03-8f2d-1fa9fb36d3ce)
 
 The amount of RAM used by es01 is pretty close to the 2GB mark and at some point might need to be increased to 3G if ELK start getting some errors.<br>
 This errors in Kibana means that _es01_ needs some additional RAM for Java. Increasing **ES_MEM_LIMIT to 3g** would fix this error.<br>
