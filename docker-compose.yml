@@ -17,8 +17,10 @@
 # Added metricbeat to docker. Metricbeat was added to load the metricbeat Kibana templates
 # to be used to monitor ELK Stack and Beats.
 # Configuration tested with Proxmox LXC Containers
-# Date: 1 Feb 2026
+# Date: 1 Feb 2025
 # Added filebeat01 to download and load via lgstash ISC threat intel in DShield SIEM.
+# Date: 18 Feb 2025
+# Added heartbeat to monitor SSL certificate. This can also be used to monitor other services
 
 volumes:
   certs:
@@ -36,6 +38,8 @@ volumes:
   filebeat01:
     driver: local
   metricbeatdata:
+    driver: local
+  heartbeatdata:
     driver: local
 
 networks:
@@ -110,6 +114,14 @@ services:
           "  - name: metricbeat\n"\
           "    dns:\n"\
           "      - metricbeat\n"\
+          "      - localhost\n"\
+          "      - ${HOSTNAME}\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
+          "      - ${IPADDRESS}\n"\
+          "  - name: heartbeat\n"\
+          "    dns:\n"\
+          "      - heartcbeat\n"\
           "      - localhost\n"\
           "      - ${HOSTNAME}\n"\
           "    ip:\n"\
@@ -452,6 +464,39 @@ services:
       - "/proc:/hostfs/proc:ro"
       - "/:/hostfs:ro"
 
+  heartbeat:
+    depends_on:
+      es01:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
+    hostname: heartbeat
+    container_name: heartbeat
+    image: docker.elastic.co/beats/heartbeat:${STACK_VERSION}
+    labels:
+      co.elastic.logs/module: heartbeat
+    user: root
+    restart: unless-stopped
+    configs:
+      - source: hb_config
+        target: /usr/share/heartbeat/heartbeat.yml
+    environment:
+      - ELASTIC_HOSTS=https://es01:9200
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=certs/ca/ca.crt
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=certificate
+    volumes:
+      - certs:/usr/share/heartbeat/certs
+      #- heartdata:/usr/share/heartbeat/data
+      #- "./heartbeat/modules.d/:/usr/share/heartbeat/modules.d/"
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro"
+      - "/proc:/hostfs/proc:ro"
+      - "/:/hostfs:ro"
+
+
 # This load the filebeat.yml template into filebeat docker
 # The following steps must me done to correcly setup filebeat.yml
 # sudo chown root:root filebeat/filebeat.yml
@@ -466,4 +511,6 @@ configs:
     file: ./elastic-agent/state/elastic-agent.yml
   mb_config:
     file: ./metricbeat/metricbeat.yml
+  hb_config:
+    file: ./heartbeat/heartbeat.yml
 
