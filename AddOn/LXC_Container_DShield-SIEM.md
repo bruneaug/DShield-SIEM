@@ -1,6 +1,7 @@
 # Proxmox Setup DShield SIEM with LXC Container
 
 Before starting, you need to decide if you want to use 22.04 or 24.04 template.<br>
+For example, if you want to user Arkime, it currently only support 20.04 and 22.04<br>
 In Proxmox server, select storage local and download the Ubuntu 22.04 or 24.04 template:<br>
 Download and install Ubuntu 22.04 or 24.04<br>
 Configure and install Ubuntu 22.04 or 24.04 Container<br>
