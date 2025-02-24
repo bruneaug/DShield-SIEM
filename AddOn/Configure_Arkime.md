@@ -118,9 +118,9 @@ $ netstat -an | grep 8005
 ## Setup Arkime Login Username & Password
 
 Default username is admin and password is training<br>
-
-$ sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin<br>
-
+````
+sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin
+````
 ### Login Arkime
 
 http:IP:8005
