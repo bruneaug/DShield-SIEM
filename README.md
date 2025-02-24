@@ -10,8 +10,8 @@ This is a good reference on howto use DShield-SIEM for analysis: https://isc.san
 This provides an overview how the log collection with the DShield sensor is done.<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/DShield-SIEM-Flow.png
 
-# What it is Used For
-This docker is custom built to be used with the [DShield Honeypot](https://isc.sans.edu/tools/honeypot/) to collect and parse the logs and collect its data in a visual and easy to search for research purposes. The suggested installation is to install the DShield sensor in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS either in your network or in the cloud of your choice.<br>
+# What Used it?
+This docker is custom built to be used with the [DShield Honeypot](https://isc.sans.edu/tools/honeypot/) to collect and parse the logs and collect the data to make it easy to search for research purposes. The suggested installation is to install the DShield sensor in a Rasperry using PI Raspbian OS or a system running Ubuntu 20.04 LTS either in your network or in the cloud of your choice.<br>
 
 **Note**: This must be installed on a separate server as per the instruction below.<br>
 
@@ -368,7 +368,7 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 sudo apt-get install apt-transport-https<br>
 echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-sudo apt-get update && sudo apt-get install filebeat softflowd
+sudo apt-get update && sudo apt-get install filebeat
 ````
 If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
 
@@ -415,8 +415,6 @@ sudo systemctl start filebeat
 sudo systemctl status filebeat
 sudo systemctl enable elastic-agent
 sudo systemctl start elastic-agent
-sudo systemctl enable softflowd
-sudo systemctl start softflowd
 ````
 ### Filebeat Tracking File
 Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
