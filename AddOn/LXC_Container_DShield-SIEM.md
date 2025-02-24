@@ -54,10 +54,8 @@ Configure as follow and **unselect Backup:**<br>
 Take a snapshot before restarting the server. If you want to revert, you will have a ready to use image.<br>
 Restart sensor to apply changes <br>
 Login and check the server and it should show 2 partitions:<br>
-![image](https://github.com/user-attachments/assets/02caaab6-6d08-495c-a992-577e21875e0e)
+![image](https://github.com/user-attachments/assets/2dd26781-b823-4924-9825-df39b7eb97f0)
 
-Shutdown the LXC and take a snapshot before proceeding with the installation of DShield SIEM<br>
-Restart LXC<br>
 Now proceed to install DShield SIEM<br>
 
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md
