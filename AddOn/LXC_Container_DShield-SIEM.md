@@ -39,9 +39,9 @@ lxc.prlimit.memlock=-1
 lxc.prlimit.nofile:65536
 ````
 Those 2 additional configuration are used by ELK server es01 to start.<br>
-Shutdown and take a snapshot<br>
+Using your user account (i.e. guy), shutdown the new sensor<br>
 ````
-init 0
+sudo init 0
 ````
 
 ## Adding Partition /var/lib/docker
@@ -49,6 +49,7 @@ Goto Resources -> Add -> Mount Point -> Create: Mount Point<br>
 Configure as follow and **unselect Backup:**<br>
 ![image](https://github.com/user-attachments/assets/9790d733-52b4-4992-bf9b-53493098c2b1)
 
+Take a snapshot before restarting the server. If you want to revert, you will have a ready to use image.<br>
 Restart sensor to apply changes <br>
 Login and check the server and it should show 2 partitions:<br>
 ![image](https://github.com/user-attachments/assets/02caaab6-6d08-495c-a992-577e21875e0e)
