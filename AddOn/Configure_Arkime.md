@@ -2,7 +2,7 @@
 
 ### Latest release version 5.6.1 -> 10 February 2025<br>
 
-This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.<br>
+This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor with Ubuntu 22.04.<br>
 First step is to add the IP of your ELK server to the /etc/hosts file following the example below.<br>
 ````
 sudo su -
@@ -156,6 +156,10 @@ ssh-copy-id -p 12222 guy@192.168.25.165
 ## Back on ELK server<br>
 
 The **rename_arkime_pcap.sh** script should already be in the ~scripts directory.<br>
+````
+cd ~/scripts
+vi rename_arkime_pcap.sh
+````
 
 Edit the script rename_arkime_pcap.sh<br>
 - Update the variable SENSOR for you own DShield sensor(s).<br>
