@@ -17,6 +17,11 @@ Edit /etc/group to add user account for sudo access (i.e. sudo:x:27:guy)<br>
 ````
 vi /etc/group
 ````
+Since the SSH service doesn't always starts, start sshd service<br>
+````
+systemctl start sshd
+systemctl status sshd
+````
 Login with user guy<br>
 ````
 sudo apt-get upgrade
