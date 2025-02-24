@@ -4,9 +4,13 @@
 
 This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.<br>
 First step is to add the IP of your ELK server to the /etc/hosts file following the example below.<br>
-
-$ sudo su -<br>
-echo "192.168.25.231 es01" >> /etc/hosts<br>
+````
+sudo su -
+vi /etc/hosts
+````
+Add es01 to IP address if doesn't already exists. It should have been added during the installation<br>
+192.168.25.231 es01<br>
+````
 exit
 
 # Download & Install Arkime
