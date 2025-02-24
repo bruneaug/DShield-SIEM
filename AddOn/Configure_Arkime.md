@@ -156,12 +156,12 @@ If not already setup previously to transfer TTYlogs to ELK, configure SSH share 
 https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Viewing_TTY_Logs_with_Lighttpd.md<br>
 
 In ELK server, create SSH Shared Keys and don’t put a password:<br>
-
-$ ssh-keygen<br>
 Copy id_rsa.pub over to each sensor(s). Likely the easiest way to copy the public key over might be to scp from DShield sensor. <br>
-$ scp guy@192.168.25.231:/home/guy/.ssh/id_rsa.pub .<br>
-$ cat id_rsa.pub >> .ssh/authorized_keys<br>
-$ rm id_rsa.pub<br>
+````
+cd
+ssh-keygen
+ssh-copy-id -p 12222 guy@192.168.25.165
+````
 
 ## Back on ELK server<br>
 
