@@ -14,7 +14,7 @@ type %USERPROFILE%\.ssh\id_rsa.pub | ssh ubuntu@192.168.25.231 -p 12222 "cat >> 
 ````
 Linux Example<br>
 ````
-ssh-copy-id ubuntu@192.168.25.231 -p 12222
+ssh-copy-id -p 12222 ubuntu@192.168.25.231
 ````
 ## DShield Sensor Setup
 The sensor only support 64-Bit OS on the PI and any combination of VM or hardware sensor<br>
