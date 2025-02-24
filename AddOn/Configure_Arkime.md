@@ -10,14 +10,15 @@ vi /etc/hosts
 ````
 Add es01 to IP address if doesn't already exists. It should have been added during the installation<br>
 192.168.25.231 es01<br>
-````
-exit
+exit<br>
 
 # Download & Install Arkime
 
 This installation is only for Ubuntu 20.04<br>
-$ mkdir arkime<br>
-$ cd arkime<br>
+````
+mkdir arkime
+cd arkime
+````
 $ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
 $ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
 $ sudo apt install ./libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
