@@ -16,6 +16,7 @@ exit<br>
 
 This installation is only for Ubuntu 20.04<br>
 ````
+cd
 mkdir arkime
 cd arkime
 ````
