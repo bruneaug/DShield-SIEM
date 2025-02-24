@@ -1,6 +1,6 @@
 # Setup Arkime with DShield-SIEM
 
-### Latest release version 5.1.2-1 -> 30 April 2024<br>
+### Latest release version 5.6.1 -> 10 February 2025<br>
 
 This is the steps necessary to install Arkime [1] to parse and index the daemonlogger logs captured by the DShield sensor.<br>
 First step is to add the IP of your ELK server to the /etc/hosts file following the example below.<br>
@@ -19,10 +19,9 @@ This installation is only for Ubuntu 20.04<br>
 cd
 mkdir arkime
 cd arkime
+wget https://github.com/arkime/arkime/releases/download/v5.6.1/arkime_5.6.1-1.ubuntu2204_amd64.deb
+sudo apt-get install ./arkime_5.6.1-1.ubuntu2204_amd64.deb
 ````
-$ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
-$ sudo apt-get install ./arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
-
 ## Need to Reapply --insecure to Configuration Scripts
 
 Go to this section to reapply --insecure<br>
