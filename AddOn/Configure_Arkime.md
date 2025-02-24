@@ -21,9 +21,6 @@ mkdir arkime
 cd arkime
 ````
 $ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
-$ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
-$ sudo apt install ./libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
-$ sudo apt-get install -yq curl libmagic-dev wget logrotate libffi-dev libffi7<br>
 $ sudo apt-get install ./arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
 
 ## Need to Reapply --insecure to Configuration Scripts
@@ -68,9 +65,9 @@ sudo find /var/lib/docker/overlay2/. -type f -name GeoLite2-ASN.mmdb -exec cp '{
 
 Use elastic as user and password you setup if it isn't student<br>
 Add after updating elasticsearch= a pcap filter to ignore the IP of ELK server IP and 127.0.0.1 (localhost) from capturing packets<br>
-
-$ sudo vi /opt/arkime/etc/config.ini
-
+````
+sudo vi /opt/arkime/etc/config.ini
+````
 Update elasticsearch, add bpf filter and update 192.168.25.231 to your ELK server IP:<br>
 elasticsearch=https://elastic:student@es01:9200<br>
 bpf=not host 192.168.25.231 and not host 127.0.0.1 and not host ::1<br>
@@ -84,24 +81,28 @@ Find GeoIP and add the following to get GeoIP to work with Arkime<br>
 ## Setup Arkime Tables
 
 Use elastic as username and if your elastic password is different that **student**, update before running this script<br>
-
-$ sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init<br>
-
-$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .<br>
-$ sudo mkdir /usr/share/ca-certificates/extra<br>
-$ sudo cp ca.crt /usr/share/ca-certificates/extra<br>
-$ sudo dpkg-reconfigure ca-certificates<br>
-
+````
+sudo /opt/arkime/db/db.pl --esuser elastic:student --insecure https://es01:9200 init
+````
+Update the following:<br>
+````
+sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .
+sudo mkdir /usr/share/ca-certificates/extra
+sudo cp ca.crt /usr/share/ca-certificates/extra
+sudo dpkg-reconfigure ca-certificates
+````
 ## Edit and add --insecure to Configuration Scripts
-
-$ sudo vi /etc/systemd/system/arkimecapture.service<br>
+````
+sudo vi /etc/systemd/system/arkimecapture.service
+````
 ExecStart=/bin/sh -c '/opt/arkime/bin/capture --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/capture.log 2>&1'<br>
-
-$ sudo vi /etc/systemd/system/arkimeviewer.service<br>
+````
+sudo vi /etc/systemd/system/arkimeviewer.service
+````
 ExecStart=/bin/sh -c '/opt/arkime/bin/node viewer.js --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/viewer.log 2>&1'<br>
-
-$ sudo systemctl daemon-reload
-
+````
+sudo systemctl daemon-reload
+````
 *** **Note**: If you apply an update, you have to reapply _--insecure_ from this section because it get erased by the update.
 
 $ sudo systemctl start arkimecapture.service<br>
