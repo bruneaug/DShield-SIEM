@@ -26,13 +26,6 @@ $ sudo apt install ./libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb<br>
 $ sudo apt-get install -yq curl libmagic-dev wget logrotate libffi-dev libffi7<br>
 $ sudo apt-get install ./arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
 
-# Upgrading Arkime
-
-$ mkdir arkime<br>
-$ cd arkime<br>
-$ curl -LJO https://github.com/arkime/arkime/releases/download/v5.1.2/arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
-$ sudo apt install ./arkime_5.1.2-1.ubuntu2004_amd64.deb<br>
-
 ## Need to Reapply --insecure to Configuration Scripts
 
 Go to this section to reapply --insecure<br>
