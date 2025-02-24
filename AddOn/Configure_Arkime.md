@@ -40,8 +40,11 @@ $ sudo /opt/arkime/bin/Configure<br>
 Found interfaces: br-e4754292a395;docker0;ens160;lo;veth163b883;veth2e92487;veth3e371fe;vethee3c267<br>
 Semicolon ';' seperated list of interfaces to monitor [eth1] **lo**<br>
 Install Elasticsearch server locally for demo, must have at least 3G of memory, NOT recommended for production use (yes or no) [**no**]<br>
-Elasticsearch server URL [http://localhost:9200] https://es01:9200<br>
-Password to encrypt S2S and other things, don't use spaces [no-default] **student**<br>
+OpenSearch/Elasticsearch server URL [https://localhost:9200] https://es01:9200<br>
+OpenSearch/Elasticsearch user [empty is no user] **elastic** <br>
+OpenSearch/Elasticsearch password [empty is no password] **student**<br>
+Password to encrypt S2S and other things, don't use spaces [must create one] **dshieldlogs** <br>
+ 
 Arkime - Creating configuration files<br>
 
 Installing sample /opt/arkime/etc/config.ini<br>
@@ -49,18 +52,18 @@ Installing sample /opt/arkime/etc/config.ini<br>
 Arkime - Installing /etc/security/limits.d/99-arkime.conf to make core and memlock unlimited<br>
 Download GEO files? You'll need a MaxMind account https://arkime.com/faq#maxmind (yes or no) [**yes**]<br>
 Arkime - Downloading GEO files<br>
-2024-02-16 22:30:49 URL:https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.csv [23323/23323] -> "/tmp/tmp.6m3dNzyHi5" [1]<br>
-2024-02-16 22:30:50 URL:https://www.wireshark.org/download/automated/data/manuf [2721990/2721990] -> "/tmp/tmp.PmjUnXNoN7" [1]<br>
+2025-02-24 22:28:20 URL:https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.csv [23323/23323] -> "/tmp/tmp.6m3dNzyHi5" [1]<br>
+2025-02-24 22:28:20 URL:https://www.wireshark.org/download/automated/data/manuf [2887602/2887602] -> "/tmp/tmp.PmjUnXNoN7" [1]<br>
 chmod: cannot access ‘/usr/share/GeoIP/*.mmdb’: No such file or directory<br>
 
 ## Fixing GeoIP 
 
 We are going to take a copy of the GeoLite2 files from Elastic and make a copy for Arkime<br>
-
-$ sudo mkdir /var/lib/GeoIP<br>
-$ sudo find /var/lib/docker/. -type f -name GeoLite2-Country.mmdb -exec cp {} /var/lib/GeoIP \;<br>
-$ sudo find /var/lib/docker/. -type f -name GeoLite2-ASN.mmdb -exec cp {} /var/lib/GeoIP \;<br>
-
+```
+sudo mkdir /var/lib/GeoIP
+sudo find /var/lib/docker/overlay2/. -type f -name GeoLite2-Country.mmdb -exec cp '{}' /var/lib/GeoIP \;
+sudo find /var/lib/docker/overlay2/. -type f -name GeoLite2-ASN.mmdb -exec cp '{}' /var/lib/GeoIP \;
+```
 # Update and add username/password of es01 
 
 Use elastic as user and password you setup if it isn't student<br>
