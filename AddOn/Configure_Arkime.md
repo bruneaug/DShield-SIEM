@@ -125,16 +125,6 @@ sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training -
 Login into Arkime with username: admin and password: training<br>
 **http:IP:8005**
 
-## Kibana Interface Direct Arkime Access
-If you want to take advantage of the right click function, you may need to download and install the latest update for dshield_sensor_8.11.1.ndjson<br>
-https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson<br>
-
-If downloading from Windows, download the file this way to prevent modification of the ndjson file<br>
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/287e4f01-de8b-4a5d-9cb2-7cf515c0a9a1)
-
-Update ELK using these instructions:<br>
-https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/Manually_Update_Management_Kibana_Saved_Objects.pdf
-
 ### Troubleshooting
 
 $ sudo bash /opt/arkime/bin/arkime_update_geo.sh<br>
