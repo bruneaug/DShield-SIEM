@@ -123,10 +123,10 @@ Default username is admin and password is training<br>
 sudo /opt/arkime/bin/arkime_add_user.sh --insecure admin "Admin User" training --admin
 ````
 ### Login Arkime
+Login into Arkime with username: admin and password: training<br>
+**http:IP:8005**
 
-http:IP:8005
-
-## Kibana Interface Direct Arkime & Cont3xt Access
+## Kibana Interface Direct Arkime Access
 If you want to take advantage of the right click function, you may need to download and install the latest update for dshield_sensor_8.11.1.ndjson<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/scripts/dshield_sensor_8.11.1.ndjson<br>
 
@@ -135,10 +135,6 @@ If downloading from Windows, download the file this way to prevent modification 
 
 Update ELK using these instructions:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/Manually_Update_Management_Kibana_Saved_Objects.pdf
-
-You will also need in ELK to go to Management -> Stack Management -> Kibana -> Data Views -> select cowrie* <br>
-Edit Cont3xtHash, Cont3xtIP, Arkime and TTYLog and change the IP of the URL (192.168.25.231) to your own ELK IP to query Cont3xt directly from the interface<br>
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/14b981b3-123d-424b-ad3c-97d8932dd33d)
 
 ### Troubleshooting
 
