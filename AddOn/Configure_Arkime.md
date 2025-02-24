@@ -112,9 +112,10 @@ $ sudo systemctl status arkimeviewer.service<br>
 $ sudo systemctl enable arkimecapture.service<br>
 $ sudo systemctl enable arkimeviewer.service<br>
 
-Confirm Arkime is Listening
-$ netstat -an | grep 8005
-
+Confirm Arkime is Listening<br>
+````
+netstat -an | grep 8005
+````
 ## Setup Arkime Login Username & Password
 
 Default username is admin and password is training<br>
