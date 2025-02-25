@@ -300,7 +300,6 @@ services:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - ELASTIC_HOSTS=https://es01:9200
       - NAME_SERVER=${DNS_SERVER}
-    mem_limit: ${LS_MEM_LIMIT}
 
   fleet-server:
     depends_on:
