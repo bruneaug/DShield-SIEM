@@ -194,7 +194,7 @@ To manually load .pcap file(s) into Arkime, place the file in ~/pcap and run thi
 $ sudo /opt/arkime/bin/capture --insecure --config /opt/arkime/etc/config.ini --host es01 --pcapdir ~/pcap --skip --recursive sensor1
 
 # Arkime Dashboard
-Access Arkime with the Kibana Link<br>
+Access Arkime with the Kibana Link in the **DShield - Traffic Analytic** tab by clicking on Arkime for the IP you would like to search<br>
 ![image](https://github.com/user-attachments/assets/430ffabf-e98d-4613-85c0-6a80cdf224d9)
 
 Access Arkime directly in Kibana http:IP:8005<br>
