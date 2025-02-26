@@ -66,10 +66,14 @@ sudo systemctl status docker.service
 ````
 
 ## Update /etc/hosts
-Add the following to /etc/hosts where the IP address is the IP of your own ELK server:<br>
-192.168.25.231 es01 fleet-server heartbeat logstash filebeat filebeat01<br>
+Add the following ELK servername **es01 fleet-server heartbeat logstash filebeat filebeat01**<br>
+to /etc/hosts after the IP address and the server name:<br>
 ````
 sudo vi /etc/hosts
+````
+Add this to /etc/hosts
+````
+es01 fleet-server heartbeat logstash filebeat filebeat01
 ````
 ## Ensure the Firewall is Off
 ````
