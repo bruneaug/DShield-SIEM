@@ -79,7 +79,7 @@ es01 fleet-server heartbeat logstash filebeat filebeat01
 Edit the sysctl.conf file and add the following at the bottom of the file:
 ````
 sudo vi /etc/sysctl.conf
-vm.max_map_count=1048575
+vm.max_map_count=262144
 ````
 Add save it. This is for [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode) when using Docker.
 
