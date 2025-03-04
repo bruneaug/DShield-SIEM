@@ -1,1 +1,36 @@
+# Configure ELK SSL Browser
 
+By adding the Docker ELK ca.crt to your workstation, you can make the connection to your ELK server showing the SSL as trusted and valid. In order to do this, copy the ca.crt as follow to your ELK client account:
+````
+sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .
+````
+Now that you have a cop of the ca.crt in your account, transfer it to your workstation (i.e. Windows or Linux) with something like scp or WinSCP. 
+Change the permission since the file is still owned by root.<br>
+````
+sudo chown guy:guy ca.crt
+````
+Next go to the directory where the **ca.crt** was transfered and double-click on the ca.crt to import it into Windows Trusted Root Certification Authorities<br>
+
+## Step-by-Step Installation
+- Step 1, double-click certificate<br>
+
+![image](https://github.com/user-attachments/assets/0b5bbdc1-08a4-414c-9099-fed3df7bb8ef)
+
+- Step 2, select **Install Certificate** to **Local Machine**<br>
+
+![image](https://github.com/user-attachments/assets/7154f719-3492-43f1-a455-0b7da90b0c5e)
+
+- Step 3, Next and select **Place all certificates in the following store** and browse to **Trusted Root Certification Authorities** and select **Ok** the Next<br>
+
+![image](https://github.com/user-attachments/assets/ae7ad535-f89d-437e-a741-950029f6339b)
+
+- Select **Finish** to complete the installation<br>
+
+![image](https://github.com/user-attachments/assets/bf6de9ee-3fab-4339-8a41-4a25902f7ea6)
+
+The import should show Successful.<br>
+
+## Testing the SSL Certificate
+If still logged in your Kibana, loggout, close that tab and reopen a new tab and access Kibana with a valid certificat showing a valid lock key.<br>
+
+![image](https://github.com/user-attachments/assets/7ea548bc-3272-48d3-81ed-8a2b02560d6e)
