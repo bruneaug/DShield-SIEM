@@ -449,6 +449,11 @@ To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor
 
 ![image](https://github.com/user-attachments/assets/a700729e-b2e4-4c78-833c-759df4ff609a)
 
+## Adding ca.crt to Workstation Browser
+Follow the steps in this [Page](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Workstation_Browser_CA_Certificate.md) to add to Kibana the ca.crt used by the ELK server.<br>
+
+![image](https://github.com/user-attachments/assets/7c709b0a-72f9-45a5-a6e4-5a777aa642a3)
+
 # Useful Docker Commands
 Refer to this page for a list of useful docker commands.<br>
 https://github.com/bruneaug/DShield-SIEM/edit/main/Troubleshooting/docker_useful_commands..md
