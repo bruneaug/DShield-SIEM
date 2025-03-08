@@ -91,14 +91,20 @@ sudo cp ca.crt /usr/share/ca-certificates/extra
 sudo dpkg-reconfigure ca-certificates
 ````
 ## Edit and add --insecure to Configuration Scripts
+Add the following delay to both scripts to let Elasticsearch start before these services starts.<br>
+![image](https://github.com/user-attachments/assets/41b64c18-1adf-43e0-a6d8-ef093d1b81c9)
+
+[Timer]
+OnBootSec=5min
+
 ````
 sudo vi /etc/systemd/system/arkimecapture.service
 ````
-ExecStart=/bin/sh -c '/opt/arkime/bin/capture --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/capture.log 2>&1'<br>
+ExecStart=/bin/sh -c '/opt/arkime/bin/capture --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/capture.log 2>&1'
 ````
 sudo vi /etc/systemd/system/arkimeviewer.service
 ````
-ExecStart=/bin/sh -c '/opt/arkime/bin/node viewer.js --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/viewer.log 2>&1'<br>
+ExecStart=/bin/sh -c '/opt/arkime/bin/node viewer.js --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/viewer.log 2>&1'
 ````
 sudo systemctl daemon-reload
 ````
