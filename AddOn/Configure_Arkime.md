@@ -96,7 +96,7 @@ Edit both of them and add --insecure and add the Timer<br>
 ````
 sudo vi /etc/systemd/system/arkimecapture.service
 ````
-ExecStart=/bin/sh -c '/opt/arkime/bin/capture --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/capture.log 2>&1'
+ExecStart=/bin/sh -c '/opt/arkime/bin/capture --host es01 --insecure -c /opt/arkime/etc/config.ini ${OPTIONS} >> /opt/arkime/logs/capture.log 2>&1'
 ````
 sudo vi /etc/systemd/system/arkimeviewer.service
 ````
