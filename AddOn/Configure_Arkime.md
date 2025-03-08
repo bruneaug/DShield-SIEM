@@ -111,8 +111,8 @@ sudo systemctl daemon-reload
 ````
 *** **Note**: If you apply an update, you have to reapply _--insecure_ from this section because it get erased by the update.
 
-$ sudo systemctl start arkimecapture.service<br>
 $ sudo systemctl start arkimeviewer.service<br>
+$ sudo systemctl start arkimecapture.service<br>
 $ sudo systemctl status arkimecapture.service<br>
 $ sudo systemctl status arkimeviewer.service<br>
 $ sudo systemctl enable arkimecapture.service<br>
