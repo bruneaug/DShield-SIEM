@@ -82,7 +82,7 @@ sudo docker compose rm -f -v
 sudo docker compose up --build -d
 ````
 **Important**<br>
-If this is a **new ELK version** (i.e 8.15.3 -> 8.17.2), you will need to run this update to activate the new Filebeat<br>
+If this is a **new ELK version** (i.e 8.17.2 -> 8.17.3), you will need to run this update to activate the new Filebeat<br>
 dashboards, pipelines & index-management for Kibana. First login Filebeat<br>
 ````
 sudo docker exec -ti filebeat bash
