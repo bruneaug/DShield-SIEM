@@ -86,6 +86,10 @@ $ sudo zeekctl stop<br>
 $ sudo zeekctl start<br>
 $ sudo zeekctl restart<br>
 
+# Filebeat Templates Setup
+Make sure this command [filebeat setup](https://github.com/bruneaug/DShield-SIEM?tab=readme-ov-file#loading-default-filebeat-templates-in-kibana) was completed and has the latest configuration for the current version.<br>
+If unsure, you can rerun the setup. If using Zeek and/or NetFlow, this command need to be run everytime there is an update.<br>
+
 # Zeek Sending Logs to ELK with Filebeat
 To send logs collection to ELK for **Local & Cloud sensor**, to ELK Stack is to copy the pre-configured<br>
 modules (located in filebeat/modules.d) supplied from the [DShield Sensor GitHub](https://github.com/bruneaug/DShield-Sensor) if not already done <br>
