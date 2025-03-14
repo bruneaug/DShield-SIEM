@@ -1,5 +1,10 @@
 # Backup DShield Sensor Logs
 
+The cowrie and webhoneypot logs on a DShield sensor are kept for 8 days and the logs for the firewall are only there for the day of collection<br>
+and overwitten at the end of the day.<br>
+It is a good idea to either copy them in a separate directory or pull them from the sensor to another system for backup.<br>
+This script does a daily backup to a separate directory on the sensor.<br>
+
 First step is to download all the files to your sensor if that wasn't previously done. This will backup cowrie, firewall (dshield) and webhoneypot.<br>
 Go to this site and follow the inststruction to pull the packages:<br>
 https://github.com/bruneaug/DShield-Sensor/tree/main
