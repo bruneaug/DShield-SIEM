@@ -32,3 +32,8 @@ The copy_cowrie.sh script will make a backup copy of iptables at:<br>
 /srv/NSM/downloads
 
 **Note**: When the sensor update the cowrie software or you manually run the update, _the logs usually get erased_.
+
+# Using Cowrie Built-in Option
+Jesse posted in this diary how to setup backup from one of Cowrie built-in script also using a cronjob to do the backup<br>
+
+https://isc.sans.edu/diary/30024
