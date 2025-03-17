@@ -465,6 +465,19 @@ GET _nodes/http?pretty	(Get a list and information of all the nodes)<br>
 GET _security/_authenticate<br>
 GET /_cat/nodes?v=true<br>
 
+# DShield Analysis Scripts by Students
+This is a list of script and code that students from the BACS program have written to assist with log analysis.<br>
+
+Jesse La Grew [cowrieprocessor](https://github.com/jslagrew/cowrieprocessor)<br>
+jrjobe [DShield-Cowrie-json-Parser](https://github.com/jrjobe/DShield-Cowrie-json-Parser)<br>
+ham-sauce [vt_cowrie](https://github.com/ham-sauce/vt_cowrie)<br>
+NickTheSecurityDude [dshield-honeypot-scripts](https://github.com/NickTheSecurityDude/dshield-honeypot-scripts/tree/main)<br>
+Josh Gilman [DShieldKickStarter](https://github.com/iamjoshgilman/DShieldKickStarter)<br>
+kcustom11 [dshield-azure](https://github.com/kcustom11/dshield-azure) Azure Terraform<br>
+Boggby [ec2-honeypot-template](https://github.com/Boggby/ec2-honeypot-template)<br>
+amelete11235
+ [homelab](https://github.com/amelete11235/homelab/blob/main/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM.md) DShiel SIEM Raspberry 5<br>
+
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
 [2] https://www.elastic.co/downloads/beats/filebeat<br>
