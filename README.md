@@ -465,7 +465,7 @@ GET _nodes/http?pretty	(Get a list and information of all the nodes)<br>
 GET _security/_authenticate<br>
 GET /_cat/nodes?v=true<br>
 
-# DShield Analysis Scripts by Students
+# DShield Analysis Scripts and Code by Students
 This is a list of script and code that students from the BACS program have written to assist with log analysis.<br>
 
 Jesse La Grew [cowrieprocessor](https://github.com/jslagrew/cowrieprocessor)<br>
