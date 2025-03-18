@@ -471,7 +471,7 @@ This is a list of script and code that students from the BACS program have writt
 Jesse La Grew [cowrieprocessor](https://github.com/jslagrew/cowrieprocessor)<br>
 jrjobe [DShield-Cowrie-json-Parser](https://github.com/jrjobe/DShield-Cowrie-json-Parser)<br>
 ham-sauce [vt_cowrie](https://github.com/ham-sauce/vt_cowrie)<br>
-NickTheSecurityDude [dshield-honeypot-scripts](https://github.com/NickTheSecurityDude/dshield-honeypot-scripts/tree/main)<br>
+NickTheSecurityDude [dshield-honeypot-scripts](https://github.com/NickTheSecurityDude/dshield-honeypot-scripts/tree/main) and [LinkedIn Post](https://www.linkedin.com/pulse/how-i-used-honeypot-track-analyze-cyberattacks-nicholas-gilbert-jcste)<br>
 Josh Gilman [DShieldKickStarter](https://github.com/iamjoshgilman/DShieldKickStarter)<br>
 kcustom11 [dshield-azure](https://github.com/kcustom11/dshield-azure) Azure Terraform<br>
 Boggby [ec2-honeypot-template](https://github.com/Boggby/ec2-honeypot-template)<br>
