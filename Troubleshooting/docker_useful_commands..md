@@ -27,6 +27,17 @@ $ sudo docker restart kibana (restart kibana service)<br>
 $ sudo docker logs logstash (looking at debugging information)<br>
 $ sudo docker inspect logstash<br>
 
+# Dependency Failed to Start
+This example is based on Kibana: container kibana is unhealthy<br>
+![image](https://github.com/user-attachments/assets/b06ba371-4fde-4e66-83aa-19fa2600d949)
+
+Remove the unhealthy container<br>
+$ sudo docker rm -f kibana <br>
+````
+sudo docker compose rm -f -v
+sudo docker compose up --build -d
+````
+
 # Removing a Docker Container
 The first command to run is to list the container volumes<br>
 ```sudo docker volume ls```
