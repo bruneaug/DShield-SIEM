@@ -425,8 +425,6 @@ logstash: 192.168.25.231:5044...
 sudo systemctl enable filebeat
 sudo systemctl start filebeat
 sudo systemctl status filebeat
-sudo systemctl enable elastic-agent
-sudo systemctl start elastic-agent
 ````
 ### Filebeat Tracking File
 Filebeat tracks the events it has processed with a file located called **log.json**, if deleted, all the events that were previous sent to Elasticsearch will be reprocessed when filebeat is restarted.<br>
