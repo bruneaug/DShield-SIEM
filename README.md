@@ -438,10 +438,6 @@ This will usually take a while to catch up in the ELK Stack dashboard. If you ar
 - tail -f log.json
 - Look for the past 30 days in the dashboard while it is catching up
 
-## Want to add Elastic-Agent to other Devices?
-Follow this step-by-step documents to install the elastic-agent to the DShield sensor<br>
-https://github.com/bruneaug/DShield-SIEM/blob/main/Configure-Elastic-Agent.pdf
-
 # Interface - Logs DShield Sensor Overview
 To access the Dashboard select Analytics -> Dashboard -> 	**[Logs DShield Sensor] Overview**<br>
 
