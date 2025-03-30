@@ -385,6 +385,12 @@ sudo apt-get update && sudo apt-get install filebeat
 ````
 If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
 
+### Cloud Sensor Setup - Filebeat -> Home Router -> Logstash
+To connect from a cloud sensor to your local ELK Stack, you need to do the following:
+- Configure the home router to NAT to your ELK Stack local IP address<br>
+- Use the router IP address (I would recommend adding a hostname to your home IP in case it changes) from your sensor to connect to your home router<br>
+- Final connection should look like this: sensor -> NAT Router IP -> ELK Stack
+
 ### Transfer all Sensor Files to the DShield Sensor
 Follow this URL to download all the files related to the DShield Sensor<br>
 https://github.com/bruneaug/DShield-Sensor
