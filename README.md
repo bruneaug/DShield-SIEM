@@ -127,6 +127,7 @@ This can be viewed Observability -> Uptime Monitors<br>
 ![image](https://github.com/user-attachments/assets/2877b810-e727-48e6-a6ba-bcb71bd7be88)
 
 This line is the sensor IP address. If it doesn't received a respose while connecting to TCP 12222, it will mark it as down in the interface.<br>
+This is initiated by the ELK server to check the response from the sensor.<br>
 Update this line: hosts: ["192.168.25.165"] <br>
 ````
 vi ~/DShield-SIEM/heartbeat/heartbeat.yml
