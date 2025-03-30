@@ -392,7 +392,8 @@ https://github.com/bruneaug/DShield-Sensor
 git clone https://github.com/bruneaug/DShield-Sensor.git
 sudo cp ~/DShield-Sensor/filebeat/filebeat.yml /etc/filebeat/filebeat.yml
 ````
-- Edit filebeat.yml and change the IP address or hostname to the logstash parser (192.168.25.23) to match the IP used by Logstash:<br>
+- Edit filebeat.yml and change the IP address or hostname to the logstash parser (192.168.25.23) to match the IP used by Logstash.<br>
+- This IP address can be a **local IP** or **the IP of your home router** if you are using a cloud sensor (i.e. OVH, AWS, Azure, etc)<br>
 ````
 sudo vi /etc/filebeat/filebeat.yml
 ````
