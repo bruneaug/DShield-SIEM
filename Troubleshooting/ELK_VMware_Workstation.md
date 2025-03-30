@@ -28,7 +28,7 @@ The IP to use from filebeat to connect to ELK is the actual IP for the host not 
 If the host IP is 192.168.25.5 and the NAT is 192.168.175.35, filebeat IP is going to be **192.168.25.5** to connect to logstash.<br>
 
 ### Cloud Sensor Setup - Filebeat -> Home Router -> Logstash
-To connect from a cloud sensor to your local (i.e Home ELK Stack), you need to do the following:
+To connect from a cloud sensor to your local ELK Stack, you need to do the following:
 - Configure the home router to NAT to your ELK Stack local IP address<br>
 - Use the router IP address (I would recommend adding a hostname to your home IP in case it changes) from your sensor to connect to your home router<br>
 - Final connection should look like this: sensor -> NAT Router IP -> ELK Stack
