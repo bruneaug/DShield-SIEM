@@ -493,3 +493,4 @@ amelete11235
 [8] https://handlers.sans.edu/gbruneau/elastic.htm<br>
 [9] https://www.elastic.co/guide/en/fleet/current/secure-connections.html<br>
 [10] https://www.docker.elastic.co/<br>
+[11] https://github.com/gchq/CyberChef<br>
