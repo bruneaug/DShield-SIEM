@@ -494,6 +494,11 @@ services:
       - "/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro"
       - "/proc:/hostfs/proc:ro"
       - "/:/hostfs:ro"
+  cyberchef:
+    container_name: cyberchef
+    image: ghcr.io/gchq/cyberchef:latest
+    ports:
+      - "8000:8000"
 
 
 # This load the filebeat.yml template into filebeat docker
