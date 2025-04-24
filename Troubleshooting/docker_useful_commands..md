@@ -71,7 +71,7 @@ Showing status of all containers<br>
 ````
 sudo docker stats
 ````
-![image](https://github.com/user-attachments/assets/bef7be9e-8bba-4af9-ab63-dbe54a942089)
+![image](https://github.com/user-attachments/assets/6b4b1d49-c10c-47e4-ab7c-db3cfc5d1472)
 
 # Update DShield ELK to the Latest Version
 Using **git stash** and **git stash pop** will backup your local changes (i.e. .env and any other files) and restore them after the update.<br>
