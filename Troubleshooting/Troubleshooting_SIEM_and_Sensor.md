@@ -62,6 +62,9 @@ $ sudo vi /etc/dshield.ini<br>
 ## Troubleshooting DShield isc-agent
 
 Sometimes thew isc-agent has errors such as this picture:<br>
+```
+sudo /srv/dshield/status.sh
+````
 
 ![isc_agent_error](https://github.com/user-attachments/assets/b9c3e43b-4de5-444d-960a-7e1c84634362)
 
