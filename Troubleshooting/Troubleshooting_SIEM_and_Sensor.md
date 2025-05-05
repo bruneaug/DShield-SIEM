@@ -65,8 +65,7 @@ Sometimes thew isc-agent has errors such as this picture:<br>
 ```
 sudo /srv/dshield/status.sh
 ````
-
-![isc_agent_error](https://github.com/user-attachments/assets/b9c3e43b-4de5-444d-960a-7e1c84634362)
+![image](https://github.com/user-attachments/assets/15ce9988-cf66-4242-9bf3-f25f389e85a3)
 
 If _/var/log/dshield.log_ is missing do the following to create an empty file:<br>
 $ sudo touch /var/log/dshield.log<br>
