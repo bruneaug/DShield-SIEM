@@ -1,4 +1,5 @@
 # Add elastic-agent to DShield Sensor
+Note: this is to be used only if the ELK server and the sensor are part of the same network.<br>
 Jump To:
 - [Add elastic-agent to DShield Sensor](#Add-elastic-agent-to-DShield-Sensor)
  - [TLS Certificate is Needed to Connect to ELK](#TLS-Certificate-is-Needed-to-Connect-to-ELK)
