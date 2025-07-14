@@ -494,7 +494,8 @@ services:
       - "/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro"
       - "/proc:/hostfs/proc:ro"
       - "/:/hostfs:ro"
-   cyberchef:
+ 
+  cyberchef:
     depends_on:
       es01:
         condition: service_healthy
