@@ -504,7 +504,7 @@ services:
     image: ghcr.io/gchq/cyberchef:latest
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "80:80"
 
 # This load the filebeat.yml template into filebeat docker
 # The following steps must me done to correcly setup filebeat.yml
