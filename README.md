@@ -479,7 +479,7 @@ kcustom11 [dshield-azure](https://github.com/kcustom11/dshield-azure) Azure Terr
 Boggby [ec2-honeypot-template](https://github.com/Boggby/ec2-honeypot-template)<br>
 amelete11235
  [homelab](https://github.com/amelete11235/homelab/blob/main/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM/Installing%20DShield%20SIEM%20on%20a%20Raspberry%20Pi%205%20-%208%20GB%20RAM.md) DShiel SIEM Raspberry 5<br>
-William Constantino [Cowrie logfile_investigation with Python](https://github.com/JJWCons/log-scripts/blob/main/logfile_investigation.py<br>
+William Constantino [Cowrie logfile_investigation with Python](https://github.com/JJWCons/log-scripts/blob/main/logfile_investigation.py)<br>
 William Constantino [Cowrie single_multi_IP with Python](https://github.com/JJWCons/log-scripts/blob/main/single_multi_IP.py)<br>
 Steven C. Peterson [DShield Model Context Protocol](https://github.com/datagen24/dsheild-mcp)
 
