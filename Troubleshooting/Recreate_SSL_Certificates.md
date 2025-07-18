@@ -32,8 +32,8 @@ If you are using Windows, you have 2 options to get a copy of the ca.crt file, y
 
 In the ELK server, copy the certificate to your home directory and change the ownership:
 ```
-guy@ubuntu:~$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .<br>
-guy@ubuntu:~$ sudo chown guy:guy ca.crt<br>
+guy@ubuntu:~$ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt .
+guy@ubuntu:~$ sudo chown guy:guy ca.crt
 ```
 In Windows, transfer a copy of the ca.crt file to your own account <br>
 ```
