@@ -382,8 +382,19 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 sudo apt-get install apt-transport-https
 echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
-sudo apt-get update && sudo apt-get install filebeat
+sudo apt-get update 
 ````
+### Install the Verion Matching your Architecture
+Linux - X86_64
+```
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.17.8-amd64.deb
+apt install filebeat*
+```
+PI - aarch64 
+```
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.17.8-arm64.deb
+apt install filebeat*
+```
 If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
 
 ### Cloud Sensor Setup - Filebeat -> Home Router -> Logstash
