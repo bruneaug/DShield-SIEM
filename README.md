@@ -388,12 +388,12 @@ sudo apt-get update
 Linux - X86_64
 ```
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.17.8-amd64.deb
-apt install filebeat*
+sudo apt install ./filebeat*
 ```
 PI - aarch64 
 ```
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.17.8-arm64.deb
-apt install filebeat*
+sudo apt install ./filebeat*
 ```
 If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
 
