@@ -4,7 +4,7 @@
       "hot": {
         "actions": {
           "rollover": {
-            "max_primary_shard_size": "5GB",
+            "max_primary_shard_size": "25GB",
             "max_age": "30d"
           }
         }
