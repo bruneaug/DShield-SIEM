@@ -4,7 +4,7 @@ If after setting up ELK you find out your ELK certificates are incorrect, you ca
 Review this section **Configure and install DShield ELK**<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#configure-and-install-dshield-elk
 ```
-sudo rm -f /var/lib/docker/volumes/dshield-elk_certs/_data/*
+sudo rm -rf /var/lib/docker/volumes/dshield-elk_certs/_data/*
 sudo docker compose stop
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
