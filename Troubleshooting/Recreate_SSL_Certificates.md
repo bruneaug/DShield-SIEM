@@ -19,16 +19,17 @@ The certs.zip file should now have been updated as well with the new date and ti
 $ sudo ls -l /var/lib/docker/volumes/dshield-elk_certs/_data/<br>
 
 Login in elasticsearch (es01) as root and unzip certs.zip to load the new certificate that contains the updated hostname and IP address.<br>
-$ sudo docker exec -ti -u root es01 bash<br>
-$ cd config/certs/<br>
-$ unzip certs.zip<br>
-
+```
+sudo docker exec -ti -u root es01 bash
+cd config/certs/
+unzip certs.zip
+```
 replace es01/es01.crt? [y]es, [n]o, [A]ll, [N]one, [r]ename: _Select A for all_<br>
-
-$ sudo docker compose stop<br>
-$ sudo docker compose rm -f -v<br>
-$ sudo docker compose up --build -d<br>
-
+``
+sudo docker compose stop
+sudo docker compose rm -f -v
+sudo docker compose up --build -d
+```
 # Import CA Cert into Workstation
 
 If you are using Windows, you have 2 options to get a copy of the ca.crt file, you can use Windows, you have the option of using scp (command line) or WinSCP to download a copy of the ca.crt file and install it in the workstation. As administrator, import the certificate.
