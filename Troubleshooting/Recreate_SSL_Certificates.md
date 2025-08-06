@@ -5,6 +5,8 @@ Review this section **Configure and install DShield ELK**<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#configure-and-install-dshield-elk
 ```
 sudo rm -f /var/lib/docker/volumes/dshield-elk_certs/_data/certs.zip
+sudo rm -f /var/lib/docker/volumes/dshield-elk_certs/_data/ca.zip
+sudo rm -f /var/lib/docker/volumes/dshield-elk_certs/_data/ca
 sudo docker compose stop
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
