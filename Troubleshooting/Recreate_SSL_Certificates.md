@@ -15,7 +15,7 @@ sudo cat /var/lib/docker/volumes/dshield-elk_certs/_data/instances.yml
 ```
 The certs.zip file should now have been updated as well with the new date and time of creation<br>
 ```
-sudo ls -l /var/lib/docker/volumes/dshield-elk_certs/_data/<br>
+sudo ls -l /var/lib/docker/volumes/dshield-elk_certs/_data/
 ```
 Login in elasticsearch (es01) as root and unzip certs.zip to load the new certificate that contains the updated hostname and IP address.<br>
 ```
