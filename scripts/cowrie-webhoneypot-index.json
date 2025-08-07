@@ -489,6 +489,38 @@
             "id": {
               "ignore_above": 1024,
               "type": "keyword"
+            },
+            "Sec-Ch-Ua": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Ch-Ua-Mobile": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Ch-Ua-Platform": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Fetch-Dest": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Fetch-Mode": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Fetch-Site": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Fetch-User": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "Sec-Gpc": {
+              "ignore_above": 1024,
+              "type": "keyword"
             }
           }
         },
@@ -499,6 +531,42 @@
               "type": "keyword"
             }
           }
+        },
+        "rule": {
+            "properties": {
+                "author": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "category": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "description": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "id": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "name": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "reference": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "ruleset": {
+                    "ignore_above": 1024,
+                    "type": "keyword"
+                },
+                "responses": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+            }
         },
         "transaction": {
           "properties": {
@@ -512,3 +580,4 @@
     }
   }
 }
+
