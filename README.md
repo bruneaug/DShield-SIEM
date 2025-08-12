@@ -128,8 +128,10 @@ vi .env
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
 You can keep these default or edit each files and change them.
 
-Edit heartbeat.yml to change the PI IP to your own sensor. Kibana heartbeat check the status of your services and determine whether they are available.<br>
-Update this IP and hostname to reflect your sensor. You can copy and add same 5 lines if you have more than one sensor you would like to monitor<br>
+### Configuring ELK Infrastructure Monitoring
+Edit **heartbeat.yml** to change the sensor IP (named PI) with your own sensor IP. Kibana heartbeat check the status of your services and determine whether they are available.<br>
+Update this IP and hostname to reflect your sensor. 
+**Note**: You can copy and add same 5 lines if you have more than one sensor you would like to monitor<br><br>
 This can be viewed Observability -> Uptime Monitors<br>
 ![image](https://github.com/user-attachments/assets/2877b810-e727-48e6-a6ba-bcb71bd7be88)
 
