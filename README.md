@@ -154,7 +154,7 @@ sudo docker compose up -d
 ````
 Installation Completed
 
-![image](https://github.com/user-attachments/assets/4adccef9-a0d2-4084-9f93-71a61a2a8a43)
+<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/30c1a562-860d-4aab-a891-4a429557f8fe" />
 
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
@@ -167,10 +167,11 @@ sudo du --human-readable --max-depth 1 --no-dereference --one-file-system /var/l
 ### The following ELK Services are Setup
 Using netstat, these 4 services should now be listening.<br>
 ```
-netstat -an | grep '9200\|9300\|8220\|5601\|5044\|5066\|5067\|5068\|9600'
+netstat -an | grep '80\|9200\|9300\|8220\|5601\|5044\|5066\|5067\|5068\|9600'
 ````
 This should be the output you should see:<br>
 <pre>
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN  ---> Local CyberChef
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana Web Access
 tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent Service
 tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch Service
@@ -180,6 +181,7 @@ tcp        0      0 0.0.0.0:5066            0.0.0.0:*               LISTEN  --->
 tcp        0      0 0.0.0.0:5067            0.0.0.0:*               LISTEN  ---> Filebeat Stack Node Information
 tcp        0      0 0.0.0.0:5068            0.0.0.0:*               LISTEN  ---> Filebeat Stack Node Information (Process ISC Threat Intel to Logstash)  
 tcp        0      0 0.0.0.0:9600            0.0.0.0:*               LISTEN  ---> Logstash Stack Node and Pipeline Information
+tcp6       0      0 :::80                   :::*                    LISTEN
 tcp6       0      0 :::5601                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
 tcp6       0      0 :::9200                 :::*                    LISTEN
