@@ -80,9 +80,12 @@ Add this to /etc/hosts after the ELK server IP addresses<br>
 es01 fleet-server heartbeat logstash filebeat filebeat01
 ````
 ## Add to sysctl vm.max_map_count
-Edit the sysctl.conf file and add the following at the bottom of the file:
+Edit the sysctl.conf file:<br>
 ````
 sudo vi /etc/sysctl.conf
+````
+Add the following at the bottom of the file:<br>
+````
 vm.max_map_count=262144
 ````
 Add save it. This is for [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode) when using Docker.
