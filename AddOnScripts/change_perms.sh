@@ -25,6 +25,7 @@ sudo chmod 644 ~/DShield-SIEM/heartbeat/heartbeat.yml
 # Check if directory exist and create it if doesn't
 
 if [ ! -d "$DIRECTORY" ]; then
+   sudo rm -rf "$DIRECTORY"
    sudo mkdir -p "$DIRECTORY"
    sudo chown $USER:$USER /opt/intel
    echo "Directory '$DIRECTORY' created and permissions changed to '$USER'."
@@ -32,9 +33,6 @@ if [ ! -d "$DIRECTORY" ]; then
    echo "Added cronjob to download ISC threat intel daily"
    crontab -l | { cat; echo "# Transfer logs to ELK server"; } | crontab -
    crontab -l | { cat; echo "0 12 * * * $HOME/scripts/get_iscipintel.sh> /dev/null 2>1&"; } | crontab -
-
-else
-        echo "Directory '$DIRECTORY' already exist."
 fi
 
 # Check if the file exist and if it does, change the IP to ELK Server 
