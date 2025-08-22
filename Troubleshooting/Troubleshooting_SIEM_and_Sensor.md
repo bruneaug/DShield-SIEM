@@ -59,9 +59,9 @@ sudo su cowrie -<br>
 This is the location for the DShield sensor configuration. This file also contains the IP address your are going to be accessing the sensor from<br>
 $ sudo vi /etc/dshield.ini<br>
 
-## Troubleshooting DShield isc-agent
+## Troubleshooting DShield web-honeypot (isc-agent is the old sensor)
 
-Sometimes thew isc-agent has errors such as this picture:<br>
+Sometimes the web-honeypot has errors such as this picture:<br>
 ```
 sudo /srv/dshield/status.sh
 ````
@@ -76,11 +76,35 @@ Run the following command to check the isc-agent status:<br>
 $ sudo systemctl status isc-agent<br>
 
 If it isn't running, try to start it after with this:<br>
+````
+sudo systemctl enable isc-agent
+sudo systemctl start isc-agent
+sudo systemctl status isc-agent
+````
 
-$ sudo systemctl start isc-agent<br>
-$ sudo systemctl restart isc-agent<br>
-$ sudo systemctl status isc-agent<br>
-$ sudo systemctl enable isc-agent<br>
+This is for **version=98** released Aug 2025<br>
+Run the following command to check the web-honeypot status:<br>
+````
+sudo systemctl status web-honeypot
+````
+There is always a possibility the sensor web-honeypot service isn't enable and need to be activated as a service<br>
+This is what you need to do:<br>
+
+````
+sudo systemctl enable web-honeypot
+sudo systemctl start web-honeypot
+sudo systemctl status web-honeypot
+````
+## web-honeypot Service won't Start
+If you get this error after unning this command: **sudo systemctl status web-honeypot**<br>
+you need to login in your ISC account and update your API Key<br>
+ - No valid API key configured. Expected 'apikey' to be defined in the 'Dshield' section of dshield<br>
+<img width="1140" height="255" alt="image" src="https://github.com/user-attachments/assets/d25fb246-2d94-4bd0-a7d1-2b677eb524be" />
+After the new key has been created, edit this file to update your "API key", save the change and restart web-honeypot service:<br>
+
+````
+sudo vi /etc/dshield.ini
+````
 
 ## Extend Log Storage Past 8 Days
 To keep logs longer than 7 days, you need to edit:<br>
