@@ -504,6 +504,7 @@ amelete11235
 William Constantino [Cowrie logfile_investigation with Python](https://github.com/JJWCons/log-scripts/blob/main/logfile_investigation.py)<br>
 William Constantino [Cowrie single_multi_IP with Python](https://github.com/JJWCons/log-scripts/blob/main/single_multi_IP.py)<br>
 Steven C. Peterson [DShield Model Context Protocol](https://github.com/datagen24/dsheild-mcp)
+Nathan Smisson [dshield-tooling](https://github.com/neurohypophysis/dshield-tooling)
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
