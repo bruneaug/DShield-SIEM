@@ -21,6 +21,8 @@
 # Added filebeat01 to download and load via lgstash ISC threat intel in DShield SIEM.
 # Date: 18 Feb 2025
 # Added heartbeat to monitor SSL certificate. This can also be used to monitor other services
+# Date: 4 Sep 2025
+# Changed Kibana port from 5601 to 443, login with: https://IP
 
 volumes:
   certs:
