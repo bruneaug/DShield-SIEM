@@ -218,9 +218,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
     ports:
-      - ${KIBANA_PORT}:5601
-    environment:
       - ${KIBANA_SSL}:${KIBANA_PORT}
+    environment:
+      - SERVER_NAME=kibana
       - ELASTICSEARCH_HOSTS=https://es01:9200
       - ELASTICSEARCH_USERNAME=kibana_system
       - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
