@@ -207,7 +207,7 @@ Next, run this Filebeat command to load the templates into Kibana:<br>
 # Access Kibana Interface
 After docker finish installing all the ELK docker components, now it is time to login the ELK stack using your Ubuntu server IP.<br>
 - Login Kibana with username: **elastic** and default password _if it hasn't been changed_: **student**<br>
-Web Access: https://serverIP:5601
+Web Access: https://serverIP
 
 ![image](https://github.com/user-attachments/assets/c51f17d0-4475-4e8e-b272-6fd1ad373fcb)
 
