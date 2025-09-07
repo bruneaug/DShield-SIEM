@@ -140,6 +140,7 @@ $ sudo docker exec -ti filebeat01 bash<br>
 $ sudo docker exec -ti metricbeat bash<br>
 $ sudo docker exec -ti heartbeat bash<br>
 $ sudo docker exec -ti cowrie bash<br>
+$ sudo docker exec -ti attack-navigator bash<br>
 
 # Copying Files Between Docker & Local User
 $ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
