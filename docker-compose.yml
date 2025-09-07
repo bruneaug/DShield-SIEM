@@ -508,6 +508,17 @@ services:
     ports:
       - "80:80"
 
+  attack-navigator:
+    depends_on:
+      es01:
+        condition: service_healthy
+    hostname: attack-navigator
+    container_name: attack-navigator
+    image: ghcr.io/mitre-attack/attack-navigator:latest
+    restart: unless-stopped
+    ports:
+      - "8080:4200"
+
 # This load the filebeat.yml template into filebeat docker
 # The following steps must me done to correcly setup filebeat.yml
 # sudo chown root:root filebeat/filebeat.yml
