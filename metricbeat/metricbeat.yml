@@ -36,7 +36,7 @@ setup.template.settings:
 # =================================== Kibana ===================================
 setup.kibana:
 
-  host: "https://kibana:5601"
+  host: "https://kibana"
   ssl:
     certificate_authorities: ["/usr/share/metricbeat/certs/ca/ca.crt"]
     certificate: "/usr/share/metricbeat/certs/kibana/kibana.crt"
