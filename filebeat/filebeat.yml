@@ -49,7 +49,7 @@ filebeat.config.modules:
 # =================================== Kibana ===================================
 setup.kibana:  
 
-  host: "https://kibana:5601"
+  host: "https://kibana"
   ssl:
     certificate_authorities: ["/usr/share/filebeat/certs/ca/ca.crt"]
     certificate: "/usr/share/filebeat/certs/kibana/kibana.crt"
