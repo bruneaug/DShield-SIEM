@@ -42,6 +42,7 @@ This docker is custom built to be used with the [DShield Honeypot](https://isc.s
 - Metricbeat
 ## Additional Software
 - CyberChef
+- Mitre ATT&CK - Attack Navigator
 
 **Note**: To update ELK server components, follow these steps:<br>
 https://github.com/bruneaug/DShield-SIEM/blob/main/README.md#download-github-update
