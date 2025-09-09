@@ -155,7 +155,7 @@ sudo docker compose up -d
 ````
 Installation Completed
 
-<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/30c1a562-860d-4aab-a891-4a429557f8fe" />
+<img width="339" height="208" alt="image" src="https://github.com/user-attachments/assets/b2b5e469-7513-4b6d-a397-062892a6aed7" />
 
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
@@ -174,6 +174,7 @@ This should be the output you should see:<br>
 <pre>
 tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN  ---> Local CyberChef
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN  ---> Kibana Web Access
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN  ---> Local Attack Navigator
 tcp        0      0 0.0.0.0:8220            0.0.0.0:*               LISTEN  ---> elastic-agent Service
 tcp        0      0 0.0.0.0:9200            0.0.0.0:*               LISTEN  ---> Elasticsearch Service
 tcp        0      0 0.0.0.0:9300            0.0.0.0:*               LISTEN  ---> Elasticsearch Cluster Service
@@ -184,6 +185,7 @@ tcp        0      0 0.0.0.0:5068            0.0.0.0:*               LISTEN  --->
 tcp        0      0 0.0.0.0:9600            0.0.0.0:*               LISTEN  ---> Logstash Stack Node and Pipeline Information
 tcp6       0      0 :::80                   :::*                    LISTEN
 tcp6       0      0 :::5601                 :::*                    LISTEN
+tcp6       0      0 :::8080                 :::*                    LISTEN
 tcp6       0      0 :::8220                 :::*                    LISTEN
 tcp6       0      0 :::9200                 :::*                    LISTEN
 tcp6       0      0 :::9300                 :::*                    LISTEN
