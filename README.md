@@ -155,7 +155,7 @@ sudo docker compose up -d
 ````
 Installation Completed
 
-<img width="339" height="208" alt="image" src="https://github.com/user-attachments/assets/b2b5e469-7513-4b6d-a397-062892a6aed7" />
+<img width="375" height="354" alt="image" src="https://github.com/user-attachments/assets/a0e66e68-4be0-4e5a-825a-be7944a5c0f4" />
 
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
