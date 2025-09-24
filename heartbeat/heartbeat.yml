@@ -21,7 +21,7 @@ heartbeat.monitors:
 
   # List or urls to query
   name: kibana
-  hosts: ["https://kibana:5601"]
+  hosts: ["https://kibana"]
   ssl:
     certificate_authorities: ['/usr/share/heartbeat/certs/ca/ca.crt']
     verification_mode: certificate
@@ -70,7 +70,7 @@ setup.template.settings:
 # Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
 # This requires a Kibana endpoint configuration.
 setup.kibana:
-  host: "https://kibana:5601"
+  host: "https://kibana"
   ssl:
     certificate_authorities: ["/usr/share/heartbeat/certs/ca/ca.crt"]
     certificate: "/usr/share/heartbeat/certs/kibana/kibana.crt"
