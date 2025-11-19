@@ -85,6 +85,8 @@ git pull --autostash
 ~/scripts/change_perms.sh
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
+sudo docker exec -ti filebeat bash
+./filebeat setup -e 
 ````
 If you get any errors after restarting the docker, rerun the following commands after stopping the docker<br>
 ````
