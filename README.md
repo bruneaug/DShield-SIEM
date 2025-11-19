@@ -342,7 +342,7 @@ Use this Dashboard to view the metrics collected by elastic-agent:<br>
 
 
 - Select and Add AlienVault OTX (need an API key)<br>
-- Select AbuseCH (no API key needed)<br>
+- Select AbuseCH (need an API key)<br>
 - Select Threat Intelligence Utilities<br>
 - Elasticsearch<br>
 - Select Kibana<br>
