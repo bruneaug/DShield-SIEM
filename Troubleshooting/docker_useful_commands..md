@@ -88,6 +88,30 @@ sudo docker compose up --build -d
 sudo docker exec -ti filebeat bash
 ./filebeat setup -e 
 ````
+## Troubleshooting git pull --autostash Fails
+
+<pre>
+guy@ubuntu:~/DShield-SIEM$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    AddOnScripts/change_perms.sh
+        deleted:    AddOnScripts/get_iscipintel.sh
+        deleted:    AddOnScripts/parsing_tty.sh
+        deleted:    AddOnScripts/rename_arkime_pcap.sh
+        deleted:    AddOnScripts/swapmem.sh
+        modified:   scripts/cowrie-setup.sh
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        added by us:     scripts/dshield_sensor_8.19.7.ndjson
+
+guy@ubuntu:~/DShield-SIEM$ git add scripts/dshield_sensor_8.19.7.ndjson
+</pre>
+
 If you get any errors after restarting the docker, rerun the following commands after stopping the docker<br>
 ````
 sudo docker compose stop
@@ -95,7 +119,7 @@ sudo docker compose rm -f -v
 sudo docker compose up --build -d
 ````
 **Important**<br>
-If this is a **new ELK version** (i.e 8.17.3 -> 8.19.3), you will need to run this update to activate the new Filebeat<br>
+If this is a **new ELK version** (i.e 8.17.3 -> 8.19.7), you will need to run this update to activate the new Filebeat<br>
 dashboards, pipelines & index-management for Kibana. First login Filebeat<br>
 ````
 sudo docker exec -ti filebeat bash
