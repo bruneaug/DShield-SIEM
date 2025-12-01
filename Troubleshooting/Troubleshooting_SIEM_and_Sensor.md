@@ -55,9 +55,17 @@ $ sudo systemctl enable ssh<br>
 
 sudo su cowrie -<br>
 
-## Editing the Cowrie Configuration File
-This is the location for the DShield sensor configuration. This file also contains the IP address your are going to be accessing the sensor from<br>
-$ sudo vi /etc/dshield.ini<br>
+## Editing the DShield Sensor (Cowrie) Configuration File which include Local Logging
+This is the location for the DShield sensor configuration. This file contains a lot of important information about the DShield sensor such as:<br>
+* The ISC account API key (apikey)
+* The IP address your are going to be accessing the sensor from (honeypotip)
+* The location of the webhoneypot logs (this need to change the logs from: enable_local_logs=**false** to enable_local_logs=enable_local_logs=true)
+<img width="391" height="38" alt="image" src="https://github.com/user-attachments/assets/b89b295c-a857-4019-abd8-6538d4e0d468" />
+
+```
+sudo vi /etc/dshield.ini<br>
+```
+This
 
 ## Troubleshooting DShield web-honeypot (isc-agent is the old sensor)
 
@@ -170,7 +178,8 @@ Look for: ttylog = false to ttylog = true<br>
 $ sudo vi /srv/cowrie/cowrie.cfg 
 
 /var/log/dshield.log -> firewall<br>
-/srv/db -> webhoneypot-*.json<br>
+/srv/db -> old webhoneypot-*.json location<br>
+/srv/log/  <--- New webhoneypot-*.json log location<br>
 /srv/cowrie/var/lib/cowrie/downloads<br>
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
@@ -192,10 +201,6 @@ If you get this error, your webserver might not be exposed and need to check por
 ## Disable WIFI
 This command should disable WIFI on the PI<br>
 $ sudo nmcli radio wifi off<br>
-
-## Config file
-This is the DShield sensor configuration file<br>
-sudo vi /etc/dshield.ini<br>
 
 ## Remote Sensor Login
 
