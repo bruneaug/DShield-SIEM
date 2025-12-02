@@ -19,6 +19,17 @@ ssh-copy-id -p 12222 ubuntu@192.168.25.231
 ## DShield Sensor Setup
 The sensor only support 64-Bit OS on the PI and any combination of VM or hardware sensor<br>
 
+## Turning off wlan0 on Pi
+This setup will turn off the wlan0 interface on a PI:<br>
+```
+sudo vi /etc/modprobe.d/raspi-blacklist.conf
+```
+Add the following configuration to the blacklist configuration:<br>
+<pre>
+blacklist brcmfmac
+blacklist brcmutil
+</pre>
+
 ## Review Error Logs
 After the installation or upgrade, you can review the errors during the installation<br>
 sudo cat /srv/log/isc-agent.err
