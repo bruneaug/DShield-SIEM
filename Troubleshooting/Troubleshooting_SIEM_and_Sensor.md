@@ -225,14 +225,18 @@ $ sudo grep your_account /var/log/syslog<br>
 
 ## IPTables Issues
 These steps is for troubleshooting Ubuntu OS. The iptables firewall is located:<br>
-$ sudo cat /etc/network/iptables
-
+```
+sudo cat /etc/network/iptables
+```
 Firewall won't start:<br>
 Lookin for any forms of errors in syslog that might indicate why it isn't starting.<br>
-$ sudo grep -i error /var/log/syslog | grep iptables
-
+```
+sudo grep -i error /var/log/syslog | grep iptables
+```
 Normal output of firewall when checking the status:<br>
-$ sudo systemctl status dshieldfw
+```
+sudo systemctl status dshieldfw
+```
 <pre>
 dshieldfw.service - DShield Firewall Configuration
   Loaded: loaded (/etc/systemd/system/dshieldfw.service; enabled; preset: enabled)
@@ -250,6 +254,18 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 sudo systemctl restart dshieldfw
 sudo systemctl status dshieldfw
 ````
+### MISSING: firewall rules
+You may need to manually add the firewall storage file if it doesn't exists<br>
+```
+sudo ls -l  /var/log/dshield.log
+```
+If there is not response, add the file to get logging going<br>
+```
+sudo touch /var/log/dshield.log
+sudo chmod 640  /var/log/dshield.log
+sudo chown root:adm  /var/log/dshield.log
+```
+
 ## Custom IPTables Rules
 From Dr J.<br>
 Added local iptables rules that will be applied in addition to the automatic rules created by the install script. The intent is to allow you to add more flexible rule to allow access to the honeypot.<br>
