@@ -69,7 +69,7 @@ sudo systemctl status docker.service
 ````
 
 ## Update /etc/hosts
-Add the following ELK servername **es01 fleet-server heartbeat logstash filebeat filebeat01**<br>
+Add the following ELK servername **es01 kibana fleet-server heartbeat logstash filebeat filebeat01**<br>
 to /etc/hosts after the IP address and the server name:<br>
 ````
 sudo vi /etc/hosts
@@ -78,7 +78,7 @@ Add this to /etc/hosts after the ELK server IP addresses<br>
 127.0.0.1 sensor es01 ...<br>
 192.168.25.80 sensor es01 ...<br>
 ````
-es01 fleet-server heartbeat logstash filebeat filebeat01
+es01 kibana fleet-server heartbeat logstash filebeat filebeat01
 ````
 ## Add to sysctl vm.max_map_count
 Edit the sysctl.conf file:<br>
