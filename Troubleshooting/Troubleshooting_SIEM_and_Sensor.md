@@ -70,13 +70,13 @@ sudo su cowrie -<br>
 This is the location for the DShield sensor configuration. This file contains a lot of important information about the DShield sensor such as:<br>
 * The ISC account API key (apikey)
 * The IP address your are going to be accessing the sensor from (honeypotip)
-* The location of the webhoneypot logs (this need to change the logs from: enable_local_logs=**false** to enable_local_logs=enable_local_logs=**true**)
+* The location of the webhoneypot logs (this need to change the logs from: enable_local_logs=**false** to enable_local_logs=**true**)
 <img width="391" height="38" alt="image" src="https://github.com/user-attachments/assets/b89b295c-a857-4019-abd8-6538d4e0d468" />
 
 ```
 sudo vi /etc/dshield.ini
 ```
-Make sure that enable_local_logs=enable_local_logs=**true** otherwise it won't be logging webhoneypot logs to the DShield sensor.<br>
+Make sure that enable_local_logs=**true** otherwise it won't be logging webhoneypot logs to the DShield sensor.<br>
 
 ## Troubleshooting DShield web-honeypot (isc-agent is the old sensor)
 
