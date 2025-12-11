@@ -3,7 +3,7 @@
     "template": {
      "settings": {
        "number_of_shards": 1,
-       "number_of_replicas": 0, 
+       "number_of_replicas": 1, 
        "max_docvalue_fields_search" : "200",
        "index": {
          "mode": "logsdb",
@@ -182,6 +182,9 @@
             },
             "ingested": {
               "type": "date"
+            },
+            "reference": {
+              "type": "keyword"
             }
           }
         },
