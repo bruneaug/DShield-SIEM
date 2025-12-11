@@ -1,6 +1,9 @@
 "205.210.31.0/24" : Palo Alto Researcher
 "198.235.24.0/24" : Palo Alto Researcher
-"147.185.132.0/22" : Palo Alto Researcher
+"162.216.150.0/24": Palo Alto Researcher
+"162.216.149.0/24": Palo Alto Researcher
+"147.185.132.0/22": Palo Alto Researcher
+"35.203.210.0/24": Palo Alto Researcher
 "216.218.128.0/17" : Shadow Server Researcher
 "184.104.0.0/15" : Shadow Server Researcher
 "64.62.128.0/18" : Shadow Server Researcher
@@ -13,4 +16,3 @@
 "167.94.145.0/24" : Censys Researcher
 "167.94.138.0/24" : Censys Researcher
 "162.142.125.0/24": Censys Researcher
-"162.216.150.0/24": Google Researcher
