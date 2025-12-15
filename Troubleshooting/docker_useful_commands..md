@@ -172,3 +172,6 @@ $ sudo docker exec -ti attack-navigator bash<br>
 $ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
 $ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/<br>
 $ sudo docker cp logstash:/usr/share/logstash/config .
+
+# List Fiels in a docker
+$ sudo docker exec -it logstash ls -l /usr/share/logstash/config
