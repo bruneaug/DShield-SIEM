@@ -2,6 +2,9 @@
 # Guy Bruneau
 # Date: 31 Jan 2025
 # Version: 0.1
+# Date: 18 Dec 2025
+# Version: 0.2
+# Added cronjob to download daily known reshearcher list
 
 #### This script runs on ELK server to setup various permissions
 #### directory for ISC threat intel.
@@ -33,6 +36,9 @@ if [ ! -d "$DIRECTORY" ]; then
    echo "Added cronjob to download ISC threat intel daily"
    crontab -l | { cat; echo "# Transfer logs to ELK server"; } | crontab -
    crontab -l | { cat; echo "0 12 * * * $HOME/scripts/get_iscipintel.sh> /dev/null 2>1&"; } | crontab -
+   echo "Added cronjob to download daily ISC list of researchers"
+   crontab -l | { cat; echo "# ISC List of known Researchers"; } | crontab -
+   crontab -l | { cat; echo "0 15 * * * $HOME/scripts/get_researchers.sh > /dev/null 2>1&"; } | crontab -
 fi
 
 # Check if the file exist and if it does, change the IP to ELK Server 
