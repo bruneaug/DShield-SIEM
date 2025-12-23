@@ -397,15 +397,24 @@ echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo 
 sudo apt-get update 
 ````
 ### Install the Verion Matching your Architecture
-Linux - X86_64
+After the installation, we place a **hold** on filebeat so you can update the sensor without changing the filebeat version. The filebeat<br>
+version should always match the Elasticsearc/Kibana docker version.<br>
+<ins>Linux - X86_64</ins>
 ```
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.7-amd64.deb
 sudo apt install ./filebeat-8.19.7-amd64.deb
+sudo apt-mark hold filebeat
 ```
-PI - aarch64 
+<ins>PI - aarch64</ins>
 ```
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.7-arm64.deb
 sudo apt install ./filebeat-8.19.7-arm64.deb
+sudo apt-mark hold filebeat
+```
+In order to update filebeat, when the time comes, you will need to remove the hold. Check if there is a hold on filebeat first before removing it<br>
+```
+sudo apt-mark showhold
+sudo apt-mark unhold filebeat
 ```
 If you want to use Zeek on your DShield sensor, review these installation [steps](https://github.com/bruneaug/DShield-SIEM/blob/main/AddOn/Configure_Zeek_DShield_Sensor.md)
 
