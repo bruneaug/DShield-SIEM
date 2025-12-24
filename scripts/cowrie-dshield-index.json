@@ -424,6 +424,25 @@
             },
             "packets": {
               "type": "long"
+            },
+            "tos": {
+              "type": "long"
+            },
+            "precedence": {
+              "type": "long"
+            },
+            "window": {
+              "type": "long"
+            },
+            "urgent": {
+              "type": "long"
+            },
+            "reserve": {
+              "type": "long"
+            },
+            "flags": {
+              "ignore_above" : 1024,
+              "type": "keyword"
             }
           }
         },
@@ -461,3 +480,5 @@
     }
   }
 }
+
+
