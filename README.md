@@ -104,7 +104,6 @@ git clone https://github.com/bruneaug/DShield-SIEM.git
 mkdir scripts
 mv DShield-SIEM/AddOnScripts/*.sh scripts
 chmod 754 scripts/*.sh
-~/scripts/get_researchers.sh
 cd ~/DShield-SIEM
 ````
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
@@ -148,6 +147,7 @@ The script **change_perms.sh** will configure some of the files before starting 
 The script will also update the IP address used in the dashboard query to the IP of your ELK stack.<br>
 ````
 ~/scripts/change_perms.sh
+~/scripts/get_researchers.sh
 ````
 Now execute docker compose to build the ELK server applications. <br>
 This will build: Kibana, Elasticsearch, elastic-agent, Logstash and load the Cowrie parsers, configuration files and dashboard.<br>
