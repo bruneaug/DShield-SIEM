@@ -426,19 +426,19 @@
               "type": "long"
             },
             "tos": {
-              "type": "long"
+              "type": "byte"
             },
             "precedence": {
-              "type": "long"
+              "type": "byte"
             },
             "window": {
               "type": "long"
             },
             "urgent": {
-              "type": "long"
+              "type": "byte"
             },
             "reserve": {
-              "type": "long"
+              "type": "byte"
             },
             "flags": {
               "ignore_above" : 1024,
@@ -480,5 +480,3 @@
     }
   }
 }
-
-
