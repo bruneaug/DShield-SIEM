@@ -104,6 +104,7 @@ git clone https://github.com/bruneaug/DShield-SIEM.git
 mkdir scripts
 mv DShield-SIEM/AddOnScripts/*.sh scripts
 chmod 754 scripts/*.sh
+~/scripts/get_researchers.sh
 cd ~/DShield-SIEM
 ````
 **Note**: Before installation, you can edit the **.env** (ls -la to see it) file to make any derided changes.<br>
