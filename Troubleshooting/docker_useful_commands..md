@@ -83,6 +83,7 @@ cd DShield-SIEM
 sudo docker compose stop
 git pull --autostash
 ~/scripts/change_perms.sh
+ ~/scripts/get_researchers.sh
 sudo docker compose rm -f -v
 sudo docker compose up --build -d
 sudo docker exec -ti filebeat bash
