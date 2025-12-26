@@ -475,6 +475,22 @@
               "type": "keyword"
             }
           }
+        },
+        "icmp": {
+          "properties": {
+            "code": {
+              "type": "long"
+            },
+            "id": {
+              "type": "long"
+            },
+            "type": {
+              "type": "long"
+            },
+            "sequence": {
+              "type": "long"
+            }
+          }            
         }
       }
     }
