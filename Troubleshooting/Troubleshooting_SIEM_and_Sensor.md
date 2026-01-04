@@ -223,7 +223,7 @@ If you do, try removing the public key and try to login again<br>
 
 $ sudo grep your_account /var/log/syslog<br>
 
-## IPTables Issues
+## Firewall IPTables Issues
 These steps is for troubleshooting Ubuntu OS. The iptables firewall is located:<br>
 ```
 sudo cat /etc/network/iptables
