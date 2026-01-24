@@ -184,10 +184,11 @@ sudo iptables -F   (to flush the firewall)
 sudo docker restart logstash (restart logstash service)
 ````
 ## Logs Location
-**Enable TTYLog** by editing this file. It is important to remember when you  the DShield sensor this will reset to false.<br>
+**Enable TTYLog** by editing this file. It is important to remember when you  the DShield sensor this will reset to false when you update the DShield sensor software.<br>
 Look for: ttylog = false to ttylog = true<br>
-$ sudo vi /srv/cowrie/cowrie.cfg 
-
+```
+sudo vi /srv/cowrie/cowrie.cfg 
+```
 /var/log/dshield.log -> firewall<br>
 /srv/db -> old webhoneypot-*.json location<br>
 /srv/log/  <--- New webhoneypot-*.json log location<br>
