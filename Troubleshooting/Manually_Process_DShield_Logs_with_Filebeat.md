@@ -14,8 +14,8 @@ the same device.<br>
 ```
 filebeat test config
 ```
-- Test the Filebeat output:
+- Test Filebeat output:
 ```
-ilebeat test output
+filebeat test output
 ```
 Now that everything has been configured and Filebeat pass both tests, you are ready to proceed to replay the logs to DShield SIEM<br>
