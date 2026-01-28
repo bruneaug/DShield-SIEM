@@ -19,3 +19,14 @@ filebeat test config
 filebeat test output
 ```
 Now that everything has been configured and Filebeat pass both tests, you are ready to proceed to replay the logs to DShield SIEM<br>
+```
+sudo systemctl start filebeat
+```
+Check if it is connected to logstash
+```
+ netstat -an | grep 5044
+```
+If you need to check Filebeat status
+```
+sudo systemctl status filebeat
+```
