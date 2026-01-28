@@ -397,7 +397,7 @@ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee 
 echo "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 sudo apt-get update 
 ````
-### Install the Verion Matching your Architecture
+### Install the Version Matching your Architecture
 After the installation, we place a **hold** on filebeat so you can update the sensor without changing the filebeat version. The filebeat<br>
 version should always match the Elasticsearc/Kibana docker version.<br>
 <ins>Linux - X86_64</ins>
