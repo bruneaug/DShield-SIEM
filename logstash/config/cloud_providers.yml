@@ -1,8 +1,10 @@
 # AWS
 7224,AWS Direct Connect
-14618,AWS Europe Public Services
-16509,AWS Public Services
+14618,AWS Europe Public Services hosting
+16509,AWS Public Services primary for EC2/Cloud
 17633,AWS South America Public Services
+62785,AWS Services
+64512,AWS Site-to-Site VPN
 # Microsoft
 3598,Microsoft-Corp-As Related infrastructure
 8070, Microsoft Corporation
