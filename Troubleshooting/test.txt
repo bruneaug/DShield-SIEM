@@ -1,3 +1,112 @@
+local tcp_reserved_bits = nw.createParser("tcp_reserved_bits", "TCP Reserved Bits")
+
+--[[
+    DESCRIPTION
+
+	This parser is used to identify CONNECT tag in the web Gateway traffic that starts
+	with CONNECT on the first line of a client URL.
+    
+	tcp_reserved_bits
+
+    VERSION
+		
+		2026-02-26 - Initial version
+
+		       
+    AUTHOR
+    
+		Guy Bruneau, guybruneau@outlook.com
+  
+    
+    DEPENDENCIES
+
+		None.
+        
+	
+--]]
+
+-- TCP Header Length can be found at the 12th byte offset from 0 in the TCP header.
+-- It is a 4bit field in the high order nibble
+-- minimum value 5 (5x4=20bytes)   maximum value 15 (15x4=60bytes)
+-- Purpose is to identify TCP header length to identify any TCP Options.
+-- Then, move to where the TCP Options start
+-- Default TCP Header size is 20 bytes.  Anything more than that and you have TCP Options.
+
+-- Bytes as Nibbles
+-- 128	64	32	16	|	8	4	2	1 
+--	8	4	2	1	|	8	4	2	1
+--                      R   R   R
+--                    \008 \004 \002
+
+
+-- declare the meta keys we'll be registering meta with
+tcp_reserved_bits:setKeys({
+	nwlanguagekey.create('service',nwtypes.UInt32),
+	nwlanguagekey.create('alert', nwtypes.Text),
+})
+
+function string.tohex(str)
+    return (str:gsub('.', function (c)
+        return string.format('%02X', string.byte(c))
+    end))
+end
+
+function tcp_reserved_bits:sessionBegin()
+
+	iphdr = nil
+	tcphdr = nil
+	
+	local packet = nwsession.getFirstPacket()
+	-- local reqStream = nwsession.getRequestStream()
+	-- local packet = nwsession.getFirstPacket(reqStream)
+	local service = nw.getAppType()
+	
+	if packet then
+				
+		local payload = nwpacket.tostring(packet,1,32)
+		if payload then
+		-- Find the upper layer protocol type for IP (0x800) and move forward 1 byte into it.
+			local ipheaderpos = payload:find("\008\000", 1, -1)
+			if ipheaderpos then
+				iphdr = ipheaderpos + 2
+			end			
+		end
+					
+		if packet then	
+			-- Find the time to live (TTL) value in the IP header
+			-- 8th byte offset from 0 in the IP header
+			-- 8bit field
+			if iphdr ~= nil then
+		
+				-- check that the IP version is 4 and header length is 5
+				-- 0x45 equals decimal 69
+				local verlen = nwpacket.byte(packet, iphdr + 0)
+				if verlen == 69 then
+				-- if verlen >= 69 and verlen <= 79 then
+				--nw.logInfo("Next IP Version: " .. verlen )
+					ipversion = "4"
+					-- this gives us the start of ip payload, which would be protocol
+					-- The payload begins at the 20th byte offset from 0 in the IP Header
+					-- Since I only care about TCP, the variable name will be 'tcphdr' even
+					-- though it could be any protocol really.
+					tcphdr = iphdr + 20
+					local iplenght = nwpacket.uint16(packet, iphdr + 3)
+					local ipid = nwpacket.uint16(packet, iphdr + 4)
+					--nw.logInfo("IPID:  " .. ipid)
+					local ttl = nwpacket.byte(packet, iphdr + 8)
+					local proto = nwpacket.byte(packet, iphdr + 9)
+					if proto then
+						local protocol = tonumber(proto)
+						if protocol == 6 then
+							--nw.logInfo("Found TTL:  " .. timeToLive)
+							-- Parsing the IP address from Hex to Dec
+							--local source = nwpacket.uint32(packet, iphdr + 12)
+							local dstIP = nwpacket.uint32(packet, iphdr + 16)
+								if tcphdr ~= nil then
+								-- local ackNumber = nwpacket.uint32(packet, tcphdr + 8)
+								-- nw.logInfo("ACK Number  " .. ackNumber)
+								-- local pshACK = nwpacket.byte(packet, tcphdr + 13)
+								local tcpHeaderLenght = nwpacket.byte(packet, tcphdr + 12)
 								-- This looks for the lower 4 bits of byte 12 for the tcp reserved bits.
 								local flags = bit.tohex(tcpHeaderLenght, 1)
 									if flags == "2" then
@@ -22,3 +131,17 @@
 										-- nw.logInfo("Flags " .. flags)
 										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
 									end -- if flags
+								end -- if tcphdr
+						end -- end if protocol
+					end -- end proto
+				end	-- end if verlen		
+			end -- if iphdr
+		end -- packet
+	end -- if packets start
+end	-- tcp_reserved_bits:OnsessionBegin()
+
+
+
+tcp_reserved_bits:setCallbacks({
+    [nwevents.OnSessionBegin] = tcp_reserved_bits.sessionBegin,
+})
