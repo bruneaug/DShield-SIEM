@@ -1,0 +1,24 @@
+								-- This looks for the lower 4 bits of byte 12 for the tcp reserved bits.
+								local flags = bit.tohex(tcpHeaderLenght, 1)
+									if flags == "2" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "4" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "6" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "8" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "a" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "c" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									elseif flags == "e" then
+										-- nw.logInfo("Flags " .. flags)
+										nw.createMeta(self.keys.alert, "TCP Reserved Bits Exist")
+									end -- if flags
