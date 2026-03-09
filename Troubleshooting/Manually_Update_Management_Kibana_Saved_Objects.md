@@ -5,7 +5,7 @@ https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/docker_useful
 
 Management → Kibana → Saved → Objects
 
-If any component of docker get updated, Kibana is likely to re-add all the dashboard. It is important to delete all the current objects by searching in the search bar: **cowrie dshield**.<br>
+If any component of docker get updated, Kibana is likely to re-add all the dashboard. It is important to delete all the current objects by searching in the search bar: **cowrie dshield zeek**.<br>
 Select and delete all objects like the picture below (list might be slighly different than below)<br>
  
 ![image](https://github.com/user-attachments/assets/cc5f4447-702e-4641-b786-09d820fe443a)
