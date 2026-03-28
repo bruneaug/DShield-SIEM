@@ -3,6 +3,7 @@
 # Date: 27 Mar 2026
 # Version: 0.1
 
+# This script is part of the ELK server if this is where you want to dowload the logs from the sensor.
 # Cronjob to automatically transfer logs daily
 # crontab -e 
 # Add this command to user cron and save. Make sure the directories exist locally
