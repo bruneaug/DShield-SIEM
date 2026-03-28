@@ -45,5 +45,5 @@ scp -P 12222 ubuntu@remoteIP:/srv/log/webhoneypot-$YESTERDAY.json /home/guy/webh
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/log/cowrie/cowrie.json.$YESTERDAY  /home/guy/cowrie/
 
 # Download uploaded files - These are scripts and potential malware uploaded by actors/bots
-scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/lib/cowrie/downloads/* /home/guy/download/
+scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/lib/cowrie/downloads/* /home/guy/downloads/
 
