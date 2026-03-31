@@ -39,7 +39,14 @@ DELETEPACKETS=`date -d "4 day ago" '+%Y-%m-%d'`
 scp -P 12222 ubuntu@remoteIP:/var/log/dshield.log  /home/guy/dshield/
 
 # Download webhoneypot logs
-scp -P 12222 ubuntu@remoteIP:/srv/log/webhoneypot-$YESTERDAY.json /home/guy/webhoneypot/
+# Make a copy of the file to local directory & change the permissions
+# Change /home/ubuntu & ubuntu:ubuntu to your local DShield sensor directory
+ssh -p 12222  ubuntu@emoteIP "sudo cp /srv/logwebhoneypot-$YESTERDAY.json /home/ubuntu"
+ssh -p 12222  ubuntu@emoteIP "sudo chown ubuntu:ubuntu /home/ubuntuwebhoneypot-$YESTERDAY.json"
+
+scp -P 12222 ubuntu@emoteIP:/home/ubuntu/webhoneypot-$YESTERDAY.json /home/guy/webhoneypot/
+# Delete the transferred file form the DShield sensor home user directory
+ssh -p 12222  ubuntu@emoteIP "sudo rm -f /home/ubuntu/webhoneypot-$YESTERDAY.json"
 
 # Download cowerie logs
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/log/cowrie/cowrie.json.$YESTERDAY  /home/guy/cowrie/
