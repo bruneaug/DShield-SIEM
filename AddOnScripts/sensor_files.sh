@@ -41,7 +41,7 @@ scp -P 12222 ubuntu@remoteIP:/var/log/dshield.log  /home/guy/dshield/
 # Download webhoneypot logs
 # Make a copy of the file to local directory & change the permissions
 # Change /home/ubuntu & ubuntu:ubuntu to your local DShield sensor directory
-ssh -p 12222  ubuntu@emoteIP "sudo cp /srv/logwebhoneypot-$YESTERDAY.json /home/ubuntu"
+ssh -p 12222  ubuntu@emoteIP "sudo cp /srv/log/webhoneypot-$YESTERDAY.json /home/ubuntu"
 ssh -p 12222  ubuntu@emoteIP "sudo chown ubuntu:ubuntu /home/ubuntuwebhoneypot-$YESTERDAY.json"
 
 scp -P 12222 ubuntu@emoteIP:/home/ubuntu/webhoneypot-$YESTERDAY.json /home/guy/webhoneypot/
