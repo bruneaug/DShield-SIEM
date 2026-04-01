@@ -51,6 +51,8 @@ ssh -p 12222  ubuntu@emoteIP "sudo rm -f /home/ubuntu/webhoneypot-$YESTERDAY.jso
 # Download cowerie logs
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/log/cowrie/cowrie.json.$YESTERDAY  /home/guy/cowrie/
 
-# Download uploaded files - These are scripts and potential malware uploaded by actors/bots
+# Download uploaded files to sensor
+# WARNING - These are scripts and potential malware uploaded by actors/bots
+ssh -p 12222  ubuntu@emoteIP "sudo chmod -R 664  /srv/cowrie/var/lib/cowrie/downloads/*"
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/lib/cowrie/downloads/* /home/guy/downloads/
 
