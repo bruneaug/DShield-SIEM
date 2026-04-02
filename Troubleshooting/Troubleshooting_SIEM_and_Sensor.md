@@ -42,7 +42,11 @@ $ sudo ./bin/install.sh<br>
 
 ## Testing Connection to ISC Website
 Testing connection to ISC website<br>
-curl -s 'https://isc.sans.edu/api/portcheck?json'<br>
+```
+curl -s 'https://isc.sans.edu/api/portcheck?json' --max-time 5
+```
+The output should look like this:<br>
+_{"port80":"open","webconfig":"ok"}_<br>
 
 ## Testing iptables Logs
 Testing connection to the ISC website to confirm the iptables logs are able to upload to the site. If it gives an error, provide the error in Slack to check what is the issue.<br>
