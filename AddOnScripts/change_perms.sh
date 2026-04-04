@@ -35,10 +35,10 @@ if [ ! -d "$DIRECTORY" ]; then
 
    echo "Added cronjob to download ISC threat intel daily"
    crontab -l | { cat; echo "# Transfer logs to ELK server"; } | crontab -
-   crontab -l | { cat; echo "0 12 * * * $HOME/scripts/get_iscipintel.sh> /dev/null 2>1&"; } | crontab -
+   crontab -l | { cat; echo "0 12 * * * $HOME/scripts/get_iscipintel.sh> /dev/null 2>&1"; } | crontab -
    echo "Added cronjob to download daily ISC list of researchers"
    crontab -l | { cat; echo "# ISC List of known Researchers"; } | crontab -
-   crontab -l | { cat; echo "0 15 * * * $HOME/scripts/get_researchers.sh > /dev/null 2>1&"; } | crontab -
+   crontab -l | { cat; echo "0 15 * * * $HOME/scripts/get_researchers.sh > /dev/null 2>&1"; } | crontab -
 fi
 
 # Check if the file exist and if it does, change the IP to ELK Server 

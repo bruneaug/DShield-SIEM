@@ -23,7 +23,7 @@ curl  https://isc.sans.edu/api/threatcategory/research?json -o $HOME/scripts/res
 
 # Parse the JSON file with just the IP and the type
 
-cat ~/research.json | sed 's/},{/}\n{/g' | tr -d '"{}[]' | sed 's/ipv4:\(.*\),added.*type:\(.*\)/"\1": \2/g' > $HOME/DShield-SIEM/logstash/config/scanners.yml
+cat $HOME/scripts/research.json | sed 's/},{/}\n{/g' | tr -d '"{}[]' | sed 's/ipv4:\(.*\),added.*type:\(.*\)/"\1": \2/g' > $HOME/DShield-SIEM/logstash/config/scanners.yml
 
 echo $PASSWORD | sudo -S docker cp $HOME/DShield-SIEM/logstash/config/scanners.yml logstash:/usr/share/logstash/config
 
