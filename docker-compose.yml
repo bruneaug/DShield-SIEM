@@ -477,6 +477,7 @@ services:
       co.elastic.logs/module: heartbeat
     user: root
     restart: unless-stopped
+    command: ["heartbeat", "-e", "--strict.perms=false"]
     configs:
       - source: hb_config
         target: /usr/share/heartbeat/heartbeat.yml
