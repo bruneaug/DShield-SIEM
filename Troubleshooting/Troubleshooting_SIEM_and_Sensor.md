@@ -96,15 +96,6 @@ $ sudo chown  syslog:adm /var/log/dshield.log<br>
 
 Run the following command to check the isc-agent status:<br>
 
-$ sudo systemctl status isc-agent<br>
-
-If it isn't running, try to start it after with this:<br>
-````
-sudo systemctl enable isc-agent
-sudo systemctl start isc-agent
-sudo systemctl status isc-agent
-````
-
 This is for **version=98** released Aug 2025<br>
 Run the following command to check the web-honeypot status:<br>
 ````
