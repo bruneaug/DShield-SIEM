@@ -512,6 +512,13 @@ https://isc.sans.edu/diary/Is+that+It+Finding+the+Unknown+Correlations+Between+H
 Parsing cowrie logs with Python by Josh Jobe<br>
 https://github.com/jrjobe/DShield-Cowrie-json-Parser
 
+### Using btop to Monitor Sensor
+```
+sudo apt install btop
+```
+<img width="941" height="402" alt="image" src="https://github.com/user-attachments/assets/7a37eb16-28e6-4db0-ba79-8d6148aa247e" />
+
+
 ## Various Linux Commands
 $ sudo last                             -> shows who was login the beside your account<br>
 $ netstat -an | grep 5044               -> Check if the port is active and connected to an IP<br>
@@ -520,5 +527,6 @@ $ uptime                                -> Shows how long the server has been ru
 $ crontab -l                            -> List all the active cronjobs<br>
 $ netstat -an | grep '5601\\|9200\\|5044'  -> Shows if Elasticsearch and logstash are listening<br>
 $ zip -e webhoneypot.zip webhoneypot-2024-* -> zipping a file or directory with a password (usually infected for malware)
+$ btop                                      -> Resource monitor that shows usage and stats for processor, memory, disks, network and processes
 
 
