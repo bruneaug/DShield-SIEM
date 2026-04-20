@@ -82,7 +82,7 @@ sudo vi /etc/dshield.ini
 ```
 Make sure that enable_local_logs=**true** otherwise it won't be logging webhoneypot logs to the DShield sensor.<br>
 
-## Troubleshooting DShield web-honeypot (isc-agent is the old sensor)
+## Troubleshooting DShield web-honeypot
 
 Sometimes the web-honeypot has errors such as this picture:<br>
 ```
@@ -101,6 +101,9 @@ Run the following command to check the web-honeypot status:<br>
 ````
 sudo systemctl status web-honeypot
 ````
+ <img width="706" height="178" alt="image" src="https://github.com/user-attachments/assets/f0e081dd-a183-48b6-b247-2f3a996666fd" />
+
+
 There is always a possibility the sensor web-honeypot service isn't enable and need to be activated as a service<br>
 This is what you need to do:<br>
 
