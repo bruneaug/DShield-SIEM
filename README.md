@@ -402,14 +402,14 @@ After the installation, we place a **hold** on filebeat so you can update the se
 version should always match the Elasticsearc/Kibana docker version.<br>
 <ins>Linux - X86_64</ins>
 ```
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.7-amd64.deb
-sudo apt install ./filebeat-8.19.7-amd64.deb
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.15-amd64.deb
+sudo apt install ./filebeat-8.19.15-amd64.deb
 sudo apt-mark hold filebeat
 ```
 <ins>PI - aarch64</ins>
 ```
-wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.7-arm64.deb
-sudo apt install ./filebeat-8.19.7-arm64.deb
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.19.15-arm64.deb
+sudo apt install ./filebeat-8.19.15-arm64.deb
 sudo apt-mark hold filebeat
 ```
 In order to update filebeat, when the time comes, you will need to remove the hold. Check if there is a hold on filebeat first before removing it<br>
