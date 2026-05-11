@@ -188,8 +188,7 @@ Look for: ttylog = false to ttylog = true<br>
 sudo vi /srv/cowrie/cowrie.cfg 
 ```
 /var/log/dshield.log -> firewall<br>
-/srv/db -> old webhoneypot-*.json location<br>
-/srv/log/  <--- New webhoneypot-*.json log location<br>
+/srv/log/webhoneypot-*.json log location<br>
 /srv/cowrie/var/lib/cowrie/downloads<br>
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
