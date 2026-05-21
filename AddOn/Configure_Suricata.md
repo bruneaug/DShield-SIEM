@@ -10,8 +10,9 @@ sudo apt update && sudo apt upgrade -y
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt update
 sudo apt install suricata -y
+sudo mkdir /var/run/suricata
+chown suricata:suricata /var/run/suricata
 sudo suricata --version
-sudo vi /etc/suricata/suricata.yaml
 ```
 ### Editing the Configuration File
 ```
