@@ -20,6 +20,8 @@ sudo vi /etc/suricata/suricata.yaml
 ```
 ### Update the configuration file<br>
 Edit the configuration file and select the correct interface to get Suricata<br>
+- Adjust the network collection to your network.
+- I suggest you can turn off logging to "fast".
 detecting activity based on your IDS signature selection. <br>
 <pre>
 af-packet:
@@ -27,6 +29,16 @@ af-packet:
     cluster-id: 99
     cluster-type: cluster_flow
     defrag: yes
+
+  vars:
+  # more specific is better for alert accuracy and performance
+  address-groups:
+    HOME_NET: "[192.168.25.28/32]"
+
+  - fast:
+      enabled: no
+      filename: fast.log
+      append: yes
 </pre>
 ### Updating Signatures
 Before activating Suricata, update the signatures to the latest available.<br>
