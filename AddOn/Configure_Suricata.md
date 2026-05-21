@@ -17,7 +17,6 @@ sudo vi /etc/suricata/suricata.yaml
 ```
 sudo vi /etc/suricata/suricata.yaml
 ```
-
 ### Update the configuration file<br>
 Edit the configuration file and select the correct interface to get Suricata<br>
 detecting activity based on your IDS signature selection. <br>
@@ -28,11 +27,17 @@ af-packet:
     cluster-type: cluster_flow
     defrag: yes
 </pre>
-### Updating the signatures and starting Suricata<br>
+### Updating Signatures
+Before activating Suricata, update the signatures to the latest available.<br>
 ```
 sudo suricata-update
+```
+### Starting Suricata
+
+```
+sudo systemctl enable suricata
 sudo systemctl restart suricata
-sudo suricata -c /etc/suricata/suricata.yaml -i eth0
+sudo systemctl status suricata
 ```
 ### Rule Classification
 ```
