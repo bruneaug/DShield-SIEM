@@ -80,6 +80,7 @@ group:emerging-icmp.rules
 ### Update the Ruleset before Restarting
 ```
 sudo suricata-update
+sudo systemctl restart suricata
 ```
 ### Confirm the SID has been Removed from the Ruleset
 ```
