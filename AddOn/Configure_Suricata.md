@@ -1,6 +1,5 @@
 # Installing Suricata on DShield Sensor
 
-This is currently just a placeholder<br>
 Update the sensor before the installation of Suricata<br>
 ```
 sudo apt update && sudo apt upgrade -y
@@ -89,7 +88,6 @@ sudo grep "sid:2200121 /var/lib/suricata/rules/suricata.rules
 ### Result that Confirms Rule has been Removed
 This picture shows the rule has been commented out (#)
 <img width="1053" height="48" alt="image" src="https://github.com/user-attachments/assets/93896b84-ac80-49d1-81e0-9ae7ef90f7e3" />
-
 
 sgh-mpm-caching: yes
 sgh-mpm-caching-path: /var/lib/suricata/cache/sgh
