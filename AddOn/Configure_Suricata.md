@@ -19,6 +19,8 @@ sudo vi /etc/suricata/suricata.yaml
 ```
 
 ### Update the configuration file<br>
+Edit the configuration file and select the correct interface to get Suricata<br>
+detecting activity based on your IDS signature selection. <br>
 <pre>
 af-packet:
   - interface: eth0 enp2s0 ens3
