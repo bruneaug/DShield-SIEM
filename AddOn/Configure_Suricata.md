@@ -5,7 +5,7 @@ Update the sensor before the installation of Suricata<br>
 ```
 sudo apt update && sudo apt upgrade -y
 ```
-Installing Suricata<br>
+## Installing Suricata<br>
 ```
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt update
@@ -13,7 +13,12 @@ sudo apt install suricata -y
 sudo suricata --version
 sudo vi /etc/suricata/suricata.yaml
 ```
-Update the configuration file<br>
+### Editing the Configuration File
+```
+sudo vi /etc/suricata/suricata.yaml
+```
+
+### Update the configuration file<br>
 <pre>
 af-packet:
   - interface: eth0 enp2s0 ens3
@@ -21,13 +26,21 @@ af-packet:
     cluster-type: cluster_flow
     defrag: yes
 </pre>
-Updating the signatures and starting Suricata<br>
+### Updating the signatures and starting Suricata<br>
 ```
 sudo suricata-update
 sudo systemctl restart suricata
 sudo suricata -c /etc/suricata/suricata.yaml -i eth0
 ```
-View the logs
+### Rule Classification
+```
+sudo vi /var/lib/suricata/rules/classification.config
+```
+### Rule Location
+```
+/usr/share/suricata/rules/
+```
+### View the logs
 ```
 cat /var/log/suricata
 ```
