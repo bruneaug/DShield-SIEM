@@ -65,6 +65,30 @@ This is the default log location for Suricata. If using DShield SIEM, those woul
 ```
 cat /var/log/suricata
 ```
+# Tuning the Sensor Rules
+Disable Signatures
+
+sudo vi /etc/suricata/ disable.conf
+<pre>
+# Disable a specific signature by its SID
+# SURICATA Ethertype unknown
+2200121
+# Or disable an entire category/group
+group:emerging-icmp.rules 
+</pre>
+
+### Update the Ruleset before Restarting
+```
+sudo suricata-update
+```
+### Confirm the SID has been Removed from the Ruleset
+```
+sudo grep "sid:2200121 /var/lib/suricata/rules/suricata.rules
+```
+### Result that Confirms Rule has been Removed
+This picture shows the rule has been commented out (#)
+<img width="1053" height="48" alt="image" src="https://github.com/user-attachments/assets/93896b84-ac80-49d1-81e0-9ae7ef90f7e3" />
+
 
 sgh-mpm-caching: yes
 sgh-mpm-caching-path: /var/lib/suricata/cache/sgh
