@@ -48,6 +48,7 @@ sudo vi /var/lib/suricata/rules/classification.config
 /usr/share/suricata/rules/
 ```
 ### View the logs
+This is the default log location for Suricata. If using DShield SIEM, those would also be sent to the SIEM.<br>
 ```
 cat /var/log/suricata
 ```
