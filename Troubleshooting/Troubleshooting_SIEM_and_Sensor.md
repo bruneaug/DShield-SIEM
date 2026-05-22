@@ -487,6 +487,26 @@ Run this command and make sure the "status" : "green", if it isn't green, you ne
 ````
 curl -XGET 'localhost:9600/_node/pipelines?pretty'
 ````
+## Logstash log Error - Limit of total fields [12500] has been exceeded while adding new fields
+When adding new logs to the ELK stack and you get the following error in the logs, it indicate the index has been maxed out <br>
+and will need to be expanded to accept new logs. This is an example of the message at the end of a log in /var/log/messages:<br>
+<pre>
+  :response=>{"create"=>{"status"=>400, "error"=>{"type"=>"document_parsing_exception", 
+ "reason"=>"[1:1005] failed to parse: Limit of total fields [12500] has been exceeded while adding new fields [1]", 
+ "caused_by"=>{"type"=>"illegal_argument_exception", 
+ "reason"=>"Limit of total fields [12500] has been exceeded while adding new fields
+</pre>
+
+To fix this which most of the time it will likely be an issue with filebeat-version, <br>
+you need to run this command in Management -> Dev Tools<br>
+Copy and past this in Dev Tools and run it. The logs should start flowing again.<br>
+
+```
+ PUT /filebeat-8.19.7/_settings
+{
+  "index.mapping.total_fields.limit": 13000
+}
+```
 
 # Linux Commands
 
