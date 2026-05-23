@@ -21,6 +21,7 @@ sudo vi /etc/suricata/suricata.yaml
 Edit the configuration file and select the correct interface to get Suricata<br>
 - Adjust the network collection to your network.
 - I suggest you can turn off logging to "fast".
+- Using the bpf-filter to stop collection of some traffic
 detecting activity based on your IDS signature selection. <br>
 <pre>
 af-packet:
