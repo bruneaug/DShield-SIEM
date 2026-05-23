@@ -25,6 +25,7 @@ detecting activity based on your IDS signature selection. <br>
 <pre>
 af-packet:
   - interface: eth0 enp2s0 ens3
+    bpf-filter: "not host 192.168.25.1"
     cluster-id: 99
     cluster-type: cluster_flow
     defrag: yes
