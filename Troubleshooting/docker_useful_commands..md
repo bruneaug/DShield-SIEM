@@ -169,6 +169,9 @@ $ sudo docker exec -ti heartbeat bash<br>
 $ sudo docker exec -ti cowrie bash<br>
 $ sudo docker exec -ti attack-navigator bash<br>
 
+# Debugging and Wathing Logs
+$ sudo docker logs -f logstash
+
 # Copying Files Between Docker & Local User
 $ sudo docker cp  server:/usr/share/elastic-agent/elastic-agent.yml .<br>
 $ sudo docker cp elastic-agent.yml  fleet-server:/usr/share/elastic-agent/<br>
