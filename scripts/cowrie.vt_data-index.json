@@ -1,5 +1,5 @@
 {
-  "index_patterns": ["cowrie.vt_data-*"],
+  "index_patterns": ["cowrie.ttylog-*"],
     "template": {
      "settings": {
        "number_of_shards": 1,
@@ -9,15 +9,15 @@
          "mode": "logsdb",
          "refresh_interval": "5s",
          "lifecycle": {
-          "name": "cowrie.vt_data",
-          "rollover_alias": "cowrie.vt_data"
+          "name": "cowrie.ttylog",
+          "rollover_alias": "cowrie.ttylog"
         }
       }
     },
     "mappings" : {
       "numeric_detection": true,
       "_meta" : {
-        "beat" : "cowrie.vt_data"
+        "beat" : "cowrie.ttylog"
       },
       "dynamic_templates": [
         {
@@ -154,7 +154,7 @@
               "type": "keyword"
             },
             "hash": {
-              "ignore_above" : 1024,
+              "ignore_above" : 28672,
               "type": "keyword"
             },
             "kind": {
@@ -182,9 +182,6 @@
             },
             "code": {
               "type": "keyword"
-            },
-            "ingested": {
-              "type": "date"
             }
           }
         },
@@ -196,13 +193,6 @@
             "domain": {
               "ignore_above": 1024,
               "type": "keyword"
-            },
-            "as_org": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "asn": {
-              "type": "long"
             },
             "bytes": {
               "type": "long"
@@ -548,114 +538,7 @@
           }
         },
         "ttylog": {
-          "ignore_above": 1024,
           "type": "keyword"
-        },
-        "file": {
-          "properties": {
-            "name": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "path": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "size": {
-              "type": "long"
-            },
-            "directory": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "threat": {
-          "properties": {
-            "indicator": {
-              "properties": {
-                "file": {
-                  "properties": {
-                    "hash": {
-                      "properties": {
-                        "sha256": {
-                          "ignore_above": "1024",
-                          "type": "keyword"
-                        }
-                      }
-                    },
-                    "type": {
-                      "ignore_above": "1024",
-                      "type": "keyword"
-                    }
-                  }
-                },
-                "description": {
-                  "ignore_above": "1024",
-                  "type": "keyword"
-                },
-                "name": {
-                  "ignore_above": "1024",
-                  "type": "keyword"
-                },
-                "virustotal": {
-                  "properties": {
-                    "malicious": {
-                      "type": "long"
-                    },
-                    "suspicious": {
-                      "type": "long"
-                    },
-                    "undetected": {
-                      "type": "long"
-                    },
-                    "harmless": {
-                      "type": "long"
-                    },
-                    "timeout": {
-                      "type": "long"
-                    },
-                    "confirmed-timeout": {
-                      "type": "long"
-                    },
-                    "failure": {
-                      "type": "long"
-                    }
-                  }
-                }
-              }
-            },
-            "software": {
-              "properties": {
-                "name": {
-                  "ignore_above": "1024",
-                  "type": "keyword"
-                }
-              }
-            },
-            "enrichments": {
-              "properties": {
-                "indicator": {
-                  "type": "object"
-                },
-                "properties": {
-                  "ignore_above": "1024",
-                  "type": "keyword"
-                },
-                "last_seen": {
-                  "type": "date"
-                }
-              }
-            },
-            "feed": {
-              "properties": {
-                "name": {
-                  "ignore_above": "1024",
-                  "type": "keyword"
-                }
-              }
-            }
-          }
         }
       }
     }
