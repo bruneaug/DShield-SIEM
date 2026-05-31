@@ -154,7 +154,7 @@
               "type": "keyword"
             },
             "hash": {
-              "ignore_above" : 1024,
+              "ignore_above" : 4096,
               "type": "keyword"
             },
             "kind": {
