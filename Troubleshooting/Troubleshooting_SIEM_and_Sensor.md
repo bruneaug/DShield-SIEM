@@ -507,6 +507,11 @@ Copy and past this in Dev Tools and run it. The logs should start flowing again.
   "index.mapping.total_fields.limit": 13000
 }
 ```
+## Filebeat in Debug Mode
+The most reliable way to find out what Filebeat is doing is to run it in the foreground with debug logging enabled. <br>
+```
+filebeat -c /etc/filebeat/filebeat.yml -e -d "*"
+```
 
 # Linux Commands
 
