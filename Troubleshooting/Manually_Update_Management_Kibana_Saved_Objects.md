@@ -17,7 +17,7 @@ The current or updated dashboard can be downloaded from Github using curl in Win
 
 Windows: 
 ```
-curl -LJO https://raw.githubusercontent.com/bruneaug/DShield-SIEM/refs/heads/main/scripts/dshield_sensor_8.19.7.ndjson
+wget https://raw.githubusercontent.com/bruneaug/DShield-SIEM/refs/heads/main/scripts/dshield_sensor_8.19.15.ndjson
 ```
 Linux: 
 ```
@@ -28,27 +28,7 @@ Select **Import**  to import the updated JSON dashboard file into Elasticsearch<
 
 ## After you Imported the Updated Dashboard
 
-The result will look like this after the JSON has been re-imported (23 Titles):
-![image](https://github.com/user-attachments/assets/6f0ba3fc-900b-407e-a16a-a9e0009819a6)
- 
-## Update cowrie Right-Click Objects
+The result will look like this after the JSON has been re-imported (24 Titles):
+<img width="658" height="832" alt="image" src="https://github.com/user-attachments/assets/08a2ea77-bd82-4fc9-bf9d-bd573b62950c" />
 
-**Important Note**: This step is only done if any of the following services have been added to your own ELK stack -> Arkime and TTYLog. Otherwise, skip this<br>
 
-After importing the updated dashboards, if you have installed Arkime, Context3Hash, Context3IP and TTYLog (those are additional tools if you wish to use them), you need to change the default of my test ELK system to your own ELK server for the right-click functions to work.<br>
-
-The IP address that you need to change is 192.168.25.231 to your own ELK server IP address.<br>
-To make the change, goto Management -> Kibana -> Data Views and select cowrie*<br>
-
-**Note**: If you get some errors after importing an updated dashboard, you may have to select **edit** in cowrie* and select **Save** to update the list of objects in the template.<br>
-
-Now edit any of the following services **if you are using Arkime and TTYLog** and change the IP address to match your ELK servername or IP<br>
-
-![image](https://github.com/user-attachments/assets/63385cbf-6f64-4291-ad4c-0bddaf139f7b)
-
-- Select the pen on the right to Edit, make the change and save<br>
-
-![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/f32c4cdd-301c-4b05-a8f1-30a81cb72901)
-
-## After the update, access the dashboard:<br>
- **DShield Main Page Activity**
