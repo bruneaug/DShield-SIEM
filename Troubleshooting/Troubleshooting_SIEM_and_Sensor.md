@@ -38,7 +38,7 @@ sudo cat /srv/log/isc-agent.err
 This command is used to reset the DShield sensor and remove everything.<br>
 
 $ sudo ./bin/quickreset.sh<br>
-$ sudo ./bin/install.sh<br>
+$ bin/install.sh<br>
 
 ## Testing Connection to ISC Website
 Testing connection to ISC website<br>
