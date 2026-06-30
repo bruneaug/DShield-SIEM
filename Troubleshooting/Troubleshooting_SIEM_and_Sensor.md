@@ -61,10 +61,17 @@ If TCP/12222 isn't listening to run the following commands:<br>
 $ sudo systemctl status ssh<br>
 
 If not listening<br>
-
-$ sudo systemctl start ssh<br>
-$ sudo systemctl status ssh<br>
-$ sudo systemctl enable ssh<br>
+```
+sudo systemctl start ssh<br>
+sudo systemctl status ssh<br>
+sudo systemctl enable ssh<br>
+```
+##  velociraptor Service
+The velociraptor service is used to monitor and detect issues with the sensor to enable troubleshooting by the Storm Center.<br>
+To review if the  velociraptor service is running, you can check with the following command:<br>
+```
+sudo systemctl status velociraptor
+```
 
 ## sudo to cowrie
 
