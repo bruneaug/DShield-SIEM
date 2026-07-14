@@ -32,7 +32,8 @@ echo "Setting up environment variables"
 export scriptdir='/usr/share/scripts'
 echo $scriptdir
 
-export curlcmd='curl --cacert /usr/share/config/certs/ca/ca.crt -u elastic:'$ELASTIC_PASSWORD
+export curlcmd='curl -k --insecure -u elastic:'$ELASTIC_PASSWORD
+#export curlcmd='curl --cacert /usr/share/config/certs/ca/ca.crt -u elastic:'$ELASTIC_PASSWORD
 echo $curlcmd
 #$curlcmd -H 'Content-Type: application/json' -XGET https://es01:9200/_cluster/health?pretty
 
