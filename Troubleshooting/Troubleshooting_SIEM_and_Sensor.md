@@ -265,6 +265,16 @@ Aug 09 16:58:28 collector systemd[1]: dshieldfw.service: Deactivated successfull
 sudo systemctl restart dshieldfw
 sudo systemctl status dshieldfw
 ````
+## Fixing Access to Cloud Sensor after Home IP Update
+If your home IP has changed, you need to login to the cloud sensor via the interface and edit the IPTables firewall to update the configuration.<br>
+
+```
+sudo vi /etc/network/iptables
+```
+Change all the location the previous home IP address (XX.XX.13.214) is located in the firewall script like this example in bold<br>
+[Cloud IPTables](https://github.com/bruneaug/DShield-SIEM/blob/main/Troubleshooting/cloud_iptables.md)
+
+
 ### MISSING: firewall rules
 You may need to manually add the firewall storage file if it doesn't exists<br>
 ```
