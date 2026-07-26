@@ -266,7 +266,7 @@ sudo systemctl restart dshieldfw
 sudo systemctl status dshieldfw
 ````
 ## Fixing Access to Cloud Sensor after Home IP Update
-If your home IP has changed, you need to login to the cloud sensor via the interface and edit the IPTables firewall to update the configuration.<br>
+If your home IP has changed, you need to login to the cloud sensor via the cloud provided interface and edit the IPTables firewall to update the configuration.<br>
 
 ```
 sudo vi /etc/network/iptables
