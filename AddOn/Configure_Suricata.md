@@ -64,7 +64,7 @@ sudo vi /var/lib/suricata/rules/classification.config
 ### View the logs
 This is the default log location for Suricata. If using DShield SIEM, those would also be sent to the SIEM.<br>
 ```
-cat /var/log/suricata
+cd /var/log/suricata
 ```
 # Tuning the Sensor Rules
 Disable Signatures
