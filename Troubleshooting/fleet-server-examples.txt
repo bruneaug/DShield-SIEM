@@ -10,6 +10,9 @@ Elasticsearch CA trusted fingerprint
 ====================================
 - Copy ca.crt certificate to /tmp
 $ sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /tmp
+- Add the ca.crt to the server trusted certificate list
+$ sudo cp /tmp/ca.crt /usr/local/share/ca-certificates/dshield.crt
+$ sudo update-ca-certificates
 Get a copy of Elasticsearch CA trusted fingerprint
 $ sudo openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
 
