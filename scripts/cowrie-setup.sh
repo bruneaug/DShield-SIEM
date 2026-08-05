@@ -32,10 +32,10 @@ echo "Setting up environment variables"
 export scriptdir='/usr/share/scripts'
 echo $scriptdir
 
-#ELASTIC_PASSWORD=`grep ELASTIC_PASSWORD ../.env | sed 's/ELASTIC_PASSWORD=//g'`
-ELASTIC_PASSWORD='student'
+ELASTIC_PASSWORD=`grep ELASTIC_PASSWORD ../.env | sed 's/ELASTIC_PASSWORD=//g'`
+#ELASTIC_PASSWORD='student'
 
-export curlcmd='curl -k --insecure -u elastic:'$ELASTIC_PASSWORD
+export curlcmd='curl -u elastic:'$ELASTIC_PASSWORD
 #export curlcmd='curl --cacert /usr/share/config/certs/ca/ca.crt -u elastic:'$ELASTIC_PASSWORD
 echo $curlcmd
 #$curlcmd -H 'Content-Type: application/json' -XGET https://es01:9200/_cluster/health?pretty
