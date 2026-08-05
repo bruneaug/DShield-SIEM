@@ -226,6 +226,15 @@ In order to see the ELK stack health, it is necessary to configure the stack mon
 
 ![image](https://github.com/user-attachments/assets/79b7a5c9-ebf7-40e2-8bd6-89d808c4c25b)
 
+# Add ca.crt to Server Trusted Certificate
+- Add the ca.crt to the server trusted certificate list
+```
+sudo cp /var/lib/docker/volumes/dshield-elk_certs/_data/ca/ca.crt /usr/local/share/ca-certificates/dshield.crt
+```
+- Update trusted certificates
+ ```
+ sudo update-ca-certificates
+```
 # Configuring the fleet-agent
 The fleet-agent (this is an elastic-agent running on the ELK stack) will be used to ingest threat intelligence.<br>
 
