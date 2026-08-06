@@ -11,6 +11,7 @@ $ sudo docker stats (shows status of container, container ID, Name, Mem/Usage)<b
 $ sudo docker system prune -a (Remove everything)<br>
 $ sudo docker logs kibana (troubleshooting docker)<br>
 $ sudo docker compose logs --follow (debugging)<br>
+$ sudo docker compose up --build 2>&1 | tee output.log (debugging and sending everything to a file) <br>
 $ sudo docker compose down --remove-orphans && sudo docker compose up --build -d (Removed or renamed orphan container)<br>
 $ sudo docker rm -f cowrie (remove a container)<br>
 $ sudo docker system df (Check docker usage)<br>
