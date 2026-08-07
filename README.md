@@ -158,6 +158,12 @@ Installation Completed
 
 <img width="375" height="354" alt="image" src="https://github.com/user-attachments/assets/a0e66e68-4be0-4e5a-825a-be7944a5c0f4" />
 
+### Adding dashboards & SIEM Signatures to Kibana
+This loads the DShield SIEM dashboards and the SIEM signatures into Kibana.<br>
+```
+~/scripts/dashboard-setup.sh
+```
+
 ### Docker Directory Listing
 This command shows the list of docker directories in used after all of Elasticsearch components have been installed.<br>
 As data gets added to Elasticsearch, you can also monitor either with the command below or within ELK the amount of disk is available for storage.<br>
