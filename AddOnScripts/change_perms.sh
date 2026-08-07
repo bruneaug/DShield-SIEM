@@ -13,6 +13,7 @@ DIRECTORY='/opt/intel'
 
 # Change permissions to these scripts to executable
 
+sudo chmod 755 ~/scripts/dashboard-setup.sh
 sudo chmod 755 ~/DShield-SIEM/scripts/cowrie-setup.sh
 sudo chown root:root ~/DShield-SIEM/filebeat/filebeat.yml
 sudo chown root:root ~/DShield-SIEM/filebeat01/filebeat.yml
