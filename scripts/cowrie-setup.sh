@@ -32,11 +32,7 @@ echo "Setting up environment variables"
 export scriptdir='/usr/share/scripts'
 echo $scriptdir
 
-ELASTIC_PASSWORD=`grep ELASTIC_PASSWORD ../.env | sed 's/ELASTIC_PASSWORD=//g'`
-#ELASTIC_PASSWORD='student'
-
-export curlcmd='curl -u elastic:'$ELASTIC_PASSWORD
-#export curlcmd='curl --cacert /usr/share/config/certs/ca/ca.crt -u elastic:'$ELASTIC_PASSWORD
+export curlcmd='curl --cacert /usr/share/config/certs/ca/ca.crt -u elastic:'$ELASTIC_PASSWORD
 echo $curlcmd
 #$curlcmd -H 'Content-Type: application/json' -XGET https://es01:9200/_cluster/health?pretty
 
@@ -74,15 +70,15 @@ $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_ilm
 $curlcmd -s -H 'Content-Type: application/x-ndjson' -XPUT https://es01:9200/_index_template/cowrie.vt_data --data-binary @cowrie.vt_data-index.json; echo
 
 # Dashboard setup
-echo "Setting up Dashboard"
+#echo "Setting up Dashboard"
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import --form file=@dshield_sensor_8.11.1.ndjson
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.11.1.ndjson
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.19.15.ndjson
+#$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.19.15.ndjson
 
 # Detection SIEM Rules setup
-echo "Setting up SIEM Detection Rule for Cowrie Activity"
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/detection_engine/rules/_import?overwrite=true --form file=@threat_Intel_IP_Address_Indicator_Match_ISC_ThreatIntel.ndjson
+#echo "Setting up SIEM Detection Rule for Cowrie Activity"
+#$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
+#$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://kibana/api/detection_engine/rules/_import?overwrite=true --form file=@threat_Intel_IP_Address_Indicator_Match_ISC_ThreatIntel.ndjson
 
 # Delete Mapping File after it has been loaded in Kibana
 # This prevent overwriting changes made in the mapping file until the next update
