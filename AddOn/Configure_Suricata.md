@@ -91,6 +91,14 @@ sudo grep "sid:2200121 /var/lib/suricata/rules/suricata.rules
 This picture shows the rule has been commented out (#)
 <img width="1053" height="48" alt="image" src="https://github.com/user-attachments/assets/93896b84-ac80-49d1-81e0-9ae7ef90f7e3" />
 
-sgh-mpm-caching: yes
-sgh-mpm-caching-path: /var/lib/suricata/cache/sgh
+sgh-mpm-caching: yes<br>
+sgh-mpm-caching-path: /var/lib/suricata/cache/sgh<br>
 
+## Filebeat for Log Forwarding to DShield-SIEM
+
+If this step wasn't already done, follow the steps listed in [DShield-SIEM](https://github.com/bruneaug/DShield-SIEM#setup-filebeat-on-dshield-sensor---logs-to-elk) to install and test filebeat to send the logs to your SIEM.<br>
+
+### Configure the Sensor
+Follow the steps listed in [DShield-Sensor](https://github.com/bruneaug/DShield-Sensor/tree/main) and to copy the suricata log rotate file to /etc/logrotate.d<br>
+```
+sudo cp DShield-Sensor/Suricata/suricata /etc/logrotate.d
