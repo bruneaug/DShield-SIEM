@@ -3,6 +3,16 @@
 # Date: 27 Mar 2026
 # Version: 0.1
 
+# Get the Filebeat configuration files from this location:
+# https://github.com/bruneaug/DShield-Sensor
+
+# Copy the filebeat directory to the local filebeat direct to use the default files
+# edit the filebeat.yml and update the IP (192.168.25.23) to the IP of your DShiel-SIEM
+
+# Run these 2 test to confirm filebeat can successfully connect to Logstash
+# filebeat test config
+# filebeat test output
+
 # This script is part of the ELK server if this is where you want to dowload the logs from the sensor.
 # Cronjob to automatically transfer logs daily
 # crontab -e 
