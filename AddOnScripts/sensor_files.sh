@@ -22,7 +22,7 @@
 # crontab -e 
 # Add this command to user cron and save. Make sure the directories exist locally
 # It is set at 23:58 to ensure the dshield firewall logs are transferred before they are lost
-# 58 23 * * * /home/guy/script/sensor_files.sh > /dev/null 2>1&
+# 58 23 * * * /home/guy/scripts/sensor_files.sh > /dev/null 2>1&
 
 
 # This script is used to download logs from DShield sensor locally to either keep copies
