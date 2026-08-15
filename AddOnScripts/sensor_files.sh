@@ -13,6 +13,10 @@
 # filebeat test config
 # filebeat test output
 
+# Replace /home/guy with the location your logs are going to be saved
+# mkdir following directories: dshield, webhoneypot, cowrie and downloads where your account is located 
+# where the files will be saved when the script run
+
 # This script is part of the ELK server if this is where you want to dowload the logs from the sensor.
 # Cronjob to automatically transfer logs daily
 # crontab -e 
@@ -51,18 +55,18 @@ scp -P 12222 ubuntu@remoteIP:/var/log/dshield.log  /home/guy/dshield/
 # Download webhoneypot logs
 # Make a copy of the file to local directory & change the permissions
 # Change /home/ubuntu & ubuntu:ubuntu to your local DShield sensor directory
-ssh -p 12222 ubuntu@emoteIP "sudo cp /srv/log/webhoneypot_$YESTERDAY.json /home/ubuntu"
-ssh -p 12222 ubuntu@emoteIP "sudo chown ubuntu:ubuntu /home/ubuntuwebhoneypot_$YESTERDAY.json"
+ssh -p 12222 ubuntu@remoteIP "sudo cp /srv/log/webhoneypot_$YESTERDAY.json /home/ubuntu"
+ssh -p 12222 ubuntu@remoteIP "sudo chown ubuntu:ubuntu /home/ubuntuwebhoneypot_$YESTERDAY.json"
 
-scp -P 12222 ubuntu@emoteIP:/home/ubuntu/webhoneypot_$YESTERDAY.json /home/guy/webhoneypot/
+scp -P 12222 ubuntu@remoteIP:/home/ubuntu/webhoneypot_$YESTERDAY.json /home/guy/webhoneypot/
 # Delete the transferred file form the DShield sensor home user directory
-ssh -p 12222 ubuntu@emoteIP "sudo rm -f /home/ubuntu/webhoneypot_$YESTERDAY.json"
+ssh -p 12222 ubuntu@remoteIP "sudo rm -f /home/ubuntu/webhoneypot_$YESTERDAY.json"
 
 # Download cowerie logs
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/log/cowrie/cowrie.json.$YESTERDAY  /home/guy/cowrie/
 
 # Download uploaded files to sensor
 # WARNING - These are scripts and potential malware uploaded by actors/bots
-ssh -p 12222 ubuntu@emoteIP "sudo chmod 664 /srv/cowrie/var/lib/cowrie/downloads/*"
+ssh -p 12222 ubuntu@remoteIP "sudo chmod 664 /srv/cowrie/var/lib/cowrie/downloads/*"
 scp -P 12222 ubuntu@remoteIP:/srv/cowrie/var/lib/cowrie/downloads/* /home/guy/downloads/
 
