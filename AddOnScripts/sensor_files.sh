@@ -37,8 +37,8 @@
 # ssh-copy-id will send your public key to the DShield sensor and after that you won't need to used a password to remotely login the sensor.
 
 # cd
-# ssh-keygen
-# ssh-copy-id -p 12222 ubuntu@remoteIP
+# ssh-keygen (no password)
+# ssh-copy-id -p 12222 ubuntu@remoteIP (This is sending the public key to the sensor)
 
 #!/usr/bin/bash
 
