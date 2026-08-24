@@ -206,6 +206,21 @@ sudo vi /srv/cowrie/etc/cowrie.cfg
 /srv/cowrie/var/log/cowrie/ -> Logs<br>
 /srv/cowrie/var/lib/cowrie/tty -> tty logs (if you have enabled them)<br>
 
+### Create Soft Links to the Logs
+This process will create some links (soft) to the log and directories<br>
+
+ ```
+ln -s /var/log/dshield.log
+ln -s /srv/log/
+ln -s /srv/cowrie/var/lib/cowrie/downloads
+ln -s /srv/cowrie/var/log/cowrie/
+ln -s /srv/cowrie/var/lib/cowrie/tty
+```
+It show show something like this after it has been setup:<br>
+lrwxrwxrwx  1 guy  guy        20 Sep 16  2025 dshield.log -> /var/log/dshield.log<br>
+ lrwxrwxrwx  1 guy  guy        26 Sep 16  2025 cowrie -> /srv/cowrie/var/log/cowrie<br>
+ lrwxrwxrwx  1 guy  guy        36 Sep 16  2025 downloads -> /srv/cowrie/var/lib/cowrie/downloads<br>
+ 
 ## Jesse's cowrieprocessor 
 "The initial purpose of this application is helps simplify command input and file download data from DShield Honeypots"<br>
 
