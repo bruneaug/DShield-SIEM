@@ -533,6 +533,7 @@ William Constantino [Cowrie logfile_investigation with Python](https://github.co
 William Constantino [Cowrie single_multi_IP with Python](https://github.com/JJWCons/log-scripts/blob/main/single_multi_IP.py)<br>
 Steven C. Peterson [DShield Model Context Protocol](https://github.com/datagen24/dsheild-mcp)<br>
 Nathan Smisson [dshield-tooling](https://github.com/neurohypophysis/dshield-tooling)<br>
+Frank Igbokwe [honeypot-omaha-batch](https://github.com/Frank-Igbokwe/honeypot-omaha-batch)<br>
 
 # References
 [1] https://isc.sans.edu/tools/honeypot/<br>
