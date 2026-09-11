@@ -17,7 +17,7 @@ The current or updated dashboard can be downloaded from Github using curl in Win
 
 Windows: 
 ```
-wget https://raw.githubusercontent.com/bruneaug/DShield-SIEM/refs/heads/main/scripts/dshield_sensor_8.19.15.ndjson
+curl https://raw.githubusercontent.com/bruneaug/DShield-SIEM/refs/heads/main/scripts/dshield_sensor_8.19.15.ndjson
 ```
 Linux: 
 ```
