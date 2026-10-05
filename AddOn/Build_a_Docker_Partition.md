@@ -21,6 +21,11 @@ cfdisk /dev/sdb
 * Select New -> Take full disk -> Write to disk enter yes -> Quit<br>
 
 ![image](https://github.com/bruneaug/DShield-SIEM/assets/48228401/e1977c75-af8f-4cc4-9ed7-7f437ce910cf)
+Confirm that LVM is installed<br>
+```
+sudo apt install lvm2
+which lvm
+```
 
 Now initializes Physical Volume for later use by the Logical Volume Manager (LVM)<br>
 ````
