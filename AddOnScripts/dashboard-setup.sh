@@ -3,6 +3,9 @@
 # Guy Bruneau, guybruneau@outlook.com
 # Date: 6 Aug 2026
 # Version: 1.0
+# Date: 13 Oct 2026
+# Version: 1.1
+# Changed $HOSTNAME to 127.0.0.1
 
 # This script now load all the defaults dashboard and SIEM custom signatures in DShield SIEM.
 
@@ -22,10 +25,10 @@ cd $dashboard
 echo "Setting up Dashboard"
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import --form file=@dshield_sensor_8.11.1.ndjson
 #curl -u elastic:$ELASTIC_PASSWORD -s -H 'kbn-xsrf: true' -XPOST https://kibana:5601/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.11.1.ndjson
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://$HOSTNAME/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.19.15.ndjson
+$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://127.0.0.1/api/saved_objects/_import?overwrite=true --form file=@dshield_sensor_8.19.15.ndjson
 
 # Detection SIEM Rules setup
 echo "Setting up SIEM Detection Rule for Cowrie Activity"
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://$HOSTNAME/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
-$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://$HOSTNAME/api/detection_engine/rules/_import?overwrite=true --form file=@threat_Intel_IP_Address_Indicator_Match_ISC_ThreatIntel.ndjson
+$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://127.0.0.1/api/detection_engine/rules/_import?overwrite=true --form file=@Threat_Intel_Indicator_Match_Cowrie.ndjson
+$curlcmd -s -H 'kbn-xsrf: true' -XPOST https://127.0.0.1/api/detection_engine/rules/_import?overwrite=true --form file=@threat_Intel_IP_Address_Indicator_Match_ISC_ThreatIntel.ndjson
 
