@@ -120,7 +120,7 @@ vi .env
   - IPADDRESS="192.168.25.231"
   - ELASTIC_PASSWORD=student
   - ES_MEM = Elasticsearch -> 4g, KB_MEM = Kibana -> 2g
-- If you want to change the default nameserver(s) information and your local private network location for the destination address (i.e. DShield sensor mapping - currently set for **Ottawa, Canada**), edit to the following directory for the files before loading docker:<br>
+- Change the default nameserver(s) information (**192.168.25.2 and 192.168.25.3**) in the 3 logstash files listed below and your local private network DNS and location using Google Maps for the destination address (i.e. DShield sensor mapping - currently set for **Ottawa, Canada**), edit to the following files before loading docker:<br>
 ````
   cd logstash/pipeline
 ````
