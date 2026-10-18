@@ -127,7 +127,7 @@ vi .env
   - logstash-200-filter-cowrie.conf <br>
   - logstash-201-filter-iptables.conf <br>
   - logstash-202-filter-cowrie-webhoneypot.conf <br>
-You can keep these default or edit each files and change them.
+Change the default to have accurate information in DShied SIEM, edit each files and change them.
 
 ### Configuring ELK Infrastructure Monitoring
 Edit **heartbeat.yml** to change the sensor IP (named PI) with your own sensor IP. Kibana heartbeat check the status of your services and determine whether they are available.<br>
